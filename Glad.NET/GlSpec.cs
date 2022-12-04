@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using System.Xml;
 using Glad.Spec;
 
 namespace Glad
 {
     public sealed class GlSpec
     {
-        private readonly XmlElement root;
+        private readonly string apiUrl = "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml";
+        private XmlElement root;
 
         public List<Group> Groups { get; }
 
         public List<Enumeration> Enums { get; }
 
         public List<Command> Commands { get; }
-        
+
         public List<Feature> Features { get; }
-        
+
         public List<Extension> Extensions { get; }
 
-        public GlSpec(string path)
+        public GlSpec()
         {
-            var doc = new XmlDocument();
-            doc.Load(path);
-            root = doc.DocumentElement;
-
             Groups = new List<Group>();
             Enums = new List<Enumeration>();
             Commands = new List<Command>();
@@ -34,9 +27,21 @@ namespace Glad
             Extensions = new List<Extension>();
         }
 
-        public void Parse()
+        public async Task Load()
         {
-            ParseGroups();
+            using var client = new HttpClient();
+            using var stream = await client.GetStreamAsync(this.apiUrl);
+
+            var doc = new XmlDocument();
+            doc.Load(stream);
+            root = doc.DocumentElement;
+
+            this.Parse();
+        }
+
+        private void Parse()
+        {
+            // ParseGroups();
             ParseEnums();
             ParseCommands();
             ParseFeatures();
@@ -103,10 +108,10 @@ namespace Glad
                     break;
                 }
             }
-                
+
         }
 
-        private IEnumerable<string> Fetch(Api api, Version version, Profile profile, FeatureType type) 
+        private IEnumerable<string> Fetch(Api api, Version version, Profile profile, FeatureType type)
         {
             var set = new HashSet<string>();
             foreach (var feature in Features)
@@ -120,7 +125,7 @@ namespace Glad
                 {
                     if (!item.Type.HasFlag(type))
                         continue;
-                   
+
                     if (!item.Profile.HasFlag(profile))
                         continue;
 

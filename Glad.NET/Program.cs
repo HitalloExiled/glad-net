@@ -12,12 +12,12 @@ namespace Glad
 
         private static GlSpec spec;
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
 
 
-            spec = new GlSpec("gl.xml");
-            spec.Parse();
+            spec = new GlSpec();
+            await spec.Load();
 
             Generator.Generate(spec, Api.GL, Profile.Core, new Version(3, 3));
 

@@ -105,7 +105,9 @@ namespace Glad
                 WORD_REPLACE[vendor] = vendor.ToUpperInvariant();
             }
 
-            using (var sw = new StreamWriter("OpenGL.cs"))
+            var path = Path.Join(Directory.GetCurrentDirectory(), "output", "OpenGL.cs");
+
+            using (var sw = new StreamWriter(path))
             {
                 using (var writer = new IndentedTextWriter(sw))
                 {
@@ -134,14 +136,14 @@ namespace Glad
                     writer.WriteLine("[SuppressMessage(\"ReSharper\", \"IdentifierTypo\")]");
                     writer.WriteLine("[SuppressMessage(\"ReSharper\", \"InconsistentNaming\")]");
 
-                        
-                        
-                   
+
+
+
                     writer.WriteLine("public static class Gl");
                     writer.WriteLine("{");
                     writer.Indent++;
 
-                   
+
                     var imports = GenerateCommands(spec, api, profile, version, writer);
 
                     writer.WriteLine("public static void Initialize(GetProcAddressHandler loader)");
@@ -231,7 +233,7 @@ namespace Glad
                 writer.WriteLine("}");
                 writer.WriteLine();
             }
-            
+
         }
 
         public static string EnumMemberName(string input)
@@ -269,7 +271,7 @@ namespace Glad
 
         private static string GenerateCommand(GlSpec spec, Command command, IndentedTextWriter writer)
         {
-            
+
 
             var name = command.Name.Substring(2);
             var proto = GenerateReturnType(spec, command.Proto);
@@ -298,7 +300,7 @@ namespace Glad
                     writer.Write($"out {words.Last()}");
                 else
                     writer.Write(words.Last());
-                if (i < args.Count - 1) 
+                if (i < args.Count - 1)
                     writer.Write(", ");
             }
             writer.WriteLine(");");
@@ -362,7 +364,7 @@ namespace Glad
                 return GetEnumName(ref spec, proto.Group);
             if (type.Equals("GLbitmask", StringComparison.Ordinal))
                 return GetBitmaskName(ref spec, proto.Group);
-            
+
             if (TYPE_REPLACE.TryGetValue(type, out var result))
                 return result;
 

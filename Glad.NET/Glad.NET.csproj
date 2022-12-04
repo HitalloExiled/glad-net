@@ -2,32 +2,26 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>Glad</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Glad.Net</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="OpenGL.cs" />
+    <Compile Remove="output/*" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="gl.xml">
+    <None Update="Resources/gl.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="glad.txt">
+    <None Update="Resources/glad.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="gladnet.txt">
+    <None Update="Resources/gladnet.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Wizard\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="OpenGL.cs" />
   </ItemGroup>
 
 </Project>
