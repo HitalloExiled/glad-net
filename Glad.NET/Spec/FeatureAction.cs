@@ -1,8 +1,7 @@
-namespace Glad.Spec
+namespace Glad.Net.Spec;
+
+public enum FeatureAction
 {
-    public enum FeatureAction
-    {
-        Require,
-        Remove
-    }
+    Require,
+    Remove
 }

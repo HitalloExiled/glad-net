@@ -1,18 +1,20 @@
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public abstract class NamedEntryCollection<T> : EntryCollection<T>, INamed where T : Entry
 {
-    public abstract class NamedEntryCollection<T> : EntryCollection<T>, INamed where T : Entry
+    public string Name { get; }
+
+    protected NamedEntryCollection(XmlElement node) : base(node)
     {
-        public string Name { get; }
+        Name = node.GetAttribute("name");
 
-        protected NamedEntryCollection(XmlElement node) : base(node)
+        if (string.IsNullOrWhiteSpace(Name))
         {
-            Name = node.GetAttribute("name");
-            if (string.IsNullOrWhiteSpace(Name))
-                throw new XmlException("Item must have name attribute.");
+            throw new XmlException("Item must have name attribute.");
         }
-
-        public override string ToString() => $"{Name} [{Count}]";
     }
+
+    public override string ToString() => $"{Name} [{Count}]";
 }

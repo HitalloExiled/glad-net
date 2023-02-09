@@ -1,7 +1,6 @@
-namespace Glad.Spec
+namespace Glad.Net.Spec;
+
+public interface INamed
 {
-    public interface INamed
-    {
-        string Name { get; }
-    }
+    string Name { get; }
 }

@@ -1,62 +1,70 @@
-using System;
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public class Feature : NamedEntryCollection<FeatureItem>
 {
-    public class Feature : NamedEntryCollection<FeatureItem>
+    public Api     Api     { get; }
+    public Version Version { get; }
+
+    public Feature(XmlElement node) : base(node)
     {
-        public Api Api { get; }
-        
-        public Version Version { get; }
-
-        public Feature(XmlElement node) : base(node)
+        var api = node.GetAttribute("api");
+        if (string.IsNullOrWhiteSpace(api))
         {
-            var api = node.GetAttribute("api");
-            if (string.IsNullOrWhiteSpace(api))
-                throw new XmlException("Feature API cannot be null/empty.");
-            Api = Enum.Parse<Api>(api, true);
-            
-            Version = Version.Parse(node.GetAttribute("number"));
+            throw new XmlException("Feature API cannot be null/empty.");
+        }
 
-            foreach (XmlNode child in node.ChildNodes)
+        Api = Enum.Parse<Api>(api, true);
+
+        Version = Version.Parse(node.GetAttribute("number"));
+
+        foreach (XmlNode child in node.ChildNodes)
+        {
+            if (child is XmlElement elem)
             {
-                if (child is XmlElement elem)
+                var profile = GetProfile(elem);
+                var action = GetAction(elem);
+                foreach (var entry in child.ChildNodes)
                 {
-                    var profile = GetProfile(elem);
-                    var action = GetAction(elem);
-                    foreach (var entry in child.ChildNodes)
+                    if (entry is XmlElement item)
                     {
-                        if (entry is XmlElement item)
-                            Add(new FeatureItem(item, profile, action));
-                    }   
+                        Add(new FeatureItem(item, profile, action));
+                    }
                 }
-                                 
-             
             }
         }
+    }
 
-        private static Profile GetProfile(XmlElement node)
+    private static Profile GetProfile(XmlElement node)
+    {
+        var name = node.GetAttribute("profile");
+        if (string.IsNullOrWhiteSpace(name))
         {
-            var name = node.GetAttribute("profile");
-            if (string.IsNullOrWhiteSpace(name))
-                return Profile.All;
-            if (name.Equals("core", StringComparison.Ordinal))
-                return Profile.Core;
-            if (name.Equals("compatibility", StringComparison.Ordinal))
-                return Profile.Compatibility;
-            if (name.Equals("common", StringComparison.Ordinal))
-                return Profile.Common;
-            throw new XmlException("Unknown OpenGL profile.");
+            return Profile.All;
         }
 
-        private static FeatureAction GetAction(XmlElement node)
+        if (name.Equals("core", StringComparison.Ordinal))
         {
-            var name = node.Name;
-            if (name.Equals("require", StringComparison.Ordinal))
-                return FeatureAction.Require;
-            if (name.Equals("remove", StringComparison.Ordinal))
-                return FeatureAction.Remove;
-            throw new XmlException("Unknown action.");
+            return Profile.Core;
         }
+
+        if (name.Equals("compatibility", StringComparison.Ordinal))
+        {
+            return Profile.Compatibility;
+        }
+
+        return name.Equals("common", StringComparison.Ordinal) ? Profile.Common : throw new XmlException("Unknown OpenGL profile.");
+    }
+
+    private static FeatureAction GetAction(XmlElement node)
+    {
+        var name = node.Name;
+        if (name.Equals("require", StringComparison.Ordinal))
+        {
+            return FeatureAction.Require;
+        }
+
+        return name.Equals("remove", StringComparison.Ordinal) ? FeatureAction.Remove : throw new XmlException("Unknown action.");
     }
 }

@@ -1,11 +1,9 @@
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public class Prototype : CommandItem
 {
-    public class Prototype : CommandItem
-    {
-        public Prototype(XmlElement node) : base(node)
-        {
-        }
-    }
+    public Prototype(XmlElement node) : base(node)
+    { }
 }

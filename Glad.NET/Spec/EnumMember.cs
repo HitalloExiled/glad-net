@@ -1,20 +1,7 @@
-using System.Xml;
+namespace Glad.Net.Spec;
 
-namespace Glad.Spec
+public class EnumMember : NamedEntry
 {
-    public class EnumMember : NamedEntry
-    {
-        public string Value { get; }
-
-        public string Alias { get; }
-
-        public EnumMember(XmlElement node) : base(node)
-        {
-            Value = node.GetAttribute("value");
-            if (string.IsNullOrWhiteSpace(Value))
-                throw new XmlException("Value cannot be null/empty.");
-            Alias = node.HasAttribute("alias") ? node.GetAttribute("alias") : null;
-          
-        }
-    }
+    public required string Value { get; init; }
+    public required string? Alias { get; init; }
 }

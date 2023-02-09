@@ -1,48 +1,55 @@
-using System;
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public class Extension : NamedEntryCollection<ExtensionItem>
 {
-    public class Extension : NamedEntryCollection<ExtensionItem>
-    {
-        public Extension(XmlElement node) : base(node)
-        {
-            var supported = node.GetAttribute("supported");
-            if (string.IsNullOrWhiteSpace(supported))
-                throw new XmlException("Extension must define supported API(s).");
-            foreach (var api in supported.Split('|'))
-            {
-                var flag = Enum.Parse<Api>(api, true);
-                Supported |= flag;
-            }
+    public Api Supported { get; }
 
-            foreach (XmlElement child in node.GetElementsByTagName("require"))
-            {
-                var api = child.HasAttribute("api")
-                    ? Enum.Parse<Api>(child.GetAttribute("api"), true)
-                    : Supported;
-                var profile = child.HasAttribute("profile")
-                    ? Enum.Parse<Profile>(child.GetAttribute("profile"), true)
-                    : Profile.All;
-                foreach (var element in child.ChildNodes)
-                    if (element is XmlElement item)
-                        Add(new ExtensionItem(item, api, profile));
-            }
+    public Extension(XmlElement node) : base(node)
+    {
+        var supported = node.GetAttribute("supported");
+        if (string.IsNullOrWhiteSpace(supported))
+        {
+            throw new XmlException("Extension must define supported API(s).");
         }
 
-        public Api Supported { get; }
+        foreach (var api in supported.Split('|'))
+        {
+            var flag = Enum.Parse<Api>(api, true);
+            Supported |= flag;
+        }
+
+        foreach (XmlElement child in node.GetElementsByTagName("require"))
+        {
+            var api = child.HasAttribute("api")
+                ? Enum.Parse<Api>(child.GetAttribute("api"), true)
+                : Supported;
+
+            var profile = child.HasAttribute("profile")
+                ? Enum.Parse<Profile>(child.GetAttribute("profile"), true)
+                : Profile.All;
+
+            foreach (var element in child.ChildNodes)
+            {
+                if (element is XmlElement item)
+                {
+                    Add(new ExtensionItem(item, api, profile));
+                }
+            }
+        }
     }
+}
 
-    public class ExtensionItem : FeatureItem
+public class ExtensionItem : FeatureItem
+{
+    public Api     RequiredApi { get; }
+
+    public Profile RequiredProfile { get; }
+
+    public ExtensionItem(XmlElement node, Api api, Profile profile) : base(node, profile, FeatureAction.Require)
     {
-        public ExtensionItem(XmlElement node, Api api, Profile profile) : base(node, profile, FeatureAction.Require)
-        {
-            RequiredApi = api;
-            RequiredProfile = profile;
-        }
-
-        public Api RequiredApi { get; }
-
-        public Profile RequiredProfile { get; }
+        RequiredApi = api;
+        RequiredProfile = profile;
     }
 }

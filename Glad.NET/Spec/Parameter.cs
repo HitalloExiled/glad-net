@@ -1,19 +1,16 @@
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public class Parameter : CommandItem
 {
-    public class Parameter : CommandItem
+    public string? LengthParam { get; }
+
+    public string? Type { get; }
+
+    public Parameter(XmlElement node) : base(node)
     {
-        public string LengthParam { get; }
-
-        public string Type { get; }
-
-        public Parameter(XmlElement node) : base(node)
-        {
-            LengthParam = node.HasAttribute("len") ? node.GetAttribute("len") : null;
-            Type = node["ptype"]?.InnerText;
-      
-
-        }
+        LengthParam = node.HasAttribute("len") ? node.GetAttribute("len") : null;
+        Type = node["ptype"]?.InnerText;
     }
 }

@@ -1,14 +1,14 @@
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public abstract class Entry
 {
-    public abstract class Entry
-    {
-        protected Entry(XmlElement node)
-        {
-            Comment = node.HasAttribute("comment") ? node.GetAttribute("comment") : null;
-        }
+    public string? Comment { get; init; }
 
-        public string Comment { get; }
-    }
+    protected Entry()
+    { }
+
+    protected Entry(XmlElement node) =>
+        Comment = node.HasAttribute("comment") ? node.GetAttribute("comment") : null;
 }

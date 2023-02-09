@@ -1,18 +1,22 @@
+namespace Glad.Net.Spec;
+
 using System.Xml;
 
-namespace Glad.Spec
+public class NamedEntry : Entry, INamed
 {
-    public class NamedEntry : Entry, INamed
+    public string Name { get; init; } = null!;
+
+    public NamedEntry() { }
+
+    public NamedEntry(XmlElement node) : base(node)
     {
-        public NamedEntry(XmlElement node) : base(node)
+        Name = node.GetAttribute("name");
+
+        if (string.IsNullOrWhiteSpace(Name))
         {
-            Name = node.GetAttribute("name");
-            if (string.IsNullOrWhiteSpace(Name))
-                throw new XmlException("Item must have name attribute.");
+            throw new XmlException("Item must have name attribute.");
         }
-
-        public string Name { get; }
-
-        public override string ToString() => Name;
     }
+
+    public override string ToString() => Name;
 }
