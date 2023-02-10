@@ -3,6 +3,7 @@
 using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Text;
+using Glad.Net.Extensions;
 using Glad.Net.Spec;
 
 public static class Generator
@@ -78,6 +79,7 @@ public static class Generator
             { "GLvdpauSurfaceNV", "nint" },
             { "GLvoid", "void" },
             { "GLVULKANPROCNV", "VulkanDebugProcNV" },
+            { "GLenum", "GlEnum" },
         };
         NAME_REPLACE = new Dictionary<string, string>
         {
@@ -90,7 +92,7 @@ public static class Generator
     }
 
 
-    public static void Generate(Specification spec, Api api, Profile profile, Version version)
+    public static void Generate(Specification spec, Options options)
     {
         foreach (var e in spec.Enums.Values)
         {
@@ -132,15 +134,15 @@ public static class Generator
         writer.WriteLine("}");
         writer.WriteLine();
 
-        GenerateEnums(spec, writer);
+        GenerateEnums(spec, options, writer);
 
         writer.WriteLine();
 
-        writer.WriteLine("public static class Gl");
+        writer.WriteLine("public static class GL");
         writer.WriteLine("{");
         writer.Indent++;
 
-        var imports = GenerateCommands(spec, api, profile, version, writer);
+        var imports = GenerateCommands(spec, options, writer);
 
         writer.WriteLine("public static void Initialize(GetProcAddressHandler loader)");
         writer.WriteLine("{");
@@ -160,7 +162,7 @@ public static class Generator
         writer.WriteLine("}");
     }
 
-    public static void GenerateEnums(Specification spec, IndentedTextWriter writer)
+    public static void GenerateEnums(Specification spec, Options options, IndentedTextWriter writer)
     {
         foreach (var enumeration in spec.Enums.Values)
         {
@@ -174,42 +176,57 @@ public static class Generator
                 continue;
             }
 
-            writer.WriteLine();
+            var buffer = new StringBuilder();
+
+            buffer.AppendLine();
 
             if (enumeration.Type is null)
             {
-                writer.WriteLine($"public enum {enumeration.Group}");
+                buffer.AppendLine($"public enum {enumeration.Group}");
             }
             else if (enumeration.Type.Equals("bitmask", StringComparison.Ordinal))
             {
-                writer.WriteLine("[Flags]");
-                writer.WriteLine($"public enum {enumeration.Group} : uint");
+                buffer.AppendLine("[Flags]");
+                buffer.AppendLine($"public enum {enumeration.Group} : uint");
             }
             else
             {
                 throw new InvalidOperationException("Unknown enumeration type.");
             }
 
-            writer.WriteLine("{");
-            writer.Indent++;
+            buffer.AppendLine("{");
 
             var count = 0;
+            var indentation = new string(' ', writer.Indent * 4);
+
             foreach (var member in enumeration.Values.Select(x => x.Value))
             {
-                count++;
                 if (spec.TryGetExtension(member.Name, out var extension))
                 {
-                    writer.WriteLine();
-                    writer.WriteLine($"[GLExtension(\"{extension}\")]");
+                    if (options.Extensions != null && !extension!.CanInclude(options.Extensions))
+                    {
+                        continue;
+                    }
+                }
+
+                count++;
+
+                if (extension != null)
+                {
+                    buffer.AppendLine();
+                    buffer.AppendLine($"{indentation}[GLExtension(\"{extension.Name}\")]");
                 }
 
                 var name = EnumMemberName(member.Name);
-                writer.Write($"{name} = {member.Value},");
-                writer.WriteLine(string.Empty);
+
+                buffer.AppendLine($"{indentation}{name} = {member.Value},");
             }
 
-            writer.Indent--;
-            writer.WriteLine("}");
+            if (count > 0)
+            {
+                writer.Write(buffer);
+                writer.WriteLine("}");
+            }
         }
     }
 
@@ -236,25 +253,37 @@ public static class Generator
                 }
             }
         }
-        return buffer.ToString();
+        return buffer.ToString().ToSafeIdentifier();
     }
 
 
-    public static IEnumerable<string> GenerateCommands(Specification spec, Api api, Profile profile, Version version, IndentedTextWriter writer)
+    public static IEnumerable<string> GenerateCommands(Specification spec, Options options, IndentedTextWriter writer)
     {
         var buffer = new List<string>();
-        foreach (var cmd in spec.GetCommands(api, version, profile))
+        foreach (var cmd in spec.GetCommands(options))
         {
-            var import = GenerateCommand(spec, cmd!, writer);
-            buffer.Add(import);
-            writer.WriteLine();
+            var import = GenerateCommand(spec, cmd!, options, writer);
+
+            if (import != null)
+            {
+                buffer.Add(import);
+                writer.WriteLine();
+            }
         }
 
         return buffer;
     }
 
-    private static string GenerateCommand(Specification spec, Command command, IndentedTextWriter writer)
+    private static string? GenerateCommand(Specification spec, Command command, Options options, IndentedTextWriter writer)
     {
+        if (spec.TryGetExtension(command.Name, out var extension))
+        {
+            if (options.Extensions != null && !extension!.CanInclude(options.Extensions))
+            {
+                return null;
+            }
+        }
+
         var name = command.Name[2..];
         var proto = GenerateReturnType(spec, command.Proto);
         var args = command.Select(x => GenerateParameter(spec, x)).ToList();
@@ -268,10 +297,9 @@ public static class Generator
         writer.WriteLine($"private static {delegateName} {command.Name};");
         writer.WriteLine();
 
-        if (spec.TryGetExtension(command.Name, out var extension))
+        if (extension != null)
         {
-            writer.WriteLine();
-            writer.WriteLine($"[GLExtension(\"{extension}\")]");
+            writer.WriteLine($"[GLExtension(\"{extension.Name}\")]");
         }
         writer.WriteLine($"public static {proto} {name}({argString}) =>");
         writer.Indent++;

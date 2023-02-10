@@ -124,7 +124,7 @@ public abstract class Specification
                 }
                 else if (group == null)
                 {
-                    var key = "Constants";
+                    var key = "GlEnum";
 
                     if (!Enums.TryGetValue(key, out var anotherEnumeration))
                     {
@@ -151,42 +151,27 @@ public abstract class Specification
         }
     }
 
-    public IEnumerable<Command?> GetCommands(Api api, Version version, Profile profile)
+    public IEnumerable<Command?> GetCommands(Options options)
     {
-        foreach (var name in Fetch(api, version, profile, FeatureType.Command))
+        foreach (var name in Fetch(options, FeatureType.Command))
         {
             yield return Commands[name];
         }
     }
 
-    private IEnumerable<string> Fetch(Api api, Version version, Profile profile, FeatureType type)
+    private IEnumerable<string> Fetch(Options options, FeatureType type)
     {
         var set = new HashSet<string>();
         foreach (var feature in Features.Values)
         {
-            if (feature.Version > version)
+            if (options.Version == null || feature.Version > options.Version)
             {
                 continue;
             }
 
-            if (!api.HasFlag(feature.Api))
+            if (!options.Api.HasFlag(feature.Api))
             {
                 continue;
-            }
-
-            foreach (var extensionItem in Extensions.Values.SelectMany(x => x).Where(x => x.Type == FeatureType.Command))
-            {
-                if (!api.HasFlag(extensionItem.RequiredApi))
-                {
-                    continue;
-                }
-
-                if (!profile.HasFlag(extensionItem.RequiredProfile))
-                {
-                    continue;
-                }
-
-                set.Add(extensionItem.Name);
             }
 
             foreach (var item in feature)
@@ -196,7 +181,7 @@ public abstract class Specification
                     continue;
                 }
 
-                if (!item.Profile.HasFlag(profile))
+                if (!options.Profile.HasFlag(item.Profile) && !item.Profile.HasFlag(options.Profile))
                 {
                     continue;
                 }
@@ -211,12 +196,36 @@ public abstract class Specification
                     set.Remove(item.Name);
                 }
             }
+
+            foreach (var extension in Extensions.Values)
+            {
+                if ((options.Extensions?.Contains(extension.Type) ?? false) || (options.Extensions?.Contains(extension.Name) ?? false))
+                {
+                    foreach (var extensionItem in extension)
+                    {
+                        if (extensionItem.Type == type)
+                        {
+                            if (!options.Api.HasFlag(extensionItem.RequiredApi) && !extensionItem.RequiredApi.HasFlag(options.Api))
+                            {
+                                continue;
+                            }
+
+                            if (!options.Profile.HasFlag(extensionItem.RequiredProfile) && !extensionItem.RequiredProfile.HasFlag(options.Profile))
+                            {
+                                continue;
+                            }
+
+                            set.Add(extensionItem.Name);
+                        }
+                    }
+                }
+            }
         }
 
         return set;
     }
 
-    public bool TryGetExtension(string extensionItemName, out string? extensionName)
+    public bool TryGetExtension(string extensionItemName, out Extension? result)
     {
         foreach (var extension in Extensions.Values)
         {
@@ -224,13 +233,13 @@ public abstract class Specification
             {
                 if (extensionItem.Name == extensionItemName)
                 {
-                    extensionName = extension.Name;
+                    result = extension;
                     return true;
                 }
             }
         }
 
-        extensionName = null;
+        result = null;
         return false;
     }
 }

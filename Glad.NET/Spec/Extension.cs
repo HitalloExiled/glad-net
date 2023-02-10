@@ -1,13 +1,18 @@
 namespace Glad.Net.Spec;
 
+using System.Collections.Generic;
 using System.Xml;
+using Glad.Net.Extensions;
 
 public class Extension : NamedEntryCollection<ExtensionItem>
 {
-    public Api Supported { get; }
+    public Api    Supported { get; }
+    public string Type { get; }
 
     public Extension(XmlElement node) : base(node)
     {
+        Type = Name.Split("_")[1];
+
         var supported = node.GetAttribute("supported");
         if (string.IsNullOrWhiteSpace(supported))
         {
@@ -39,6 +44,9 @@ public class Extension : NamedEntryCollection<ExtensionItem>
             }
         }
     }
+
+    public bool CanInclude(HashSet<string> extensions) =>
+        extensions.Contains(Type) || extensions.Contains(Name);
 }
 
 public class ExtensionItem : FeatureItem
@@ -49,7 +57,7 @@ public class ExtensionItem : FeatureItem
 
     public ExtensionItem(XmlElement node, Api api, Profile profile) : base(node, profile, FeatureAction.Require)
     {
-        RequiredApi = api;
+        RequiredApi     = api;
         RequiredProfile = profile;
     }
 }
