@@ -14,7 +14,7 @@ internal class Program
 
         spec.Load(file);
 
-        Generator.Generate(spec, new(Api.GL | Api.GLES2, Profile.Core, new() { "OVR", "KHR" }, new Version(3, 3)));
+        Generator.Generate(spec, new(Api.GLCore | Api.GL | Api.GLES2, Profile.Core, new() { "OVR", "KHR", "ARB" }, new Version(3, 3)));
 
         Console.WriteLine("Done!!!");
     }

@@ -227,11 +227,12 @@ public abstract class Specification
 
     public bool TryGetExtension(string extensionItemName, out Extension? result)
     {
+        var standard = Features.Values.SelectMany(x => x).Select(x => x.Name).ToHashSet();
         foreach (var extension in Extensions.Values)
         {
             foreach (var extensionItem in extension)
             {
-                if (extensionItem.Name == extensionItemName)
+                if (extensionItem.Name == extensionItemName && !standard.Contains(extensionItemName))
                 {
                     result = extension;
                     return true;

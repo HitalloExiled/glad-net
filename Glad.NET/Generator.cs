@@ -79,15 +79,16 @@ public static class Generator
             { "GLvdpauSurfaceNV", "nint" },
             { "GLvoid", "void" },
             { "GLVULKANPROCNV", "VulkanDebugProcNV" },
-            { "GLenum", "GlEnum" },
+            { "GLenum", "GLEnum" },
         };
         NAME_REPLACE = new Dictionary<string, string>
         {
-            { "in", "input" },
-            { "out", "output" },
-            { "params", "parameters" },
-            { "string", "str" },
-            { "ref", "reference" }
+            { "in", "@in" },
+            { "out", "@out" },
+            { "params", "@params" },
+            { "string", "@string" },
+            { "ref", "@ref" },
+            { "event", "@event" },
         };
     }
 
@@ -144,7 +145,7 @@ public static class Generator
 
         var imports = GenerateCommands(spec, options, writer);
 
-        writer.WriteLine("public static void Initialize(GetProcAddressHandler loader)");
+        writer.WriteLine("public OpenGL(GetProcAddressHandler loader)");
         writer.WriteLine("{");
         writer.Indent++;
         foreach (var import in imports)
@@ -286,6 +287,7 @@ public static class Generator
 
         var name = command.Name[2..];
         var proto = GenerateReturnType(spec, command.Proto);
+        var safety = command.Any(x => x.IsPointer && x.Type != null) ? " unsafe" : "" ;
         var args = command.Select(x => GenerateParameter(spec, x)).ToList();
 
         var argString = string.Join(", ", args);
@@ -293,18 +295,18 @@ public static class Generator
         var delegateName = $"GL{name}";
 
         writer.WriteLine("[UnmanagedFunctionPointer(CallingConvention.Cdecl)]");
-        writer.WriteLine($"private delegate {proto} {delegateName}({argString});");
-        writer.WriteLine($"private static {delegateName} {command.Name};");
+        writer.WriteLine($"private{safety} delegate {proto} {delegateName}({argString});");
+        writer.WriteLine($"private readonly {delegateName} {command.Name};");
         writer.WriteLine();
 
         if (extension != null)
         {
             writer.WriteLine($"[GLExtension(\"{extension.Name}\")]");
         }
-        writer.WriteLine($"public static {proto} {name}({argString}) =>");
+        writer.WriteLine($"public{safety} {proto} {name}({argString}) =>");
         writer.Indent++;
 
-        writer.Write($"{command.Name}.Invoke(");
+        writer.Write($"this.{command.Name}.Invoke(");
 
         for (var i = 0; i < args.Count; i++)
         {
@@ -365,13 +367,9 @@ public static class Generator
         {
             Debug.WriteLine("MEH");
         }
-        else if (param.IsConstPointer)
+        else if (type != "nint" && (param.IsConstPointer || param.IsPointer))
         {
-            return $"{type}[] {name}";
-        }
-        else if (param.IsPointer)
-        {
-            return $"out {type} {name}";
+            return (param.IsConstPointer ? "/*const*/ " : "") + $"{type}* {name}";
         }
 
         return $"{type} {name}";
