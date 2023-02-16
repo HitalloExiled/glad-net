@@ -36,6 +36,19 @@
                 "${workspaceFolder}/Glad.NET/Glad.NET.csproj"
             ],
             "problemMatcher": "$msCompile"
-        }
+        },
+        {
+            "label": "generate",
+            "command": "dotnet",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/Glad.NET"
+            },
+            "args": [
+                "${workspaceFolder}/Glad.NET/bin/Debug/net7.0/Glad.NET.dll",
+            ],
+            "dependsOn": "build",
+            "problemMatcher": []
+        },
     ]
 }

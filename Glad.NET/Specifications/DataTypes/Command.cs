@@ -1,4 +1,4 @@
-namespace Glad.Net.Spec;
+namespace Glad.Net.Specifications.DataTypes;
 
 using System.Xml;
 
@@ -14,9 +14,12 @@ public class Command : EntryCollection<Parameter>, INamed
     {
         Proto = new Prototype(node["proto"]!);
 
-        foreach (XmlElement param in node.GetElementsByTagName("param"))
+        foreach (XmlElement param in node.ChildNodes)
         {
-            Add(new Parameter(param));
+            if (param.Name == "param")
+            {
+                Add(new Parameter(param));
+            }
         }
 
         Alias = node["alias"]?.GetAttribute("name") ?? null;

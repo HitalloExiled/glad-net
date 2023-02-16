@@ -9,23 +9,27 @@ internal class Program
 
     static void Main()
     {
-        GenerateOpenGL();
-        // GenerateVulkan();
-
-        Console.WriteLine("Done!!!");
-    }
-
-    private static void GenerateOpenGL()
-    {
         var spec = new GLSpecification();
 
         var file = Path.Join(Directory.GetCurrentDirectory(), "./Resources/gl.xml");
 
         spec.Load(file);
 
-        var glOptions = new GLOptions
+<<<<<<< Updated upstream
+        Generator.Generate(spec, new(Api.GLCore | Api.GL | Api.GLES2, Profile.Core, new() { "OVR", "KHR", "ARB" }, new Version(3, 3)));
+=======
+        var glOptions = new Options
         {
-            Spec       = SpecType.GL,
+            Spec       = Spec.GL,
+            Api        = GLApi.GL | GLApi.GLES2,
+            Profile    = Profile.Core,
+            Extensions = { "OVR", "KHR" },
+            Version    = new(3, 3),
+        };
+
+        var vkOptions = new Options
+        {
+            Spec       = Spec.VK,
             Api        = GLApi.GL | GLApi.GLES2,
             Profile    = Profile.Core,
             Extensions = { "OVR", "KHR" },
@@ -33,25 +37,8 @@ internal class Program
         };
 
         Generator.Generate(spec, glOptions);
-    }
+>>>>>>> Stashed changes
 
-    private static void GenerateVulkan()
-    {
-        var spec = new VKSpecification();
-
-        var file = Path.Join(Directory.GetCurrentDirectory(), "./Resources/vk.xml");
-
-        spec.Load(file);
-
-        var glOptions = new GLOptions
-        {
-            Spec       = SpecType.VK,
-            Api        = GLApi.GL | GLApi.GLES2,
-            Profile    = Profile.Core,
-            Extensions = { "OVR", "KHR" },
-            Version    = new(3, 3),
-        };
-
-        Generator.Generate(spec, glOptions);
+        Console.WriteLine("Done!!!");
     }
 }

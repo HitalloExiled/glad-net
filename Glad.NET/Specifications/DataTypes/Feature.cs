@@ -1,10 +1,11 @@
-namespace Glad.Net.Spec;
+namespace Glad.Net.Specifications.DataTypes;
 
 using System.Xml;
+using Glad.Net.Specifications.Enums;
 
 public class Feature : NamedEntryCollection<FeatureItem>
 {
-    public Api     Api     { get; }
+    public GLApi     Api     { get; }
     public Version Version { get; }
 
     public Feature(XmlElement node) : base(node)
@@ -15,7 +16,7 @@ public class Feature : NamedEntryCollection<FeatureItem>
             throw new XmlException("Feature API cannot be null/empty.");
         }
 
-        Api = Enum.Parse<Api>(api, true);
+        Api = Enum.Parse<GLApi>(api, true);
 
         Version = Version.Parse(node.GetAttribute("number"));
 

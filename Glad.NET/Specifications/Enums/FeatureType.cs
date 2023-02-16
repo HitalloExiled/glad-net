@@ -1,4 +1,4 @@
-namespace Glad.Net.Spec;
+namespace Glad.Net.Specifications.Enums;
 
 [Flags]
 public enum FeatureType : byte

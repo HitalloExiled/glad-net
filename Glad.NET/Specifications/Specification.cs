@@ -1,13 +1,15 @@
-﻿namespace Glad.Net.Spec;
+﻿namespace Glad.Net.Specifications;
 
-using System.Reflection.Metadata.Ecma335;
 using System.Xml;
+using Glad.Net.Specifications.DataTypes;
+using Glad.Net.Specifications.Enums;
 
 public abstract class Specification
 {
     private XmlElement root = null!;
 
-    public abstract string ApiUrl { get; }
+    public abstract string   ApiUrl { get; }
+    public abstract SpecType Type   { get; }
 
     public Dictionary<string, Command>     Commands   { get; } = new();
     public Dictionary<string, Enumeration> Enums      { get; } = new();
@@ -151,7 +153,7 @@ public abstract class Specification
         }
     }
 
-    public IEnumerable<Command?> GetCommands(Options options)
+    public IEnumerable<Command?> GetCommands(GLOptions options)
     {
         foreach (var name in Fetch(options, FeatureType.Command))
         {
@@ -159,7 +161,7 @@ public abstract class Specification
         }
     }
 
-    private IEnumerable<string> Fetch(Options options, FeatureType type)
+    private IEnumerable<string> Fetch(GLOptions options, FeatureType type)
     {
         var set = new HashSet<string>();
         foreach (var feature in Features.Values)

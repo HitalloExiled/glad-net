@@ -1,4 +1,4 @@
-namespace Glad.Net.Spec;
+namespace Glad.Net.Specifications.DataTypes;
 
 public enum FeatureAction
 {

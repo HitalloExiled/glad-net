@@ -1,6 +1,7 @@
-namespace Glad.Net.Spec;
+namespace Glad.Net.Specifications.DataTypes;
 
 using System.Xml;
+using Glad.Net.Specifications.Enums;
 
 public class FeatureItem : NamedEntry
 {

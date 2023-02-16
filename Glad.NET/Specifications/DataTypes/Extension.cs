@@ -1,12 +1,12 @@
-namespace Glad.Net.Spec;
+namespace Glad.Net.Specifications.DataTypes;
 
 using System.Collections.Generic;
 using System.Xml;
-using Glad.Net.Extensions;
+using Glad.Net.Specifications.Enums;
 
 public class Extension : NamedEntryCollection<ExtensionItem>
 {
-    public Api    Supported { get; }
+    public GLApi    Supported { get; }
     public string Type { get; }
 
     public Extension(XmlElement node) : base(node)
@@ -21,14 +21,14 @@ public class Extension : NamedEntryCollection<ExtensionItem>
 
         foreach (var api in supported.Split('|'))
         {
-            var flag = Enum.Parse<Api>(api, true);
+            var flag = Enum.Parse<GLApi>(api, true);
             Supported |= flag;
         }
 
         foreach (XmlElement child in node.GetElementsByTagName("require"))
         {
             var api = child.HasAttribute("api")
-                ? Enum.Parse<Api>(child.GetAttribute("api"), true)
+                ? Enum.Parse<GLApi>(child.GetAttribute("api"), true)
                 : Supported;
 
             var profile = child.HasAttribute("profile")
@@ -51,11 +51,11 @@ public class Extension : NamedEntryCollection<ExtensionItem>
 
 public class ExtensionItem : FeatureItem
 {
-    public Api     RequiredApi { get; }
+    public GLApi     RequiredApi { get; }
 
     public Profile RequiredProfile { get; }
 
-    public ExtensionItem(XmlElement node, Api api, Profile profile) : base(node, profile, FeatureAction.Require)
+    public ExtensionItem(XmlElement node, GLApi api, Profile profile) : base(node, profile, FeatureAction.Require)
     {
         RequiredApi     = api;
         RequiredProfile = profile;

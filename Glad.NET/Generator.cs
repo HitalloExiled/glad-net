@@ -4,7 +4,8 @@ using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Text;
 using Glad.Net.Extensions;
-using Glad.Net.Spec;
+using Glad.Net.Specifications;
+using Glad.Net.Specifications.DataTypes;
 
 public static class Generator
 {
@@ -93,7 +94,7 @@ public static class Generator
     }
 
 
-    public static void Generate(Specification spec, Options options)
+    public static void Generate(Specification spec, GLOptions options)
     {
         foreach (var e in spec.Enums.Values)
         {
@@ -106,7 +107,11 @@ public static class Generator
             WORD_REPLACE[vendor] = vendor.ToUpperInvariant();
         }
 
-        var path = Path.Join(Directory.GetCurrentDirectory(), "output", "OpenGL.cs");
+        var path = string.IsNullOrEmpty(options.Output)
+            ? Path.Join(Directory.GetCurrentDirectory(), "output", "OpenGL.cs")
+            : Path.IsPathRooted(options.Output)
+                ? options.Output
+                : Path.GetFullPath(options.Output, Directory.GetCurrentDirectory());
 
         using var sw = new StreamWriter(path);
         using var writer = new IndentedTextWriter(sw);
@@ -139,13 +144,13 @@ public static class Generator
 
         writer.WriteLine();
 
-        writer.WriteLine("public static class GL");
+        writer.WriteLine("public class GL");
         writer.WriteLine("{");
         writer.Indent++;
 
         var imports = GenerateCommands(spec, options, writer);
 
-        writer.WriteLine("public OpenGL(GetProcAddressHandler loader)");
+        writer.WriteLine("public GL(GetProcAddressHandler loader)");
         writer.WriteLine("{");
         writer.Indent++;
         foreach (var import in imports)
@@ -163,7 +168,7 @@ public static class Generator
         writer.WriteLine("}");
     }
 
-    public static void GenerateEnums(Specification spec, Options options, IndentedTextWriter writer)
+    public static void GenerateEnums(Specification spec, GLOptions options, IndentedTextWriter writer)
     {
         foreach (var enumeration in spec.Enums.Values)
         {
@@ -258,7 +263,7 @@ public static class Generator
     }
 
 
-    public static IEnumerable<string> GenerateCommands(Specification spec, Options options, IndentedTextWriter writer)
+    public static IEnumerable<string> GenerateCommands(Specification spec, GLOptions options, IndentedTextWriter writer)
     {
         var buffer = new List<string>();
         foreach (var cmd in spec.GetCommands(options))
@@ -275,7 +280,7 @@ public static class Generator
         return buffer;
     }
 
-    private static string? GenerateCommand(Specification spec, Command command, Options options, IndentedTextWriter writer)
+    private static string? GenerateCommand(Specification spec, Command command, GLOptions options, IndentedTextWriter writer)
     {
         if (spec.TryGetExtension(command.Name, out var extension))
         {
@@ -301,7 +306,7 @@ public static class Generator
 
         if (extension != null)
         {
-            writer.WriteLine($"[GLExtension(\"{extension.Name}\")]");
+            writer.WriteLine($"[{spec.Type}Extension(\"{extension.Name}\")]");
         }
         writer.WriteLine($"public{safety} {proto} {name}({argString}) =>");
         writer.Indent++;
@@ -346,7 +351,7 @@ public static class Generator
 
         var type = param.Type;
 
-        if (type.Equals("GLenum", StringComparison.Ordinal))
+        if (type is "GLenum" or "GLint")
         {
             type = GetEnumName(spec, param.Group);
         }
