@@ -4,13 +4,13 @@ using System.Xml;
 
 public abstract class CommandItem : Entry, INamed
 {
-    public string Name { get; }
+    public string       Name      { get; }
 
-    public List<string> Words { get; }
+    public List<string> Words    { get; }
 
-    public string Canonical => string.Join(' ', Words);
+    public string       Canonical => string.Join(' ', Words);
 
-    public string? Group { get; }
+    public string?      Group     { get; }
 
     protected CommandItem(XmlElement node) : base(node)
     {
@@ -30,13 +30,4 @@ public abstract class CommandItem : Entry, INamed
     }
 
     public override string ToString() => Name;
-
-    /// <summary>
-    /// Gets a value indicating if the underlying type type is a pointer.
-    /// </summary>
-    public bool IsPointer => Words.Any(w => w.Contains('*'));
-
-    public bool IsConstPointer => Words.Any(w => w.Contains("const"));
-
-    public bool IsConstConstPointer => Words.FindAll(w => w.Contains("const")).Count > 1;
 }

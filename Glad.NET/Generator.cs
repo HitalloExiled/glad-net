@@ -94,7 +94,7 @@ public static class Generator
     }
 
 
-    public static void Generate(Specification spec, GLOptions options)
+    public static void Generate(Specification spec, Options options)
     {
         foreach (var e in spec.Enums.Values)
         {
@@ -108,12 +108,12 @@ public static class Generator
         }
 
         var path = string.IsNullOrEmpty(options.Output)
-            ? Path.Join(Directory.GetCurrentDirectory(), "output", "OpenGL.cs")
+            ? Path.Join(Directory.GetCurrentDirectory(), "output", $"{spec.Type}.cs")
             : Path.IsPathRooted(options.Output)
                 ? options.Output
                 : Path.GetFullPath(options.Output, Directory.GetCurrentDirectory());
 
-        using var sw = new StreamWriter(path);
+        using var sw     = new StreamWriter(path);
         using var writer = new IndentedTextWriter(sw);
 
         writer.WriteLine("using System;");
@@ -130,12 +130,12 @@ public static class Generator
         writer.WriteLine("public delegate void VulkanDebugProcNV();");
         writer.WriteLine();
         writer.WriteLine("[AttributeUsage(AttributeTargets.All)]");
-        writer.WriteLine("class GLExtensionAttribute : Attribute");
+        writer.WriteLine($"class {spec.Type}ExtensionAttribute : Attribute");
         writer.WriteLine("{");
         writer.Indent++;
         writer.WriteLine("public string Name { get; }");
         writer.WriteLine();
-        writer.WriteLine("public GLExtensionAttribute(string name) => Name = name;");
+        writer.WriteLine($"public {spec.Type}ExtensionAttribute(string name) => Name = name;");
         writer.Indent--;
         writer.WriteLine("}");
         writer.WriteLine();
@@ -144,13 +144,13 @@ public static class Generator
 
         writer.WriteLine();
 
-        writer.WriteLine("public class GL");
+        writer.WriteLine($"public class {spec.Type}");
         writer.WriteLine("{");
         writer.Indent++;
 
         var imports = GenerateCommands(spec, options, writer);
 
-        writer.WriteLine("public GL(GetProcAddressHandler loader)");
+        writer.WriteLine($"public {spec.Type}(GetProcAddressHandler loader)");
         writer.WriteLine("{");
         writer.Indent++;
         foreach (var import in imports)
@@ -168,7 +168,7 @@ public static class Generator
         writer.WriteLine("}");
     }
 
-    public static void GenerateEnums(Specification spec, GLOptions options, IndentedTextWriter writer)
+    public static void GenerateEnums(Specification spec, Options options, IndentedTextWriter writer)
     {
         foreach (var enumeration in spec.Enums.Values)
         {
@@ -220,7 +220,7 @@ public static class Generator
                 if (extension != null)
                 {
                     buffer.AppendLine();
-                    buffer.AppendLine($"{indentation}[GLExtension(\"{extension.Name}\")]");
+                    buffer.AppendLine($"{indentation}[{spec.Type}Extension(\"{extension.Name}\")]");
                 }
 
                 var name = EnumMemberName(member.Name);
@@ -241,7 +241,7 @@ public static class Generator
         var buffer = new StringBuilder();
         foreach (var word in input.Split('_').Select(s => s.ToLower()))
         {
-            if (word == "gl")
+            if (word is "gl" or "vk")
             {
                 continue;
             }
@@ -263,7 +263,7 @@ public static class Generator
     }
 
 
-    public static IEnumerable<string> GenerateCommands(Specification spec, GLOptions options, IndentedTextWriter writer)
+    public static IEnumerable<string> GenerateCommands(Specification spec, Options options, IndentedTextWriter writer)
     {
         var buffer = new List<string>();
         foreach (var cmd in spec.GetCommands(options))
@@ -280,7 +280,7 @@ public static class Generator
         return buffer;
     }
 
-    private static string? GenerateCommand(Specification spec, Command command, GLOptions options, IndentedTextWriter writer)
+    private static string? GenerateCommand(Specification spec, Command command, Options options, IndentedTextWriter writer)
     {
         if (spec.TryGetExtension(command.Name, out var extension))
         {
@@ -292,12 +292,12 @@ public static class Generator
 
         var name = command.Name[2..];
         var proto = GenerateReturnType(spec, command.Proto);
-        var safety = command.Any(x => x.IsPointer && x.Type != null) ? " unsafe" : "" ;
+        var safety = command.Any(x => x.Type.IsPointer && x.Type.OriginalType != null) ? " unsafe" : "" ;
         var args = command.Select(x => GenerateParameter(spec, x)).ToList();
 
         var argString = string.Join(", ", args);
 
-        var delegateName = $"GL{name}";
+        var delegateName = $"{spec.Type}{name}";
 
         writer.WriteLine("[UnmanagedFunctionPointer(CallingConvention.Cdecl)]");
         writer.WriteLine($"private{safety} delegate {proto} {delegateName}({argString});");
@@ -344,18 +344,18 @@ public static class Generator
             name = value;
         }
 
-        if (param.Type is null)
+        if (param.Type.OriginalType == null)
         {
-            return param.IsConstPointer ? $"nint {name}" : $"out nint {name}";
+            return param.Type.IsConst && param.Type.IsPointer ? $"nint {name}" : $"out nint {name}";
         }
 
-        var type = param.Type;
+        var type = param.Type.Name;
 
         if (type is "GLenum" or "GLint")
         {
             type = GetEnumName(spec, param.Group);
         }
-        else if (type.Equals("GLbitfield", StringComparison.Ordinal))
+        else if (type == "GLbitfield")
         {
             type = GetBitmaskName(spec, param.Group);
         }
@@ -365,16 +365,16 @@ public static class Generator
         }
         else
         {
-            Debug.WriteLine($"Unknown GL type: {type}");
+            Debug.WriteLine($"Unknown {spec.Type} type: {type}");
         }
 
-        if (param.IsConstConstPointer)
+        if (param.Words.FindAll(w => w.Contains("const")).Count > 1)
         {
             Debug.WriteLine("MEH");
         }
-        else if (type != "nint" && (param.IsConstPointer || param.IsPointer))
+        else if (type != "nint" && (param.Type.IsConst || param.Type.IsPointer))
         {
-            return (param.IsConstPointer ? "/*const*/ " : "") + $"{type}* {name}";
+            return (param.Type.IsConst ? "/*const*/ " : "") + $"{type}* {name}";
         }
 
         return $"{type} {name}";
@@ -382,23 +382,23 @@ public static class Generator
 
     private static string GenerateReturnType(Specification spec, Prototype proto)
     {
-        if (proto.IsPointer)
+        if (proto.Type.IsPointer)
         {
-            return "nint";
+            return proto.Type.OriginalType == null ? "nint" : $"{proto.Type.Name}*";
         }
 
         var type = proto.Words[0].Trim();
-        if (type.Equals("void", StringComparison.Ordinal))
+        if (type == "void")
         {
             return type;
         }
 
-        if (type.Equals("GLenum", StringComparison.Ordinal))
+        if (type == "GLenum")
         {
             return GetEnumName(spec, proto.Group);
         }
 
-        if (type.Equals("GLbitmask", StringComparison.Ordinal))
+        if (type == "GLbitmask")
         {
             return GetBitmaskName(spec, proto.Group);
         }
@@ -408,7 +408,7 @@ public static class Generator
             return result;
         }
 
-        Debug.WriteLine($"Unknown GL type: {type}");
+        Debug.WriteLine($"Unknown {spec.Type} type: {type}");
 
         return type;
     }

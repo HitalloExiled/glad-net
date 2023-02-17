@@ -4,6 +4,7 @@ using System.Xml;
 
 public class Prototype : CommandItem
 {
-    public Prototype(XmlElement node) : base(node)
-    { }
+    public ParsedType Type { get; }
+
+    public Prototype(XmlElement node) : base(node) => Type = new(node);
 }

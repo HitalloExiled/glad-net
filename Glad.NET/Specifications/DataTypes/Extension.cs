@@ -6,7 +6,7 @@ using Glad.Net.Specifications.Enums;
 
 public class Extension : NamedEntryCollection<ExtensionItem>
 {
-    public GLApi    Supported { get; }
+    public Api    Supported { get; }
     public string Type { get; }
 
     public Extension(XmlElement node) : base(node)
@@ -21,14 +21,14 @@ public class Extension : NamedEntryCollection<ExtensionItem>
 
         foreach (var api in supported.Split('|'))
         {
-            var flag = Enum.Parse<GLApi>(api, true);
+            var flag = Enum.Parse<Api>(api, true);
             Supported |= flag;
         }
 
         foreach (XmlElement child in node.GetElementsByTagName("require"))
         {
             var api = child.HasAttribute("api")
-                ? Enum.Parse<GLApi>(child.GetAttribute("api"), true)
+                ? Enum.Parse<Api>(child.GetAttribute("api"), true)
                 : Supported;
 
             var profile = child.HasAttribute("profile")
@@ -37,7 +37,7 @@ public class Extension : NamedEntryCollection<ExtensionItem>
 
             foreach (var element in child.ChildNodes)
             {
-                if (element is XmlElement item)
+                if (element is XmlElement item && item.Name != "comment")
                 {
                     Add(new ExtensionItem(item, api, profile));
                 }
@@ -51,11 +51,11 @@ public class Extension : NamedEntryCollection<ExtensionItem>
 
 public class ExtensionItem : FeatureItem
 {
-    public GLApi     RequiredApi { get; }
+    public Api     RequiredApi { get; }
 
     public Profile RequiredProfile { get; }
 
-    public ExtensionItem(XmlElement node, GLApi api, Profile profile) : base(node, profile, FeatureAction.Require)
+    public ExtensionItem(XmlElement node, Api api, Profile profile) : base(node, profile, FeatureAction.Require)
     {
         RequiredApi     = api;
         RequiredProfile = profile;

@@ -22,7 +22,7 @@ public class Command : EntryCollection<Parameter>, INamed
             }
         }
 
-        Alias = node["alias"]?.GetAttribute("name") ?? null;
+        Alias = node.GetAttribute("alias") ?? node["alias"]?.GetAttribute("name") ?? null;
     }
 
     public override string ToString() => Name;

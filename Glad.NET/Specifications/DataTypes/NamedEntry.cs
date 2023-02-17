@@ -10,7 +10,7 @@ public class NamedEntry : Entry, INamed
 
     public NamedEntry(XmlElement node) : base(node)
     {
-        Name = node.GetAttribute("name");
+        Name = node["name"]?.InnerText ?? node.GetAttribute("name");
 
         if (string.IsNullOrWhiteSpace(Name))
         {

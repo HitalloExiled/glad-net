@@ -11,11 +11,11 @@ namespace OpenGL
     public delegate void VulkanDebugProcNV();
     
     [AttributeUsage(AttributeTargets.All)]
-    class GLExtensionAttribute : Attribute
+    class OpenGLExtensionAttribute : Attribute
     {
         public string Name { get; }
         
-        public GLExtensionAttribute(string name) => Name = name;
+        public OpenGLExtensionAttribute(string name) => Name = name;
     }
     
     
@@ -80,12 +80,12 @@ public enum ContextFlagMask : uint
     ContextFlagForwardCompatibleBit = 0x00000001,
     ContextFlagDebugBit = 0x00000002,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     ContextFlagDebugBitKhr = 0x00000002,
     ContextFlagRobustAccessBit = 0x00000004,
     ContextFlagNoErrorBit = 0x00000008,
 
-    [GLExtension("GL_KHR_no_error")]
+    [OpenGLExtension("GL_KHR_no_error")]
     ContextFlagNoErrorBitKhr = 0x00000008,
 }
     
@@ -152,28 +152,28 @@ public enum UseProgramStageMask : uint
 public enum SubgroupSupportedFeatures : uint
 {
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureBasicBitKhr = 0x00000001,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureVoteBitKhr = 0x00000002,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureArithmeticBitKhr = 0x00000004,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureBallotBitKhr = 0x00000008,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureShuffleBitKhr = 0x00000010,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureShuffleRelativeBitKhr = 0x00000020,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureClusteredBitKhr = 0x00000040,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupFeatureQuadBitKhr = 0x00000080,
 }
     
@@ -516,91 +516,91 @@ public enum PrimitiveType
 public enum GlEnum
 {
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     StackOverflowKhr = 0x0503,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     StackUnderflowKhr = 0x0504,
     ContextLost = 0x0507,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     ContextLostKhr = 0x0507,
     TextureTarget = 0x1006,
     RescaleNormal = 0x803A,
     Texture3DBindingOES = 0x806A,
     TextureDepth = 0x8071,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     VertexArrayKhr = 0x8074,
     ParameterBufferBinding = 0x80EF,
     FramebufferDefault = 0x8218,
     PrimitiveRestartForPatchesSupported = 0x8221,
     Index = 0x8222,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugOutputSynchronousKhr = 0x8242,
     DebugNextLoggedMessageLength = 0x8243,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugNextLoggedMessageLengthKhr = 0x8243,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugCallbackFunctionKhr = 0x8244,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugCallbackUserParamKhr = 0x8245,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSourceApiKhr = 0x8246,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSourceWindowSystemKhr = 0x8247,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSourceShaderCompilerKhr = 0x8248,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSourceThirdPartyKhr = 0x8249,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSourceApplicationKhr = 0x824A,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSourceOtherKhr = 0x824B,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypeErrorKhr = 0x824C,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypeDeprecatedBehaviorKhr = 0x824D,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypeUndefinedBehaviorKhr = 0x824E,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypePortabilityKhr = 0x824F,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypePerformanceKhr = 0x8250,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypeOtherKhr = 0x8251,
     LoseContextOnReset = 0x8252,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     LoseContextOnResetKhr = 0x8252,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     GuiltyContextResetKhr = 0x8253,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     InnocentContextResetKhr = 0x8254,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     UnknownContextResetKhr = 0x8255,
     ResetNotificationStrategy = 0x8256,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     ResetNotificationStrategyKhr = 0x8256,
     ViewportSubpixelBitsEXT = 0x825C,
     ViewportBoundsRangeEXT = 0x825D,
@@ -608,26 +608,26 @@ public enum GlEnum
     UndefinedVertex = 0x8260,
     NoResetNotification = 0x8261,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     NoResetNotificationKhr = 0x8261,
     MaxComputeSharedMemorySize = 0x8262,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypeMarkerKhr = 0x8268,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypePushGroupKhr = 0x8269,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugTypePopGroupKhr = 0x826A,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSeverityNotificationKhr = 0x826B,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     MaxDebugGroupStackDepthKhr = 0x826C,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugGroupStackDepthKhr = 0x826D,
     MaxCombinedDimensions = 0x8282,
     DepthComponents = 0x8284,
@@ -668,27 +668,27 @@ public enum GlEnum
     TextureViewNumLayers = 0x82DE,
     TextureImmutableLevels = 0x82DF,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     BufferKhr = 0x82E0,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     ShaderKhr = 0x82E1,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     ProgramKhr = 0x82E2,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     QueryKhr = 0x82E3,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     ProgramPipelineKhr = 0x82E4,
     MaxVertexAttribStride = 0x82E5,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     SamplerKhr = 0x82E6,
     DisplayList = 0x82E7,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     MaxLabelLengthKhr = 0x82E8,
     NumShadingLanguageVersions = 0x82E9,
     TransformFeedbackStreamOverflow = 0x82ED,
@@ -703,11 +703,11 @@ public enum GlEnum
     MaxCombinedClipAndCullDistances = 0x82FA,
     ContextReleaseBehavior = 0x82FB,
 
-    [GLExtension("GL_KHR_context_flush_control")]
+    [OpenGLExtension("GL_KHR_context_flush_control")]
     ContextReleaseBehaviorKhr = 0x82FB,
     ContextReleaseBehaviorFlush = 0x82FC,
 
-    [GLExtension("GL_KHR_context_flush_control")]
+    [OpenGLExtension("GL_KHR_context_flush_control")]
     ContextReleaseBehaviorFlushKhr = 0x82FC,
     RobustGpuTimeoutMsKhr = 0x82FD,
     DepthPassInstrumentSGIX = 0x8310,
@@ -909,7 +909,7 @@ public enum GlEnum
     MaxShaderStorageBlockSize = 0x90DE,
     ContextRobustAccess = 0x90F3,
 
-    [GLExtension("GL_KHR_robustness")]
+    [OpenGLExtension("GL_KHR_robustness")]
     ContextRobustAccessKhr = 0x90F3,
     TextureSamples = 0x9106,
     TextureFixedSampleLocations = 0x9107,
@@ -927,33 +927,33 @@ public enum GlEnum
     TextureImmutableFormat = 0x912F,
     MaxDebugMessageLength = 0x9143,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     MaxDebugMessageLengthKhr = 0x9143,
     MaxDebugLoggedMessages = 0x9144,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     MaxDebugLoggedMessagesKhr = 0x9144,
     DebugLoggedMessages = 0x9145,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugLoggedMessagesKhr = 0x9145,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSeverityHighKhr = 0x9146,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSeverityMediumKhr = 0x9147,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugSeverityLowKhr = 0x9148,
     QueryBufferBinding = 0x9193,
     TextureBufferOffset = 0x919D,
     TextureBufferSize = 0x919E,
 
-    [GLExtension("GL_KHR_parallel_shader_compile")]
+    [OpenGLExtension("GL_KHR_parallel_shader_compile")]
     MaxShaderCompilerThreadsKhr = 0x91B0,
 
-    [GLExtension("GL_KHR_parallel_shader_compile")]
+    [OpenGLExtension("GL_KHR_parallel_shader_compile")]
     CompletionStatusKhr = 0x91B1,
     MaxComputeImageUniforms = 0x91BD,
     UnpackFlipYWebgl = 0x9240,
@@ -962,67 +962,67 @@ public enum GlEnum
     UnpackColorspaceConversionWebgl = 0x9243,
     BrowserDefaultWebgl = 0x9244,
 
-    [GLExtension("GL_KHR_blend_equation_advanced_coherent")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced_coherent")]
     BlendAdvancedCoherentKhr = 0x9285,
     Multiply = 0x9294,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     MultiplyKhr = 0x9294,
     Screen = 0x9295,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     ScreenKhr = 0x9295,
     Overlay = 0x9296,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     OverlayKhr = 0x9296,
     Darken = 0x9297,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     DarkenKhr = 0x9297,
     Lighten = 0x9298,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     LightenKhr = 0x9298,
     Colordodge = 0x9299,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     ColordodgeKhr = 0x9299,
     Colorburn = 0x929A,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     ColorburnKhr = 0x929A,
     Hardlight = 0x929B,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     HardlightKhr = 0x929B,
     Softlight = 0x929C,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     SoftlightKhr = 0x929C,
     Difference = 0x929E,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     DifferenceKhr = 0x929E,
     Exclusion = 0x92A0,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     ExclusionKhr = 0x92A0,
     HslHue = 0x92AD,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     HslHueKhr = 0x92AD,
     HslSaturation = 0x92AE,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     HslSaturationKhr = 0x92AE,
     HslColor = 0x92AF,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     HslColorKhr = 0x92AF,
     HslLuminosity = 0x92B0,
 
-    [GLExtension("GL_KHR_blend_equation_advanced")]
+    [OpenGLExtension("GL_KHR_blend_equation_advanced")]
     HslLuminosityKhr = 0x92B0,
     PrimitiveBoundingBox = 0x92BE,
     AtomicCounterBufferStart = 0x92C2,
@@ -1037,32 +1037,32 @@ public enum GlEnum
     UnsignedIntAtomicCounter = 0x92DB,
     MaxAtomicCounterBufferBindings = 0x92DC,
 
-    [GLExtension("GL_KHR_debug")]
+    [OpenGLExtension("GL_KHR_debug")]
     DebugOutputKhr = 0x92E0,
     ClipOrigin = 0x935C,
     ClipDepthMode = 0x935D,
     MultisampleLineWidthRange = 0x9381,
     MultisampleLineWidthGranularity = 0x9382,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupSizeKhr = 0x9532,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupSupportedStagesKhr = 0x9533,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupSupportedFeaturesKhr = 0x9534,
 
-    [GLExtension("GL_KHR_shader_subgroup")]
+    [OpenGLExtension("GL_KHR_shader_subgroup")]
     SubgroupQuadAllStagesKhr = 0x9535,
     SpirVBinary = 0x9552,
     SpirVExtensions = 0x9553,
     NumSpirVExtensions = 0x9554,
 
-    [GLExtension("GL_OVR_multiview")]
+    [OpenGLExtension("GL_OVR_multiview")]
     MaxViewsOvr = 0x9631,
 
-    [GLExtension("GL_OVR_multiview")]
+    [OpenGLExtension("GL_OVR_multiview")]
     FramebufferIncompleteViewTargetsOvr = 0x9633,
     GsShaderBinaryMtk = 0x9640,
     GsProgramBinaryMtk = 0x9641,
@@ -2827,115 +2827,115 @@ public enum InternalFormat
     CompressedSrgb8Alpha8Etc2EacOES = 0x9279,
     CompressedRgbaAstc4x4 = 0x93B0,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc4x4Khr = 0x93B0,
     CompressedRgbaAstc5x4 = 0x93B1,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc5x4Khr = 0x93B1,
     CompressedRgbaAstc5x5 = 0x93B2,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc5x5Khr = 0x93B2,
     CompressedRgbaAstc6x5 = 0x93B3,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc6x5Khr = 0x93B3,
     CompressedRgbaAstc6x6 = 0x93B4,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc6x6Khr = 0x93B4,
     CompressedRgbaAstc8x5 = 0x93B5,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc8x5Khr = 0x93B5,
     CompressedRgbaAstc8x6 = 0x93B6,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc8x6Khr = 0x93B6,
     CompressedRgbaAstc8x8 = 0x93B7,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc8x8Khr = 0x93B7,
     CompressedRgbaAstc10x5 = 0x93B8,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x5Khr = 0x93B8,
     CompressedRgbaAstc10x6 = 0x93B9,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x6Khr = 0x93B9,
     CompressedRgbaAstc10x8 = 0x93BA,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x8Khr = 0x93BA,
     CompressedRgbaAstc10x10 = 0x93BB,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x10Khr = 0x93BB,
     CompressedRgbaAstc12x10 = 0x93BC,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc12x10Khr = 0x93BC,
     CompressedRgbaAstc12x12 = 0x93BD,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc12x12Khr = 0x93BD,
     CompressedSrgb8Alpha8Astc4x4 = 0x93D0,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc4x4Khr = 0x93D0,
     CompressedSrgb8Alpha8Astc5x4 = 0x93D1,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc5x4Khr = 0x93D1,
     CompressedSrgb8Alpha8Astc5x5 = 0x93D2,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc5x5Khr = 0x93D2,
     CompressedSrgb8Alpha8Astc6x5 = 0x93D3,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc6x5Khr = 0x93D3,
     CompressedSrgb8Alpha8Astc6x6 = 0x93D4,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc6x6Khr = 0x93D4,
     CompressedSrgb8Alpha8Astc8x5 = 0x93D5,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc8x5Khr = 0x93D5,
     CompressedSrgb8Alpha8Astc8x6 = 0x93D6,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc8x6Khr = 0x93D6,
     CompressedSrgb8Alpha8Astc8x8 = 0x93D7,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc8x8Khr = 0x93D7,
     CompressedSrgb8Alpha8Astc10x5 = 0x93D8,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x5Khr = 0x93D8,
     CompressedSrgb8Alpha8Astc10x6 = 0x93D9,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x6Khr = 0x93D9,
     CompressedSrgb8Alpha8Astc10x8 = 0x93DA,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x8Khr = 0x93DA,
     CompressedSrgb8Alpha8Astc10x10 = 0x93DB,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x10Khr = 0x93DB,
     CompressedSrgb8Alpha8Astc12x10 = 0x93DC,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc12x10Khr = 0x93DC,
     CompressedSrgb8Alpha8Astc12x12 = 0x93DD,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc12x12Khr = 0x93DD,
 }
     
@@ -3202,115 +3202,115 @@ public enum SizedInternalFormat
     CompressedSrgb8Alpha8Etc2EacOES = 0x9279,
     CompressedRgbaAstc4x4 = 0x93B0,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc4x4Khr = 0x93B0,
     CompressedRgbaAstc5x4 = 0x93B1,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc5x4Khr = 0x93B1,
     CompressedRgbaAstc5x5 = 0x93B2,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc5x5Khr = 0x93B2,
     CompressedRgbaAstc6x5 = 0x93B3,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc6x5Khr = 0x93B3,
     CompressedRgbaAstc6x6 = 0x93B4,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc6x6Khr = 0x93B4,
     CompressedRgbaAstc8x5 = 0x93B5,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc8x5Khr = 0x93B5,
     CompressedRgbaAstc8x6 = 0x93B6,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc8x6Khr = 0x93B6,
     CompressedRgbaAstc8x8 = 0x93B7,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc8x8Khr = 0x93B7,
     CompressedRgbaAstc10x5 = 0x93B8,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x5Khr = 0x93B8,
     CompressedRgbaAstc10x6 = 0x93B9,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x6Khr = 0x93B9,
     CompressedRgbaAstc10x8 = 0x93BA,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x8Khr = 0x93BA,
     CompressedRgbaAstc10x10 = 0x93BB,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc10x10Khr = 0x93BB,
     CompressedRgbaAstc12x10 = 0x93BC,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc12x10Khr = 0x93BC,
     CompressedRgbaAstc12x12 = 0x93BD,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedRgbaAstc12x12Khr = 0x93BD,
     CompressedSrgb8Alpha8Astc4x4 = 0x93D0,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc4x4Khr = 0x93D0,
     CompressedSrgb8Alpha8Astc5x4 = 0x93D1,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc5x4Khr = 0x93D1,
     CompressedSrgb8Alpha8Astc5x5 = 0x93D2,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc5x5Khr = 0x93D2,
     CompressedSrgb8Alpha8Astc6x5 = 0x93D3,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc6x5Khr = 0x93D3,
     CompressedSrgb8Alpha8Astc6x6 = 0x93D4,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc6x6Khr = 0x93D4,
     CompressedSrgb8Alpha8Astc8x5 = 0x93D5,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc8x5Khr = 0x93D5,
     CompressedSrgb8Alpha8Astc8x6 = 0x93D6,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc8x6Khr = 0x93D6,
     CompressedSrgb8Alpha8Astc8x8 = 0x93D7,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc8x8Khr = 0x93D7,
     CompressedSrgb8Alpha8Astc10x5 = 0x93D8,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x5Khr = 0x93D8,
     CompressedSrgb8Alpha8Astc10x6 = 0x93D9,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x6Khr = 0x93D9,
     CompressedSrgb8Alpha8Astc10x8 = 0x93DA,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x8Khr = 0x93DA,
     CompressedSrgb8Alpha8Astc10x10 = 0x93DB,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc10x10Khr = 0x93DB,
     CompressedSrgb8Alpha8Astc12x10 = 0x93DC,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc12x10Khr = 0x93DC,
     CompressedSrgb8Alpha8Astc12x12 = 0x93DD,
 
-    [GLExtension("GL_KHR_texture_compression_astc_hdr")]
+    [OpenGLExtension("GL_KHR_texture_compression_astc_hdr")]
     CompressedSrgb8Alpha8Astc12x12Khr = 0x93DD,
 }
     
@@ -3560,10 +3560,10 @@ public enum FramebufferAttachmentParameterName
     FramebufferAttachmentTextureLayer = 0x8CD4,
     FramebufferAttachmentLayered = 0x8DA7,
 
-    [GLExtension("GL_OVR_multiview")]
+    [OpenGLExtension("GL_OVR_multiview")]
     FramebufferAttachmentTextureNumViewsOvr = 0x9630,
 
-    [GLExtension("GL_OVR_multiview")]
+    [OpenGLExtension("GL_OVR_multiview")]
     FramebufferAttachmentTextureBaseViewIndexOvr = 0x9632,
 }
     
@@ -4205,3814 +4205,3814 @@ public enum ShadingRateQCOM
     ShadingRate2x4PixelsQCOM = 0x96AD,
 }
     
-    public class GL
+    public class OpenGL
     {
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCullFace(TriangleFace mode);
-        private readonly GLCullFace glCullFace;
+        private delegate void OpenGLCullFace(out nint mode);
+        private readonly OpenGLCullFace glCullFace;
         
-        public void CullFace(TriangleFace mode) =>
-            this.glCullFace.Invoke(mode);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFrontFace(FrontFaceDirection mode);
-        private readonly GLFrontFace glFrontFace;
-        
-        public void FrontFace(FrontFaceDirection mode) =>
-            this.glFrontFace.Invoke(mode);
+        public void CullFace(out nint mode) =>
+            this.glCullFace.Invoke(out mode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLHint(HintTarget target, HintMode mode);
-        private readonly GLHint glHint;
+        private delegate void OpenGLFrontFace(out nint mode);
+        private readonly OpenGLFrontFace glFrontFace;
         
-        public void Hint(HintTarget target, HintMode mode) =>
-            this.glHint.Invoke(target, mode);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLLineWidth(float width);
-        private readonly GLLineWidth glLineWidth;
-        
-        public void LineWidth(float width) =>
-            this.glLineWidth.Invoke(width);
+        public void FrontFace(out nint mode) =>
+            this.glFrontFace.Invoke(out mode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPointSize(float size);
-        private readonly GLPointSize glPointSize;
+        private delegate void OpenGLHint(out nint target, out nint mode);
+        private readonly OpenGLHint glHint;
         
-        public void PointSize(float size) =>
-            this.glPointSize.Invoke(size);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPolygonMode(TriangleFace face, PolygonMode mode);
-        private readonly GLPolygonMode glPolygonMode;
-        
-        public void PolygonMode(TriangleFace face, PolygonMode mode) =>
-            this.glPolygonMode.Invoke(face, mode);
+        public void Hint(out nint target, out nint mode) =>
+            this.glHint.Invoke(out target, out mode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLScissor(int x, int y, int width, int height);
-        private readonly GLScissor glScissor;
+        private delegate void OpenGLLineWidth(out nint width);
+        private readonly OpenGLLineWidth glLineWidth;
         
-        public void Scissor(int x, int y, int width, int height) =>
-            this.glScissor.Invoke(x, y, width, height);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexParameterf(TextureTarget target, TextureParameterName pname, float param);
-        private readonly GLTexParameterf glTexParameterf;
-        
-        public void TexParameterf(TextureTarget target, TextureParameterName pname, float param) =>
-            this.glTexParameterf.Invoke(target, pname, param);
+        public void LineWidth(out nint width) =>
+            this.glLineWidth.Invoke(out width);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLTexParameterfv(TextureTarget target, TextureParameterName pname, /*const*/ float* @params);
-        private readonly GLTexParameterfv glTexParameterfv;
+        private delegate void OpenGLPointSize(out nint size);
+        private readonly OpenGLPointSize glPointSize;
         
-        public unsafe void TexParameterfv(TextureTarget target, TextureParameterName pname, /*const*/ float* @params) =>
-            this.glTexParameterfv.Invoke(target, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexParameteri(TextureTarget target, TextureParameterName pname, int param);
-        private readonly GLTexParameteri glTexParameteri;
-        
-        public void TexParameteri(TextureTarget target, TextureParameterName pname, int param) =>
-            this.glTexParameteri.Invoke(target, pname, param);
+        public void PointSize(out nint size) =>
+            this.glPointSize.Invoke(out size);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLTexParameteriv(TextureTarget target, TextureParameterName pname, /*const*/ int* @params);
-        private readonly GLTexParameteriv glTexParameteriv;
+        private delegate void OpenGLPolygonMode(out nint face, out nint mode);
+        private readonly OpenGLPolygonMode glPolygonMode;
         
-        public unsafe void TexParameteriv(TextureTarget target, TextureParameterName pname, /*const*/ int* @params) =>
-            this.glTexParameteriv.Invoke(target, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexImage1D(TextureTarget target, int level, InternalFormat internalformat, int width, int border, PixelFormat format, PixelType type, nint pixels);
-        private readonly GLTexImage1D glTexImage1D;
-        
-        public void TexImage1D(TextureTarget target, int level, InternalFormat internalformat, int width, int border, PixelFormat format, PixelType type, nint pixels) =>
-            this.glTexImage1D.Invoke(target, level, internalformat, width, border, format, type, pixels);
+        public void PolygonMode(out nint face, out nint mode) =>
+            this.glPolygonMode.Invoke(out face, out mode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexImage2D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int border, PixelFormat format, PixelType type, nint pixels);
-        private readonly GLTexImage2D glTexImage2D;
+        private delegate void OpenGLScissor(out nint x, out nint y, out nint width, out nint height);
+        private readonly OpenGLScissor glScissor;
         
-        public void TexImage2D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int border, PixelFormat format, PixelType type, nint pixels) =>
-            this.glTexImage2D.Invoke(target, level, internalformat, width, height, border, format, type, pixels);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawBuffer(DrawBufferMode buf);
-        private readonly GLDrawBuffer glDrawBuffer;
-        
-        public void DrawBuffer(DrawBufferMode buf) =>
-            this.glDrawBuffer.Invoke(buf);
+        public void Scissor(out nint x, out nint y, out nint width, out nint height) =>
+            this.glScissor.Invoke(out x, out y, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClear(ClearBufferMask mask);
-        private readonly GLClear glClear;
+        private delegate void OpenGLTexParameterf(out nint target, out nint pname, out nint param);
+        private readonly OpenGLTexParameterf glTexParameterf;
         
-        public void Clear(ClearBufferMask mask) =>
-            this.glClear.Invoke(mask);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClearColor(float red, float green, float blue, float alpha);
-        private readonly GLClearColor glClearColor;
-        
-        public void ClearColor(float red, float green, float blue, float alpha) =>
-            this.glClearColor.Invoke(red, green, blue, alpha);
+        public void TexParameterf(out nint target, out nint pname, out nint param) =>
+            this.glTexParameterf.Invoke(out target, out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClearStencil(int s);
-        private readonly GLClearStencil glClearStencil;
+        private delegate void OpenGLTexParameterfv(out nint target, out nint pname, nint @params);
+        private readonly OpenGLTexParameterfv glTexParameterfv;
         
-        public void ClearStencil(int s) =>
-            this.glClearStencil.Invoke(s);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClearDepth(double depth);
-        private readonly GLClearDepth glClearDepth;
-        
-        public void ClearDepth(double depth) =>
-            this.glClearDepth.Invoke(depth);
+        public void TexParameterfv(out nint target, out nint pname, nint @params) =>
+            this.glTexParameterfv.Invoke(out target, out pname, @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLStencilMask(uint mask);
-        private readonly GLStencilMask glStencilMask;
+        private delegate void OpenGLTexParameteri(out nint target, out nint pname, out nint param);
+        private readonly OpenGLTexParameteri glTexParameteri;
         
-        public void StencilMask(uint mask) =>
-            this.glStencilMask.Invoke(mask);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLColorMask(bool red, bool green, bool blue, bool alpha);
-        private readonly GLColorMask glColorMask;
-        
-        public void ColorMask(bool red, bool green, bool blue, bool alpha) =>
-            this.glColorMask.Invoke(red, green, blue, alpha);
+        public void TexParameteri(out nint target, out nint pname, out nint param) =>
+            this.glTexParameteri.Invoke(out target, out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDepthMask(bool flag);
-        private readonly GLDepthMask glDepthMask;
+        private delegate void OpenGLTexParameteriv(out nint target, out nint pname, nint @params);
+        private readonly OpenGLTexParameteriv glTexParameteriv;
         
-        public void DepthMask(bool flag) =>
-            this.glDepthMask.Invoke(flag);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDisable(EnableCap cap);
-        private readonly GLDisable glDisable;
-        
-        public void Disable(EnableCap cap) =>
-            this.glDisable.Invoke(cap);
+        public void TexParameteriv(out nint target, out nint pname, nint @params) =>
+            this.glTexParameteriv.Invoke(out target, out pname, @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLEnable(EnableCap cap);
-        private readonly GLEnable glEnable;
+        private delegate void OpenGLTexImage1D(out nint target, out nint level, out nint internalformat, out nint width, out nint border, out nint format, out nint type, nint pixels);
+        private readonly OpenGLTexImage1D glTexImage1D;
         
-        public void Enable(EnableCap cap) =>
-            this.glEnable.Invoke(cap);
+        public void TexImage1D(out nint target, out nint level, out nint internalformat, out nint width, out nint border, out nint format, out nint type, nint pixels) =>
+            this.glTexImage1D.Invoke(out target, out level, out internalformat, out width, out border, out format, out type, pixels);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFinish();
-        private readonly GLFinish glFinish;
+        private delegate void OpenGLTexImage2D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint border, out nint format, out nint type, nint pixels);
+        private readonly OpenGLTexImage2D glTexImage2D;
+        
+        public void TexImage2D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint border, out nint format, out nint type, nint pixels) =>
+            this.glTexImage2D.Invoke(out target, out level, out internalformat, out width, out height, out border, out format, out type, pixels);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDrawBuffer(out nint buf);
+        private readonly OpenGLDrawBuffer glDrawBuffer;
+        
+        public void DrawBuffer(out nint buf) =>
+            this.glDrawBuffer.Invoke(out buf);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLClear(out nint mask);
+        private readonly OpenGLClear glClear;
+        
+        public void Clear(out nint mask) =>
+            this.glClear.Invoke(out mask);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLClearColor(out nint red, out nint green, out nint blue, out nint alpha);
+        private readonly OpenGLClearColor glClearColor;
+        
+        public void ClearColor(out nint red, out nint green, out nint blue, out nint alpha) =>
+            this.glClearColor.Invoke(out red, out green, out blue, out alpha);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLClearStencil(out nint s);
+        private readonly OpenGLClearStencil glClearStencil;
+        
+        public void ClearStencil(out nint s) =>
+            this.glClearStencil.Invoke(out s);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLClearDepth(out nint depth);
+        private readonly OpenGLClearDepth glClearDepth;
+        
+        public void ClearDepth(out nint depth) =>
+            this.glClearDepth.Invoke(out depth);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLStencilMask(out nint mask);
+        private readonly OpenGLStencilMask glStencilMask;
+        
+        public void StencilMask(out nint mask) =>
+            this.glStencilMask.Invoke(out mask);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLColorMask(out nint red, out nint green, out nint blue, out nint alpha);
+        private readonly OpenGLColorMask glColorMask;
+        
+        public void ColorMask(out nint red, out nint green, out nint blue, out nint alpha) =>
+            this.glColorMask.Invoke(out red, out green, out blue, out alpha);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDepthMask(out nint flag);
+        private readonly OpenGLDepthMask glDepthMask;
+        
+        public void DepthMask(out nint flag) =>
+            this.glDepthMask.Invoke(out flag);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDisable(out nint cap);
+        private readonly OpenGLDisable glDisable;
+        
+        public void Disable(out nint cap) =>
+            this.glDisable.Invoke(out cap);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLEnable(out nint cap);
+        private readonly OpenGLEnable glEnable;
+        
+        public void Enable(out nint cap) =>
+            this.glEnable.Invoke(out cap);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLFinish();
+        private readonly OpenGLFinish glFinish;
         
         public void Finish() =>
             this.glFinish.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFlush();
-        private readonly GLFlush glFlush;
+        private delegate void OpenGLFlush();
+        private readonly OpenGLFlush glFlush;
         
         public void Flush() =>
             this.glFlush.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendFunc(BlendingFactor sfactor, BlendingFactor dfactor);
-        private readonly GLBlendFunc glBlendFunc;
+        private delegate void OpenGLBlendFunc(out nint sfactor, out nint dfactor);
+        private readonly OpenGLBlendFunc glBlendFunc;
         
-        public void BlendFunc(BlendingFactor sfactor, BlendingFactor dfactor) =>
-            this.glBlendFunc.Invoke(sfactor, dfactor);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLLogicOp(LogicOp opcode);
-        private readonly GLLogicOp glLogicOp;
-        
-        public void LogicOp(LogicOp opcode) =>
-            this.glLogicOp.Invoke(opcode);
+        public void BlendFunc(out nint sfactor, out nint dfactor) =>
+            this.glBlendFunc.Invoke(out sfactor, out dfactor);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLStencilFunc(StencilFunction func, int @ref, uint mask);
-        private readonly GLStencilFunc glStencilFunc;
+        private delegate void OpenGLLogicOp(out nint opcode);
+        private readonly OpenGLLogicOp glLogicOp;
         
-        public void StencilFunc(StencilFunction func, int @ref, uint mask) =>
-            this.glStencilFunc.Invoke(func, @ref, mask);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLStencilOp(StencilOp fail, StencilOp zfail, StencilOp zpass);
-        private readonly GLStencilOp glStencilOp;
-        
-        public void StencilOp(StencilOp fail, StencilOp zfail, StencilOp zpass) =>
-            this.glStencilOp.Invoke(fail, zfail, zpass);
+        public void LogicOp(out nint opcode) =>
+            this.glLogicOp.Invoke(out opcode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDepthFunc(DepthFunction func);
-        private readonly GLDepthFunc glDepthFunc;
+        private delegate void OpenGLStencilFunc(out nint func, out nint @ref, out nint mask);
+        private readonly OpenGLStencilFunc glStencilFunc;
         
-        public void DepthFunc(DepthFunction func) =>
-            this.glDepthFunc.Invoke(func);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPixelStoref(PixelStoreParameter pname, float param);
-        private readonly GLPixelStoref glPixelStoref;
-        
-        public void PixelStoref(PixelStoreParameter pname, float param) =>
-            this.glPixelStoref.Invoke(pname, param);
+        public void StencilFunc(out nint func, out nint @ref, out nint mask) =>
+            this.glStencilFunc.Invoke(out func, out @ref, out mask);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPixelStorei(PixelStoreParameter pname, int param);
-        private readonly GLPixelStorei glPixelStorei;
+        private delegate void OpenGLStencilOp(out nint fail, out nint zfail, out nint zpass);
+        private readonly OpenGLStencilOp glStencilOp;
         
-        public void PixelStorei(PixelStoreParameter pname, int param) =>
-            this.glPixelStorei.Invoke(pname, param);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLReadBuffer(ReadBufferMode src);
-        private readonly GLReadBuffer glReadBuffer;
-        
-        public void ReadBuffer(ReadBufferMode src) =>
-            this.glReadBuffer.Invoke(src);
+        public void StencilOp(out nint fail, out nint zfail, out nint zpass) =>
+            this.glStencilOp.Invoke(out fail, out zfail, out zpass);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLReadPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, out nint pixels);
-        private readonly GLReadPixels glReadPixels;
+        private delegate void OpenGLDepthFunc(out nint func);
+        private readonly OpenGLDepthFunc glDepthFunc;
         
-        public void ReadPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, out nint pixels) =>
-            this.glReadPixels.Invoke(x, y, width, height, format, type, out pixels);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetBooleanv(GetPName pname, bool* data);
-        private readonly GLGetBooleanv glGetBooleanv;
-        
-        public unsafe void GetBooleanv(GetPName pname, bool* data) =>
-            this.glGetBooleanv.Invoke(pname, data);
+        public void DepthFunc(out nint func) =>
+            this.glDepthFunc.Invoke(out func);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetDoublev(GetPName pname, double* data);
-        private readonly GLGetDoublev glGetDoublev;
+        private delegate void OpenGLPixelStoref(out nint pname, out nint param);
+        private readonly OpenGLPixelStoref glPixelStoref;
         
-        public unsafe void GetDoublev(GetPName pname, double* data) =>
-            this.glGetDoublev.Invoke(pname, data);
+        public void PixelStoref(out nint pname, out nint param) =>
+            this.glPixelStoref.Invoke(out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate ErrorCode GLGetError();
-        private readonly GLGetError glGetError;
+        private delegate void OpenGLPixelStorei(out nint pname, out nint param);
+        private readonly OpenGLPixelStorei glPixelStorei;
+        
+        public void PixelStorei(out nint pname, out nint param) =>
+            this.glPixelStorei.Invoke(out pname, out param);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLReadBuffer(out nint src);
+        private readonly OpenGLReadBuffer glReadBuffer;
+        
+        public void ReadBuffer(out nint src) =>
+            this.glReadBuffer.Invoke(out src);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLReadPixels(out nint x, out nint y, out nint width, out nint height, out nint format, out nint type, out nint pixels);
+        private readonly OpenGLReadPixels glReadPixels;
+        
+        public void ReadPixels(out nint x, out nint y, out nint width, out nint height, out nint format, out nint type, out nint pixels) =>
+            this.glReadPixels.Invoke(out x, out y, out width, out height, out format, out type, out pixels);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetBooleanv(out nint pname, out nint data);
+        private readonly OpenGLGetBooleanv glGetBooleanv;
+        
+        public void GetBooleanv(out nint pname, out nint data) =>
+            this.glGetBooleanv.Invoke(out pname, out data);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetDoublev(out nint pname, out nint data);
+        private readonly OpenGLGetDoublev glGetDoublev;
+        
+        public void GetDoublev(out nint pname, out nint data) =>
+            this.glGetDoublev.Invoke(out pname, out data);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate ErrorCode OpenGLGetError();
+        private readonly OpenGLGetError glGetError;
         
         public ErrorCode GetError() =>
             this.glGetError.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetFloatv(GetPName pname, float* data);
-        private readonly GLGetFloatv glGetFloatv;
+        private delegate void OpenGLGetFloatv(out nint pname, out nint data);
+        private readonly OpenGLGetFloatv glGetFloatv;
         
-        public unsafe void GetFloatv(GetPName pname, float* data) =>
-            this.glGetFloatv.Invoke(pname, data);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetIntegerv(GetPName pname, int* data);
-        private readonly GLGetIntegerv glGetIntegerv;
-        
-        public unsafe void GetIntegerv(GetPName pname, int* data) =>
-            this.glGetIntegerv.Invoke(pname, data);
+        public void GetFloatv(out nint pname, out nint data) =>
+            this.glGetFloatv.Invoke(out pname, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate nint GLGetString(StringName name);
-        private readonly GLGetString glGetString;
+        private delegate void OpenGLGetIntegerv(out nint pname, out nint data);
+        private readonly OpenGLGetIntegerv glGetIntegerv;
         
-        public nint GetString(StringName name) =>
-            this.glGetString.Invoke(name);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetTexImage(TextureTarget target, int level, PixelFormat format, PixelType type, out nint pixels);
-        private readonly GLGetTexImage glGetTexImage;
-        
-        public void GetTexImage(TextureTarget target, int level, PixelFormat format, PixelType type, out nint pixels) =>
-            this.glGetTexImage.Invoke(target, level, format, type, out pixels);
+        public void GetIntegerv(out nint pname, out nint data) =>
+            this.glGetIntegerv.Invoke(out pname, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTexParameterfv(TextureTarget target, GetTextureParameter pname, float* @params);
-        private readonly GLGetTexParameterfv glGetTexParameterfv;
+        private delegate nint OpenGLGetString(out nint name);
+        private readonly OpenGLGetString glGetString;
         
-        public unsafe void GetTexParameterfv(TextureTarget target, GetTextureParameter pname, float* @params) =>
-            this.glGetTexParameterfv.Invoke(target, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTexParameteriv(TextureTarget target, GetTextureParameter pname, int* @params);
-        private readonly GLGetTexParameteriv glGetTexParameteriv;
-        
-        public unsafe void GetTexParameteriv(TextureTarget target, GetTextureParameter pname, int* @params) =>
-            this.glGetTexParameteriv.Invoke(target, pname, @params);
+        public nint GetString(out nint name) =>
+            this.glGetString.Invoke(out name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTexLevelParameterfv(TextureTarget target, int level, GetTextureParameter pname, float* @params);
-        private readonly GLGetTexLevelParameterfv glGetTexLevelParameterfv;
+        private delegate void OpenGLGetTexImage(out nint target, out nint level, out nint format, out nint type, out nint pixels);
+        private readonly OpenGLGetTexImage glGetTexImage;
         
-        public unsafe void GetTexLevelParameterfv(TextureTarget target, int level, GetTextureParameter pname, float* @params) =>
-            this.glGetTexLevelParameterfv.Invoke(target, level, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTexLevelParameteriv(TextureTarget target, int level, GetTextureParameter pname, int* @params);
-        private readonly GLGetTexLevelParameteriv glGetTexLevelParameteriv;
-        
-        public unsafe void GetTexLevelParameteriv(TextureTarget target, int level, GetTextureParameter pname, int* @params) =>
-            this.glGetTexLevelParameteriv.Invoke(target, level, pname, @params);
+        public void GetTexImage(out nint target, out nint level, out nint format, out nint type, out nint pixels) =>
+            this.glGetTexImage.Invoke(out target, out level, out format, out type, out pixels);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsEnabled(EnableCap cap);
-        private readonly GLIsEnabled glIsEnabled;
+        private delegate void OpenGLGetTexParameterfv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetTexParameterfv glGetTexParameterfv;
         
-        public bool IsEnabled(EnableCap cap) =>
-            this.glIsEnabled.Invoke(cap);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDepthRange(double n, double f);
-        private readonly GLDepthRange glDepthRange;
-        
-        public void DepthRange(double n, double f) =>
-            this.glDepthRange.Invoke(n, f);
+        public void GetTexParameterfv(out nint target, out nint pname, out nint @params) =>
+            this.glGetTexParameterfv.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLViewport(int x, int y, int width, int height);
-        private readonly GLViewport glViewport;
+        private delegate void OpenGLGetTexParameteriv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetTexParameteriv glGetTexParameteriv;
         
-        public void Viewport(int x, int y, int width, int height) =>
-            this.glViewport.Invoke(x, y, width, height);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexStorage3DMultisample(TextureTarget target, int samples, SizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations);
-        private readonly GLTexStorage3DMultisample glTexStorage3DMultisample;
-        
-        public void TexStorage3DMultisample(TextureTarget target, int samples, SizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations) =>
-            this.glTexStorage3DMultisample.Invoke(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+        public void GetTexParameteriv(out nint target, out nint pname, out nint @params) =>
+            this.glGetTexParameteriv.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexBufferRange(TextureTarget target, SizedInternalFormat internalformat, uint buffer, nint offset, nint size);
-        private readonly GLTexBufferRange glTexBufferRange;
+        private delegate void OpenGLGetTexLevelParameterfv(out nint target, out nint level, out nint pname, out nint @params);
+        private readonly OpenGLGetTexLevelParameterfv glGetTexLevelParameterfv;
         
-        public void TexBufferRange(TextureTarget target, SizedInternalFormat internalformat, uint buffer, nint offset, nint size) =>
-            this.glTexBufferRange.Invoke(target, internalformat, buffer, offset, size);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPatchParameteri(PatchParameterName pname, int value);
-        private readonly GLPatchParameteri glPatchParameteri;
-        
-        public void PatchParameteri(PatchParameterName pname, int value) =>
-            this.glPatchParameteri.Invoke(pname, value);
+        public void GetTexLevelParameterfv(out nint target, out nint level, out nint pname, out nint @params) =>
+            this.glGetTexLevelParameterfv.Invoke(out target, out level, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLMinSampleShading(float value);
-        private readonly GLMinSampleShading glMinSampleShading;
+        private delegate void OpenGLGetTexLevelParameteriv(out nint target, out nint level, out nint pname, out nint @params);
+        private readonly OpenGLGetTexLevelParameteriv glGetTexLevelParameteriv;
         
-        public void MinSampleShading(float value) =>
-            this.glMinSampleShading.Invoke(value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPrimitiveBoundingBox(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW);
-        private readonly GLPrimitiveBoundingBox glPrimitiveBoundingBox;
-        
-        public void PrimitiveBoundingBox(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW) =>
-            this.glPrimitiveBoundingBox.Invoke(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
+        public void GetTexLevelParameteriv(out nint target, out nint level, out nint pname, out nint @params) =>
+            this.glGetTexLevelParameteriv.Invoke(out target, out level, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendFuncSeparatei(uint buf, BlendingFactor srcRGB, BlendingFactor dstRGB, BlendingFactor srcAlpha, BlendingFactor dstAlpha);
-        private readonly GLBlendFuncSeparatei glBlendFuncSeparatei;
+        private delegate bool OpenGLIsEnabled(out nint cap);
+        private readonly OpenGLIsEnabled glIsEnabled;
         
-        public void BlendFuncSeparatei(uint buf, BlendingFactor srcRGB, BlendingFactor dstRGB, BlendingFactor srcAlpha, BlendingFactor dstAlpha) =>
-            this.glBlendFuncSeparatei.Invoke(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendFunci(uint buf, BlendingFactor src, BlendingFactor dst);
-        private readonly GLBlendFunci glBlendFunci;
-        
-        public void BlendFunci(uint buf, BlendingFactor src, BlendingFactor dst) =>
-            this.glBlendFunci.Invoke(buf, src, dst);
+        public bool IsEnabled(out nint cap) =>
+            this.glIsEnabled.Invoke(out cap);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendEquationSeparatei(uint buf, BlendEquationModeEXT modeRGB, BlendEquationModeEXT modeAlpha);
-        private readonly GLBlendEquationSeparatei glBlendEquationSeparatei;
+        private delegate void OpenGLDepthRange(out nint n, out nint f);
+        private readonly OpenGLDepthRange glDepthRange;
         
-        public void BlendEquationSeparatei(uint buf, BlendEquationModeEXT modeRGB, BlendEquationModeEXT modeAlpha) =>
-            this.glBlendEquationSeparatei.Invoke(buf, modeRGB, modeAlpha);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendEquationi(uint buf, BlendEquationModeEXT mode);
-        private readonly GLBlendEquationi glBlendEquationi;
-        
-        public void BlendEquationi(uint buf, BlendEquationModeEXT mode) =>
-            this.glBlendEquationi.Invoke(buf, mode);
+        public void DepthRange(out nint n, out nint f) =>
+            this.glDepthRange.Invoke(out n, out f);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyImageSubData(uint srcName, CopyImageSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, CopyImageSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth);
-        private readonly GLCopyImageSubData glCopyImageSubData;
+        private delegate void OpenGLViewport(out nint x, out nint y, out nint width, out nint height);
+        private readonly OpenGLViewport glViewport;
         
-        public void CopyImageSubData(uint srcName, CopyImageSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, CopyImageSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth) =>
-            this.glCopyImageSubData.Invoke(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
+        public void Viewport(out nint x, out nint y, out nint width, out nint height) =>
+            this.glViewport.Invoke(out x, out y, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendBarrier();
-        private readonly GLBlendBarrier glBlendBarrier;
+        private delegate void OpenGLTexStorage3DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint depth, out nint fixedsamplelocations);
+        private readonly OpenGLTexStorage3DMultisample glTexStorage3DMultisample;
+        
+        public void TexStorage3DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint depth, out nint fixedsamplelocations) =>
+            this.glTexStorage3DMultisample.Invoke(out target, out samples, out internalformat, out width, out height, out depth, out fixedsamplelocations);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLTexBufferRange(out nint target, out nint internalformat, out nint buffer, out nint offset, out nint size);
+        private readonly OpenGLTexBufferRange glTexBufferRange;
+        
+        public void TexBufferRange(out nint target, out nint internalformat, out nint buffer, out nint offset, out nint size) =>
+            this.glTexBufferRange.Invoke(out target, out internalformat, out buffer, out offset, out size);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLPatchParameteri(out nint pname, out nint value);
+        private readonly OpenGLPatchParameteri glPatchParameteri;
+        
+        public void PatchParameteri(out nint pname, out nint value) =>
+            this.glPatchParameteri.Invoke(out pname, out value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLMinSampleShading(out nint value);
+        private readonly OpenGLMinSampleShading glMinSampleShading;
+        
+        public void MinSampleShading(out nint value) =>
+            this.glMinSampleShading.Invoke(out value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLPrimitiveBoundingBox(out nint minX, out nint minY, out nint minZ, out nint minW, out nint maxX, out nint maxY, out nint maxZ, out nint maxW);
+        private readonly OpenGLPrimitiveBoundingBox glPrimitiveBoundingBox;
+        
+        public void PrimitiveBoundingBox(out nint minX, out nint minY, out nint minZ, out nint minW, out nint maxX, out nint maxY, out nint maxZ, out nint maxW) =>
+            this.glPrimitiveBoundingBox.Invoke(out minX, out minY, out minZ, out minW, out maxX, out maxY, out maxZ, out maxW);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendFuncSeparatei(out nint buf, out nint srcRGB, out nint dstRGB, out nint srcAlpha, out nint dstAlpha);
+        private readonly OpenGLBlendFuncSeparatei glBlendFuncSeparatei;
+        
+        public void BlendFuncSeparatei(out nint buf, out nint srcRGB, out nint dstRGB, out nint srcAlpha, out nint dstAlpha) =>
+            this.glBlendFuncSeparatei.Invoke(out buf, out srcRGB, out dstRGB, out srcAlpha, out dstAlpha);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendFunci(out nint buf, out nint src, out nint dst);
+        private readonly OpenGLBlendFunci glBlendFunci;
+        
+        public void BlendFunci(out nint buf, out nint src, out nint dst) =>
+            this.glBlendFunci.Invoke(out buf, out src, out dst);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendEquationSeparatei(out nint buf, out nint modeRGB, out nint modeAlpha);
+        private readonly OpenGLBlendEquationSeparatei glBlendEquationSeparatei;
+        
+        public void BlendEquationSeparatei(out nint buf, out nint modeRGB, out nint modeAlpha) =>
+            this.glBlendEquationSeparatei.Invoke(out buf, out modeRGB, out modeAlpha);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendEquationi(out nint buf, out nint mode);
+        private readonly OpenGLBlendEquationi glBlendEquationi;
+        
+        public void BlendEquationi(out nint buf, out nint mode) =>
+            this.glBlendEquationi.Invoke(out buf, out mode);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLCopyImageSubData(out nint srcName, out nint srcTarget, out nint srcLevel, out nint srcX, out nint srcY, out nint srcZ, out nint dstName, out nint dstTarget, out nint dstLevel, out nint dstX, out nint dstY, out nint dstZ, out nint srcWidth, out nint srcHeight, out nint srcDepth);
+        private readonly OpenGLCopyImageSubData glCopyImageSubData;
+        
+        public void CopyImageSubData(out nint srcName, out nint srcTarget, out nint srcLevel, out nint srcX, out nint srcY, out nint srcZ, out nint dstName, out nint dstTarget, out nint dstLevel, out nint dstX, out nint dstY, out nint dstZ, out nint srcWidth, out nint srcHeight, out nint srcDepth) =>
+            this.glCopyImageSubData.Invoke(out srcName, out srcTarget, out srcLevel, out srcX, out srcY, out srcZ, out dstName, out dstTarget, out dstLevel, out dstX, out dstY, out dstZ, out srcWidth, out srcHeight, out srcDepth);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendBarrier();
+        private readonly OpenGLBlendBarrier glBlendBarrier;
         
         public void BlendBarrier() =>
             this.glBlendBarrier.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexBindingDivisor(uint bindingindex, uint divisor);
-        private readonly GLVertexBindingDivisor glVertexBindingDivisor;
+        private delegate void OpenGLVertexBindingDivisor(out nint bindingindex, out nint divisor);
+        private readonly OpenGLVertexBindingDivisor glVertexBindingDivisor;
         
-        public void VertexBindingDivisor(uint bindingindex, uint divisor) =>
-            this.glVertexBindingDivisor.Invoke(bindingindex, divisor);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribBinding(uint attribindex, uint bindingindex);
-        private readonly GLVertexAttribBinding glVertexAttribBinding;
-        
-        public void VertexAttribBinding(uint attribindex, uint bindingindex) =>
-            this.glVertexAttribBinding.Invoke(attribindex, bindingindex);
+        public void VertexBindingDivisor(out nint bindingindex, out nint divisor) =>
+            this.glVertexBindingDivisor.Invoke(out bindingindex, out divisor);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribIFormat(uint attribindex, int size, VertexAttribIType type, uint relativeoffset);
-        private readonly GLVertexAttribIFormat glVertexAttribIFormat;
+        private delegate void OpenGLVertexAttribBinding(out nint attribindex, out nint bindingindex);
+        private readonly OpenGLVertexAttribBinding glVertexAttribBinding;
         
-        public void VertexAttribIFormat(uint attribindex, int size, VertexAttribIType type, uint relativeoffset) =>
-            this.glVertexAttribIFormat.Invoke(attribindex, size, type, relativeoffset);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribFormat(uint attribindex, int size, VertexAttribType type, bool normalized, uint relativeoffset);
-        private readonly GLVertexAttribFormat glVertexAttribFormat;
-        
-        public void VertexAttribFormat(uint attribindex, int size, VertexAttribType type, bool normalized, uint relativeoffset) =>
-            this.glVertexAttribFormat.Invoke(attribindex, size, type, normalized, relativeoffset);
+        public void VertexAttribBinding(out nint attribindex, out nint bindingindex) =>
+            this.glVertexAttribBinding.Invoke(out attribindex, out bindingindex);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride);
-        private readonly GLBindVertexBuffer glBindVertexBuffer;
+        private delegate void OpenGLVertexAttribIFormat(out nint attribindex, out nint size, out nint type, out nint relativeoffset);
+        private readonly OpenGLVertexAttribIFormat glVertexAttribIFormat;
         
-        public void BindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride) =>
-            this.glBindVertexBuffer.Invoke(bindingindex, buffer, offset, stride);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexStorage2DMultisample(TextureTarget target, int samples, SizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations);
-        private readonly GLTexStorage2DMultisample glTexStorage2DMultisample;
-        
-        public void TexStorage2DMultisample(TextureTarget target, int samples, SizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations) =>
-            this.glTexStorage2DMultisample.Invoke(target, samples, internalformat, width, height, fixedsamplelocations);
+        public void VertexAttribIFormat(out nint attribindex, out nint size, out nint type, out nint relativeoffset) =>
+            this.glVertexAttribIFormat.Invoke(out attribindex, out size, out type, out relativeoffset);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLMemoryBarrierByRegion(MemoryBarrierMask barriers);
-        private readonly GLMemoryBarrierByRegion glMemoryBarrierByRegion;
+        private delegate void OpenGLVertexAttribFormat(out nint attribindex, out nint size, out nint type, out nint normalized, out nint relativeoffset);
+        private readonly OpenGLVertexAttribFormat glVertexAttribFormat;
         
-        public void MemoryBarrierByRegion(MemoryBarrierMask barriers) =>
-            this.glMemoryBarrierByRegion.Invoke(barriers);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLMemoryBarrier(MemoryBarrierMask barriers);
-        private readonly GLMemoryBarrier glMemoryBarrier;
-        
-        public void MemoryBarrier(MemoryBarrierMask barriers) =>
-            this.glMemoryBarrier.Invoke(barriers);
+        public void VertexAttribFormat(out nint attribindex, out nint size, out nint type, out nint normalized, out nint relativeoffset) =>
+            this.glVertexAttribFormat.Invoke(out attribindex, out size, out type, out normalized, out relativeoffset);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindImageTexture(uint unit, uint texture, int level, bool layered, int layer, BufferAccessARB access, InternalFormat format);
-        private readonly GLBindImageTexture glBindImageTexture;
+        private delegate void OpenGLBindVertexBuffer(out nint bindingindex, out nint buffer, out nint offset, out nint stride);
+        private readonly OpenGLBindVertexBuffer glBindVertexBuffer;
         
-        public void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, BufferAccessARB access, InternalFormat format) =>
-            this.glBindImageTexture.Invoke(unit, texture, level, layered, layer, access, format);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, sbyte* infoLog);
-        private readonly GLGetProgramPipelineInfoLog glGetProgramPipelineInfoLog;
-        
-        public unsafe void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, sbyte* infoLog) =>
-            this.glGetProgramPipelineInfoLog.Invoke(pipeline, bufSize, length, infoLog);
+        public void BindVertexBuffer(out nint bindingindex, out nint buffer, out nint offset, out nint stride) =>
+            this.glBindVertexBuffer.Invoke(out bindingindex, out buffer, out offset, out stride);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLValidateProgramPipeline(uint pipeline);
-        private readonly GLValidateProgramPipeline glValidateProgramPipeline;
+        private delegate void OpenGLTexStorage2DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint fixedsamplelocations);
+        private readonly OpenGLTexStorage2DMultisample glTexStorage2DMultisample;
         
-        public void ValidateProgramPipeline(uint pipeline) =>
-            this.glValidateProgramPipeline.Invoke(pipeline);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix4x3fv glProgramUniformMatrix4x3fv;
-        
-        public unsafe void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix4x3fv.Invoke(program, location, count, transpose, value);
+        public void TexStorage2DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint fixedsamplelocations) =>
+            this.glTexStorage2DMultisample.Invoke(out target, out samples, out internalformat, out width, out height, out fixedsamplelocations);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix3x4fv glProgramUniformMatrix3x4fv;
+        private delegate void OpenGLMemoryBarrierByRegion(out nint barriers);
+        private readonly OpenGLMemoryBarrierByRegion glMemoryBarrierByRegion;
         
-        public unsafe void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix3x4fv.Invoke(program, location, count, transpose, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix4x2fv glProgramUniformMatrix4x2fv;
-        
-        public unsafe void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix4x2fv.Invoke(program, location, count, transpose, value);
+        public void MemoryBarrierByRegion(out nint barriers) =>
+            this.glMemoryBarrierByRegion.Invoke(out barriers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix2x4fv glProgramUniformMatrix2x4fv;
+        private delegate void OpenGLMemoryBarrier(out nint barriers);
+        private readonly OpenGLMemoryBarrier glMemoryBarrier;
         
-        public unsafe void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix2x4fv.Invoke(program, location, count, transpose, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix3x2fv glProgramUniformMatrix3x2fv;
-        
-        public unsafe void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix3x2fv.Invoke(program, location, count, transpose, value);
+        public void MemoryBarrier(out nint barriers) =>
+            this.glMemoryBarrier.Invoke(out barriers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix2x3fv glProgramUniformMatrix2x3fv;
+        private delegate void OpenGLBindImageTexture(out nint unit, out nint texture, out nint level, out nint layered, out nint layer, out nint access, out nint format);
+        private readonly OpenGLBindImageTexture glBindImageTexture;
         
-        public unsafe void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix2x3fv.Invoke(program, location, count, transpose, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix4fv glProgramUniformMatrix4fv;
-        
-        public unsafe void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix4fv.Invoke(program, location, count, transpose, value);
+        public void BindImageTexture(out nint unit, out nint texture, out nint level, out nint layered, out nint layer, out nint access, out nint format) =>
+            this.glBindImageTexture.Invoke(out unit, out texture, out level, out layered, out layer, out access, out format);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix3fv glProgramUniformMatrix3fv;
+        private delegate void OpenGLGetProgramPipelineInfoLog(out nint pipeline, out nint bufSize, out nint length, out nint infoLog);
+        private readonly OpenGLGetProgramPipelineInfoLog glGetProgramPipelineInfoLog;
         
-        public unsafe void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix3fv.Invoke(program, location, count, transpose, value);
+        public void GetProgramPipelineInfoLog(out nint pipeline, out nint bufSize, out nint length, out nint infoLog) =>
+            this.glGetProgramPipelineInfoLog.Invoke(out pipeline, out bufSize, out length, out infoLog);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendBarrierKHR();
-        private readonly GLBlendBarrierKHR glBlendBarrierKHR;
+        private delegate void OpenGLValidateProgramPipeline(out nint pipeline);
+        private readonly OpenGLValidateProgramPipeline glValidateProgramPipeline;
         
-        [GLExtension("GL_KHR_blend_equation_advanced")]
+        public void ValidateProgramPipeline(out nint pipeline) =>
+            this.glValidateProgramPipeline.Invoke(out pipeline);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix4x3fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix4x3fv glProgramUniformMatrix4x3fv;
+        
+        public void ProgramUniformMatrix4x3fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix4x3fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix3x4fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix3x4fv glProgramUniformMatrix3x4fv;
+        
+        public void ProgramUniformMatrix3x4fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix3x4fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix4x2fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix4x2fv glProgramUniformMatrix4x2fv;
+        
+        public void ProgramUniformMatrix4x2fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix4x2fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix2x4fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix2x4fv glProgramUniformMatrix2x4fv;
+        
+        public void ProgramUniformMatrix2x4fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix2x4fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix3x2fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix3x2fv glProgramUniformMatrix3x2fv;
+        
+        public void ProgramUniformMatrix3x2fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix3x2fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix2x3fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix2x3fv glProgramUniformMatrix2x3fv;
+        
+        public void ProgramUniformMatrix2x3fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix2x3fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix4fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix4fv glProgramUniformMatrix4fv;
+        
+        public void ProgramUniformMatrix4fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix4fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLProgramUniformMatrix3fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix3fv glProgramUniformMatrix3fv;
+        
+        public void ProgramUniformMatrix3fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix3fv.Invoke(out program, out location, out count, out transpose, value);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendBarrierKHR();
+        private readonly OpenGLBlendBarrierKHR glBlendBarrierKHR;
+        
+        [OpenGLExtension("GL_KHR_blend_equation_advanced")]
         public void BlendBarrierKHR() =>
             this.glBlendBarrierKHR.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, /*const*/ uint* ids, bool enabled);
-        private readonly GLDebugMessageControl glDebugMessageControl;
+        private delegate void OpenGLDebugMessageControl(out nint source, out nint type, out nint severity, out nint count, nint ids, out nint enabled);
+        private readonly OpenGLDebugMessageControl glDebugMessageControl;
         
-        public unsafe void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, /*const*/ uint* ids, bool enabled) =>
-            this.glDebugMessageControl.Invoke(source, type, severity, count, ids, enabled);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, /*const*/ sbyte* buf);
-        private readonly GLDebugMessageInsert glDebugMessageInsert;
-        
-        public unsafe void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, /*const*/ sbyte* buf) =>
-            this.glDebugMessageInsert.Invoke(source, type, id, severity, length, buf);
+        public void DebugMessageControl(out nint source, out nint type, out nint severity, out nint count, nint ids, out nint enabled) =>
+            this.glDebugMessageControl.Invoke(out source, out type, out severity, out count, ids, out enabled);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDebugMessageCallback(DebugProc callback, nint userParam);
-        private readonly GLDebugMessageCallback glDebugMessageCallback;
+        private delegate void OpenGLDebugMessageInsert(out nint source, out nint type, out nint id, out nint severity, out nint length, nint buf);
+        private readonly OpenGLDebugMessageInsert glDebugMessageInsert;
         
-        public void DebugMessageCallback(DebugProc callback, nint userParam) =>
-            this.glDebugMessageCallback.Invoke(callback, userParam);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate uint GLGetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, sbyte* messageLog);
-        private readonly GLGetDebugMessageLog glGetDebugMessageLog;
-        
-        public unsafe uint GetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, sbyte* messageLog) =>
-            this.glGetDebugMessageLog.Invoke(count, bufSize, sources, types, ids, severities, lengths, messageLog);
+        public void DebugMessageInsert(out nint source, out nint type, out nint id, out nint severity, out nint length, nint buf) =>
+            this.glDebugMessageInsert.Invoke(out source, out type, out id, out severity, out length, buf);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLPushDebugGroup(DebugSource source, uint id, int length, /*const*/ sbyte* message);
-        private readonly GLPushDebugGroup glPushDebugGroup;
+        private delegate void OpenGLDebugMessageCallback(out nint callback, nint userParam);
+        private readonly OpenGLDebugMessageCallback glDebugMessageCallback;
         
-        public unsafe void PushDebugGroup(DebugSource source, uint id, int length, /*const*/ sbyte* message) =>
-            this.glPushDebugGroup.Invoke(source, id, length, message);
+        public void DebugMessageCallback(out nint callback, nint userParam) =>
+            this.glDebugMessageCallback.Invoke(out callback, userParam);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPopDebugGroup();
-        private readonly GLPopDebugGroup glPopDebugGroup;
+        private delegate uint OpenGLGetDebugMessageLog(out nint count, out nint bufSize, out nint sources, out nint types, out nint ids, out nint severities, out nint lengths, out nint messageLog);
+        private readonly OpenGLGetDebugMessageLog glGetDebugMessageLog;
+        
+        public uint GetDebugMessageLog(out nint count, out nint bufSize, out nint sources, out nint types, out nint ids, out nint severities, out nint lengths, out nint messageLog) =>
+            this.glGetDebugMessageLog.Invoke(out count, out bufSize, out sources, out types, out ids, out severities, out lengths, out messageLog);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLPushDebugGroup(out nint source, out nint id, out nint length, nint message);
+        private readonly OpenGLPushDebugGroup glPushDebugGroup;
+        
+        public void PushDebugGroup(out nint source, out nint id, out nint length, nint message) =>
+            this.glPushDebugGroup.Invoke(out source, out id, out length, message);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLPopDebugGroup();
+        private readonly OpenGLPopDebugGroup glPopDebugGroup;
         
         public void PopDebugGroup() =>
             this.glPopDebugGroup.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLObjectLabel(ObjectIdentifier identifier, uint name, int length, /*const*/ sbyte* label);
-        private readonly GLObjectLabel glObjectLabel;
+        private delegate void OpenGLObjectLabel(out nint identifier, out nint name, out nint length, nint label);
+        private readonly OpenGLObjectLabel glObjectLabel;
         
-        public unsafe void ObjectLabel(ObjectIdentifier identifier, uint name, int length, /*const*/ sbyte* label) =>
-            this.glObjectLabel.Invoke(identifier, name, length, label);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, sbyte* label);
-        private readonly GLGetObjectLabel glGetObjectLabel;
-        
-        public unsafe void GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, sbyte* label) =>
-            this.glGetObjectLabel.Invoke(identifier, name, bufSize, length, label);
+        public void ObjectLabel(out nint identifier, out nint name, out nint length, nint label) =>
+            this.glObjectLabel.Invoke(out identifier, out name, out length, label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLObjectPtrLabel(nint ptr, int length, /*const*/ sbyte* label);
-        private readonly GLObjectPtrLabel glObjectPtrLabel;
+        private delegate void OpenGLGetObjectLabel(out nint identifier, out nint name, out nint bufSize, out nint length, out nint label);
+        private readonly OpenGLGetObjectLabel glGetObjectLabel;
         
-        public unsafe void ObjectPtrLabel(nint ptr, int length, /*const*/ sbyte* label) =>
-            this.glObjectPtrLabel.Invoke(ptr, length, label);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetObjectPtrLabel(nint ptr, int bufSize, int* length, sbyte* label);
-        private readonly GLGetObjectPtrLabel glGetObjectPtrLabel;
-        
-        public unsafe void GetObjectPtrLabel(nint ptr, int bufSize, int* length, sbyte* label) =>
-            this.glGetObjectPtrLabel.Invoke(ptr, bufSize, length, label);
+        public void GetObjectLabel(out nint identifier, out nint name, out nint bufSize, out nint length, out nint label) =>
+            this.glGetObjectLabel.Invoke(out identifier, out name, out bufSize, out length, out label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform3uiv(uint program, int location, int count, /*const*/ uint* value);
-        private readonly GLProgramUniform3uiv glProgramUniform3uiv;
+        private delegate void OpenGLObjectPtrLabel(nint ptr, out nint length, nint label);
+        private readonly OpenGLObjectPtrLabel glObjectPtrLabel;
         
-        public unsafe void ProgramUniform3uiv(uint program, int location, int count, /*const*/ uint* value) =>
-            this.glProgramUniform3uiv.Invoke(program, location, count, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, /*const*/ uint* ids, bool enabled);
-        private readonly GLDebugMessageControlKHR glDebugMessageControlKHR;
-        
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, /*const*/ uint* ids, bool enabled) =>
-            this.glDebugMessageControlKHR.Invoke(source, type, severity, count, ids, enabled);
+        public void ObjectPtrLabel(nint ptr, out nint length, nint label) =>
+            this.glObjectPtrLabel.Invoke(ptr, out length, label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, /*const*/ sbyte* buf);
-        private readonly GLDebugMessageInsertKHR glDebugMessageInsertKHR;
+        private delegate void OpenGLGetObjectPtrLabel(nint ptr, out nint bufSize, out nint length, out nint label);
+        private readonly OpenGLGetObjectPtrLabel glGetObjectPtrLabel;
         
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void DebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, /*const*/ sbyte* buf) =>
-            this.glDebugMessageInsertKHR.Invoke(source, type, id, severity, length, buf);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDebugMessageCallbackKHR(DebugProc callback, nint userParam);
-        private readonly GLDebugMessageCallbackKHR glDebugMessageCallbackKHR;
-        
-        [GLExtension("GL_KHR_debug")]
-        public void DebugMessageCallbackKHR(DebugProc callback, nint userParam) =>
-            this.glDebugMessageCallbackKHR.Invoke(callback, userParam);
+        public void GetObjectPtrLabel(nint ptr, out nint bufSize, out nint length, out nint label) =>
+            this.glGetObjectPtrLabel.Invoke(ptr, out bufSize, out length, out label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate uint GLGetDebugMessageLogKHR(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, sbyte* messageLog);
-        private readonly GLGetDebugMessageLogKHR glGetDebugMessageLogKHR;
+        private delegate void OpenGLProgramUniform3uiv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform3uiv glProgramUniform3uiv;
         
-        [GLExtension("GL_KHR_debug")]
-        public unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, sbyte* messageLog) =>
-            this.glGetDebugMessageLogKHR.Invoke(count, bufSize, sources, types, ids, severities, lengths, messageLog);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLPushDebugGroupKHR(DebugSource source, uint id, int length, /*const*/ sbyte* message);
-        private readonly GLPushDebugGroupKHR glPushDebugGroupKHR;
-        
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void PushDebugGroupKHR(DebugSource source, uint id, int length, /*const*/ sbyte* message) =>
-            this.glPushDebugGroupKHR.Invoke(source, id, length, message);
+        public void ProgramUniform3uiv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform3uiv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPopDebugGroupKHR();
-        private readonly GLPopDebugGroupKHR glPopDebugGroupKHR;
+        private delegate void OpenGLDebugMessageControlKHR(out nint source, out nint type, out nint severity, out nint count, nint ids, out nint enabled);
+        private readonly OpenGLDebugMessageControlKHR glDebugMessageControlKHR;
         
-        [GLExtension("GL_KHR_debug")]
+        [OpenGLExtension("GL_KHR_debug")]
+        public void DebugMessageControlKHR(out nint source, out nint type, out nint severity, out nint count, nint ids, out nint enabled) =>
+            this.glDebugMessageControlKHR.Invoke(out source, out type, out severity, out count, ids, out enabled);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDebugMessageInsertKHR(out nint source, out nint type, out nint id, out nint severity, out nint length, nint buf);
+        private readonly OpenGLDebugMessageInsertKHR glDebugMessageInsertKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
+        public void DebugMessageInsertKHR(out nint source, out nint type, out nint id, out nint severity, out nint length, nint buf) =>
+            this.glDebugMessageInsertKHR.Invoke(out source, out type, out id, out severity, out length, buf);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDebugMessageCallbackKHR(out nint callback, nint userParam);
+        private readonly OpenGLDebugMessageCallbackKHR glDebugMessageCallbackKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
+        public void DebugMessageCallbackKHR(out nint callback, nint userParam) =>
+            this.glDebugMessageCallbackKHR.Invoke(out callback, userParam);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate uint OpenGLGetDebugMessageLogKHR(out nint count, out nint bufSize, out nint sources, out nint types, out nint ids, out nint severities, out nint lengths, out nint messageLog);
+        private readonly OpenGLGetDebugMessageLogKHR glGetDebugMessageLogKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
+        public uint GetDebugMessageLogKHR(out nint count, out nint bufSize, out nint sources, out nint types, out nint ids, out nint severities, out nint lengths, out nint messageLog) =>
+            this.glGetDebugMessageLogKHR.Invoke(out count, out bufSize, out sources, out types, out ids, out severities, out lengths, out messageLog);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLPushDebugGroupKHR(out nint source, out nint id, out nint length, nint message);
+        private readonly OpenGLPushDebugGroupKHR glPushDebugGroupKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
+        public void PushDebugGroupKHR(out nint source, out nint id, out nint length, nint message) =>
+            this.glPushDebugGroupKHR.Invoke(out source, out id, out length, message);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLPopDebugGroupKHR();
+        private readonly OpenGLPopDebugGroupKHR glPopDebugGroupKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
         public void PopDebugGroupKHR() =>
             this.glPopDebugGroupKHR.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLObjectLabelKHR(ObjectIdentifier identifier, uint name, int length, /*const*/ sbyte* label);
-        private readonly GLObjectLabelKHR glObjectLabelKHR;
+        private delegate void OpenGLObjectLabelKHR(out nint identifier, out nint name, out nint length, nint label);
+        private readonly OpenGLObjectLabelKHR glObjectLabelKHR;
         
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void ObjectLabelKHR(ObjectIdentifier identifier, uint name, int length, /*const*/ sbyte* label) =>
-            this.glObjectLabelKHR.Invoke(identifier, name, length, label);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetObjectLabelKHR(int identifier, uint name, int bufSize, int* length, sbyte* label);
-        private readonly GLGetObjectLabelKHR glGetObjectLabelKHR;
-        
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void GetObjectLabelKHR(int identifier, uint name, int bufSize, int* length, sbyte* label) =>
-            this.glGetObjectLabelKHR.Invoke(identifier, name, bufSize, length, label);
+        [OpenGLExtension("GL_KHR_debug")]
+        public void ObjectLabelKHR(out nint identifier, out nint name, out nint length, nint label) =>
+            this.glObjectLabelKHR.Invoke(out identifier, out name, out length, label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLObjectPtrLabelKHR(nint ptr, int length, /*const*/ sbyte* label);
-        private readonly GLObjectPtrLabelKHR glObjectPtrLabelKHR;
+        private delegate void OpenGLGetObjectLabelKHR(out nint identifier, out nint name, out nint bufSize, out nint length, out nint label);
+        private readonly OpenGLGetObjectLabelKHR glGetObjectLabelKHR;
         
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void ObjectPtrLabelKHR(nint ptr, int length, /*const*/ sbyte* label) =>
-            this.glObjectPtrLabelKHR.Invoke(ptr, length, label);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetObjectPtrLabelKHR(nint ptr, int bufSize, int* length, sbyte* label);
-        private readonly GLGetObjectPtrLabelKHR glGetObjectPtrLabelKHR;
-        
-        [GLExtension("GL_KHR_debug")]
-        public unsafe void GetObjectPtrLabelKHR(nint ptr, int bufSize, int* length, sbyte* label) =>
-            this.glGetObjectPtrLabelKHR.Invoke(ptr, bufSize, length, label);
+        [OpenGLExtension("GL_KHR_debug")]
+        public void GetObjectLabelKHR(out nint identifier, out nint name, out nint bufSize, out nint length, out nint label) =>
+            this.glGetObjectLabelKHR.Invoke(out identifier, out name, out bufSize, out length, out label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetPointervKHR(int pname, out nint @params);
-        private readonly GLGetPointervKHR glGetPointervKHR;
+        private delegate void OpenGLObjectPtrLabelKHR(nint ptr, out nint length, nint label);
+        private readonly OpenGLObjectPtrLabelKHR glObjectPtrLabelKHR;
         
-        [GLExtension("GL_KHR_debug")]
-        public void GetPointervKHR(int pname, out nint @params) =>
-            this.glGetPointervKHR.Invoke(pname, out @params);
+        [OpenGLExtension("GL_KHR_debug")]
+        public void ObjectPtrLabelKHR(nint ptr, out nint length, nint label) =>
+            this.glObjectPtrLabelKHR.Invoke(ptr, out length, label);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate GraphicsResetStatus GLGetGraphicsResetStatus();
-        private readonly GLGetGraphicsResetStatus glGetGraphicsResetStatus;
+        private delegate void OpenGLGetObjectPtrLabelKHR(nint ptr, out nint bufSize, out nint length, out nint label);
+        private readonly OpenGLGetObjectPtrLabelKHR glGetObjectPtrLabelKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
+        public void GetObjectPtrLabelKHR(nint ptr, out nint bufSize, out nint length, out nint label) =>
+            this.glGetObjectPtrLabelKHR.Invoke(ptr, out bufSize, out length, out label);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetPointervKHR(out nint pname, out nint @params);
+        private readonly OpenGLGetPointervKHR glGetPointervKHR;
+        
+        [OpenGLExtension("GL_KHR_debug")]
+        public void GetPointervKHR(out nint pname, out nint @params) =>
+            this.glGetPointervKHR.Invoke(out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate GraphicsResetStatus OpenGLGetGraphicsResetStatus();
+        private readonly OpenGLGetGraphicsResetStatus glGetGraphicsResetStatus;
         
         public GraphicsResetStatus GetGraphicsResetStatus() =>
             this.glGetGraphicsResetStatus.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, out nint data);
-        private readonly GLReadnPixels glReadnPixels;
+        private delegate void OpenGLReadnPixels(out nint x, out nint y, out nint width, out nint height, out nint format, out nint type, out nint bufSize, out nint data);
+        private readonly OpenGLReadnPixels glReadnPixels;
         
-        public void ReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, out nint data) =>
-            this.glReadnPixels.Invoke(x, y, width, height, format, type, bufSize, out data);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetnUniformfv(uint program, int location, int bufSize, float* @params);
-        private readonly GLGetnUniformfv glGetnUniformfv;
-        
-        public unsafe void GetnUniformfv(uint program, int location, int bufSize, float* @params) =>
-            this.glGetnUniformfv.Invoke(program, location, bufSize, @params);
+        public void ReadnPixels(out nint x, out nint y, out nint width, out nint height, out nint format, out nint type, out nint bufSize, out nint data) =>
+            this.glReadnPixels.Invoke(out x, out y, out width, out height, out format, out type, out bufSize, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetnUniformiv(uint program, int location, int bufSize, int* @params);
-        private readonly GLGetnUniformiv glGetnUniformiv;
+        private delegate void OpenGLGetnUniformfv(out nint program, out nint location, out nint bufSize, out nint @params);
+        private readonly OpenGLGetnUniformfv glGetnUniformfv;
         
-        public unsafe void GetnUniformiv(uint program, int location, int bufSize, int* @params) =>
-            this.glGetnUniformiv.Invoke(program, location, bufSize, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetnUniformuiv(uint program, int location, int bufSize, uint* @params);
-        private readonly GLGetnUniformuiv glGetnUniformuiv;
-        
-        public unsafe void GetnUniformuiv(uint program, int location, int bufSize, uint* @params) =>
-            this.glGetnUniformuiv.Invoke(program, location, bufSize, @params);
+        public void GetnUniformfv(out nint program, out nint location, out nint bufSize, out nint @params) =>
+            this.glGetnUniformfv.Invoke(out program, out location, out bufSize, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate GraphicsResetStatus GLGetGraphicsResetStatusKHR();
-        private readonly GLGetGraphicsResetStatusKHR glGetGraphicsResetStatusKHR;
+        private delegate void OpenGLGetnUniformiv(out nint program, out nint location, out nint bufSize, out nint @params);
+        private readonly OpenGLGetnUniformiv glGetnUniformiv;
         
-        [GLExtension("GL_KHR_robustness")]
+        public void GetnUniformiv(out nint program, out nint location, out nint bufSize, out nint @params) =>
+            this.glGetnUniformiv.Invoke(out program, out location, out bufSize, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetnUniformuiv(out nint program, out nint location, out nint bufSize, out nint @params);
+        private readonly OpenGLGetnUniformuiv glGetnUniformuiv;
+        
+        public void GetnUniformuiv(out nint program, out nint location, out nint bufSize, out nint @params) =>
+            this.glGetnUniformuiv.Invoke(out program, out location, out bufSize, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate GraphicsResetStatus OpenGLGetGraphicsResetStatusKHR();
+        private readonly OpenGLGetGraphicsResetStatusKHR glGetGraphicsResetStatusKHR;
+        
+        [OpenGLExtension("GL_KHR_robustness")]
         public GraphicsResetStatus GetGraphicsResetStatusKHR() =>
             this.glGetGraphicsResetStatusKHR.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLReadnPixelsKHR(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, out nint data);
-        private readonly GLReadnPixelsKHR glReadnPixelsKHR;
+        private delegate void OpenGLReadnPixelsKHR(out nint x, out nint y, out nint width, out nint height, out nint format, out nint type, out nint bufSize, out nint data);
+        private readonly OpenGLReadnPixelsKHR glReadnPixelsKHR;
         
-        [GLExtension("GL_KHR_robustness")]
-        public void ReadnPixelsKHR(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, out nint data) =>
-            this.glReadnPixelsKHR.Invoke(x, y, width, height, format, type, bufSize, out data);
+        [OpenGLExtension("GL_KHR_robustness")]
+        public void ReadnPixelsKHR(out nint x, out nint y, out nint width, out nint height, out nint format, out nint type, out nint bufSize, out nint data) =>
+            this.glReadnPixelsKHR.Invoke(out x, out y, out width, out height, out format, out type, out bufSize, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetnUniformfvKHR(uint program, int location, int bufSize, float* @params);
-        private readonly GLGetnUniformfvKHR glGetnUniformfvKHR;
+        private delegate void OpenGLGetnUniformfvKHR(out nint program, out nint location, out nint bufSize, out nint @params);
+        private readonly OpenGLGetnUniformfvKHR glGetnUniformfvKHR;
         
-        [GLExtension("GL_KHR_robustness")]
-        public unsafe void GetnUniformfvKHR(uint program, int location, int bufSize, float* @params) =>
-            this.glGetnUniformfvKHR.Invoke(program, location, bufSize, @params);
+        [OpenGLExtension("GL_KHR_robustness")]
+        public void GetnUniformfvKHR(out nint program, out nint location, out nint bufSize, out nint @params) =>
+            this.glGetnUniformfvKHR.Invoke(out program, out location, out bufSize, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetnUniformivKHR(uint program, int location, int bufSize, int* @params);
-        private readonly GLGetnUniformivKHR glGetnUniformivKHR;
+        private delegate void OpenGLGetnUniformivKHR(out nint program, out nint location, out nint bufSize, out nint @params);
+        private readonly OpenGLGetnUniformivKHR glGetnUniformivKHR;
         
-        [GLExtension("GL_KHR_robustness")]
-        public unsafe void GetnUniformivKHR(uint program, int location, int bufSize, int* @params) =>
-            this.glGetnUniformivKHR.Invoke(program, location, bufSize, @params);
+        [OpenGLExtension("GL_KHR_robustness")]
+        public void GetnUniformivKHR(out nint program, out nint location, out nint bufSize, out nint @params) =>
+            this.glGetnUniformivKHR.Invoke(out program, out location, out bufSize, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetnUniformuivKHR(uint program, int location, int bufSize, uint* @params);
-        private readonly GLGetnUniformuivKHR glGetnUniformuivKHR;
+        private delegate void OpenGLGetnUniformuivKHR(out nint program, out nint location, out nint bufSize, out nint @params);
+        private readonly OpenGLGetnUniformuivKHR glGetnUniformuivKHR;
         
-        [GLExtension("GL_KHR_robustness")]
-        public unsafe void GetnUniformuivKHR(uint program, int location, int bufSize, uint* @params) =>
-            this.glGetnUniformuivKHR.Invoke(program, location, bufSize, @params);
+        [OpenGLExtension("GL_KHR_robustness")]
+        public void GetnUniformuivKHR(out nint program, out nint location, out nint bufSize, out nint @params) =>
+            this.glGetnUniformuivKHR.Invoke(out program, out location, out bufSize, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLMaxShaderCompilerThreadsKHR(uint count);
-        private readonly GLMaxShaderCompilerThreadsKHR glMaxShaderCompilerThreadsKHR;
+        private delegate void OpenGLMaxShaderCompilerThreadsKHR(out nint count);
+        private readonly OpenGLMaxShaderCompilerThreadsKHR glMaxShaderCompilerThreadsKHR;
         
-        [GLExtension("GL_KHR_parallel_shader_compile")]
-        public void MaxShaderCompilerThreadsKHR(uint count) =>
-            this.glMaxShaderCompilerThreadsKHR.Invoke(count);
+        [OpenGLExtension("GL_KHR_parallel_shader_compile")]
+        public void MaxShaderCompilerThreadsKHR(out nint count) =>
+            this.glMaxShaderCompilerThreadsKHR.Invoke(out count);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTextureMultiviewOVR(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews);
-        private readonly GLFramebufferTextureMultiviewOVR glFramebufferTextureMultiviewOVR;
+        private delegate void OpenGLFramebufferTextureMultiviewOVR(out nint target, out nint attachment, out nint texture, out nint level, out nint baseViewIndex, out nint numViews);
+        private readonly OpenGLFramebufferTextureMultiviewOVR glFramebufferTextureMultiviewOVR;
         
-        [GLExtension("GL_OVR_multiview")]
-        public void FramebufferTextureMultiviewOVR(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews) =>
-            this.glFramebufferTextureMultiviewOVR.Invoke(target, attachment, texture, level, baseViewIndex, numViews);
+        [OpenGLExtension("GL_OVR_multiview")]
+        public void FramebufferTextureMultiviewOVR(out nint target, out nint attachment, out nint texture, out nint level, out nint baseViewIndex, out nint numViews) =>
+            this.glFramebufferTextureMultiviewOVR.Invoke(out target, out attachment, out texture, out level, out baseViewIndex, out numViews);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTextureMultisampleMultiviewOVR(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level, int samples, int baseViewIndex, int numViews);
-        private readonly GLFramebufferTextureMultisampleMultiviewOVR glFramebufferTextureMultisampleMultiviewOVR;
+        private delegate void OpenGLFramebufferTextureMultisampleMultiviewOVR(out nint target, out nint attachment, out nint texture, out nint level, out nint samples, out nint baseViewIndex, out nint numViews);
+        private readonly OpenGLFramebufferTextureMultisampleMultiviewOVR glFramebufferTextureMultisampleMultiviewOVR;
         
-        [GLExtension("GL_OVR_multiview_multisampled_render_to_texture")]
-        public void FramebufferTextureMultisampleMultiviewOVR(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level, int samples, int baseViewIndex, int numViews) =>
-            this.glFramebufferTextureMultisampleMultiviewOVR.Invoke(target, attachment, texture, level, samples, baseViewIndex, numViews);
+        [OpenGLExtension("GL_OVR_multiview_multisampled_render_to_texture")]
+        public void FramebufferTextureMultisampleMultiviewOVR(out nint target, out nint attachment, out nint texture, out nint level, out nint samples, out nint baseViewIndex, out nint numViews) =>
+            this.glFramebufferTextureMultisampleMultiviewOVR.Invoke(out target, out attachment, out texture, out level, out samples, out baseViewIndex, out numViews);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawArrays(PrimitiveType mode, int first, int count);
-        private readonly GLDrawArrays glDrawArrays;
+        private delegate void OpenGLDrawArrays(out nint mode, out nint first, out nint count);
+        private readonly OpenGLDrawArrays glDrawArrays;
         
-        public void DrawArrays(PrimitiveType mode, int first, int count) =>
-            this.glDrawArrays.Invoke(mode, first, count);
+        public void DrawArrays(out nint mode, out nint first, out nint count) =>
+            this.glDrawArrays.Invoke(out mode, out first, out count);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawElements(PrimitiveType mode, int count, DrawElementsType type, nint indices);
-        private readonly GLDrawElements glDrawElements;
+        private delegate void OpenGLDrawElements(out nint mode, out nint count, out nint type, nint indices);
+        private readonly OpenGLDrawElements glDrawElements;
         
-        public void DrawElements(PrimitiveType mode, int count, DrawElementsType type, nint indices) =>
-            this.glDrawElements.Invoke(mode, count, type, indices);
+        public void DrawElements(out nint mode, out nint count, out nint type, nint indices) =>
+            this.glDrawElements.Invoke(out mode, out count, out type, indices);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPolygonOffset(float factor, float units);
-        private readonly GLPolygonOffset glPolygonOffset;
+        private delegate void OpenGLPolygonOffset(out nint factor, out nint units);
+        private readonly OpenGLPolygonOffset glPolygonOffset;
         
-        public void PolygonOffset(float factor, float units) =>
-            this.glPolygonOffset.Invoke(factor, units);
+        public void PolygonOffset(out nint factor, out nint units) =>
+            this.glPolygonOffset.Invoke(out factor, out units);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyTexImage1D(TextureTarget target, int level, InternalFormat internalformat, int x, int y, int width, int border);
-        private readonly GLCopyTexImage1D glCopyTexImage1D;
+        private delegate void OpenGLCopyTexImage1D(out nint target, out nint level, out nint internalformat, out nint x, out nint y, out nint width, out nint border);
+        private readonly OpenGLCopyTexImage1D glCopyTexImage1D;
         
-        public void CopyTexImage1D(TextureTarget target, int level, InternalFormat internalformat, int x, int y, int width, int border) =>
-            this.glCopyTexImage1D.Invoke(target, level, internalformat, x, y, width, border);
+        public void CopyTexImage1D(out nint target, out nint level, out nint internalformat, out nint x, out nint y, out nint width, out nint border) =>
+            this.glCopyTexImage1D.Invoke(out target, out level, out internalformat, out x, out y, out width, out border);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyTexImage2D(TextureTarget target, int level, InternalFormat internalformat, int x, int y, int width, int height, int border);
-        private readonly GLCopyTexImage2D glCopyTexImage2D;
+        private delegate void OpenGLCopyTexImage2D(out nint target, out nint level, out nint internalformat, out nint x, out nint y, out nint width, out nint height, out nint border);
+        private readonly OpenGLCopyTexImage2D glCopyTexImage2D;
         
-        public void CopyTexImage2D(TextureTarget target, int level, InternalFormat internalformat, int x, int y, int width, int height, int border) =>
-            this.glCopyTexImage2D.Invoke(target, level, internalformat, x, y, width, height, border);
+        public void CopyTexImage2D(out nint target, out nint level, out nint internalformat, out nint x, out nint y, out nint width, out nint height, out nint border) =>
+            this.glCopyTexImage2D.Invoke(out target, out level, out internalformat, out x, out y, out width, out height, out border);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width);
-        private readonly GLCopyTexSubImage1D glCopyTexSubImage1D;
+        private delegate void OpenGLCopyTexSubImage1D(out nint target, out nint level, out nint xoffset, out nint x, out nint y, out nint width);
+        private readonly OpenGLCopyTexSubImage1D glCopyTexSubImage1D;
         
-        public void CopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width) =>
-            this.glCopyTexSubImage1D.Invoke(target, level, xoffset, x, y, width);
+        public void CopyTexSubImage1D(out nint target, out nint level, out nint xoffset, out nint x, out nint y, out nint width) =>
+            this.glCopyTexSubImage1D.Invoke(out target, out level, out xoffset, out x, out y, out width);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
-        private readonly GLCopyTexSubImage2D glCopyTexSubImage2D;
+        private delegate void OpenGLCopyTexSubImage2D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint x, out nint y, out nint width, out nint height);
+        private readonly OpenGLCopyTexSubImage2D glCopyTexSubImage2D;
         
-        public void CopyTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height) =>
-            this.glCopyTexSubImage2D.Invoke(target, level, xoffset, yoffset, x, y, width, height);
+        public void CopyTexSubImage2D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint x, out nint y, out nint width, out nint height) =>
+            this.glCopyTexSubImage2D.Invoke(out target, out level, out xoffset, out yoffset, out x, out y, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexSubImage1D(TextureTarget target, int level, int xoffset, int width, PixelFormat format, PixelType type, nint pixels);
-        private readonly GLTexSubImage1D glTexSubImage1D;
+        private delegate void OpenGLTexSubImage1D(out nint target, out nint level, out nint xoffset, out nint width, out nint format, out nint type, nint pixels);
+        private readonly OpenGLTexSubImage1D glTexSubImage1D;
         
-        public void TexSubImage1D(TextureTarget target, int level, int xoffset, int width, PixelFormat format, PixelType type, nint pixels) =>
-            this.glTexSubImage1D.Invoke(target, level, xoffset, width, format, type, pixels);
+        public void TexSubImage1D(out nint target, out nint level, out nint xoffset, out nint width, out nint format, out nint type, nint pixels) =>
+            this.glTexSubImage1D.Invoke(out target, out level, out xoffset, out width, out format, out type, pixels);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, PixelFormat format, PixelType type, nint pixels);
-        private readonly GLTexSubImage2D glTexSubImage2D;
+        private delegate void OpenGLTexSubImage2D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint width, out nint height, out nint format, out nint type, nint pixels);
+        private readonly OpenGLTexSubImage2D glTexSubImage2D;
         
-        public void TexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, PixelFormat format, PixelType type, nint pixels) =>
-            this.glTexSubImage2D.Invoke(target, level, xoffset, yoffset, width, height, format, type, pixels);
+        public void TexSubImage2D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint width, out nint height, out nint format, out nint type, nint pixels) =>
+            this.glTexSubImage2D.Invoke(out target, out level, out xoffset, out yoffset, out width, out height, out format, out type, pixels);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindTexture(TextureTarget target, uint texture);
-        private readonly GLBindTexture glBindTexture;
+        private delegate void OpenGLBindTexture(out nint target, out nint texture);
+        private readonly OpenGLBindTexture glBindTexture;
         
-        public void BindTexture(TextureTarget target, uint texture) =>
-            this.glBindTexture.Invoke(target, texture);
+        public void BindTexture(out nint target, out nint texture) =>
+            this.glBindTexture.Invoke(out target, out texture);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteTextures(int n, /*const*/ uint* textures);
-        private readonly GLDeleteTextures glDeleteTextures;
+        private delegate void OpenGLDeleteTextures(out nint n, nint textures);
+        private readonly OpenGLDeleteTextures glDeleteTextures;
         
-        public unsafe void DeleteTextures(int n, /*const*/ uint* textures) =>
-            this.glDeleteTextures.Invoke(n, textures);
+        public void DeleteTextures(out nint n, nint textures) =>
+            this.glDeleteTextures.Invoke(out n, textures);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenTextures(int n, uint* textures);
-        private readonly GLGenTextures glGenTextures;
+        private delegate void OpenGLGenTextures(out nint n, out nint textures);
+        private readonly OpenGLGenTextures glGenTextures;
         
-        public unsafe void GenTextures(int n, uint* textures) =>
-            this.glGenTextures.Invoke(n, textures);
+        public void GenTextures(out nint n, out nint textures) =>
+            this.glGenTextures.Invoke(out n, out textures);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsTexture(uint texture);
-        private readonly GLIsTexture glIsTexture;
+        private delegate bool OpenGLIsTexture(out nint texture);
+        private readonly OpenGLIsTexture glIsTexture;
         
-        public bool IsTexture(uint texture) =>
-            this.glIsTexture.Invoke(texture);
+        public bool IsTexture(out nint texture) =>
+            this.glIsTexture.Invoke(out texture);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLProgramUniformMatrix2fv glProgramUniformMatrix2fv;
+        private delegate void OpenGLProgramUniformMatrix2fv(out nint program, out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLProgramUniformMatrix2fv glProgramUniformMatrix2fv;
         
-        public unsafe void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glProgramUniformMatrix2fv.Invoke(program, location, count, transpose, value);
+        public void ProgramUniformMatrix2fv(out nint program, out nint location, out nint count, out nint transpose, nint value) =>
+            this.glProgramUniformMatrix2fv.Invoke(out program, out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform4fv(uint program, int location, int count, /*const*/ float* value);
-        private readonly GLProgramUniform4fv glProgramUniform4fv;
+        private delegate void OpenGLProgramUniform4fv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform4fv glProgramUniform4fv;
         
-        public unsafe void ProgramUniform4fv(uint program, int location, int count, /*const*/ float* value) =>
-            this.glProgramUniform4fv.Invoke(program, location, count, value);
+        public void ProgramUniform4fv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform4fv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform3fv(uint program, int location, int count, /*const*/ float* value);
-        private readonly GLProgramUniform3fv glProgramUniform3fv;
+        private delegate void OpenGLProgramUniform3fv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform3fv glProgramUniform3fv;
         
-        public unsafe void ProgramUniform3fv(uint program, int location, int count, /*const*/ float* value) =>
-            this.glProgramUniform3fv.Invoke(program, location, count, value);
+        public void ProgramUniform3fv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform3fv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform2fv(uint program, int location, int count, /*const*/ float* value);
-        private readonly GLProgramUniform2fv glProgramUniform2fv;
+        private delegate void OpenGLProgramUniform2fv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform2fv glProgramUniform2fv;
         
-        public unsafe void ProgramUniform2fv(uint program, int location, int count, /*const*/ float* value) =>
-            this.glProgramUniform2fv.Invoke(program, location, count, value);
+        public void ProgramUniform2fv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform2fv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform1fv(uint program, int location, int count, /*const*/ float* value);
-        private readonly GLProgramUniform1fv glProgramUniform1fv;
+        private delegate void OpenGLProgramUniform1fv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform1fv glProgramUniform1fv;
         
-        public unsafe void ProgramUniform1fv(uint program, int location, int count, /*const*/ float* value) =>
-            this.glProgramUniform1fv.Invoke(program, location, count, value);
+        public void ProgramUniform1fv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform1fv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform4uiv(uint program, int location, int count, /*const*/ uint* value);
-        private readonly GLProgramUniform4uiv glProgramUniform4uiv;
+        private delegate void OpenGLProgramUniform4uiv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform4uiv glProgramUniform4uiv;
         
-        public unsafe void ProgramUniform4uiv(uint program, int location, int count, /*const*/ uint* value) =>
-            this.glProgramUniform4uiv.Invoke(program, location, count, value);
+        public void ProgramUniform4uiv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform4uiv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform2uiv(uint program, int location, int count, /*const*/ uint* value);
-        private readonly GLProgramUniform2uiv glProgramUniform2uiv;
+        private delegate void OpenGLProgramUniform2uiv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform2uiv glProgramUniform2uiv;
         
-        public unsafe void ProgramUniform2uiv(uint program, int location, int count, /*const*/ uint* value) =>
-            this.glProgramUniform2uiv.Invoke(program, location, count, value);
+        public void ProgramUniform2uiv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform2uiv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform1uiv(uint program, int location, int count, /*const*/ uint* value);
-        private readonly GLProgramUniform1uiv glProgramUniform1uiv;
+        private delegate void OpenGLProgramUniform1uiv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform1uiv glProgramUniform1uiv;
         
-        public unsafe void ProgramUniform1uiv(uint program, int location, int count, /*const*/ uint* value) =>
-            this.glProgramUniform1uiv.Invoke(program, location, count, value);
+        public void ProgramUniform1uiv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform1uiv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform4iv(uint program, int location, int count, /*const*/ int* value);
-        private readonly GLProgramUniform4iv glProgramUniform4iv;
+        private delegate void OpenGLProgramUniform4iv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform4iv glProgramUniform4iv;
         
-        public unsafe void ProgramUniform4iv(uint program, int location, int count, /*const*/ int* value) =>
-            this.glProgramUniform4iv.Invoke(program, location, count, value);
+        public void ProgramUniform4iv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform4iv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform3iv(uint program, int location, int count, /*const*/ int* value);
-        private readonly GLProgramUniform3iv glProgramUniform3iv;
+        private delegate void OpenGLProgramUniform3iv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform3iv glProgramUniform3iv;
         
-        public unsafe void ProgramUniform3iv(uint program, int location, int count, /*const*/ int* value) =>
-            this.glProgramUniform3iv.Invoke(program, location, count, value);
+        public void ProgramUniform3iv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform3iv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform2iv(uint program, int location, int count, /*const*/ int* value);
-        private readonly GLProgramUniform2iv glProgramUniform2iv;
+        private delegate void OpenGLProgramUniform2iv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform2iv glProgramUniform2iv;
         
-        public unsafe void ProgramUniform2iv(uint program, int location, int count, /*const*/ int* value) =>
-            this.glProgramUniform2iv.Invoke(program, location, count, value);
+        public void ProgramUniform2iv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform2iv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLProgramUniform1iv(uint program, int location, int count, /*const*/ int* value);
-        private readonly GLProgramUniform1iv glProgramUniform1iv;
+        private delegate void OpenGLProgramUniform1iv(out nint program, out nint location, out nint count, nint value);
+        private readonly OpenGLProgramUniform1iv glProgramUniform1iv;
         
-        public unsafe void ProgramUniform1iv(uint program, int location, int count, /*const*/ int* value) =>
-            this.glProgramUniform1iv.Invoke(program, location, count, value);
+        public void ProgramUniform1iv(out nint program, out nint location, out nint count, nint value) =>
+            this.glProgramUniform1iv.Invoke(out program, out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform4f(uint program, int location, float v0, float v1, float v2, float v3);
-        private readonly GLProgramUniform4f glProgramUniform4f;
+        private delegate void OpenGLProgramUniform4f(out nint program, out nint location, out nint v0, out nint v1, out nint v2, out nint v3);
+        private readonly OpenGLProgramUniform4f glProgramUniform4f;
         
-        public void ProgramUniform4f(uint program, int location, float v0, float v1, float v2, float v3) =>
-            this.glProgramUniform4f.Invoke(program, location, v0, v1, v2, v3);
+        public void ProgramUniform4f(out nint program, out nint location, out nint v0, out nint v1, out nint v2, out nint v3) =>
+            this.glProgramUniform4f.Invoke(out program, out location, out v0, out v1, out v2, out v3);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform3f(uint program, int location, float v0, float v1, float v2);
-        private readonly GLProgramUniform3f glProgramUniform3f;
+        private delegate void OpenGLProgramUniform3f(out nint program, out nint location, out nint v0, out nint v1, out nint v2);
+        private readonly OpenGLProgramUniform3f glProgramUniform3f;
         
-        public void ProgramUniform3f(uint program, int location, float v0, float v1, float v2) =>
-            this.glProgramUniform3f.Invoke(program, location, v0, v1, v2);
+        public void ProgramUniform3f(out nint program, out nint location, out nint v0, out nint v1, out nint v2) =>
+            this.glProgramUniform3f.Invoke(out program, out location, out v0, out v1, out v2);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform2f(uint program, int location, float v0, float v1);
-        private readonly GLProgramUniform2f glProgramUniform2f;
+        private delegate void OpenGLProgramUniform2f(out nint program, out nint location, out nint v0, out nint v1);
+        private readonly OpenGLProgramUniform2f glProgramUniform2f;
         
-        public void ProgramUniform2f(uint program, int location, float v0, float v1) =>
-            this.glProgramUniform2f.Invoke(program, location, v0, v1);
+        public void ProgramUniform2f(out nint program, out nint location, out nint v0, out nint v1) =>
+            this.glProgramUniform2f.Invoke(out program, out location, out v0, out v1);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform1f(uint program, int location, float v0);
-        private readonly GLProgramUniform1f glProgramUniform1f;
+        private delegate void OpenGLProgramUniform1f(out nint program, out nint location, out nint v0);
+        private readonly OpenGLProgramUniform1f glProgramUniform1f;
         
-        public void ProgramUniform1f(uint program, int location, float v0) =>
-            this.glProgramUniform1f.Invoke(program, location, v0);
+        public void ProgramUniform1f(out nint program, out nint location, out nint v0) =>
+            this.glProgramUniform1f.Invoke(out program, out location, out v0);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawRangeElements(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, nint indices);
-        private readonly GLDrawRangeElements glDrawRangeElements;
+        private delegate void OpenGLDrawRangeElements(out nint mode, out nint start, out nint end, out nint count, out nint type, nint indices);
+        private readonly OpenGLDrawRangeElements glDrawRangeElements;
         
-        public void DrawRangeElements(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, nint indices) =>
-            this.glDrawRangeElements.Invoke(mode, start, end, count, type, indices);
+        public void DrawRangeElements(out nint mode, out nint start, out nint end, out nint count, out nint type, nint indices) =>
+            this.glDrawRangeElements.Invoke(out mode, out start, out end, out count, out type, indices);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexImage3D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int depth, int border, PixelFormat format, PixelType type, nint pixels);
-        private readonly GLTexImage3D glTexImage3D;
+        private delegate void OpenGLTexImage3D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint depth, out nint border, out nint format, out nint type, nint pixels);
+        private readonly OpenGLTexImage3D glTexImage3D;
         
-        public void TexImage3D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int depth, int border, PixelFormat format, PixelType type, nint pixels) =>
-            this.glTexImage3D.Invoke(target, level, internalformat, width, height, depth, border, format, type, pixels);
+        public void TexImage3D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint depth, out nint border, out nint format, out nint type, nint pixels) =>
+            this.glTexImage3D.Invoke(out target, out level, out internalformat, out width, out height, out depth, out border, out format, out type, pixels);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, nint pixels);
-        private readonly GLTexSubImage3D glTexSubImage3D;
+        private delegate void OpenGLTexSubImage3D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint zoffset, out nint width, out nint height, out nint depth, out nint format, out nint type, nint pixels);
+        private readonly OpenGLTexSubImage3D glTexSubImage3D;
         
-        public void TexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, nint pixels) =>
-            this.glTexSubImage3D.Invoke(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+        public void TexSubImage3D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint zoffset, out nint width, out nint height, out nint depth, out nint format, out nint type, nint pixels) =>
+            this.glTexSubImage3D.Invoke(out target, out level, out xoffset, out yoffset, out zoffset, out width, out height, out depth, out format, out type, pixels);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height);
-        private readonly GLCopyTexSubImage3D glCopyTexSubImage3D;
+        private delegate void OpenGLCopyTexSubImage3D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint zoffset, out nint x, out nint y, out nint width, out nint height);
+        private readonly OpenGLCopyTexSubImage3D glCopyTexSubImage3D;
         
-        public void CopyTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height) =>
-            this.glCopyTexSubImage3D.Invoke(target, level, xoffset, yoffset, zoffset, x, y, width, height);
+        public void CopyTexSubImage3D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint zoffset, out nint x, out nint y, out nint width, out nint height) =>
+            this.glCopyTexSubImage3D.Invoke(out target, out level, out xoffset, out yoffset, out zoffset, out x, out y, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLActiveTexture(TextureUnit texture);
-        private readonly GLActiveTexture glActiveTexture;
+        private delegate void OpenGLActiveTexture(out nint texture);
+        private readonly OpenGLActiveTexture glActiveTexture;
         
-        public void ActiveTexture(TextureUnit texture) =>
-            this.glActiveTexture.Invoke(texture);
+        public void ActiveTexture(out nint texture) =>
+            this.glActiveTexture.Invoke(out texture);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLSampleCoverage(float value, bool invert);
-        private readonly GLSampleCoverage glSampleCoverage;
+        private delegate void OpenGLSampleCoverage(out nint value, out nint invert);
+        private readonly OpenGLSampleCoverage glSampleCoverage;
         
-        public void SampleCoverage(float value, bool invert) =>
-            this.glSampleCoverage.Invoke(value, invert);
+        public void SampleCoverage(out nint value, out nint invert) =>
+            this.glSampleCoverage.Invoke(out value, out invert);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompressedTexImage3D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data);
-        private readonly GLCompressedTexImage3D glCompressedTexImage3D;
+        private delegate void OpenGLCompressedTexImage3D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint depth, out nint border, out nint imageSize, nint data);
+        private readonly OpenGLCompressedTexImage3D glCompressedTexImage3D;
         
-        public void CompressedTexImage3D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data) =>
-            this.glCompressedTexImage3D.Invoke(target, level, internalformat, width, height, depth, border, imageSize, data);
+        public void CompressedTexImage3D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint depth, out nint border, out nint imageSize, nint data) =>
+            this.glCompressedTexImage3D.Invoke(out target, out level, out internalformat, out width, out height, out depth, out border, out imageSize, data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompressedTexImage2D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int border, int imageSize, nint data);
-        private readonly GLCompressedTexImage2D glCompressedTexImage2D;
+        private delegate void OpenGLCompressedTexImage2D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint border, out nint imageSize, nint data);
+        private readonly OpenGLCompressedTexImage2D glCompressedTexImage2D;
         
-        public void CompressedTexImage2D(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int border, int imageSize, nint data) =>
-            this.glCompressedTexImage2D.Invoke(target, level, internalformat, width, height, border, imageSize, data);
+        public void CompressedTexImage2D(out nint target, out nint level, out nint internalformat, out nint width, out nint height, out nint border, out nint imageSize, nint data) =>
+            this.glCompressedTexImage2D.Invoke(out target, out level, out internalformat, out width, out height, out border, out imageSize, data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompressedTexImage1D(TextureTarget target, int level, InternalFormat internalformat, int width, int border, int imageSize, nint data);
-        private readonly GLCompressedTexImage1D glCompressedTexImage1D;
+        private delegate void OpenGLCompressedTexImage1D(out nint target, out nint level, out nint internalformat, out nint width, out nint border, out nint imageSize, nint data);
+        private readonly OpenGLCompressedTexImage1D glCompressedTexImage1D;
         
-        public void CompressedTexImage1D(TextureTarget target, int level, InternalFormat internalformat, int width, int border, int imageSize, nint data) =>
-            this.glCompressedTexImage1D.Invoke(target, level, internalformat, width, border, imageSize, data);
+        public void CompressedTexImage1D(out nint target, out nint level, out nint internalformat, out nint width, out nint border, out nint imageSize, nint data) =>
+            this.glCompressedTexImage1D.Invoke(out target, out level, out internalformat, out width, out border, out imageSize, data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, InternalFormat format, int imageSize, nint data);
-        private readonly GLCompressedTexSubImage3D glCompressedTexSubImage3D;
+        private delegate void OpenGLCompressedTexSubImage3D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint zoffset, out nint width, out nint height, out nint depth, out nint format, out nint imageSize, nint data);
+        private readonly OpenGLCompressedTexSubImage3D glCompressedTexSubImage3D;
         
-        public void CompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, InternalFormat format, int imageSize, nint data) =>
-            this.glCompressedTexSubImage3D.Invoke(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
+        public void CompressedTexSubImage3D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint zoffset, out nint width, out nint height, out nint depth, out nint format, out nint imageSize, nint data) =>
+            this.glCompressedTexSubImage3D.Invoke(out target, out level, out xoffset, out yoffset, out zoffset, out width, out height, out depth, out format, out imageSize, data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompressedTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, InternalFormat format, int imageSize, nint data);
-        private readonly GLCompressedTexSubImage2D glCompressedTexSubImage2D;
+        private delegate void OpenGLCompressedTexSubImage2D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint width, out nint height, out nint format, out nint imageSize, nint data);
+        private readonly OpenGLCompressedTexSubImage2D glCompressedTexSubImage2D;
         
-        public void CompressedTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, InternalFormat format, int imageSize, nint data) =>
-            this.glCompressedTexSubImage2D.Invoke(target, level, xoffset, yoffset, width, height, format, imageSize, data);
+        public void CompressedTexSubImage2D(out nint target, out nint level, out nint xoffset, out nint yoffset, out nint width, out nint height, out nint format, out nint imageSize, nint data) =>
+            this.glCompressedTexSubImage2D.Invoke(out target, out level, out xoffset, out yoffset, out width, out height, out format, out imageSize, data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompressedTexSubImage1D(TextureTarget target, int level, int xoffset, int width, InternalFormat format, int imageSize, nint data);
-        private readonly GLCompressedTexSubImage1D glCompressedTexSubImage1D;
+        private delegate void OpenGLCompressedTexSubImage1D(out nint target, out nint level, out nint xoffset, out nint width, out nint format, out nint imageSize, nint data);
+        private readonly OpenGLCompressedTexSubImage1D glCompressedTexSubImage1D;
         
-        public void CompressedTexSubImage1D(TextureTarget target, int level, int xoffset, int width, InternalFormat format, int imageSize, nint data) =>
-            this.glCompressedTexSubImage1D.Invoke(target, level, xoffset, width, format, imageSize, data);
+        public void CompressedTexSubImage1D(out nint target, out nint level, out nint xoffset, out nint width, out nint format, out nint imageSize, nint data) =>
+            this.glCompressedTexSubImage1D.Invoke(out target, out level, out xoffset, out width, out format, out imageSize, data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetCompressedTexImage(TextureTarget target, int level, out nint img);
-        private readonly GLGetCompressedTexImage glGetCompressedTexImage;
+        private delegate void OpenGLGetCompressedTexImage(out nint target, out nint level, out nint img);
+        private readonly OpenGLGetCompressedTexImage glGetCompressedTexImage;
         
-        public void GetCompressedTexImage(TextureTarget target, int level, out nint img) =>
-            this.glGetCompressedTexImage.Invoke(target, level, out img);
+        public void GetCompressedTexImage(out nint target, out nint level, out nint img) =>
+            this.glGetCompressedTexImage.Invoke(out target, out level, out img);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform4ui(uint program, int location, uint v0, uint v1, uint v2, uint v3);
-        private readonly GLProgramUniform4ui glProgramUniform4ui;
+        private delegate void OpenGLProgramUniform4ui(out nint program, out nint location, out nint v0, out nint v1, out nint v2, out nint v3);
+        private readonly OpenGLProgramUniform4ui glProgramUniform4ui;
         
-        public void ProgramUniform4ui(uint program, int location, uint v0, uint v1, uint v2, uint v3) =>
-            this.glProgramUniform4ui.Invoke(program, location, v0, v1, v2, v3);
+        public void ProgramUniform4ui(out nint program, out nint location, out nint v0, out nint v1, out nint v2, out nint v3) =>
+            this.glProgramUniform4ui.Invoke(out program, out location, out v0, out v1, out v2, out v3);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform3ui(uint program, int location, uint v0, uint v1, uint v2);
-        private readonly GLProgramUniform3ui glProgramUniform3ui;
+        private delegate void OpenGLProgramUniform3ui(out nint program, out nint location, out nint v0, out nint v1, out nint v2);
+        private readonly OpenGLProgramUniform3ui glProgramUniform3ui;
         
-        public void ProgramUniform3ui(uint program, int location, uint v0, uint v1, uint v2) =>
-            this.glProgramUniform3ui.Invoke(program, location, v0, v1, v2);
+        public void ProgramUniform3ui(out nint program, out nint location, out nint v0, out nint v1, out nint v2) =>
+            this.glProgramUniform3ui.Invoke(out program, out location, out v0, out v1, out v2);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform2ui(uint program, int location, uint v0, uint v1);
-        private readonly GLProgramUniform2ui glProgramUniform2ui;
+        private delegate void OpenGLProgramUniform2ui(out nint program, out nint location, out nint v0, out nint v1);
+        private readonly OpenGLProgramUniform2ui glProgramUniform2ui;
         
-        public void ProgramUniform2ui(uint program, int location, uint v0, uint v1) =>
-            this.glProgramUniform2ui.Invoke(program, location, v0, v1);
+        public void ProgramUniform2ui(out nint program, out nint location, out nint v0, out nint v1) =>
+            this.glProgramUniform2ui.Invoke(out program, out location, out v0, out v1);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform1ui(uint program, int location, uint v0);
-        private readonly GLProgramUniform1ui glProgramUniform1ui;
+        private delegate void OpenGLProgramUniform1ui(out nint program, out nint location, out nint v0);
+        private readonly OpenGLProgramUniform1ui glProgramUniform1ui;
         
-        public void ProgramUniform1ui(uint program, int location, uint v0) =>
-            this.glProgramUniform1ui.Invoke(program, location, v0);
+        public void ProgramUniform1ui(out nint program, out nint location, out nint v0) =>
+            this.glProgramUniform1ui.Invoke(out program, out location, out v0);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform4i(uint program, int location, int v0, int v1, int v2, int v3);
-        private readonly GLProgramUniform4i glProgramUniform4i;
+        private delegate void OpenGLProgramUniform4i(out nint program, out nint location, out nint v0, out nint v1, out nint v2, out nint v3);
+        private readonly OpenGLProgramUniform4i glProgramUniform4i;
         
-        public void ProgramUniform4i(uint program, int location, int v0, int v1, int v2, int v3) =>
-            this.glProgramUniform4i.Invoke(program, location, v0, v1, v2, v3);
+        public void ProgramUniform4i(out nint program, out nint location, out nint v0, out nint v1, out nint v2, out nint v3) =>
+            this.glProgramUniform4i.Invoke(out program, out location, out v0, out v1, out v2, out v3);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform3i(uint program, int location, int v0, int v1, int v2);
-        private readonly GLProgramUniform3i glProgramUniform3i;
+        private delegate void OpenGLProgramUniform3i(out nint program, out nint location, out nint v0, out nint v1, out nint v2);
+        private readonly OpenGLProgramUniform3i glProgramUniform3i;
         
-        public void ProgramUniform3i(uint program, int location, int v0, int v1, int v2) =>
-            this.glProgramUniform3i.Invoke(program, location, v0, v1, v2);
+        public void ProgramUniform3i(out nint program, out nint location, out nint v0, out nint v1, out nint v2) =>
+            this.glProgramUniform3i.Invoke(out program, out location, out v0, out v1, out v2);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform2i(uint program, int location, int v0, int v1);
-        private readonly GLProgramUniform2i glProgramUniform2i;
+        private delegate void OpenGLProgramUniform2i(out nint program, out nint location, out nint v0, out nint v1);
+        private readonly OpenGLProgramUniform2i glProgramUniform2i;
         
-        public void ProgramUniform2i(uint program, int location, int v0, int v1) =>
-            this.glProgramUniform2i.Invoke(program, location, v0, v1);
+        public void ProgramUniform2i(out nint program, out nint location, out nint v0, out nint v1) =>
+            this.glProgramUniform2i.Invoke(out program, out location, out v0, out v1);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramUniform1i(uint program, int location, int v0);
-        private readonly GLProgramUniform1i glProgramUniform1i;
+        private delegate void OpenGLProgramUniform1i(out nint program, out nint location, out nint v0);
+        private readonly OpenGLProgramUniform1i glProgramUniform1i;
         
-        public void ProgramUniform1i(uint program, int location, int v0) =>
-            this.glProgramUniform1i.Invoke(program, location, v0);
+        public void ProgramUniform1i(out nint program, out nint location, out nint v0) =>
+            this.glProgramUniform1i.Invoke(out program, out location, out v0);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramPipelineiv(uint pipeline, PipelineParameterName pname, int* @params);
-        private readonly GLGetProgramPipelineiv glGetProgramPipelineiv;
+        private delegate void OpenGLGetProgramPipelineiv(out nint pipeline, out nint pname, out nint @params);
+        private readonly OpenGLGetProgramPipelineiv glGetProgramPipelineiv;
         
-        public unsafe void GetProgramPipelineiv(uint pipeline, PipelineParameterName pname, int* @params) =>
-            this.glGetProgramPipelineiv.Invoke(pipeline, pname, @params);
+        public void GetProgramPipelineiv(out nint pipeline, out nint pname, out nint @params) =>
+            this.glGetProgramPipelineiv.Invoke(out pipeline, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsProgramPipeline(uint pipeline);
-        private readonly GLIsProgramPipeline glIsProgramPipeline;
+        private delegate bool OpenGLIsProgramPipeline(out nint pipeline);
+        private readonly OpenGLIsProgramPipeline glIsProgramPipeline;
         
-        public bool IsProgramPipeline(uint pipeline) =>
-            this.glIsProgramPipeline.Invoke(pipeline);
+        public bool IsProgramPipeline(out nint pipeline) =>
+            this.glIsProgramPipeline.Invoke(out pipeline);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenProgramPipelines(int n, uint* pipelines);
-        private readonly GLGenProgramPipelines glGenProgramPipelines;
+        private delegate void OpenGLGenProgramPipelines(out nint n, out nint pipelines);
+        private readonly OpenGLGenProgramPipelines glGenProgramPipelines;
         
-        public unsafe void GenProgramPipelines(int n, uint* pipelines) =>
-            this.glGenProgramPipelines.Invoke(n, pipelines);
+        public void GenProgramPipelines(out nint n, out nint pipelines) =>
+            this.glGenProgramPipelines.Invoke(out n, out pipelines);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteProgramPipelines(int n, /*const*/ uint* pipelines);
-        private readonly GLDeleteProgramPipelines glDeleteProgramPipelines;
+        private delegate void OpenGLDeleteProgramPipelines(out nint n, nint pipelines);
+        private readonly OpenGLDeleteProgramPipelines glDeleteProgramPipelines;
         
-        public unsafe void DeleteProgramPipelines(int n, /*const*/ uint* pipelines) =>
-            this.glDeleteProgramPipelines.Invoke(n, pipelines);
+        public void DeleteProgramPipelines(out nint n, nint pipelines) =>
+            this.glDeleteProgramPipelines.Invoke(out n, pipelines);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindProgramPipeline(uint pipeline);
-        private readonly GLBindProgramPipeline glBindProgramPipeline;
+        private delegate void OpenGLBindProgramPipeline(out nint pipeline);
+        private readonly OpenGLBindProgramPipeline glBindProgramPipeline;
         
-        public void BindProgramPipeline(uint pipeline) =>
-            this.glBindProgramPipeline.Invoke(pipeline);
+        public void BindProgramPipeline(out nint pipeline) =>
+            this.glBindProgramPipeline.Invoke(out pipeline);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate uint GLCreateShaderProgramv(ShaderType type, int count, sbyte strings);
-        private readonly GLCreateShaderProgramv glCreateShaderProgramv;
+        private delegate uint OpenGLCreateShaderProgramv(out nint type, out nint count, nint strings);
+        private readonly OpenGLCreateShaderProgramv glCreateShaderProgramv;
         
-        public unsafe uint CreateShaderProgramv(ShaderType type, int count, sbyte strings) =>
-            this.glCreateShaderProgramv.Invoke(type, count, strings);
+        public uint CreateShaderProgramv(out nint type, out nint count, nint strings) =>
+            this.glCreateShaderProgramv.Invoke(out type, out count, strings);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLActiveShaderProgram(uint pipeline, uint program);
-        private readonly GLActiveShaderProgram glActiveShaderProgram;
+        private delegate void OpenGLActiveShaderProgram(out nint pipeline, out nint program);
+        private readonly OpenGLActiveShaderProgram glActiveShaderProgram;
         
-        public void ActiveShaderProgram(uint pipeline, uint program) =>
-            this.glActiveShaderProgram.Invoke(pipeline, program);
+        public void ActiveShaderProgram(out nint pipeline, out nint program) =>
+            this.glActiveShaderProgram.Invoke(out pipeline, out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUseProgramStages(uint pipeline, UseProgramStageMask stages, uint program);
-        private readonly GLUseProgramStages glUseProgramStages;
+        private delegate void OpenGLUseProgramStages(out nint pipeline, out nint stages, out nint program);
+        private readonly OpenGLUseProgramStages glUseProgramStages;
         
-        public void UseProgramStages(uint pipeline, UseProgramStageMask stages, uint program) =>
-            this.glUseProgramStages.Invoke(pipeline, stages, program);
+        public void UseProgramStages(out nint pipeline, out nint stages, out nint program) =>
+            this.glUseProgramStages.Invoke(out pipeline, out stages, out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate int GLGetProgramResourceLocation(uint program, ProgramInterface programInterface, /*const*/ sbyte* name);
-        private readonly GLGetProgramResourceLocation glGetProgramResourceLocation;
+        private delegate int OpenGLGetProgramResourceLocation(out nint program, out nint programInterface, nint name);
+        private readonly OpenGLGetProgramResourceLocation glGetProgramResourceLocation;
         
-        public unsafe int GetProgramResourceLocation(uint program, ProgramInterface programInterface, /*const*/ sbyte* name) =>
-            this.glGetProgramResourceLocation.Invoke(program, programInterface, name);
+        public int GetProgramResourceLocation(out nint program, out nint programInterface, nint name) =>
+            this.glGetProgramResourceLocation.Invoke(out program, out programInterface, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramResourceiv(uint program, ProgramInterface programInterface, uint index, int propCount, /*const*/ ProgramResourceProperty* props, int count, int* length, int* @params);
-        private readonly GLGetProgramResourceiv glGetProgramResourceiv;
+        private delegate void OpenGLGetProgramResourceiv(out nint program, out nint programInterface, out nint index, out nint propCount, nint props, out nint count, out nint length, out nint @params);
+        private readonly OpenGLGetProgramResourceiv glGetProgramResourceiv;
         
-        public unsafe void GetProgramResourceiv(uint program, ProgramInterface programInterface, uint index, int propCount, /*const*/ ProgramResourceProperty* props, int count, int* length, int* @params) =>
-            this.glGetProgramResourceiv.Invoke(program, programInterface, index, propCount, props, count, length, @params);
+        public void GetProgramResourceiv(out nint program, out nint programInterface, out nint index, out nint propCount, nint props, out nint count, out nint length, out nint @params) =>
+            this.glGetProgramResourceiv.Invoke(out program, out programInterface, out index, out propCount, props, out count, out length, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramResourceName(uint program, ProgramInterface programInterface, uint index, int bufSize, int* length, sbyte* name);
-        private readonly GLGetProgramResourceName glGetProgramResourceName;
+        private delegate void OpenGLGetProgramResourceName(out nint program, out nint programInterface, out nint index, out nint bufSize, out nint length, out nint name);
+        private readonly OpenGLGetProgramResourceName glGetProgramResourceName;
         
-        public unsafe void GetProgramResourceName(uint program, ProgramInterface programInterface, uint index, int bufSize, int* length, sbyte* name) =>
-            this.glGetProgramResourceName.Invoke(program, programInterface, index, bufSize, length, name);
+        public void GetProgramResourceName(out nint program, out nint programInterface, out nint index, out nint bufSize, out nint length, out nint name) =>
+            this.glGetProgramResourceName.Invoke(out program, out programInterface, out index, out bufSize, out length, out name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate uint GLGetProgramResourceIndex(uint program, ProgramInterface programInterface, /*const*/ sbyte* name);
-        private readonly GLGetProgramResourceIndex glGetProgramResourceIndex;
+        private delegate uint OpenGLGetProgramResourceIndex(out nint program, out nint programInterface, nint name);
+        private readonly OpenGLGetProgramResourceIndex glGetProgramResourceIndex;
         
-        public unsafe uint GetProgramResourceIndex(uint program, ProgramInterface programInterface, /*const*/ sbyte* name) =>
-            this.glGetProgramResourceIndex.Invoke(program, programInterface, name);
+        public uint GetProgramResourceIndex(out nint program, out nint programInterface, nint name) =>
+            this.glGetProgramResourceIndex.Invoke(out program, out programInterface, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramInterfaceiv(uint program, ProgramInterface programInterface, ProgramInterfacePName pname, int* @params);
-        private readonly GLGetProgramInterfaceiv glGetProgramInterfaceiv;
+        private delegate void OpenGLGetProgramInterfaceiv(out nint program, out nint programInterface, out nint pname, out nint @params);
+        private readonly OpenGLGetProgramInterfaceiv glGetProgramInterfaceiv;
         
-        public unsafe void GetProgramInterfaceiv(uint program, ProgramInterface programInterface, ProgramInterfacePName pname, int* @params) =>
-            this.glGetProgramInterfaceiv.Invoke(program, programInterface, pname, @params);
+        public void GetProgramInterfaceiv(out nint program, out nint programInterface, out nint pname, out nint @params) =>
+            this.glGetProgramInterfaceiv.Invoke(out program, out programInterface, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params);
-        private readonly GLGetFramebufferParameteriv glGetFramebufferParameteriv;
+        private delegate void OpenGLGetFramebufferParameteriv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetFramebufferParameteriv glGetFramebufferParameteriv;
         
-        public unsafe void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) =>
-            this.glGetFramebufferParameteriv.Invoke(target, pname, @params);
+        public void GetFramebufferParameteriv(out nint target, out nint pname, out nint @params) =>
+            this.glGetFramebufferParameteriv.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferParameteri(FramebufferTarget target, FramebufferParameterName pname, int param);
-        private readonly GLFramebufferParameteri glFramebufferParameteri;
+        private delegate void OpenGLFramebufferParameteri(out nint target, out nint pname, out nint param);
+        private readonly OpenGLFramebufferParameteri glFramebufferParameteri;
         
-        public void FramebufferParameteri(FramebufferTarget target, FramebufferParameterName pname, int param) =>
-            this.glFramebufferParameteri.Invoke(target, pname, param);
+        public void FramebufferParameteri(out nint target, out nint pname, out nint param) =>
+            this.glFramebufferParameteri.Invoke(out target, out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawElementsIndirect(PrimitiveType mode, DrawElementsType type, nint indirect);
-        private readonly GLDrawElementsIndirect glDrawElementsIndirect;
+        private delegate void OpenGLDrawElementsIndirect(out nint mode, out nint type, nint indirect);
+        private readonly OpenGLDrawElementsIndirect glDrawElementsIndirect;
         
-        public void DrawElementsIndirect(PrimitiveType mode, DrawElementsType type, nint indirect) =>
-            this.glDrawElementsIndirect.Invoke(mode, type, indirect);
+        public void DrawElementsIndirect(out nint mode, out nint type, nint indirect) =>
+            this.glDrawElementsIndirect.Invoke(out mode, out type, indirect);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawArraysIndirect(PrimitiveType mode, nint indirect);
-        private readonly GLDrawArraysIndirect glDrawArraysIndirect;
+        private delegate void OpenGLDrawArraysIndirect(out nint mode, nint indirect);
+        private readonly OpenGLDrawArraysIndirect glDrawArraysIndirect;
         
-        public void DrawArraysIndirect(PrimitiveType mode, nint indirect) =>
-            this.glDrawArraysIndirect.Invoke(mode, indirect);
+        public void DrawArraysIndirect(out nint mode, nint indirect) =>
+            this.glDrawArraysIndirect.Invoke(out mode, indirect);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDispatchComputeIndirect(nint indirect);
-        private readonly GLDispatchComputeIndirect glDispatchComputeIndirect;
+        private delegate void OpenGLDispatchComputeIndirect(out nint indirect);
+        private readonly OpenGLDispatchComputeIndirect glDispatchComputeIndirect;
         
-        public void DispatchComputeIndirect(nint indirect) =>
-            this.glDispatchComputeIndirect.Invoke(indirect);
+        public void DispatchComputeIndirect(out nint indirect) =>
+            this.glDispatchComputeIndirect.Invoke(out indirect);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDispatchCompute(uint num_groups_x, uint num_groups_y, uint num_groups_z);
-        private readonly GLDispatchCompute glDispatchCompute;
+        private delegate void OpenGLDispatchCompute(out nint num_groups_x, out nint num_groups_y, out nint num_groups_z);
+        private readonly OpenGLDispatchCompute glDispatchCompute;
         
-        public void DispatchCompute(uint num_groups_x, uint num_groups_y, uint num_groups_z) =>
-            this.glDispatchCompute.Invoke(num_groups_x, num_groups_y, num_groups_z);
+        public void DispatchCompute(out nint num_groups_x, out nint num_groups_y, out nint num_groups_z) =>
+            this.glDispatchCompute.Invoke(out num_groups_x, out num_groups_y, out num_groups_z);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* @params);
-        private readonly GLGetInternalformativ glGetInternalformativ;
+        private delegate void OpenGLGetInternalformativ(out nint target, out nint internalformat, out nint pname, out nint count, out nint @params);
+        private readonly OpenGLGetInternalformativ glGetInternalformativ;
         
-        public unsafe void GetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* @params) =>
-            this.glGetInternalformativ.Invoke(target, internalformat, pname, count, @params);
+        public void GetInternalformativ(out nint target, out nint internalformat, out nint pname, out nint count, out nint @params) =>
+            this.glGetInternalformativ.Invoke(out target, out internalformat, out pname, out count, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexStorage3D(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height, int depth);
-        private readonly GLTexStorage3D glTexStorage3D;
+        private delegate void OpenGLTexStorage3D(out nint target, out nint levels, out nint internalformat, out nint width, out nint height, out nint depth);
+        private readonly OpenGLTexStorage3D glTexStorage3D;
         
-        public void TexStorage3D(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height, int depth) =>
-            this.glTexStorage3D.Invoke(target, levels, internalformat, width, height, depth);
+        public void TexStorage3D(out nint target, out nint levels, out nint internalformat, out nint width, out nint height, out nint depth) =>
+            this.glTexStorage3D.Invoke(out target, out levels, out internalformat, out width, out height, out depth);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexStorage2D(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height);
-        private readonly GLTexStorage2D glTexStorage2D;
+        private delegate void OpenGLTexStorage2D(out nint target, out nint levels, out nint internalformat, out nint width, out nint height);
+        private readonly OpenGLTexStorage2D glTexStorage2D;
         
-        public void TexStorage2D(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height) =>
-            this.glTexStorage2D.Invoke(target, levels, internalformat, width, height);
+        public void TexStorage2D(out nint target, out nint levels, out nint internalformat, out nint width, out nint height) =>
+            this.glTexStorage2D.Invoke(out target, out levels, out internalformat, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLInvalidateSubFramebuffer(FramebufferTarget target, int numAttachments, /*const*/ InvalidateFramebufferAttachment* attachments, int x, int y, int width, int height);
-        private readonly GLInvalidateSubFramebuffer glInvalidateSubFramebuffer;
+        private delegate void OpenGLInvalidateSubFramebuffer(out nint target, out nint numAttachments, nint attachments, out nint x, out nint y, out nint width, out nint height);
+        private readonly OpenGLInvalidateSubFramebuffer glInvalidateSubFramebuffer;
         
-        public unsafe void InvalidateSubFramebuffer(FramebufferTarget target, int numAttachments, /*const*/ InvalidateFramebufferAttachment* attachments, int x, int y, int width, int height) =>
-            this.glInvalidateSubFramebuffer.Invoke(target, numAttachments, attachments, x, y, width, height);
+        public void InvalidateSubFramebuffer(out nint target, out nint numAttachments, nint attachments, out nint x, out nint y, out nint width, out nint height) =>
+            this.glInvalidateSubFramebuffer.Invoke(out target, out numAttachments, attachments, out x, out y, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLInvalidateFramebuffer(FramebufferTarget target, int numAttachments, /*const*/ InvalidateFramebufferAttachment* attachments);
-        private readonly GLInvalidateFramebuffer glInvalidateFramebuffer;
+        private delegate void OpenGLInvalidateFramebuffer(out nint target, out nint numAttachments, nint attachments);
+        private readonly OpenGLInvalidateFramebuffer glInvalidateFramebuffer;
         
-        public unsafe void InvalidateFramebuffer(FramebufferTarget target, int numAttachments, /*const*/ InvalidateFramebufferAttachment* attachments) =>
-            this.glInvalidateFramebuffer.Invoke(target, numAttachments, attachments);
+        public void InvalidateFramebuffer(out nint target, out nint numAttachments, nint attachments) =>
+            this.glInvalidateFramebuffer.Invoke(out target, out numAttachments, attachments);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramParameteri(uint program, ProgramParameterPName pname, int value);
-        private readonly GLProgramParameteri glProgramParameteri;
+        private delegate void OpenGLProgramParameteri(out nint program, out nint pname, out nint value);
+        private readonly OpenGLProgramParameteri glProgramParameteri;
         
-        public void ProgramParameteri(uint program, ProgramParameterPName pname, int value) =>
-            this.glProgramParameteri.Invoke(program, pname, value);
+        public void ProgramParameteri(out nint program, out nint pname, out nint value) =>
+            this.glProgramParameteri.Invoke(out program, out pname, out value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProgramBinary(uint program, int binaryFormat, nint binary, int length);
-        private readonly GLProgramBinary glProgramBinary;
+        private delegate void OpenGLProgramBinary(out nint program, out nint binaryFormat, nint binary, out nint length);
+        private readonly OpenGLProgramBinary glProgramBinary;
         
-        public void ProgramBinary(uint program, int binaryFormat, nint binary, int length) =>
-            this.glProgramBinary.Invoke(program, binaryFormat, binary, length);
+        public void ProgramBinary(out nint program, out nint binaryFormat, nint binary, out nint length) =>
+            this.glProgramBinary.Invoke(out program, out binaryFormat, binary, out length);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramBinary(uint program, int bufSize, int* length, int* binaryFormat, out nint binary);
-        private readonly GLGetProgramBinary glGetProgramBinary;
+        private delegate void OpenGLGetProgramBinary(out nint program, out nint bufSize, out nint length, out nint binaryFormat, out nint binary);
+        private readonly OpenGLGetProgramBinary glGetProgramBinary;
         
-        public unsafe void GetProgramBinary(uint program, int bufSize, int* length, int* binaryFormat, out nint binary) =>
-            this.glGetProgramBinary.Invoke(program, bufSize, length, binaryFormat, out binary);
+        public void GetProgramBinary(out nint program, out nint bufSize, out nint length, out nint binaryFormat, out nint binary) =>
+            this.glGetProgramBinary.Invoke(out program, out bufSize, out length, out binaryFormat, out binary);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLResumeTransformFeedback();
-        private readonly GLResumeTransformFeedback glResumeTransformFeedback;
+        private delegate void OpenGLResumeTransformFeedback();
+        private readonly OpenGLResumeTransformFeedback glResumeTransformFeedback;
         
         public void ResumeTransformFeedback() =>
             this.glResumeTransformFeedback.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPauseTransformFeedback();
-        private readonly GLPauseTransformFeedback glPauseTransformFeedback;
+        private delegate void OpenGLPauseTransformFeedback();
+        private readonly OpenGLPauseTransformFeedback glPauseTransformFeedback;
         
         public void PauseTransformFeedback() =>
             this.glPauseTransformFeedback.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendFuncSeparate(BlendingFactor sfactorRGB, BlendingFactor dfactorRGB, BlendingFactor sfactorAlpha, BlendingFactor dfactorAlpha);
-        private readonly GLBlendFuncSeparate glBlendFuncSeparate;
+        private delegate void OpenGLBlendFuncSeparate(out nint sfactorRGB, out nint dfactorRGB, out nint sfactorAlpha, out nint dfactorAlpha);
+        private readonly OpenGLBlendFuncSeparate glBlendFuncSeparate;
         
-        public void BlendFuncSeparate(BlendingFactor sfactorRGB, BlendingFactor dfactorRGB, BlendingFactor sfactorAlpha, BlendingFactor dfactorAlpha) =>
-            this.glBlendFuncSeparate.Invoke(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLMultiDrawArrays(PrimitiveType mode, /*const*/ int* first, /*const*/ int* count, int drawcount);
-        private readonly GLMultiDrawArrays glMultiDrawArrays;
-        
-        public unsafe void MultiDrawArrays(PrimitiveType mode, /*const*/ int* first, /*const*/ int* count, int drawcount) =>
-            this.glMultiDrawArrays.Invoke(mode, first, count, drawcount);
+        public void BlendFuncSeparate(out nint sfactorRGB, out nint dfactorRGB, out nint sfactorAlpha, out nint dfactorAlpha) =>
+            this.glBlendFuncSeparate.Invoke(out sfactorRGB, out dfactorRGB, out sfactorAlpha, out dfactorAlpha);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLMultiDrawElements(PrimitiveType mode, /*const*/ int* count, DrawElementsType type, nint indices, int drawcount);
-        private readonly GLMultiDrawElements glMultiDrawElements;
+        private delegate void OpenGLMultiDrawArrays(out nint mode, nint first, nint count, out nint drawcount);
+        private readonly OpenGLMultiDrawArrays glMultiDrawArrays;
         
-        public unsafe void MultiDrawElements(PrimitiveType mode, /*const*/ int* count, DrawElementsType type, nint indices, int drawcount) =>
-            this.glMultiDrawElements.Invoke(mode, count, type, indices, drawcount);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPointParameterf(PointParameterNameARB pname, float param);
-        private readonly GLPointParameterf glPointParameterf;
-        
-        public void PointParameterf(PointParameterNameARB pname, float param) =>
-            this.glPointParameterf.Invoke(pname, param);
+        public void MultiDrawArrays(out nint mode, nint first, nint count, out nint drawcount) =>
+            this.glMultiDrawArrays.Invoke(out mode, first, count, out drawcount);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLPointParameterfv(PointParameterNameARB pname, /*const*/ float* @params);
-        private readonly GLPointParameterfv glPointParameterfv;
+        private delegate void OpenGLMultiDrawElements(out nint mode, nint count, out nint type, nint indices, out nint drawcount);
+        private readonly OpenGLMultiDrawElements glMultiDrawElements;
         
-        public unsafe void PointParameterfv(PointParameterNameARB pname, /*const*/ float* @params) =>
-            this.glPointParameterfv.Invoke(pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPointParameteri(PointParameterNameARB pname, int param);
-        private readonly GLPointParameteri glPointParameteri;
-        
-        public void PointParameteri(PointParameterNameARB pname, int param) =>
-            this.glPointParameteri.Invoke(pname, param);
+        public void MultiDrawElements(out nint mode, nint count, out nint type, nint indices, out nint drawcount) =>
+            this.glMultiDrawElements.Invoke(out mode, count, out type, indices, out drawcount);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLPointParameteriv(PointParameterNameARB pname, /*const*/ int* @params);
-        private readonly GLPointParameteriv glPointParameteriv;
+        private delegate void OpenGLPointParameterf(out nint pname, out nint param);
+        private readonly OpenGLPointParameterf glPointParameterf;
         
-        public unsafe void PointParameteriv(PointParameterNameARB pname, /*const*/ int* @params) =>
-            this.glPointParameteriv.Invoke(pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsTransformFeedback(uint id);
-        private readonly GLIsTransformFeedback glIsTransformFeedback;
-        
-        public bool IsTransformFeedback(uint id) =>
-            this.glIsTransformFeedback.Invoke(id);
+        public void PointParameterf(out nint pname, out nint param) =>
+            this.glPointParameterf.Invoke(out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenTransformFeedbacks(int n, uint* ids);
-        private readonly GLGenTransformFeedbacks glGenTransformFeedbacks;
+        private delegate void OpenGLPointParameterfv(out nint pname, nint @params);
+        private readonly OpenGLPointParameterfv glPointParameterfv;
         
-        public unsafe void GenTransformFeedbacks(int n, uint* ids) =>
-            this.glGenTransformFeedbacks.Invoke(n, ids);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteTransformFeedbacks(int n, /*const*/ uint* ids);
-        private readonly GLDeleteTransformFeedbacks glDeleteTransformFeedbacks;
-        
-        public unsafe void DeleteTransformFeedbacks(int n, /*const*/ uint* ids) =>
-            this.glDeleteTransformFeedbacks.Invoke(n, ids);
+        public void PointParameterfv(out nint pname, nint @params) =>
+            this.glPointParameterfv.Invoke(out pname, @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindTransformFeedback(BindTransformFeedbackTarget target, uint id);
-        private readonly GLBindTransformFeedback glBindTransformFeedback;
+        private delegate void OpenGLPointParameteri(out nint pname, out nint param);
+        private readonly OpenGLPointParameteri glPointParameteri;
         
-        public void BindTransformFeedback(BindTransformFeedbackTarget target, uint id) =>
-            this.glBindTransformFeedback.Invoke(target, id);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLShaderBinary(int count, /*const*/ uint* shaders, ShaderBinaryFormat binaryFormat, nint binary, int length);
-        private readonly GLShaderBinary glShaderBinary;
-        
-        public unsafe void ShaderBinary(int count, /*const*/ uint* shaders, ShaderBinaryFormat binaryFormat, nint binary, int length) =>
-            this.glShaderBinary.Invoke(count, shaders, binaryFormat, binary, length);
+        public void PointParameteri(out nint pname, out nint param) =>
+            this.glPointParameteri.Invoke(out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLReleaseShaderCompiler();
-        private readonly GLReleaseShaderCompiler glReleaseShaderCompiler;
+        private delegate void OpenGLPointParameteriv(out nint pname, nint @params);
+        private readonly OpenGLPointParameteriv glPointParameteriv;
+        
+        public void PointParameteriv(out nint pname, nint @params) =>
+            this.glPointParameteriv.Invoke(out pname, @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate bool OpenGLIsTransformFeedback(out nint id);
+        private readonly OpenGLIsTransformFeedback glIsTransformFeedback;
+        
+        public bool IsTransformFeedback(out nint id) =>
+            this.glIsTransformFeedback.Invoke(out id);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGenTransformFeedbacks(out nint n, out nint ids);
+        private readonly OpenGLGenTransformFeedbacks glGenTransformFeedbacks;
+        
+        public void GenTransformFeedbacks(out nint n, out nint ids) =>
+            this.glGenTransformFeedbacks.Invoke(out n, out ids);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDeleteTransformFeedbacks(out nint n, nint ids);
+        private readonly OpenGLDeleteTransformFeedbacks glDeleteTransformFeedbacks;
+        
+        public void DeleteTransformFeedbacks(out nint n, nint ids) =>
+            this.glDeleteTransformFeedbacks.Invoke(out n, ids);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBindTransformFeedback(out nint target, out nint id);
+        private readonly OpenGLBindTransformFeedback glBindTransformFeedback;
+        
+        public void BindTransformFeedback(out nint target, out nint id) =>
+            this.glBindTransformFeedback.Invoke(out target, out id);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLShaderBinary(out nint count, nint shaders, out nint binaryFormat, nint binary, out nint length);
+        private readonly OpenGLShaderBinary glShaderBinary;
+        
+        public void ShaderBinary(out nint count, nint shaders, out nint binaryFormat, nint binary, out nint length) =>
+            this.glShaderBinary.Invoke(out count, shaders, out binaryFormat, binary, out length);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLReleaseShaderCompiler();
+        private readonly OpenGLReleaseShaderCompiler glReleaseShaderCompiler;
         
         public void ReleaseShaderCompiler() =>
             this.glReleaseShaderCompiler.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetShaderPrecisionFormat(ShaderType shadertype, PrecisionType precisiontype, int* range, int* precision);
-        private readonly GLGetShaderPrecisionFormat glGetShaderPrecisionFormat;
+        private delegate void OpenGLGetShaderPrecisionFormat(out nint shadertype, out nint precisiontype, out nint range, out nint precision);
+        private readonly OpenGLGetShaderPrecisionFormat glGetShaderPrecisionFormat;
         
-        public unsafe void GetShaderPrecisionFormat(ShaderType shadertype, PrecisionType precisiontype, int* range, int* precision) =>
-            this.glGetShaderPrecisionFormat.Invoke(shadertype, precisiontype, range, precision);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDepthRangef(float n, float f);
-        private readonly GLDepthRangef glDepthRangef;
-        
-        public void DepthRangef(float n, float f) =>
-            this.glDepthRangef.Invoke(n, f);
+        public void GetShaderPrecisionFormat(out nint shadertype, out nint precisiontype, out nint range, out nint precision) =>
+            this.glGetShaderPrecisionFormat.Invoke(out shadertype, out precisiontype, out range, out precision);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClearDepthf(float d);
-        private readonly GLClearDepthf glClearDepthf;
+        private delegate void OpenGLDepthRangef(out nint n, out nint f);
+        private readonly OpenGLDepthRangef glDepthRangef;
         
-        public void ClearDepthf(float d) =>
-            this.glClearDepthf.Invoke(d);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribP4uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value);
-        private readonly GLVertexAttribP4uiv glVertexAttribP4uiv;
-        
-        public unsafe void VertexAttribP4uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value) =>
-            this.glVertexAttribP4uiv.Invoke(index, type, normalized, value);
+        public void DepthRangef(out nint n, out nint f) =>
+            this.glDepthRangef.Invoke(out n, out f);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribP4ui(uint index, VertexAttribPointerType type, bool normalized, uint value);
-        private readonly GLVertexAttribP4ui glVertexAttribP4ui;
+        private delegate void OpenGLClearDepthf(out nint d);
+        private readonly OpenGLClearDepthf glClearDepthf;
         
-        public void VertexAttribP4ui(uint index, VertexAttribPointerType type, bool normalized, uint value) =>
-            this.glVertexAttribP4ui.Invoke(index, type, normalized, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribP3uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value);
-        private readonly GLVertexAttribP3uiv glVertexAttribP3uiv;
-        
-        public unsafe void VertexAttribP3uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value) =>
-            this.glVertexAttribP3uiv.Invoke(index, type, normalized, value);
+        public void ClearDepthf(out nint d) =>
+            this.glClearDepthf.Invoke(out d);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribP3ui(uint index, VertexAttribPointerType type, bool normalized, uint value);
-        private readonly GLVertexAttribP3ui glVertexAttribP3ui;
+        private delegate void OpenGLVertexAttribP4uiv(out nint index, out nint type, out nint normalized, nint value);
+        private readonly OpenGLVertexAttribP4uiv glVertexAttribP4uiv;
         
-        public void VertexAttribP3ui(uint index, VertexAttribPointerType type, bool normalized, uint value) =>
-            this.glVertexAttribP3ui.Invoke(index, type, normalized, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribP2uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value);
-        private readonly GLVertexAttribP2uiv glVertexAttribP2uiv;
-        
-        public unsafe void VertexAttribP2uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value) =>
-            this.glVertexAttribP2uiv.Invoke(index, type, normalized, value);
+        public void VertexAttribP4uiv(out nint index, out nint type, out nint normalized, nint value) =>
+            this.glVertexAttribP4uiv.Invoke(out index, out type, out normalized, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribP2ui(uint index, VertexAttribPointerType type, bool normalized, uint value);
-        private readonly GLVertexAttribP2ui glVertexAttribP2ui;
+        private delegate void OpenGLVertexAttribP4ui(out nint index, out nint type, out nint normalized, out nint value);
+        private readonly OpenGLVertexAttribP4ui glVertexAttribP4ui;
         
-        public void VertexAttribP2ui(uint index, VertexAttribPointerType type, bool normalized, uint value) =>
-            this.glVertexAttribP2ui.Invoke(index, type, normalized, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribP1uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value);
-        private readonly GLVertexAttribP1uiv glVertexAttribP1uiv;
-        
-        public unsafe void VertexAttribP1uiv(uint index, VertexAttribPointerType type, bool normalized, /*const*/ uint* value) =>
-            this.glVertexAttribP1uiv.Invoke(index, type, normalized, value);
+        public void VertexAttribP4ui(out nint index, out nint type, out nint normalized, out nint value) =>
+            this.glVertexAttribP4ui.Invoke(out index, out type, out normalized, out value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribP1ui(uint index, VertexAttribPointerType type, bool normalized, uint value);
-        private readonly GLVertexAttribP1ui glVertexAttribP1ui;
+        private delegate void OpenGLVertexAttribP3uiv(out nint index, out nint type, out nint normalized, nint value);
+        private readonly OpenGLVertexAttribP3uiv glVertexAttribP3uiv;
         
-        public void VertexAttribP1ui(uint index, VertexAttribPointerType type, bool normalized, uint value) =>
-            this.glVertexAttribP1ui.Invoke(index, type, normalized, value);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribDivisor(uint index, uint divisor);
-        private readonly GLVertexAttribDivisor glVertexAttribDivisor;
-        
-        public void VertexAttribDivisor(uint index, uint divisor) =>
-            this.glVertexAttribDivisor.Invoke(index, divisor);
+        public void VertexAttribP3uiv(out nint index, out nint type, out nint normalized, nint value) =>
+            this.glVertexAttribP3uiv.Invoke(out index, out type, out normalized, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetQueryObjectui64v(uint id, QueryObjectParameterName pname, ulong* @params);
-        private readonly GLGetQueryObjectui64v glGetQueryObjectui64v;
+        private delegate void OpenGLVertexAttribP3ui(out nint index, out nint type, out nint normalized, out nint value);
+        private readonly OpenGLVertexAttribP3ui glVertexAttribP3ui;
         
-        public unsafe void GetQueryObjectui64v(uint id, QueryObjectParameterName pname, ulong* @params) =>
-            this.glGetQueryObjectui64v.Invoke(id, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetQueryObjecti64v(uint id, QueryObjectParameterName pname, long* @params);
-        private readonly GLGetQueryObjecti64v glGetQueryObjecti64v;
-        
-        public unsafe void GetQueryObjecti64v(uint id, QueryObjectParameterName pname, long* @params) =>
-            this.glGetQueryObjecti64v.Invoke(id, pname, @params);
+        public void VertexAttribP3ui(out nint index, out nint type, out nint normalized, out nint value) =>
+            this.glVertexAttribP3ui.Invoke(out index, out type, out normalized, out value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLQueryCounter(uint id, QueryCounterTarget target);
-        private readonly GLQueryCounter glQueryCounter;
+        private delegate void OpenGLVertexAttribP2uiv(out nint index, out nint type, out nint normalized, nint value);
+        private readonly OpenGLVertexAttribP2uiv glVertexAttribP2uiv;
         
-        public void QueryCounter(uint id, QueryCounterTarget target) =>
-            this.glQueryCounter.Invoke(id, target);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetSamplerParameterIuiv(uint sampler, SamplerParameterI pname, uint* @params);
-        private readonly GLGetSamplerParameterIuiv glGetSamplerParameterIuiv;
-        
-        public unsafe void GetSamplerParameterIuiv(uint sampler, SamplerParameterI pname, uint* @params) =>
-            this.glGetSamplerParameterIuiv.Invoke(sampler, pname, @params);
+        public void VertexAttribP2uiv(out nint index, out nint type, out nint normalized, nint value) =>
+            this.glVertexAttribP2uiv.Invoke(out index, out type, out normalized, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetSamplerParameterfv(uint sampler, SamplerParameterF pname, float* @params);
-        private readonly GLGetSamplerParameterfv glGetSamplerParameterfv;
+        private delegate void OpenGLVertexAttribP2ui(out nint index, out nint type, out nint normalized, out nint value);
+        private readonly OpenGLVertexAttribP2ui glVertexAttribP2ui;
         
-        public unsafe void GetSamplerParameterfv(uint sampler, SamplerParameterF pname, float* @params) =>
-            this.glGetSamplerParameterfv.Invoke(sampler, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetSamplerParameterIiv(uint sampler, SamplerParameterI pname, int* @params);
-        private readonly GLGetSamplerParameterIiv glGetSamplerParameterIiv;
-        
-        public unsafe void GetSamplerParameterIiv(uint sampler, SamplerParameterI pname, int* @params) =>
-            this.glGetSamplerParameterIiv.Invoke(sampler, pname, @params);
+        public void VertexAttribP2ui(out nint index, out nint type, out nint normalized, out nint value) =>
+            this.glVertexAttribP2ui.Invoke(out index, out type, out normalized, out value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetSamplerParameteriv(uint sampler, SamplerParameterI pname, int* @params);
-        private readonly GLGetSamplerParameteriv glGetSamplerParameteriv;
+        private delegate void OpenGLVertexAttribP1uiv(out nint index, out nint type, out nint normalized, nint value);
+        private readonly OpenGLVertexAttribP1uiv glVertexAttribP1uiv;
         
-        public unsafe void GetSamplerParameteriv(uint sampler, SamplerParameterI pname, int* @params) =>
-            this.glGetSamplerParameteriv.Invoke(sampler, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLSamplerParameterIuiv(uint sampler, SamplerParameterI pname, /*const*/ uint* param);
-        private readonly GLSamplerParameterIuiv glSamplerParameterIuiv;
-        
-        public unsafe void SamplerParameterIuiv(uint sampler, SamplerParameterI pname, /*const*/ uint* param) =>
-            this.glSamplerParameterIuiv.Invoke(sampler, pname, param);
+        public void VertexAttribP1uiv(out nint index, out nint type, out nint normalized, nint value) =>
+            this.glVertexAttribP1uiv.Invoke(out index, out type, out normalized, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLSamplerParameterIiv(uint sampler, SamplerParameterI pname, /*const*/ int* param);
-        private readonly GLSamplerParameterIiv glSamplerParameterIiv;
+        private delegate void OpenGLVertexAttribP1ui(out nint index, out nint type, out nint normalized, out nint value);
+        private readonly OpenGLVertexAttribP1ui glVertexAttribP1ui;
         
-        public unsafe void SamplerParameterIiv(uint sampler, SamplerParameterI pname, /*const*/ int* param) =>
-            this.glSamplerParameterIiv.Invoke(sampler, pname, param);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLSamplerParameterfv(uint sampler, SamplerParameterF pname, /*const*/ float* param);
-        private readonly GLSamplerParameterfv glSamplerParameterfv;
-        
-        public unsafe void SamplerParameterfv(uint sampler, SamplerParameterF pname, /*const*/ float* param) =>
-            this.glSamplerParameterfv.Invoke(sampler, pname, param);
+        public void VertexAttribP1ui(out nint index, out nint type, out nint normalized, out nint value) =>
+            this.glVertexAttribP1ui.Invoke(out index, out type, out normalized, out value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLSamplerParameterf(uint sampler, SamplerParameterF pname, float param);
-        private readonly GLSamplerParameterf glSamplerParameterf;
+        private delegate void OpenGLVertexAttribDivisor(out nint index, out nint divisor);
+        private readonly OpenGLVertexAttribDivisor glVertexAttribDivisor;
         
-        public void SamplerParameterf(uint sampler, SamplerParameterF pname, float param) =>
-            this.glSamplerParameterf.Invoke(sampler, pname, param);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLSamplerParameteriv(uint sampler, SamplerParameterI pname, /*const*/ int* param);
-        private readonly GLSamplerParameteriv glSamplerParameteriv;
-        
-        public unsafe void SamplerParameteriv(uint sampler, SamplerParameterI pname, /*const*/ int* param) =>
-            this.glSamplerParameteriv.Invoke(sampler, pname, param);
+        public void VertexAttribDivisor(out nint index, out nint divisor) =>
+            this.glVertexAttribDivisor.Invoke(out index, out divisor);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLSamplerParameteri(uint sampler, SamplerParameterI pname, int param);
-        private readonly GLSamplerParameteri glSamplerParameteri;
+        private delegate void OpenGLGetQueryObjectui64v(out nint id, out nint pname, out nint @params);
+        private readonly OpenGLGetQueryObjectui64v glGetQueryObjectui64v;
         
-        public void SamplerParameteri(uint sampler, SamplerParameterI pname, int param) =>
-            this.glSamplerParameteri.Invoke(sampler, pname, param);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindSampler(uint unit, uint sampler);
-        private readonly GLBindSampler glBindSampler;
-        
-        public void BindSampler(uint unit, uint sampler) =>
-            this.glBindSampler.Invoke(unit, sampler);
+        public void GetQueryObjectui64v(out nint id, out nint pname, out nint @params) =>
+            this.glGetQueryObjectui64v.Invoke(out id, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsSampler(uint sampler);
-        private readonly GLIsSampler glIsSampler;
+        private delegate void OpenGLGetQueryObjecti64v(out nint id, out nint pname, out nint @params);
+        private readonly OpenGLGetQueryObjecti64v glGetQueryObjecti64v;
         
-        public bool IsSampler(uint sampler) =>
-            this.glIsSampler.Invoke(sampler);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteSamplers(int count, /*const*/ uint* samplers);
-        private readonly GLDeleteSamplers glDeleteSamplers;
-        
-        public unsafe void DeleteSamplers(int count, /*const*/ uint* samplers) =>
-            this.glDeleteSamplers.Invoke(count, samplers);
+        public void GetQueryObjecti64v(out nint id, out nint pname, out nint @params) =>
+            this.glGetQueryObjecti64v.Invoke(out id, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenSamplers(int count, uint* samplers);
-        private readonly GLGenSamplers glGenSamplers;
+        private delegate void OpenGLQueryCounter(out nint id, out nint target);
+        private readonly OpenGLQueryCounter glQueryCounter;
         
-        public unsafe void GenSamplers(int count, uint* samplers) =>
-            this.glGenSamplers.Invoke(count, samplers);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate int GLGetFragDataIndex(uint program, /*const*/ sbyte* name);
-        private readonly GLGetFragDataIndex glGetFragDataIndex;
-        
-        public unsafe int GetFragDataIndex(uint program, /*const*/ sbyte* name) =>
-            this.glGetFragDataIndex.Invoke(program, name);
+        public void QueryCounter(out nint id, out nint target) =>
+            this.glQueryCounter.Invoke(out id, out target);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLBindFragDataLocationIndexed(uint program, uint colorNumber, uint index, /*const*/ sbyte* name);
-        private readonly GLBindFragDataLocationIndexed glBindFragDataLocationIndexed;
+        private delegate void OpenGLGetSamplerParameterIuiv(out nint sampler, out nint pname, out nint @params);
+        private readonly OpenGLGetSamplerParameterIuiv glGetSamplerParameterIuiv;
         
-        public unsafe void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, /*const*/ sbyte* name) =>
-            this.glBindFragDataLocationIndexed.Invoke(program, colorNumber, index, name);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetPointerv(GetPointervPName pname, out nint @params);
-        private readonly GLGetPointerv glGetPointerv;
-        
-        public void GetPointerv(GetPointervPName pname, out nint @params) =>
-            this.glGetPointerv.Invoke(pname, out @params);
+        public void GetSamplerParameterIuiv(out nint sampler, out nint pname, out nint @params) =>
+            this.glGetSamplerParameterIuiv.Invoke(out sampler, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendColor(float red, float green, float blue, float alpha);
-        private readonly GLBlendColor glBlendColor;
+        private delegate void OpenGLGetSamplerParameterfv(out nint sampler, out nint pname, out nint @params);
+        private readonly OpenGLGetSamplerParameterfv glGetSamplerParameterfv;
         
-        public void BlendColor(float red, float green, float blue, float alpha) =>
-            this.glBlendColor.Invoke(red, green, blue, alpha);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendEquation(BlendEquationModeEXT mode);
-        private readonly GLBlendEquation glBlendEquation;
-        
-        public void BlendEquation(BlendEquationModeEXT mode) =>
-            this.glBlendEquation.Invoke(mode);
+        public void GetSamplerParameterfv(out nint sampler, out nint pname, out nint @params) =>
+            this.glGetSamplerParameterfv.Invoke(out sampler, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenQueries(int n, uint* ids);
-        private readonly GLGenQueries glGenQueries;
+        private delegate void OpenGLGetSamplerParameterIiv(out nint sampler, out nint pname, out nint @params);
+        private readonly OpenGLGetSamplerParameterIiv glGetSamplerParameterIiv;
         
-        public unsafe void GenQueries(int n, uint* ids) =>
-            this.glGenQueries.Invoke(n, ids);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteQueries(int n, /*const*/ uint* ids);
-        private readonly GLDeleteQueries glDeleteQueries;
-        
-        public unsafe void DeleteQueries(int n, /*const*/ uint* ids) =>
-            this.glDeleteQueries.Invoke(n, ids);
+        public void GetSamplerParameterIiv(out nint sampler, out nint pname, out nint @params) =>
+            this.glGetSamplerParameterIiv.Invoke(out sampler, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsQuery(uint id);
-        private readonly GLIsQuery glIsQuery;
+        private delegate void OpenGLGetSamplerParameteriv(out nint sampler, out nint pname, out nint @params);
+        private readonly OpenGLGetSamplerParameteriv glGetSamplerParameteriv;
         
-        public bool IsQuery(uint id) =>
-            this.glIsQuery.Invoke(id);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBeginQuery(QueryTarget target, uint id);
-        private readonly GLBeginQuery glBeginQuery;
-        
-        public void BeginQuery(QueryTarget target, uint id) =>
-            this.glBeginQuery.Invoke(target, id);
+        public void GetSamplerParameteriv(out nint sampler, out nint pname, out nint @params) =>
+            this.glGetSamplerParameteriv.Invoke(out sampler, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLEndQuery(QueryTarget target);
-        private readonly GLEndQuery glEndQuery;
+        private delegate void OpenGLSamplerParameterIuiv(out nint sampler, out nint pname, nint param);
+        private readonly OpenGLSamplerParameterIuiv glSamplerParameterIuiv;
         
-        public void EndQuery(QueryTarget target) =>
-            this.glEndQuery.Invoke(target);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetQueryiv(QueryTarget target, QueryParameterName pname, int* @params);
-        private readonly GLGetQueryiv glGetQueryiv;
-        
-        public unsafe void GetQueryiv(QueryTarget target, QueryParameterName pname, int* @params) =>
-            this.glGetQueryiv.Invoke(target, pname, @params);
+        public void SamplerParameterIuiv(out nint sampler, out nint pname, nint param) =>
+            this.glSamplerParameterIuiv.Invoke(out sampler, out pname, param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetQueryObjectiv(uint id, QueryObjectParameterName pname, int* @params);
-        private readonly GLGetQueryObjectiv glGetQueryObjectiv;
+        private delegate void OpenGLSamplerParameterIiv(out nint sampler, out nint pname, nint param);
+        private readonly OpenGLSamplerParameterIiv glSamplerParameterIiv;
         
-        public unsafe void GetQueryObjectiv(uint id, QueryObjectParameterName pname, int* @params) =>
-            this.glGetQueryObjectiv.Invoke(id, pname, @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetQueryObjectuiv(uint id, QueryObjectParameterName pname, uint* @params);
-        private readonly GLGetQueryObjectuiv glGetQueryObjectuiv;
-        
-        public unsafe void GetQueryObjectuiv(uint id, QueryObjectParameterName pname, uint* @params) =>
-            this.glGetQueryObjectuiv.Invoke(id, pname, @params);
+        public void SamplerParameterIiv(out nint sampler, out nint pname, nint param) =>
+            this.glSamplerParameterIiv.Invoke(out sampler, out pname, param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindBuffer(BufferTargetARB target, uint buffer);
-        private readonly GLBindBuffer glBindBuffer;
+        private delegate void OpenGLSamplerParameterfv(out nint sampler, out nint pname, nint param);
+        private readonly OpenGLSamplerParameterfv glSamplerParameterfv;
         
-        public void BindBuffer(BufferTargetARB target, uint buffer) =>
-            this.glBindBuffer.Invoke(target, buffer);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteBuffers(int n, /*const*/ uint* buffers);
-        private readonly GLDeleteBuffers glDeleteBuffers;
-        
-        public unsafe void DeleteBuffers(int n, /*const*/ uint* buffers) =>
-            this.glDeleteBuffers.Invoke(n, buffers);
+        public void SamplerParameterfv(out nint sampler, out nint pname, nint param) =>
+            this.glSamplerParameterfv.Invoke(out sampler, out pname, param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenBuffers(int n, uint* buffers);
-        private readonly GLGenBuffers glGenBuffers;
+        private delegate void OpenGLSamplerParameterf(out nint sampler, out nint pname, out nint param);
+        private readonly OpenGLSamplerParameterf glSamplerParameterf;
         
-        public unsafe void GenBuffers(int n, uint* buffers) =>
-            this.glGenBuffers.Invoke(n, buffers);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsBuffer(uint buffer);
-        private readonly GLIsBuffer glIsBuffer;
-        
-        public bool IsBuffer(uint buffer) =>
-            this.glIsBuffer.Invoke(buffer);
+        public void SamplerParameterf(out nint sampler, out nint pname, out nint param) =>
+            this.glSamplerParameterf.Invoke(out sampler, out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBufferData(BufferTargetARB target, nint size, nint data, BufferUsageARB usage);
-        private readonly GLBufferData glBufferData;
+        private delegate void OpenGLSamplerParameteriv(out nint sampler, out nint pname, nint param);
+        private readonly OpenGLSamplerParameteriv glSamplerParameteriv;
         
-        public void BufferData(BufferTargetARB target, nint size, nint data, BufferUsageARB usage) =>
-            this.glBufferData.Invoke(target, size, data, usage);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBufferSubData(BufferTargetARB target, nint offset, nint size, nint data);
-        private readonly GLBufferSubData glBufferSubData;
-        
-        public void BufferSubData(BufferTargetARB target, nint offset, nint size, nint data) =>
-            this.glBufferSubData.Invoke(target, offset, size, data);
+        public void SamplerParameteriv(out nint sampler, out nint pname, nint param) =>
+            this.glSamplerParameteriv.Invoke(out sampler, out pname, param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetBufferSubData(BufferTargetARB target, nint offset, nint size, out nint data);
-        private readonly GLGetBufferSubData glGetBufferSubData;
+        private delegate void OpenGLSamplerParameteri(out nint sampler, out nint pname, out nint param);
+        private readonly OpenGLSamplerParameteri glSamplerParameteri;
         
-        public void GetBufferSubData(BufferTargetARB target, nint offset, nint size, out nint data) =>
-            this.glGetBufferSubData.Invoke(target, offset, size, out data);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate nint GLMapBuffer(BufferTargetARB target, BufferAccessARB access);
-        private readonly GLMapBuffer glMapBuffer;
-        
-        public nint MapBuffer(BufferTargetARB target, BufferAccessARB access) =>
-            this.glMapBuffer.Invoke(target, access);
+        public void SamplerParameteri(out nint sampler, out nint pname, out nint param) =>
+            this.glSamplerParameteri.Invoke(out sampler, out pname, out param);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLUnmapBuffer(BufferTargetARB target);
-        private readonly GLUnmapBuffer glUnmapBuffer;
+        private delegate void OpenGLBindSampler(out nint unit, out nint sampler);
+        private readonly OpenGLBindSampler glBindSampler;
         
-        public bool UnmapBuffer(BufferTargetARB target) =>
-            this.glUnmapBuffer.Invoke(target);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetBufferParameteriv(BufferTargetARB target, BufferPNameARB pname, int* @params);
-        private readonly GLGetBufferParameteriv glGetBufferParameteriv;
-        
-        public unsafe void GetBufferParameteriv(BufferTargetARB target, BufferPNameARB pname, int* @params) =>
-            this.glGetBufferParameteriv.Invoke(target, pname, @params);
+        public void BindSampler(out nint unit, out nint sampler) =>
+            this.glBindSampler.Invoke(out unit, out sampler);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetBufferPointerv(BufferTargetARB target, BufferPointerNameARB pname, out nint @params);
-        private readonly GLGetBufferPointerv glGetBufferPointerv;
+        private delegate bool OpenGLIsSampler(out nint sampler);
+        private readonly OpenGLIsSampler glIsSampler;
         
-        public void GetBufferPointerv(BufferTargetARB target, BufferPointerNameARB pname, out nint @params) =>
-            this.glGetBufferPointerv.Invoke(target, pname, out @params);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlendEquationSeparate(BlendEquationModeEXT modeRGB, BlendEquationModeEXT modeAlpha);
-        private readonly GLBlendEquationSeparate glBlendEquationSeparate;
-        
-        public void BlendEquationSeparate(BlendEquationModeEXT modeRGB, BlendEquationModeEXT modeAlpha) =>
-            this.glBlendEquationSeparate.Invoke(modeRGB, modeAlpha);
+        public bool IsSampler(out nint sampler) =>
+            this.glIsSampler.Invoke(out sampler);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDrawBuffers(int n, /*const*/ DrawBufferMode* bufs);
-        private readonly GLDrawBuffers glDrawBuffers;
+        private delegate void OpenGLDeleteSamplers(out nint count, nint samplers);
+        private readonly OpenGLDeleteSamplers glDeleteSamplers;
         
-        public unsafe void DrawBuffers(int n, /*const*/ DrawBufferMode* bufs) =>
-            this.glDrawBuffers.Invoke(n, bufs);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLStencilOpSeparate(TriangleFace face, StencilOp sfail, StencilOp dpfail, StencilOp dppass);
-        private readonly GLStencilOpSeparate glStencilOpSeparate;
-        
-        public void StencilOpSeparate(TriangleFace face, StencilOp sfail, StencilOp dpfail, StencilOp dppass) =>
-            this.glStencilOpSeparate.Invoke(face, sfail, dpfail, dppass);
+        public void DeleteSamplers(out nint count, nint samplers) =>
+            this.glDeleteSamplers.Invoke(out count, samplers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLStencilFuncSeparate(TriangleFace face, StencilFunction func, int @ref, uint mask);
-        private readonly GLStencilFuncSeparate glStencilFuncSeparate;
+        private delegate void OpenGLGenSamplers(out nint count, out nint samplers);
+        private readonly OpenGLGenSamplers glGenSamplers;
         
-        public void StencilFuncSeparate(TriangleFace face, StencilFunction func, int @ref, uint mask) =>
-            this.glStencilFuncSeparate.Invoke(face, func, @ref, mask);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLStencilMaskSeparate(TriangleFace face, uint mask);
-        private readonly GLStencilMaskSeparate glStencilMaskSeparate;
-        
-        public void StencilMaskSeparate(TriangleFace face, uint mask) =>
-            this.glStencilMaskSeparate.Invoke(face, mask);
+        public void GenSamplers(out nint count, out nint samplers) =>
+            this.glGenSamplers.Invoke(out count, out samplers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLAttachShader(uint program, uint shader);
-        private readonly GLAttachShader glAttachShader;
+        private delegate int OpenGLGetFragDataIndex(out nint program, nint name);
+        private readonly OpenGLGetFragDataIndex glGetFragDataIndex;
         
-        public void AttachShader(uint program, uint shader) =>
-            this.glAttachShader.Invoke(program, shader);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLBindAttribLocation(uint program, uint index, /*const*/ sbyte* name);
-        private readonly GLBindAttribLocation glBindAttribLocation;
-        
-        public unsafe void BindAttribLocation(uint program, uint index, /*const*/ sbyte* name) =>
-            this.glBindAttribLocation.Invoke(program, index, name);
+        public int GetFragDataIndex(out nint program, nint name) =>
+            this.glGetFragDataIndex.Invoke(out program, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCompileShader(uint shader);
-        private readonly GLCompileShader glCompileShader;
+        private delegate void OpenGLBindFragDataLocationIndexed(out nint program, out nint colorNumber, out nint index, nint name);
+        private readonly OpenGLBindFragDataLocationIndexed glBindFragDataLocationIndexed;
         
-        public void CompileShader(uint shader) =>
-            this.glCompileShader.Invoke(shader);
+        public void BindFragDataLocationIndexed(out nint program, out nint colorNumber, out nint index, nint name) =>
+            this.glBindFragDataLocationIndexed.Invoke(out program, out colorNumber, out index, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate uint GLCreateProgram();
-        private readonly GLCreateProgram glCreateProgram;
+        private delegate void OpenGLGetPointerv(out nint pname, out nint @params);
+        private readonly OpenGLGetPointerv glGetPointerv;
+        
+        public void GetPointerv(out nint pname, out nint @params) =>
+            this.glGetPointerv.Invoke(out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendColor(out nint red, out nint green, out nint blue, out nint alpha);
+        private readonly OpenGLBlendColor glBlendColor;
+        
+        public void BlendColor(out nint red, out nint green, out nint blue, out nint alpha) =>
+            this.glBlendColor.Invoke(out red, out green, out blue, out alpha);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendEquation(out nint mode);
+        private readonly OpenGLBlendEquation glBlendEquation;
+        
+        public void BlendEquation(out nint mode) =>
+            this.glBlendEquation.Invoke(out mode);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGenQueries(out nint n, out nint ids);
+        private readonly OpenGLGenQueries glGenQueries;
+        
+        public void GenQueries(out nint n, out nint ids) =>
+            this.glGenQueries.Invoke(out n, out ids);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDeleteQueries(out nint n, nint ids);
+        private readonly OpenGLDeleteQueries glDeleteQueries;
+        
+        public void DeleteQueries(out nint n, nint ids) =>
+            this.glDeleteQueries.Invoke(out n, ids);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate bool OpenGLIsQuery(out nint id);
+        private readonly OpenGLIsQuery glIsQuery;
+        
+        public bool IsQuery(out nint id) =>
+            this.glIsQuery.Invoke(out id);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBeginQuery(out nint target, out nint id);
+        private readonly OpenGLBeginQuery glBeginQuery;
+        
+        public void BeginQuery(out nint target, out nint id) =>
+            this.glBeginQuery.Invoke(out target, out id);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLEndQuery(out nint target);
+        private readonly OpenGLEndQuery glEndQuery;
+        
+        public void EndQuery(out nint target) =>
+            this.glEndQuery.Invoke(out target);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetQueryiv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetQueryiv glGetQueryiv;
+        
+        public void GetQueryiv(out nint target, out nint pname, out nint @params) =>
+            this.glGetQueryiv.Invoke(out target, out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetQueryObjectiv(out nint id, out nint pname, out nint @params);
+        private readonly OpenGLGetQueryObjectiv glGetQueryObjectiv;
+        
+        public void GetQueryObjectiv(out nint id, out nint pname, out nint @params) =>
+            this.glGetQueryObjectiv.Invoke(out id, out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetQueryObjectuiv(out nint id, out nint pname, out nint @params);
+        private readonly OpenGLGetQueryObjectuiv glGetQueryObjectuiv;
+        
+        public void GetQueryObjectuiv(out nint id, out nint pname, out nint @params) =>
+            this.glGetQueryObjectuiv.Invoke(out id, out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBindBuffer(out nint target, out nint buffer);
+        private readonly OpenGLBindBuffer glBindBuffer;
+        
+        public void BindBuffer(out nint target, out nint buffer) =>
+            this.glBindBuffer.Invoke(out target, out buffer);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDeleteBuffers(out nint n, nint buffers);
+        private readonly OpenGLDeleteBuffers glDeleteBuffers;
+        
+        public void DeleteBuffers(out nint n, nint buffers) =>
+            this.glDeleteBuffers.Invoke(out n, buffers);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGenBuffers(out nint n, out nint buffers);
+        private readonly OpenGLGenBuffers glGenBuffers;
+        
+        public void GenBuffers(out nint n, out nint buffers) =>
+            this.glGenBuffers.Invoke(out n, out buffers);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate bool OpenGLIsBuffer(out nint buffer);
+        private readonly OpenGLIsBuffer glIsBuffer;
+        
+        public bool IsBuffer(out nint buffer) =>
+            this.glIsBuffer.Invoke(out buffer);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBufferData(out nint target, out nint size, nint data, out nint usage);
+        private readonly OpenGLBufferData glBufferData;
+        
+        public void BufferData(out nint target, out nint size, nint data, out nint usage) =>
+            this.glBufferData.Invoke(out target, out size, data, out usage);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBufferSubData(out nint target, out nint offset, out nint size, nint data);
+        private readonly OpenGLBufferSubData glBufferSubData;
+        
+        public void BufferSubData(out nint target, out nint offset, out nint size, nint data) =>
+            this.glBufferSubData.Invoke(out target, out offset, out size, data);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetBufferSubData(out nint target, out nint offset, out nint size, out nint data);
+        private readonly OpenGLGetBufferSubData glGetBufferSubData;
+        
+        public void GetBufferSubData(out nint target, out nint offset, out nint size, out nint data) =>
+            this.glGetBufferSubData.Invoke(out target, out offset, out size, out data);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate nint OpenGLMapBuffer(out nint target, out nint access);
+        private readonly OpenGLMapBuffer glMapBuffer;
+        
+        public nint MapBuffer(out nint target, out nint access) =>
+            this.glMapBuffer.Invoke(out target, out access);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate bool OpenGLUnmapBuffer(out nint target);
+        private readonly OpenGLUnmapBuffer glUnmapBuffer;
+        
+        public bool UnmapBuffer(out nint target) =>
+            this.glUnmapBuffer.Invoke(out target);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetBufferParameteriv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetBufferParameteriv glGetBufferParameteriv;
+        
+        public void GetBufferParameteriv(out nint target, out nint pname, out nint @params) =>
+            this.glGetBufferParameteriv.Invoke(out target, out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLGetBufferPointerv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetBufferPointerv glGetBufferPointerv;
+        
+        public void GetBufferPointerv(out nint target, out nint pname, out nint @params) =>
+            this.glGetBufferPointerv.Invoke(out target, out pname, out @params);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBlendEquationSeparate(out nint modeRGB, out nint modeAlpha);
+        private readonly OpenGLBlendEquationSeparate glBlendEquationSeparate;
+        
+        public void BlendEquationSeparate(out nint modeRGB, out nint modeAlpha) =>
+            this.glBlendEquationSeparate.Invoke(out modeRGB, out modeAlpha);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLDrawBuffers(out nint n, nint bufs);
+        private readonly OpenGLDrawBuffers glDrawBuffers;
+        
+        public void DrawBuffers(out nint n, nint bufs) =>
+            this.glDrawBuffers.Invoke(out n, bufs);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLStencilOpSeparate(out nint face, out nint sfail, out nint dpfail, out nint dppass);
+        private readonly OpenGLStencilOpSeparate glStencilOpSeparate;
+        
+        public void StencilOpSeparate(out nint face, out nint sfail, out nint dpfail, out nint dppass) =>
+            this.glStencilOpSeparate.Invoke(out face, out sfail, out dpfail, out dppass);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLStencilFuncSeparate(out nint face, out nint func, out nint @ref, out nint mask);
+        private readonly OpenGLStencilFuncSeparate glStencilFuncSeparate;
+        
+        public void StencilFuncSeparate(out nint face, out nint func, out nint @ref, out nint mask) =>
+            this.glStencilFuncSeparate.Invoke(out face, out func, out @ref, out mask);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLStencilMaskSeparate(out nint face, out nint mask);
+        private readonly OpenGLStencilMaskSeparate glStencilMaskSeparate;
+        
+        public void StencilMaskSeparate(out nint face, out nint mask) =>
+            this.glStencilMaskSeparate.Invoke(out face, out mask);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLAttachShader(out nint program, out nint shader);
+        private readonly OpenGLAttachShader glAttachShader;
+        
+        public void AttachShader(out nint program, out nint shader) =>
+            this.glAttachShader.Invoke(out program, out shader);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBindAttribLocation(out nint program, out nint index, nint name);
+        private readonly OpenGLBindAttribLocation glBindAttribLocation;
+        
+        public void BindAttribLocation(out nint program, out nint index, nint name) =>
+            this.glBindAttribLocation.Invoke(out program, out index, name);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLCompileShader(out nint shader);
+        private readonly OpenGLCompileShader glCompileShader;
+        
+        public void CompileShader(out nint shader) =>
+            this.glCompileShader.Invoke(out shader);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate uint OpenGLCreateProgram();
+        private readonly OpenGLCreateProgram glCreateProgram;
         
         public uint CreateProgram() =>
             this.glCreateProgram.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate uint GLCreateShader(ShaderType type);
-        private readonly GLCreateShader glCreateShader;
+        private delegate uint OpenGLCreateShader(out nint type);
+        private readonly OpenGLCreateShader glCreateShader;
         
-        public uint CreateShader(ShaderType type) =>
-            this.glCreateShader.Invoke(type);
+        public uint CreateShader(out nint type) =>
+            this.glCreateShader.Invoke(out type);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDeleteProgram(uint program);
-        private readonly GLDeleteProgram glDeleteProgram;
+        private delegate void OpenGLDeleteProgram(out nint program);
+        private readonly OpenGLDeleteProgram glDeleteProgram;
         
-        public void DeleteProgram(uint program) =>
-            this.glDeleteProgram.Invoke(program);
+        public void DeleteProgram(out nint program) =>
+            this.glDeleteProgram.Invoke(out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDeleteShader(uint shader);
-        private readonly GLDeleteShader glDeleteShader;
+        private delegate void OpenGLDeleteShader(out nint shader);
+        private readonly OpenGLDeleteShader glDeleteShader;
         
-        public void DeleteShader(uint shader) =>
-            this.glDeleteShader.Invoke(shader);
+        public void DeleteShader(out nint shader) =>
+            this.glDeleteShader.Invoke(out shader);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDetachShader(uint program, uint shader);
-        private readonly GLDetachShader glDetachShader;
+        private delegate void OpenGLDetachShader(out nint program, out nint shader);
+        private readonly OpenGLDetachShader glDetachShader;
         
-        public void DetachShader(uint program, uint shader) =>
-            this.glDetachShader.Invoke(program, shader);
+        public void DetachShader(out nint program, out nint shader) =>
+            this.glDetachShader.Invoke(out program, out shader);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDisableVertexAttribArray(uint index);
-        private readonly GLDisableVertexAttribArray glDisableVertexAttribArray;
+        private delegate void OpenGLDisableVertexAttribArray(out nint index);
+        private readonly OpenGLDisableVertexAttribArray glDisableVertexAttribArray;
         
-        public void DisableVertexAttribArray(uint index) =>
-            this.glDisableVertexAttribArray.Invoke(index);
+        public void DisableVertexAttribArray(out nint index) =>
+            this.glDisableVertexAttribArray.Invoke(out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLEnableVertexAttribArray(uint index);
-        private readonly GLEnableVertexAttribArray glEnableVertexAttribArray;
+        private delegate void OpenGLEnableVertexAttribArray(out nint index);
+        private readonly OpenGLEnableVertexAttribArray glEnableVertexAttribArray;
         
-        public void EnableVertexAttribArray(uint index) =>
-            this.glEnableVertexAttribArray.Invoke(index);
+        public void EnableVertexAttribArray(out nint index) =>
+            this.glEnableVertexAttribArray.Invoke(out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetActiveAttrib(uint program, uint index, int bufSize, int* length, int* size, AttributeType* type, sbyte* name);
-        private readonly GLGetActiveAttrib glGetActiveAttrib;
+        private delegate void OpenGLGetActiveAttrib(out nint program, out nint index, out nint bufSize, out nint length, out nint size, out nint type, out nint name);
+        private readonly OpenGLGetActiveAttrib glGetActiveAttrib;
         
-        public unsafe void GetActiveAttrib(uint program, uint index, int bufSize, int* length, int* size, AttributeType* type, sbyte* name) =>
-            this.glGetActiveAttrib.Invoke(program, index, bufSize, length, size, type, name);
+        public void GetActiveAttrib(out nint program, out nint index, out nint bufSize, out nint length, out nint size, out nint type, out nint name) =>
+            this.glGetActiveAttrib.Invoke(out program, out index, out bufSize, out length, out size, out type, out name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetActiveUniform(uint program, uint index, int bufSize, int* length, int* size, UniformType* type, sbyte* name);
-        private readonly GLGetActiveUniform glGetActiveUniform;
+        private delegate void OpenGLGetActiveUniform(out nint program, out nint index, out nint bufSize, out nint length, out nint size, out nint type, out nint name);
+        private readonly OpenGLGetActiveUniform glGetActiveUniform;
         
-        public unsafe void GetActiveUniform(uint program, uint index, int bufSize, int* length, int* size, UniformType* type, sbyte* name) =>
-            this.glGetActiveUniform.Invoke(program, index, bufSize, length, size, type, name);
+        public void GetActiveUniform(out nint program, out nint index, out nint bufSize, out nint length, out nint size, out nint type, out nint name) =>
+            this.glGetActiveUniform.Invoke(out program, out index, out bufSize, out length, out size, out type, out name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetAttachedShaders(uint program, int maxCount, int* count, uint* shaders);
-        private readonly GLGetAttachedShaders glGetAttachedShaders;
+        private delegate void OpenGLGetAttachedShaders(out nint program, out nint maxCount, out nint count, out nint shaders);
+        private readonly OpenGLGetAttachedShaders glGetAttachedShaders;
         
-        public unsafe void GetAttachedShaders(uint program, int maxCount, int* count, uint* shaders) =>
-            this.glGetAttachedShaders.Invoke(program, maxCount, count, shaders);
+        public void GetAttachedShaders(out nint program, out nint maxCount, out nint count, out nint shaders) =>
+            this.glGetAttachedShaders.Invoke(out program, out maxCount, out count, out shaders);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate int GLGetAttribLocation(uint program, /*const*/ sbyte* name);
-        private readonly GLGetAttribLocation glGetAttribLocation;
+        private delegate int OpenGLGetAttribLocation(out nint program, nint name);
+        private readonly OpenGLGetAttribLocation glGetAttribLocation;
         
-        public unsafe int GetAttribLocation(uint program, /*const*/ sbyte* name) =>
-            this.glGetAttribLocation.Invoke(program, name);
+        public int GetAttribLocation(out nint program, nint name) =>
+            this.glGetAttribLocation.Invoke(out program, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramiv(uint program, ProgramPropertyARB pname, int* @params);
-        private readonly GLGetProgramiv glGetProgramiv;
+        private delegate void OpenGLGetProgramiv(out nint program, out nint pname, out nint @params);
+        private readonly OpenGLGetProgramiv glGetProgramiv;
         
-        public unsafe void GetProgramiv(uint program, ProgramPropertyARB pname, int* @params) =>
-            this.glGetProgramiv.Invoke(program, pname, @params);
+        public void GetProgramiv(out nint program, out nint pname, out nint @params) =>
+            this.glGetProgramiv.Invoke(out program, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetProgramInfoLog(uint program, int bufSize, int* length, sbyte* infoLog);
-        private readonly GLGetProgramInfoLog glGetProgramInfoLog;
+        private delegate void OpenGLGetProgramInfoLog(out nint program, out nint bufSize, out nint length, out nint infoLog);
+        private readonly OpenGLGetProgramInfoLog glGetProgramInfoLog;
         
-        public unsafe void GetProgramInfoLog(uint program, int bufSize, int* length, sbyte* infoLog) =>
-            this.glGetProgramInfoLog.Invoke(program, bufSize, length, infoLog);
+        public void GetProgramInfoLog(out nint program, out nint bufSize, out nint length, out nint infoLog) =>
+            this.glGetProgramInfoLog.Invoke(out program, out bufSize, out length, out infoLog);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetShaderiv(uint shader, ShaderParameterName pname, int* @params);
-        private readonly GLGetShaderiv glGetShaderiv;
+        private delegate void OpenGLGetShaderiv(out nint shader, out nint pname, out nint @params);
+        private readonly OpenGLGetShaderiv glGetShaderiv;
         
-        public unsafe void GetShaderiv(uint shader, ShaderParameterName pname, int* @params) =>
-            this.glGetShaderiv.Invoke(shader, pname, @params);
+        public void GetShaderiv(out nint shader, out nint pname, out nint @params) =>
+            this.glGetShaderiv.Invoke(out shader, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetShaderInfoLog(uint shader, int bufSize, int* length, sbyte* infoLog);
-        private readonly GLGetShaderInfoLog glGetShaderInfoLog;
+        private delegate void OpenGLGetShaderInfoLog(out nint shader, out nint bufSize, out nint length, out nint infoLog);
+        private readonly OpenGLGetShaderInfoLog glGetShaderInfoLog;
         
-        public unsafe void GetShaderInfoLog(uint shader, int bufSize, int* length, sbyte* infoLog) =>
-            this.glGetShaderInfoLog.Invoke(shader, bufSize, length, infoLog);
+        public void GetShaderInfoLog(out nint shader, out nint bufSize, out nint length, out nint infoLog) =>
+            this.glGetShaderInfoLog.Invoke(out shader, out bufSize, out length, out infoLog);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetShaderSource(uint shader, int bufSize, int* length, sbyte* source);
-        private readonly GLGetShaderSource glGetShaderSource;
+        private delegate void OpenGLGetShaderSource(out nint shader, out nint bufSize, out nint length, out nint source);
+        private readonly OpenGLGetShaderSource glGetShaderSource;
         
-        public unsafe void GetShaderSource(uint shader, int bufSize, int* length, sbyte* source) =>
-            this.glGetShaderSource.Invoke(shader, bufSize, length, source);
+        public void GetShaderSource(out nint shader, out nint bufSize, out nint length, out nint source) =>
+            this.glGetShaderSource.Invoke(out shader, out bufSize, out length, out source);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate int GLGetUniformLocation(uint program, /*const*/ sbyte* name);
-        private readonly GLGetUniformLocation glGetUniformLocation;
+        private delegate int OpenGLGetUniformLocation(out nint program, nint name);
+        private readonly OpenGLGetUniformLocation glGetUniformLocation;
         
-        public unsafe int GetUniformLocation(uint program, /*const*/ sbyte* name) =>
-            this.glGetUniformLocation.Invoke(program, name);
+        public int GetUniformLocation(out nint program, nint name) =>
+            this.glGetUniformLocation.Invoke(out program, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetUniformfv(uint program, int location, float* @params);
-        private readonly GLGetUniformfv glGetUniformfv;
+        private delegate void OpenGLGetUniformfv(out nint program, out nint location, out nint @params);
+        private readonly OpenGLGetUniformfv glGetUniformfv;
         
-        public unsafe void GetUniformfv(uint program, int location, float* @params) =>
-            this.glGetUniformfv.Invoke(program, location, @params);
+        public void GetUniformfv(out nint program, out nint location, out nint @params) =>
+            this.glGetUniformfv.Invoke(out program, out location, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetUniformiv(uint program, int location, int* @params);
-        private readonly GLGetUniformiv glGetUniformiv;
+        private delegate void OpenGLGetUniformiv(out nint program, out nint location, out nint @params);
+        private readonly OpenGLGetUniformiv glGetUniformiv;
         
-        public unsafe void GetUniformiv(uint program, int location, int* @params) =>
-            this.glGetUniformiv.Invoke(program, location, @params);
+        public void GetUniformiv(out nint program, out nint location, out nint @params) =>
+            this.glGetUniformiv.Invoke(out program, out location, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetVertexAttribdv(uint index, VertexAttribPropertyARB pname, double* @params);
-        private readonly GLGetVertexAttribdv glGetVertexAttribdv;
+        private delegate void OpenGLGetVertexAttribdv(out nint index, out nint pname, out nint @params);
+        private readonly OpenGLGetVertexAttribdv glGetVertexAttribdv;
         
-        public unsafe void GetVertexAttribdv(uint index, VertexAttribPropertyARB pname, double* @params) =>
-            this.glGetVertexAttribdv.Invoke(index, pname, @params);
+        public void GetVertexAttribdv(out nint index, out nint pname, out nint @params) =>
+            this.glGetVertexAttribdv.Invoke(out index, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetVertexAttribfv(uint index, VertexAttribPropertyARB pname, float* @params);
-        private readonly GLGetVertexAttribfv glGetVertexAttribfv;
+        private delegate void OpenGLGetVertexAttribfv(out nint index, out nint pname, out nint @params);
+        private readonly OpenGLGetVertexAttribfv glGetVertexAttribfv;
         
-        public unsafe void GetVertexAttribfv(uint index, VertexAttribPropertyARB pname, float* @params) =>
-            this.glGetVertexAttribfv.Invoke(index, pname, @params);
+        public void GetVertexAttribfv(out nint index, out nint pname, out nint @params) =>
+            this.glGetVertexAttribfv.Invoke(out index, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetVertexAttribiv(uint index, VertexAttribPropertyARB pname, int* @params);
-        private readonly GLGetVertexAttribiv glGetVertexAttribiv;
+        private delegate void OpenGLGetVertexAttribiv(out nint index, out nint pname, out nint @params);
+        private readonly OpenGLGetVertexAttribiv glGetVertexAttribiv;
         
-        public unsafe void GetVertexAttribiv(uint index, VertexAttribPropertyARB pname, int* @params) =>
-            this.glGetVertexAttribiv.Invoke(index, pname, @params);
+        public void GetVertexAttribiv(out nint index, out nint pname, out nint @params) =>
+            this.glGetVertexAttribiv.Invoke(out index, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGetVertexAttribPointerv(uint index, VertexAttribPointerPropertyARB pname, out nint pointer);
-        private readonly GLGetVertexAttribPointerv glGetVertexAttribPointerv;
+        private delegate void OpenGLGetVertexAttribPointerv(out nint index, out nint pname, out nint pointer);
+        private readonly OpenGLGetVertexAttribPointerv glGetVertexAttribPointerv;
         
-        public void GetVertexAttribPointerv(uint index, VertexAttribPointerPropertyARB pname, out nint pointer) =>
-            this.glGetVertexAttribPointerv.Invoke(index, pname, out pointer);
+        public void GetVertexAttribPointerv(out nint index, out nint pname, out nint pointer) =>
+            this.glGetVertexAttribPointerv.Invoke(out index, out pname, out pointer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsProgram(uint program);
-        private readonly GLIsProgram glIsProgram;
+        private delegate bool OpenGLIsProgram(out nint program);
+        private readonly OpenGLIsProgram glIsProgram;
         
-        public bool IsProgram(uint program) =>
-            this.glIsProgram.Invoke(program);
+        public bool IsProgram(out nint program) =>
+            this.glIsProgram.Invoke(out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsShader(uint shader);
-        private readonly GLIsShader glIsShader;
+        private delegate bool OpenGLIsShader(out nint shader);
+        private readonly OpenGLIsShader glIsShader;
         
-        public bool IsShader(uint shader) =>
-            this.glIsShader.Invoke(shader);
+        public bool IsShader(out nint shader) =>
+            this.glIsShader.Invoke(out shader);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLLinkProgram(uint program);
-        private readonly GLLinkProgram glLinkProgram;
+        private delegate void OpenGLLinkProgram(out nint program);
+        private readonly OpenGLLinkProgram glLinkProgram;
         
-        public void LinkProgram(uint program) =>
-            this.glLinkProgram.Invoke(program);
+        public void LinkProgram(out nint program) =>
+            this.glLinkProgram.Invoke(out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLShaderSource(uint shader, int count, sbyte @string, /*const*/ int* length);
-        private readonly GLShaderSource glShaderSource;
+        private delegate void OpenGLShaderSource(out nint shader, out nint count, nint @string, nint length);
+        private readonly OpenGLShaderSource glShaderSource;
         
-        public unsafe void ShaderSource(uint shader, int count, sbyte @string, /*const*/ int* length) =>
-            this.glShaderSource.Invoke(shader, count, @string, length);
+        public void ShaderSource(out nint shader, out nint count, nint @string, nint length) =>
+            this.glShaderSource.Invoke(out shader, out count, @string, length);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUseProgram(uint program);
-        private readonly GLUseProgram glUseProgram;
+        private delegate void OpenGLUseProgram(out nint program);
+        private readonly OpenGLUseProgram glUseProgram;
         
-        public void UseProgram(uint program) =>
-            this.glUseProgram.Invoke(program);
+        public void UseProgram(out nint program) =>
+            this.glUseProgram.Invoke(out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform1f(int location, float v0);
-        private readonly GLUniform1f glUniform1f;
+        private delegate void OpenGLUniform1f(out nint location, out nint v0);
+        private readonly OpenGLUniform1f glUniform1f;
         
-        public void Uniform1f(int location, float v0) =>
-            this.glUniform1f.Invoke(location, v0);
+        public void Uniform1f(out nint location, out nint v0) =>
+            this.glUniform1f.Invoke(out location, out v0);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform2f(int location, float v0, float v1);
-        private readonly GLUniform2f glUniform2f;
+        private delegate void OpenGLUniform2f(out nint location, out nint v0, out nint v1);
+        private readonly OpenGLUniform2f glUniform2f;
         
-        public void Uniform2f(int location, float v0, float v1) =>
-            this.glUniform2f.Invoke(location, v0, v1);
+        public void Uniform2f(out nint location, out nint v0, out nint v1) =>
+            this.glUniform2f.Invoke(out location, out v0, out v1);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform3f(int location, float v0, float v1, float v2);
-        private readonly GLUniform3f glUniform3f;
+        private delegate void OpenGLUniform3f(out nint location, out nint v0, out nint v1, out nint v2);
+        private readonly OpenGLUniform3f glUniform3f;
         
-        public void Uniform3f(int location, float v0, float v1, float v2) =>
-            this.glUniform3f.Invoke(location, v0, v1, v2);
+        public void Uniform3f(out nint location, out nint v0, out nint v1, out nint v2) =>
+            this.glUniform3f.Invoke(out location, out v0, out v1, out v2);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform4f(int location, float v0, float v1, float v2, float v3);
-        private readonly GLUniform4f glUniform4f;
+        private delegate void OpenGLUniform4f(out nint location, out nint v0, out nint v1, out nint v2, out nint v3);
+        private readonly OpenGLUniform4f glUniform4f;
         
-        public void Uniform4f(int location, float v0, float v1, float v2, float v3) =>
-            this.glUniform4f.Invoke(location, v0, v1, v2, v3);
+        public void Uniform4f(out nint location, out nint v0, out nint v1, out nint v2, out nint v3) =>
+            this.glUniform4f.Invoke(out location, out v0, out v1, out v2, out v3);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform1i(int location, int v0);
-        private readonly GLUniform1i glUniform1i;
+        private delegate void OpenGLUniform1i(out nint location, out nint v0);
+        private readonly OpenGLUniform1i glUniform1i;
         
-        public void Uniform1i(int location, int v0) =>
-            this.glUniform1i.Invoke(location, v0);
+        public void Uniform1i(out nint location, out nint v0) =>
+            this.glUniform1i.Invoke(out location, out v0);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform2i(int location, int v0, int v1);
-        private readonly GLUniform2i glUniform2i;
+        private delegate void OpenGLUniform2i(out nint location, out nint v0, out nint v1);
+        private readonly OpenGLUniform2i glUniform2i;
         
-        public void Uniform2i(int location, int v0, int v1) =>
-            this.glUniform2i.Invoke(location, v0, v1);
+        public void Uniform2i(out nint location, out nint v0, out nint v1) =>
+            this.glUniform2i.Invoke(out location, out v0, out v1);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform3i(int location, int v0, int v1, int v2);
-        private readonly GLUniform3i glUniform3i;
+        private delegate void OpenGLUniform3i(out nint location, out nint v0, out nint v1, out nint v2);
+        private readonly OpenGLUniform3i glUniform3i;
         
-        public void Uniform3i(int location, int v0, int v1, int v2) =>
-            this.glUniform3i.Invoke(location, v0, v1, v2);
+        public void Uniform3i(out nint location, out nint v0, out nint v1, out nint v2) =>
+            this.glUniform3i.Invoke(out location, out v0, out v1, out v2);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform4i(int location, int v0, int v1, int v2, int v3);
-        private readonly GLUniform4i glUniform4i;
+        private delegate void OpenGLUniform4i(out nint location, out nint v0, out nint v1, out nint v2, out nint v3);
+        private readonly OpenGLUniform4i glUniform4i;
         
-        public void Uniform4i(int location, int v0, int v1, int v2, int v3) =>
-            this.glUniform4i.Invoke(location, v0, v1, v2, v3);
+        public void Uniform4i(out nint location, out nint v0, out nint v1, out nint v2, out nint v3) =>
+            this.glUniform4i.Invoke(out location, out v0, out v1, out v2, out v3);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform1fv(int location, int count, /*const*/ float* value);
-        private readonly GLUniform1fv glUniform1fv;
+        private delegate void OpenGLUniform1fv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform1fv glUniform1fv;
         
-        public unsafe void Uniform1fv(int location, int count, /*const*/ float* value) =>
-            this.glUniform1fv.Invoke(location, count, value);
+        public void Uniform1fv(out nint location, out nint count, nint value) =>
+            this.glUniform1fv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform2fv(int location, int count, /*const*/ float* value);
-        private readonly GLUniform2fv glUniform2fv;
+        private delegate void OpenGLUniform2fv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform2fv glUniform2fv;
         
-        public unsafe void Uniform2fv(int location, int count, /*const*/ float* value) =>
-            this.glUniform2fv.Invoke(location, count, value);
+        public void Uniform2fv(out nint location, out nint count, nint value) =>
+            this.glUniform2fv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform3fv(int location, int count, /*const*/ float* value);
-        private readonly GLUniform3fv glUniform3fv;
+        private delegate void OpenGLUniform3fv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform3fv glUniform3fv;
         
-        public unsafe void Uniform3fv(int location, int count, /*const*/ float* value) =>
-            this.glUniform3fv.Invoke(location, count, value);
+        public void Uniform3fv(out nint location, out nint count, nint value) =>
+            this.glUniform3fv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform4fv(int location, int count, /*const*/ float* value);
-        private readonly GLUniform4fv glUniform4fv;
+        private delegate void OpenGLUniform4fv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform4fv glUniform4fv;
         
-        public unsafe void Uniform4fv(int location, int count, /*const*/ float* value) =>
-            this.glUniform4fv.Invoke(location, count, value);
+        public void Uniform4fv(out nint location, out nint count, nint value) =>
+            this.glUniform4fv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform1iv(int location, int count, /*const*/ int* value);
-        private readonly GLUniform1iv glUniform1iv;
+        private delegate void OpenGLUniform1iv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform1iv glUniform1iv;
         
-        public unsafe void Uniform1iv(int location, int count, /*const*/ int* value) =>
-            this.glUniform1iv.Invoke(location, count, value);
+        public void Uniform1iv(out nint location, out nint count, nint value) =>
+            this.glUniform1iv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform2iv(int location, int count, /*const*/ int* value);
-        private readonly GLUniform2iv glUniform2iv;
+        private delegate void OpenGLUniform2iv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform2iv glUniform2iv;
         
-        public unsafe void Uniform2iv(int location, int count, /*const*/ int* value) =>
-            this.glUniform2iv.Invoke(location, count, value);
+        public void Uniform2iv(out nint location, out nint count, nint value) =>
+            this.glUniform2iv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform3iv(int location, int count, /*const*/ int* value);
-        private readonly GLUniform3iv glUniform3iv;
+        private delegate void OpenGLUniform3iv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform3iv glUniform3iv;
         
-        public unsafe void Uniform3iv(int location, int count, /*const*/ int* value) =>
-            this.glUniform3iv.Invoke(location, count, value);
+        public void Uniform3iv(out nint location, out nint count, nint value) =>
+            this.glUniform3iv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform4iv(int location, int count, /*const*/ int* value);
-        private readonly GLUniform4iv glUniform4iv;
+        private delegate void OpenGLUniform4iv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform4iv glUniform4iv;
         
-        public unsafe void Uniform4iv(int location, int count, /*const*/ int* value) =>
-            this.glUniform4iv.Invoke(location, count, value);
+        public void Uniform4iv(out nint location, out nint count, nint value) =>
+            this.glUniform4iv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix2fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix2fv glUniformMatrix2fv;
+        private delegate void OpenGLUniformMatrix2fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix2fv glUniformMatrix2fv;
         
-        public unsafe void UniformMatrix2fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix2fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix2fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix2fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix3fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix3fv glUniformMatrix3fv;
+        private delegate void OpenGLUniformMatrix3fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix3fv glUniformMatrix3fv;
         
-        public unsafe void UniformMatrix3fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix3fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix3fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix3fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix4fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix4fv glUniformMatrix4fv;
+        private delegate void OpenGLUniformMatrix4fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix4fv glUniformMatrix4fv;
         
-        public unsafe void UniformMatrix4fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix4fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix4fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix4fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLValidateProgram(uint program);
-        private readonly GLValidateProgram glValidateProgram;
+        private delegate void OpenGLValidateProgram(out nint program);
+        private readonly OpenGLValidateProgram glValidateProgram;
         
-        public void ValidateProgram(uint program) =>
-            this.glValidateProgram.Invoke(program);
+        public void ValidateProgram(out nint program) =>
+            this.glValidateProgram.Invoke(out program);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib1d(uint index, double x);
-        private readonly GLVertexAttrib1d glVertexAttrib1d;
+        private delegate void OpenGLVertexAttrib1d(out nint index, out nint x);
+        private readonly OpenGLVertexAttrib1d glVertexAttrib1d;
         
-        public void VertexAttrib1d(uint index, double x) =>
-            this.glVertexAttrib1d.Invoke(index, x);
+        public void VertexAttrib1d(out nint index, out nint x) =>
+            this.glVertexAttrib1d.Invoke(out index, out x);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib1dv(uint index, /*const*/ double* v);
-        private readonly GLVertexAttrib1dv glVertexAttrib1dv;
+        private delegate void OpenGLVertexAttrib1dv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib1dv glVertexAttrib1dv;
         
-        public unsafe void VertexAttrib1dv(uint index, /*const*/ double* v) =>
-            this.glVertexAttrib1dv.Invoke(index, v);
+        public void VertexAttrib1dv(out nint index, nint v) =>
+            this.glVertexAttrib1dv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib1f(uint index, float x);
-        private readonly GLVertexAttrib1f glVertexAttrib1f;
+        private delegate void OpenGLVertexAttrib1f(out nint index, out nint x);
+        private readonly OpenGLVertexAttrib1f glVertexAttrib1f;
         
-        public void VertexAttrib1f(uint index, float x) =>
-            this.glVertexAttrib1f.Invoke(index, x);
+        public void VertexAttrib1f(out nint index, out nint x) =>
+            this.glVertexAttrib1f.Invoke(out index, out x);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib1fv(uint index, /*const*/ float* v);
-        private readonly GLVertexAttrib1fv glVertexAttrib1fv;
+        private delegate void OpenGLVertexAttrib1fv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib1fv glVertexAttrib1fv;
         
-        public unsafe void VertexAttrib1fv(uint index, /*const*/ float* v) =>
-            this.glVertexAttrib1fv.Invoke(index, v);
+        public void VertexAttrib1fv(out nint index, nint v) =>
+            this.glVertexAttrib1fv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib1s(uint index, short x);
-        private readonly GLVertexAttrib1s glVertexAttrib1s;
+        private delegate void OpenGLVertexAttrib1s(out nint index, out nint x);
+        private readonly OpenGLVertexAttrib1s glVertexAttrib1s;
         
-        public void VertexAttrib1s(uint index, short x) =>
-            this.glVertexAttrib1s.Invoke(index, x);
+        public void VertexAttrib1s(out nint index, out nint x) =>
+            this.glVertexAttrib1s.Invoke(out index, out x);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib1sv(uint index, /*const*/ short* v);
-        private readonly GLVertexAttrib1sv glVertexAttrib1sv;
+        private delegate void OpenGLVertexAttrib1sv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib1sv glVertexAttrib1sv;
         
-        public unsafe void VertexAttrib1sv(uint index, /*const*/ short* v) =>
-            this.glVertexAttrib1sv.Invoke(index, v);
+        public void VertexAttrib1sv(out nint index, nint v) =>
+            this.glVertexAttrib1sv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib2d(uint index, double x, double y);
-        private readonly GLVertexAttrib2d glVertexAttrib2d;
+        private delegate void OpenGLVertexAttrib2d(out nint index, out nint x, out nint y);
+        private readonly OpenGLVertexAttrib2d glVertexAttrib2d;
         
-        public void VertexAttrib2d(uint index, double x, double y) =>
-            this.glVertexAttrib2d.Invoke(index, x, y);
+        public void VertexAttrib2d(out nint index, out nint x, out nint y) =>
+            this.glVertexAttrib2d.Invoke(out index, out x, out y);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib2dv(uint index, /*const*/ double* v);
-        private readonly GLVertexAttrib2dv glVertexAttrib2dv;
+        private delegate void OpenGLVertexAttrib2dv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib2dv glVertexAttrib2dv;
         
-        public unsafe void VertexAttrib2dv(uint index, /*const*/ double* v) =>
-            this.glVertexAttrib2dv.Invoke(index, v);
+        public void VertexAttrib2dv(out nint index, nint v) =>
+            this.glVertexAttrib2dv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib2f(uint index, float x, float y);
-        private readonly GLVertexAttrib2f glVertexAttrib2f;
+        private delegate void OpenGLVertexAttrib2f(out nint index, out nint x, out nint y);
+        private readonly OpenGLVertexAttrib2f glVertexAttrib2f;
         
-        public void VertexAttrib2f(uint index, float x, float y) =>
-            this.glVertexAttrib2f.Invoke(index, x, y);
+        public void VertexAttrib2f(out nint index, out nint x, out nint y) =>
+            this.glVertexAttrib2f.Invoke(out index, out x, out y);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib2fv(uint index, /*const*/ float* v);
-        private readonly GLVertexAttrib2fv glVertexAttrib2fv;
+        private delegate void OpenGLVertexAttrib2fv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib2fv glVertexAttrib2fv;
         
-        public unsafe void VertexAttrib2fv(uint index, /*const*/ float* v) =>
-            this.glVertexAttrib2fv.Invoke(index, v);
+        public void VertexAttrib2fv(out nint index, nint v) =>
+            this.glVertexAttrib2fv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib2s(uint index, short x, short y);
-        private readonly GLVertexAttrib2s glVertexAttrib2s;
+        private delegate void OpenGLVertexAttrib2s(out nint index, out nint x, out nint y);
+        private readonly OpenGLVertexAttrib2s glVertexAttrib2s;
         
-        public void VertexAttrib2s(uint index, short x, short y) =>
-            this.glVertexAttrib2s.Invoke(index, x, y);
+        public void VertexAttrib2s(out nint index, out nint x, out nint y) =>
+            this.glVertexAttrib2s.Invoke(out index, out x, out y);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib2sv(uint index, /*const*/ short* v);
-        private readonly GLVertexAttrib2sv glVertexAttrib2sv;
+        private delegate void OpenGLVertexAttrib2sv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib2sv glVertexAttrib2sv;
         
-        public unsafe void VertexAttrib2sv(uint index, /*const*/ short* v) =>
-            this.glVertexAttrib2sv.Invoke(index, v);
+        public void VertexAttrib2sv(out nint index, nint v) =>
+            this.glVertexAttrib2sv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib3d(uint index, double x, double y, double z);
-        private readonly GLVertexAttrib3d glVertexAttrib3d;
+        private delegate void OpenGLVertexAttrib3d(out nint index, out nint x, out nint y, out nint z);
+        private readonly OpenGLVertexAttrib3d glVertexAttrib3d;
         
-        public void VertexAttrib3d(uint index, double x, double y, double z) =>
-            this.glVertexAttrib3d.Invoke(index, x, y, z);
+        public void VertexAttrib3d(out nint index, out nint x, out nint y, out nint z) =>
+            this.glVertexAttrib3d.Invoke(out index, out x, out y, out z);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib3dv(uint index, /*const*/ double* v);
-        private readonly GLVertexAttrib3dv glVertexAttrib3dv;
+        private delegate void OpenGLVertexAttrib3dv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib3dv glVertexAttrib3dv;
         
-        public unsafe void VertexAttrib3dv(uint index, /*const*/ double* v) =>
-            this.glVertexAttrib3dv.Invoke(index, v);
+        public void VertexAttrib3dv(out nint index, nint v) =>
+            this.glVertexAttrib3dv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib3f(uint index, float x, float y, float z);
-        private readonly GLVertexAttrib3f glVertexAttrib3f;
+        private delegate void OpenGLVertexAttrib3f(out nint index, out nint x, out nint y, out nint z);
+        private readonly OpenGLVertexAttrib3f glVertexAttrib3f;
         
-        public void VertexAttrib3f(uint index, float x, float y, float z) =>
-            this.glVertexAttrib3f.Invoke(index, x, y, z);
+        public void VertexAttrib3f(out nint index, out nint x, out nint y, out nint z) =>
+            this.glVertexAttrib3f.Invoke(out index, out x, out y, out z);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib3fv(uint index, /*const*/ float* v);
-        private readonly GLVertexAttrib3fv glVertexAttrib3fv;
+        private delegate void OpenGLVertexAttrib3fv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib3fv glVertexAttrib3fv;
         
-        public unsafe void VertexAttrib3fv(uint index, /*const*/ float* v) =>
-            this.glVertexAttrib3fv.Invoke(index, v);
+        public void VertexAttrib3fv(out nint index, nint v) =>
+            this.glVertexAttrib3fv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib3s(uint index, short x, short y, short z);
-        private readonly GLVertexAttrib3s glVertexAttrib3s;
+        private delegate void OpenGLVertexAttrib3s(out nint index, out nint x, out nint y, out nint z);
+        private readonly OpenGLVertexAttrib3s glVertexAttrib3s;
         
-        public void VertexAttrib3s(uint index, short x, short y, short z) =>
-            this.glVertexAttrib3s.Invoke(index, x, y, z);
+        public void VertexAttrib3s(out nint index, out nint x, out nint y, out nint z) =>
+            this.glVertexAttrib3s.Invoke(out index, out x, out y, out z);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib3sv(uint index, /*const*/ short* v);
-        private readonly GLVertexAttrib3sv glVertexAttrib3sv;
+        private delegate void OpenGLVertexAttrib3sv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib3sv glVertexAttrib3sv;
         
-        public unsafe void VertexAttrib3sv(uint index, /*const*/ short* v) =>
-            this.glVertexAttrib3sv.Invoke(index, v);
+        public void VertexAttrib3sv(out nint index, nint v) =>
+            this.glVertexAttrib3sv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4Nbv(uint index, /*const*/ sbyte* v);
-        private readonly GLVertexAttrib4Nbv glVertexAttrib4Nbv;
+        private delegate void OpenGLVertexAttrib4Nbv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4Nbv glVertexAttrib4Nbv;
         
-        public unsafe void VertexAttrib4Nbv(uint index, /*const*/ sbyte* v) =>
-            this.glVertexAttrib4Nbv.Invoke(index, v);
+        public void VertexAttrib4Nbv(out nint index, nint v) =>
+            this.glVertexAttrib4Nbv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4Niv(uint index, /*const*/ int* v);
-        private readonly GLVertexAttrib4Niv glVertexAttrib4Niv;
+        private delegate void OpenGLVertexAttrib4Niv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4Niv glVertexAttrib4Niv;
         
-        public unsafe void VertexAttrib4Niv(uint index, /*const*/ int* v) =>
-            this.glVertexAttrib4Niv.Invoke(index, v);
+        public void VertexAttrib4Niv(out nint index, nint v) =>
+            this.glVertexAttrib4Niv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4Nsv(uint index, /*const*/ short* v);
-        private readonly GLVertexAttrib4Nsv glVertexAttrib4Nsv;
+        private delegate void OpenGLVertexAttrib4Nsv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4Nsv glVertexAttrib4Nsv;
         
-        public unsafe void VertexAttrib4Nsv(uint index, /*const*/ short* v) =>
-            this.glVertexAttrib4Nsv.Invoke(index, v);
+        public void VertexAttrib4Nsv(out nint index, nint v) =>
+            this.glVertexAttrib4Nsv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib4Nub(uint index, byte x, byte y, byte z, byte w);
-        private readonly GLVertexAttrib4Nub glVertexAttrib4Nub;
+        private delegate void OpenGLVertexAttrib4Nub(out nint index, out nint x, out nint y, out nint z, out nint w);
+        private readonly OpenGLVertexAttrib4Nub glVertexAttrib4Nub;
         
-        public void VertexAttrib4Nub(uint index, byte x, byte y, byte z, byte w) =>
-            this.glVertexAttrib4Nub.Invoke(index, x, y, z, w);
+        public void VertexAttrib4Nub(out nint index, out nint x, out nint y, out nint z, out nint w) =>
+            this.glVertexAttrib4Nub.Invoke(out index, out x, out y, out z, out w);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4Nubv(uint index, /*const*/ byte* v);
-        private readonly GLVertexAttrib4Nubv glVertexAttrib4Nubv;
+        private delegate void OpenGLVertexAttrib4Nubv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4Nubv glVertexAttrib4Nubv;
         
-        public unsafe void VertexAttrib4Nubv(uint index, /*const*/ byte* v) =>
-            this.glVertexAttrib4Nubv.Invoke(index, v);
+        public void VertexAttrib4Nubv(out nint index, nint v) =>
+            this.glVertexAttrib4Nubv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4Nuiv(uint index, /*const*/ uint* v);
-        private readonly GLVertexAttrib4Nuiv glVertexAttrib4Nuiv;
+        private delegate void OpenGLVertexAttrib4Nuiv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4Nuiv glVertexAttrib4Nuiv;
         
-        public unsafe void VertexAttrib4Nuiv(uint index, /*const*/ uint* v) =>
-            this.glVertexAttrib4Nuiv.Invoke(index, v);
+        public void VertexAttrib4Nuiv(out nint index, nint v) =>
+            this.glVertexAttrib4Nuiv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4Nusv(uint index, /*const*/ ushort* v);
-        private readonly GLVertexAttrib4Nusv glVertexAttrib4Nusv;
+        private delegate void OpenGLVertexAttrib4Nusv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4Nusv glVertexAttrib4Nusv;
         
-        public unsafe void VertexAttrib4Nusv(uint index, /*const*/ ushort* v) =>
-            this.glVertexAttrib4Nusv.Invoke(index, v);
+        public void VertexAttrib4Nusv(out nint index, nint v) =>
+            this.glVertexAttrib4Nusv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4bv(uint index, /*const*/ sbyte* v);
-        private readonly GLVertexAttrib4bv glVertexAttrib4bv;
+        private delegate void OpenGLVertexAttrib4bv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4bv glVertexAttrib4bv;
         
-        public unsafe void VertexAttrib4bv(uint index, /*const*/ sbyte* v) =>
-            this.glVertexAttrib4bv.Invoke(index, v);
+        public void VertexAttrib4bv(out nint index, nint v) =>
+            this.glVertexAttrib4bv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib4d(uint index, double x, double y, double z, double w);
-        private readonly GLVertexAttrib4d glVertexAttrib4d;
+        private delegate void OpenGLVertexAttrib4d(out nint index, out nint x, out nint y, out nint z, out nint w);
+        private readonly OpenGLVertexAttrib4d glVertexAttrib4d;
         
-        public void VertexAttrib4d(uint index, double x, double y, double z, double w) =>
-            this.glVertexAttrib4d.Invoke(index, x, y, z, w);
+        public void VertexAttrib4d(out nint index, out nint x, out nint y, out nint z, out nint w) =>
+            this.glVertexAttrib4d.Invoke(out index, out x, out y, out z, out w);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4dv(uint index, /*const*/ double* v);
-        private readonly GLVertexAttrib4dv glVertexAttrib4dv;
+        private delegate void OpenGLVertexAttrib4dv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4dv glVertexAttrib4dv;
         
-        public unsafe void VertexAttrib4dv(uint index, /*const*/ double* v) =>
-            this.glVertexAttrib4dv.Invoke(index, v);
+        public void VertexAttrib4dv(out nint index, nint v) =>
+            this.glVertexAttrib4dv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib4f(uint index, float x, float y, float z, float w);
-        private readonly GLVertexAttrib4f glVertexAttrib4f;
+        private delegate void OpenGLVertexAttrib4f(out nint index, out nint x, out nint y, out nint z, out nint w);
+        private readonly OpenGLVertexAttrib4f glVertexAttrib4f;
         
-        public void VertexAttrib4f(uint index, float x, float y, float z, float w) =>
-            this.glVertexAttrib4f.Invoke(index, x, y, z, w);
+        public void VertexAttrib4f(out nint index, out nint x, out nint y, out nint z, out nint w) =>
+            this.glVertexAttrib4f.Invoke(out index, out x, out y, out z, out w);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4fv(uint index, /*const*/ float* v);
-        private readonly GLVertexAttrib4fv glVertexAttrib4fv;
+        private delegate void OpenGLVertexAttrib4fv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4fv glVertexAttrib4fv;
         
-        public unsafe void VertexAttrib4fv(uint index, /*const*/ float* v) =>
-            this.glVertexAttrib4fv.Invoke(index, v);
+        public void VertexAttrib4fv(out nint index, nint v) =>
+            this.glVertexAttrib4fv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4iv(uint index, /*const*/ int* v);
-        private readonly GLVertexAttrib4iv glVertexAttrib4iv;
+        private delegate void OpenGLVertexAttrib4iv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4iv glVertexAttrib4iv;
         
-        public unsafe void VertexAttrib4iv(uint index, /*const*/ int* v) =>
-            this.glVertexAttrib4iv.Invoke(index, v);
+        public void VertexAttrib4iv(out nint index, nint v) =>
+            this.glVertexAttrib4iv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttrib4s(uint index, short x, short y, short z, short w);
-        private readonly GLVertexAttrib4s glVertexAttrib4s;
+        private delegate void OpenGLVertexAttrib4s(out nint index, out nint x, out nint y, out nint z, out nint w);
+        private readonly OpenGLVertexAttrib4s glVertexAttrib4s;
         
-        public void VertexAttrib4s(uint index, short x, short y, short z, short w) =>
-            this.glVertexAttrib4s.Invoke(index, x, y, z, w);
+        public void VertexAttrib4s(out nint index, out nint x, out nint y, out nint z, out nint w) =>
+            this.glVertexAttrib4s.Invoke(out index, out x, out y, out z, out w);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4sv(uint index, /*const*/ short* v);
-        private readonly GLVertexAttrib4sv glVertexAttrib4sv;
+        private delegate void OpenGLVertexAttrib4sv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4sv glVertexAttrib4sv;
         
-        public unsafe void VertexAttrib4sv(uint index, /*const*/ short* v) =>
-            this.glVertexAttrib4sv.Invoke(index, v);
+        public void VertexAttrib4sv(out nint index, nint v) =>
+            this.glVertexAttrib4sv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4ubv(uint index, /*const*/ byte* v);
-        private readonly GLVertexAttrib4ubv glVertexAttrib4ubv;
+        private delegate void OpenGLVertexAttrib4ubv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4ubv glVertexAttrib4ubv;
         
-        public unsafe void VertexAttrib4ubv(uint index, /*const*/ byte* v) =>
-            this.glVertexAttrib4ubv.Invoke(index, v);
+        public void VertexAttrib4ubv(out nint index, nint v) =>
+            this.glVertexAttrib4ubv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4uiv(uint index, /*const*/ uint* v);
-        private readonly GLVertexAttrib4uiv glVertexAttrib4uiv;
+        private delegate void OpenGLVertexAttrib4uiv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4uiv glVertexAttrib4uiv;
         
-        public unsafe void VertexAttrib4uiv(uint index, /*const*/ uint* v) =>
-            this.glVertexAttrib4uiv.Invoke(index, v);
+        public void VertexAttrib4uiv(out nint index, nint v) =>
+            this.glVertexAttrib4uiv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttrib4usv(uint index, /*const*/ ushort* v);
-        private readonly GLVertexAttrib4usv glVertexAttrib4usv;
+        private delegate void OpenGLVertexAttrib4usv(out nint index, nint v);
+        private readonly OpenGLVertexAttrib4usv glVertexAttrib4usv;
         
-        public unsafe void VertexAttrib4usv(uint index, /*const*/ ushort* v) =>
-            this.glVertexAttrib4usv.Invoke(index, v);
+        public void VertexAttrib4usv(out nint index, nint v) =>
+            this.glVertexAttrib4usv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribPointer(uint index, int size, VertexAttribPointerType type, bool normalized, int stride, nint pointer);
-        private readonly GLVertexAttribPointer glVertexAttribPointer;
+        private delegate void OpenGLVertexAttribPointer(out nint index, out nint size, out nint type, out nint normalized, out nint stride, nint pointer);
+        private readonly OpenGLVertexAttribPointer glVertexAttribPointer;
         
-        public void VertexAttribPointer(uint index, int size, VertexAttribPointerType type, bool normalized, int stride, nint pointer) =>
-            this.glVertexAttribPointer.Invoke(index, size, type, normalized, stride, pointer);
+        public void VertexAttribPointer(out nint index, out nint size, out nint type, out nint normalized, out nint stride, nint pointer) =>
+            this.glVertexAttribPointer.Invoke(out index, out size, out type, out normalized, out stride, pointer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix2x3fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix2x3fv glUniformMatrix2x3fv;
+        private delegate void OpenGLUniformMatrix2x3fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix2x3fv glUniformMatrix2x3fv;
         
-        public unsafe void UniformMatrix2x3fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix2x3fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix2x3fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix2x3fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix3x2fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix3x2fv glUniformMatrix3x2fv;
+        private delegate void OpenGLUniformMatrix3x2fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix3x2fv glUniformMatrix3x2fv;
         
-        public unsafe void UniformMatrix3x2fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix3x2fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix3x2fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix3x2fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix2x4fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix2x4fv glUniformMatrix2x4fv;
+        private delegate void OpenGLUniformMatrix2x4fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix2x4fv glUniformMatrix2x4fv;
         
-        public unsafe void UniformMatrix2x4fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix2x4fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix2x4fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix2x4fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix4x2fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix4x2fv glUniformMatrix4x2fv;
+        private delegate void OpenGLUniformMatrix4x2fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix4x2fv glUniformMatrix4x2fv;
         
-        public unsafe void UniformMatrix4x2fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix4x2fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix4x2fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix4x2fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix3x4fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix3x4fv glUniformMatrix3x4fv;
+        private delegate void OpenGLUniformMatrix3x4fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix3x4fv glUniformMatrix3x4fv;
         
-        public unsafe void UniformMatrix3x4fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix3x4fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix3x4fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix3x4fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniformMatrix4x3fv(int location, int count, bool transpose, /*const*/ float* value);
-        private readonly GLUniformMatrix4x3fv glUniformMatrix4x3fv;
+        private delegate void OpenGLUniformMatrix4x3fv(out nint location, out nint count, out nint transpose, nint value);
+        private readonly OpenGLUniformMatrix4x3fv glUniformMatrix4x3fv;
         
-        public unsafe void UniformMatrix4x3fv(int location, int count, bool transpose, /*const*/ float* value) =>
-            this.glUniformMatrix4x3fv.Invoke(location, count, transpose, value);
+        public void UniformMatrix4x3fv(out nint location, out nint count, out nint transpose, nint value) =>
+            this.glUniformMatrix4x3fv.Invoke(out location, out count, out transpose, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLColorMaski(uint index, bool r, bool g, bool b, bool a);
-        private readonly GLColorMaski glColorMaski;
+        private delegate void OpenGLColorMaski(out nint index, out nint r, out nint g, out nint b, out nint a);
+        private readonly OpenGLColorMaski glColorMaski;
         
-        public void ColorMaski(uint index, bool r, bool g, bool b, bool a) =>
-            this.glColorMaski.Invoke(index, r, g, b, a);
+        public void ColorMaski(out nint index, out nint r, out nint g, out nint b, out nint a) =>
+            this.glColorMaski.Invoke(out index, out r, out g, out b, out a);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetBooleani_v(BufferTargetARB target, uint index, bool* data);
-        private readonly GLGetBooleani_v glGetBooleani_v;
+        private delegate void OpenGLGetBooleani_v(out nint target, out nint index, out nint data);
+        private readonly OpenGLGetBooleani_v glGetBooleani_v;
         
-        public unsafe void GetBooleani_v(BufferTargetARB target, uint index, bool* data) =>
-            this.glGetBooleani_v.Invoke(target, index, data);
+        public void GetBooleani_v(out nint target, out nint index, out nint data) =>
+            this.glGetBooleani_v.Invoke(out target, out index, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetIntegeri_v(GetPName target, uint index, int* data);
-        private readonly GLGetIntegeri_v glGetIntegeri_v;
+        private delegate void OpenGLGetIntegeri_v(out nint target, out nint index, out nint data);
+        private readonly OpenGLGetIntegeri_v glGetIntegeri_v;
         
-        public unsafe void GetIntegeri_v(GetPName target, uint index, int* data) =>
-            this.glGetIntegeri_v.Invoke(target, index, data);
+        public void GetIntegeri_v(out nint target, out nint index, out nint data) =>
+            this.glGetIntegeri_v.Invoke(out target, out index, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLEnablei(EnableCap target, uint index);
-        private readonly GLEnablei glEnablei;
+        private delegate void OpenGLEnablei(out nint target, out nint index);
+        private readonly OpenGLEnablei glEnablei;
         
-        public void Enablei(EnableCap target, uint index) =>
-            this.glEnablei.Invoke(target, index);
+        public void Enablei(out nint target, out nint index) =>
+            this.glEnablei.Invoke(out target, out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDisablei(EnableCap target, uint index);
-        private readonly GLDisablei glDisablei;
+        private delegate void OpenGLDisablei(out nint target, out nint index);
+        private readonly OpenGLDisablei glDisablei;
         
-        public void Disablei(EnableCap target, uint index) =>
-            this.glDisablei.Invoke(target, index);
+        public void Disablei(out nint target, out nint index) =>
+            this.glDisablei.Invoke(out target, out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsEnabledi(EnableCap target, uint index);
-        private readonly GLIsEnabledi glIsEnabledi;
+        private delegate bool OpenGLIsEnabledi(out nint target, out nint index);
+        private readonly OpenGLIsEnabledi glIsEnabledi;
         
-        public bool IsEnabledi(EnableCap target, uint index) =>
-            this.glIsEnabledi.Invoke(target, index);
+        public bool IsEnabledi(out nint target, out nint index) =>
+            this.glIsEnabledi.Invoke(out target, out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBeginTransformFeedback(PrimitiveType primitiveMode);
-        private readonly GLBeginTransformFeedback glBeginTransformFeedback;
+        private delegate void OpenGLBeginTransformFeedback(out nint primitiveMode);
+        private readonly OpenGLBeginTransformFeedback glBeginTransformFeedback;
         
-        public void BeginTransformFeedback(PrimitiveType primitiveMode) =>
-            this.glBeginTransformFeedback.Invoke(primitiveMode);
+        public void BeginTransformFeedback(out nint primitiveMode) =>
+            this.glBeginTransformFeedback.Invoke(out primitiveMode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLEndTransformFeedback();
-        private readonly GLEndTransformFeedback glEndTransformFeedback;
+        private delegate void OpenGLEndTransformFeedback();
+        private readonly OpenGLEndTransformFeedback glEndTransformFeedback;
         
         public void EndTransformFeedback() =>
             this.glEndTransformFeedback.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindBufferRange(BufferTargetARB target, uint index, uint buffer, nint offset, nint size);
-        private readonly GLBindBufferRange glBindBufferRange;
+        private delegate void OpenGLBindBufferRange(out nint target, out nint index, out nint buffer, out nint offset, out nint size);
+        private readonly OpenGLBindBufferRange glBindBufferRange;
         
-        public void BindBufferRange(BufferTargetARB target, uint index, uint buffer, nint offset, nint size) =>
-            this.glBindBufferRange.Invoke(target, index, buffer, offset, size);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindBufferBase(BufferTargetARB target, uint index, uint buffer);
-        private readonly GLBindBufferBase glBindBufferBase;
-        
-        public void BindBufferBase(BufferTargetARB target, uint index, uint buffer) =>
-            this.glBindBufferBase.Invoke(target, index, buffer);
+        public void BindBufferRange(out nint target, out nint index, out nint buffer, out nint offset, out nint size) =>
+            this.glBindBufferRange.Invoke(out target, out index, out buffer, out offset, out size);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLTransformFeedbackVaryings(uint program, int count, sbyte varyings, TransformFeedbackBufferMode bufferMode);
-        private readonly GLTransformFeedbackVaryings glTransformFeedbackVaryings;
+        private delegate void OpenGLBindBufferBase(out nint target, out nint index, out nint buffer);
+        private readonly OpenGLBindBufferBase glBindBufferBase;
         
-        public unsafe void TransformFeedbackVaryings(uint program, int count, sbyte varyings, TransformFeedbackBufferMode bufferMode) =>
-            this.glTransformFeedbackVaryings.Invoke(program, count, varyings, bufferMode);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, AttributeType* type, sbyte* name);
-        private readonly GLGetTransformFeedbackVarying glGetTransformFeedbackVarying;
-        
-        public unsafe void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, AttributeType* type, sbyte* name) =>
-            this.glGetTransformFeedbackVarying.Invoke(program, index, bufSize, length, size, type, name);
+        public void BindBufferBase(out nint target, out nint index, out nint buffer) =>
+            this.glBindBufferBase.Invoke(out target, out index, out buffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClampColor(ClampColorTargetARB target, ClampColorModeARB clamp);
-        private readonly GLClampColor glClampColor;
+        private delegate void OpenGLTransformFeedbackVaryings(out nint program, out nint count, nint varyings, out nint bufferMode);
+        private readonly OpenGLTransformFeedbackVaryings glTransformFeedbackVaryings;
         
-        public void ClampColor(ClampColorTargetARB target, ClampColorModeARB clamp) =>
-            this.glClampColor.Invoke(target, clamp);
-        
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBeginConditionalRender(uint id, ConditionalRenderMode mode);
-        private readonly GLBeginConditionalRender glBeginConditionalRender;
-        
-        public void BeginConditionalRender(uint id, ConditionalRenderMode mode) =>
-            this.glBeginConditionalRender.Invoke(id, mode);
+        public void TransformFeedbackVaryings(out nint program, out nint count, nint varyings, out nint bufferMode) =>
+            this.glTransformFeedbackVaryings.Invoke(out program, out count, varyings, out bufferMode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLEndConditionalRender();
-        private readonly GLEndConditionalRender glEndConditionalRender;
+        private delegate void OpenGLGetTransformFeedbackVarying(out nint program, out nint index, out nint bufSize, out nint length, out nint size, out nint type, out nint name);
+        private readonly OpenGLGetTransformFeedbackVarying glGetTransformFeedbackVarying;
+        
+        public void GetTransformFeedbackVarying(out nint program, out nint index, out nint bufSize, out nint length, out nint size, out nint type, out nint name) =>
+            this.glGetTransformFeedbackVarying.Invoke(out program, out index, out bufSize, out length, out size, out type, out name);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLClampColor(out nint target, out nint clamp);
+        private readonly OpenGLClampColor glClampColor;
+        
+        public void ClampColor(out nint target, out nint clamp) =>
+            this.glClampColor.Invoke(out target, out clamp);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLBeginConditionalRender(out nint id, out nint mode);
+        private readonly OpenGLBeginConditionalRender glBeginConditionalRender;
+        
+        public void BeginConditionalRender(out nint id, out nint mode) =>
+            this.glBeginConditionalRender.Invoke(out id, out mode);
+        
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void OpenGLEndConditionalRender();
+        private readonly OpenGLEndConditionalRender glEndConditionalRender;
         
         public void EndConditionalRender() =>
             this.glEndConditionalRender.Invoke();
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribIPointer(uint index, int size, VertexAttribIType type, int stride, nint pointer);
-        private readonly GLVertexAttribIPointer glVertexAttribIPointer;
+        private delegate void OpenGLVertexAttribIPointer(out nint index, out nint size, out nint type, out nint stride, nint pointer);
+        private readonly OpenGLVertexAttribIPointer glVertexAttribIPointer;
         
-        public void VertexAttribIPointer(uint index, int size, VertexAttribIType type, int stride, nint pointer) =>
-            this.glVertexAttribIPointer.Invoke(index, size, type, stride, pointer);
+        public void VertexAttribIPointer(out nint index, out nint size, out nint type, out nint stride, nint pointer) =>
+            this.glVertexAttribIPointer.Invoke(out index, out size, out type, out stride, pointer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetVertexAttribIiv(uint index, VertexAttribEnum pname, int* @params);
-        private readonly GLGetVertexAttribIiv glGetVertexAttribIiv;
+        private delegate void OpenGLGetVertexAttribIiv(out nint index, out nint pname, out nint @params);
+        private readonly OpenGLGetVertexAttribIiv glGetVertexAttribIiv;
         
-        public unsafe void GetVertexAttribIiv(uint index, VertexAttribEnum pname, int* @params) =>
-            this.glGetVertexAttribIiv.Invoke(index, pname, @params);
+        public void GetVertexAttribIiv(out nint index, out nint pname, out nint @params) =>
+            this.glGetVertexAttribIiv.Invoke(out index, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetVertexAttribIuiv(uint index, VertexAttribEnum pname, uint* @params);
-        private readonly GLGetVertexAttribIuiv glGetVertexAttribIuiv;
+        private delegate void OpenGLGetVertexAttribIuiv(out nint index, out nint pname, out nint @params);
+        private readonly OpenGLGetVertexAttribIuiv glGetVertexAttribIuiv;
         
-        public unsafe void GetVertexAttribIuiv(uint index, VertexAttribEnum pname, uint* @params) =>
-            this.glGetVertexAttribIuiv.Invoke(index, pname, @params);
+        public void GetVertexAttribIuiv(out nint index, out nint pname, out nint @params) =>
+            this.glGetVertexAttribIuiv.Invoke(out index, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI1i(uint index, int x);
-        private readonly GLVertexAttribI1i glVertexAttribI1i;
+        private delegate void OpenGLVertexAttribI1i(out nint index, out nint x);
+        private readonly OpenGLVertexAttribI1i glVertexAttribI1i;
         
-        public void VertexAttribI1i(uint index, int x) =>
-            this.glVertexAttribI1i.Invoke(index, x);
+        public void VertexAttribI1i(out nint index, out nint x) =>
+            this.glVertexAttribI1i.Invoke(out index, out x);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI2i(uint index, int x, int y);
-        private readonly GLVertexAttribI2i glVertexAttribI2i;
+        private delegate void OpenGLVertexAttribI2i(out nint index, out nint x, out nint y);
+        private readonly OpenGLVertexAttribI2i glVertexAttribI2i;
         
-        public void VertexAttribI2i(uint index, int x, int y) =>
-            this.glVertexAttribI2i.Invoke(index, x, y);
+        public void VertexAttribI2i(out nint index, out nint x, out nint y) =>
+            this.glVertexAttribI2i.Invoke(out index, out x, out y);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI3i(uint index, int x, int y, int z);
-        private readonly GLVertexAttribI3i glVertexAttribI3i;
+        private delegate void OpenGLVertexAttribI3i(out nint index, out nint x, out nint y, out nint z);
+        private readonly OpenGLVertexAttribI3i glVertexAttribI3i;
         
-        public void VertexAttribI3i(uint index, int x, int y, int z) =>
-            this.glVertexAttribI3i.Invoke(index, x, y, z);
+        public void VertexAttribI3i(out nint index, out nint x, out nint y, out nint z) =>
+            this.glVertexAttribI3i.Invoke(out index, out x, out y, out z);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI4i(uint index, int x, int y, int z, int w);
-        private readonly GLVertexAttribI4i glVertexAttribI4i;
+        private delegate void OpenGLVertexAttribI4i(out nint index, out nint x, out nint y, out nint z, out nint w);
+        private readonly OpenGLVertexAttribI4i glVertexAttribI4i;
         
-        public void VertexAttribI4i(uint index, int x, int y, int z, int w) =>
-            this.glVertexAttribI4i.Invoke(index, x, y, z, w);
+        public void VertexAttribI4i(out nint index, out nint x, out nint y, out nint z, out nint w) =>
+            this.glVertexAttribI4i.Invoke(out index, out x, out y, out z, out w);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI1ui(uint index, uint x);
-        private readonly GLVertexAttribI1ui glVertexAttribI1ui;
+        private delegate void OpenGLVertexAttribI1ui(out nint index, out nint x);
+        private readonly OpenGLVertexAttribI1ui glVertexAttribI1ui;
         
-        public void VertexAttribI1ui(uint index, uint x) =>
-            this.glVertexAttribI1ui.Invoke(index, x);
+        public void VertexAttribI1ui(out nint index, out nint x) =>
+            this.glVertexAttribI1ui.Invoke(out index, out x);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI2ui(uint index, uint x, uint y);
-        private readonly GLVertexAttribI2ui glVertexAttribI2ui;
+        private delegate void OpenGLVertexAttribI2ui(out nint index, out nint x, out nint y);
+        private readonly OpenGLVertexAttribI2ui glVertexAttribI2ui;
         
-        public void VertexAttribI2ui(uint index, uint x, uint y) =>
-            this.glVertexAttribI2ui.Invoke(index, x, y);
+        public void VertexAttribI2ui(out nint index, out nint x, out nint y) =>
+            this.glVertexAttribI2ui.Invoke(out index, out x, out y);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI3ui(uint index, uint x, uint y, uint z);
-        private readonly GLVertexAttribI3ui glVertexAttribI3ui;
+        private delegate void OpenGLVertexAttribI3ui(out nint index, out nint x, out nint y, out nint z);
+        private readonly OpenGLVertexAttribI3ui glVertexAttribI3ui;
         
-        public void VertexAttribI3ui(uint index, uint x, uint y, uint z) =>
-            this.glVertexAttribI3ui.Invoke(index, x, y, z);
+        public void VertexAttribI3ui(out nint index, out nint x, out nint y, out nint z) =>
+            this.glVertexAttribI3ui.Invoke(out index, out x, out y, out z);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLVertexAttribI4ui(uint index, uint x, uint y, uint z, uint w);
-        private readonly GLVertexAttribI4ui glVertexAttribI4ui;
+        private delegate void OpenGLVertexAttribI4ui(out nint index, out nint x, out nint y, out nint z, out nint w);
+        private readonly OpenGLVertexAttribI4ui glVertexAttribI4ui;
         
-        public void VertexAttribI4ui(uint index, uint x, uint y, uint z, uint w) =>
-            this.glVertexAttribI4ui.Invoke(index, x, y, z, w);
+        public void VertexAttribI4ui(out nint index, out nint x, out nint y, out nint z, out nint w) =>
+            this.glVertexAttribI4ui.Invoke(out index, out x, out y, out z, out w);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI1iv(uint index, /*const*/ int* v);
-        private readonly GLVertexAttribI1iv glVertexAttribI1iv;
+        private delegate void OpenGLVertexAttribI1iv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI1iv glVertexAttribI1iv;
         
-        public unsafe void VertexAttribI1iv(uint index, /*const*/ int* v) =>
-            this.glVertexAttribI1iv.Invoke(index, v);
+        public void VertexAttribI1iv(out nint index, nint v) =>
+            this.glVertexAttribI1iv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI2iv(uint index, /*const*/ int* v);
-        private readonly GLVertexAttribI2iv glVertexAttribI2iv;
+        private delegate void OpenGLVertexAttribI2iv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI2iv glVertexAttribI2iv;
         
-        public unsafe void VertexAttribI2iv(uint index, /*const*/ int* v) =>
-            this.glVertexAttribI2iv.Invoke(index, v);
+        public void VertexAttribI2iv(out nint index, nint v) =>
+            this.glVertexAttribI2iv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI3iv(uint index, /*const*/ int* v);
-        private readonly GLVertexAttribI3iv glVertexAttribI3iv;
+        private delegate void OpenGLVertexAttribI3iv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI3iv glVertexAttribI3iv;
         
-        public unsafe void VertexAttribI3iv(uint index, /*const*/ int* v) =>
-            this.glVertexAttribI3iv.Invoke(index, v);
+        public void VertexAttribI3iv(out nint index, nint v) =>
+            this.glVertexAttribI3iv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI4iv(uint index, /*const*/ int* v);
-        private readonly GLVertexAttribI4iv glVertexAttribI4iv;
+        private delegate void OpenGLVertexAttribI4iv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI4iv glVertexAttribI4iv;
         
-        public unsafe void VertexAttribI4iv(uint index, /*const*/ int* v) =>
-            this.glVertexAttribI4iv.Invoke(index, v);
+        public void VertexAttribI4iv(out nint index, nint v) =>
+            this.glVertexAttribI4iv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI1uiv(uint index, /*const*/ uint* v);
-        private readonly GLVertexAttribI1uiv glVertexAttribI1uiv;
+        private delegate void OpenGLVertexAttribI1uiv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI1uiv glVertexAttribI1uiv;
         
-        public unsafe void VertexAttribI1uiv(uint index, /*const*/ uint* v) =>
-            this.glVertexAttribI1uiv.Invoke(index, v);
+        public void VertexAttribI1uiv(out nint index, nint v) =>
+            this.glVertexAttribI1uiv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI2uiv(uint index, /*const*/ uint* v);
-        private readonly GLVertexAttribI2uiv glVertexAttribI2uiv;
+        private delegate void OpenGLVertexAttribI2uiv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI2uiv glVertexAttribI2uiv;
         
-        public unsafe void VertexAttribI2uiv(uint index, /*const*/ uint* v) =>
-            this.glVertexAttribI2uiv.Invoke(index, v);
+        public void VertexAttribI2uiv(out nint index, nint v) =>
+            this.glVertexAttribI2uiv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI3uiv(uint index, /*const*/ uint* v);
-        private readonly GLVertexAttribI3uiv glVertexAttribI3uiv;
+        private delegate void OpenGLVertexAttribI3uiv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI3uiv glVertexAttribI3uiv;
         
-        public unsafe void VertexAttribI3uiv(uint index, /*const*/ uint* v) =>
-            this.glVertexAttribI3uiv.Invoke(index, v);
+        public void VertexAttribI3uiv(out nint index, nint v) =>
+            this.glVertexAttribI3uiv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI4uiv(uint index, /*const*/ uint* v);
-        private readonly GLVertexAttribI4uiv glVertexAttribI4uiv;
+        private delegate void OpenGLVertexAttribI4uiv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI4uiv glVertexAttribI4uiv;
         
-        public unsafe void VertexAttribI4uiv(uint index, /*const*/ uint* v) =>
-            this.glVertexAttribI4uiv.Invoke(index, v);
+        public void VertexAttribI4uiv(out nint index, nint v) =>
+            this.glVertexAttribI4uiv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI4bv(uint index, /*const*/ sbyte* v);
-        private readonly GLVertexAttribI4bv glVertexAttribI4bv;
+        private delegate void OpenGLVertexAttribI4bv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI4bv glVertexAttribI4bv;
         
-        public unsafe void VertexAttribI4bv(uint index, /*const*/ sbyte* v) =>
-            this.glVertexAttribI4bv.Invoke(index, v);
+        public void VertexAttribI4bv(out nint index, nint v) =>
+            this.glVertexAttribI4bv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI4sv(uint index, /*const*/ short* v);
-        private readonly GLVertexAttribI4sv glVertexAttribI4sv;
+        private delegate void OpenGLVertexAttribI4sv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI4sv glVertexAttribI4sv;
         
-        public unsafe void VertexAttribI4sv(uint index, /*const*/ short* v) =>
-            this.glVertexAttribI4sv.Invoke(index, v);
+        public void VertexAttribI4sv(out nint index, nint v) =>
+            this.glVertexAttribI4sv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI4ubv(uint index, /*const*/ byte* v);
-        private readonly GLVertexAttribI4ubv glVertexAttribI4ubv;
+        private delegate void OpenGLVertexAttribI4ubv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI4ubv glVertexAttribI4ubv;
         
-        public unsafe void VertexAttribI4ubv(uint index, /*const*/ byte* v) =>
-            this.glVertexAttribI4ubv.Invoke(index, v);
+        public void VertexAttribI4ubv(out nint index, nint v) =>
+            this.glVertexAttribI4ubv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLVertexAttribI4usv(uint index, /*const*/ ushort* v);
-        private readonly GLVertexAttribI4usv glVertexAttribI4usv;
+        private delegate void OpenGLVertexAttribI4usv(out nint index, nint v);
+        private readonly OpenGLVertexAttribI4usv glVertexAttribI4usv;
         
-        public unsafe void VertexAttribI4usv(uint index, /*const*/ ushort* v) =>
-            this.glVertexAttribI4usv.Invoke(index, v);
+        public void VertexAttribI4usv(out nint index, nint v) =>
+            this.glVertexAttribI4usv.Invoke(out index, v);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetUniformuiv(uint program, int location, uint* @params);
-        private readonly GLGetUniformuiv glGetUniformuiv;
+        private delegate void OpenGLGetUniformuiv(out nint program, out nint location, out nint @params);
+        private readonly OpenGLGetUniformuiv glGetUniformuiv;
         
-        public unsafe void GetUniformuiv(uint program, int location, uint* @params) =>
-            this.glGetUniformuiv.Invoke(program, location, @params);
+        public void GetUniformuiv(out nint program, out nint location, out nint @params) =>
+            this.glGetUniformuiv.Invoke(out program, out location, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLBindFragDataLocation(uint program, uint color, /*const*/ sbyte* name);
-        private readonly GLBindFragDataLocation glBindFragDataLocation;
+        private delegate void OpenGLBindFragDataLocation(out nint program, out nint color, nint name);
+        private readonly OpenGLBindFragDataLocation glBindFragDataLocation;
         
-        public unsafe void BindFragDataLocation(uint program, uint color, /*const*/ sbyte* name) =>
-            this.glBindFragDataLocation.Invoke(program, color, name);
+        public void BindFragDataLocation(out nint program, out nint color, nint name) =>
+            this.glBindFragDataLocation.Invoke(out program, out color, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate int GLGetFragDataLocation(uint program, /*const*/ sbyte* name);
-        private readonly GLGetFragDataLocation glGetFragDataLocation;
+        private delegate int OpenGLGetFragDataLocation(out nint program, nint name);
+        private readonly OpenGLGetFragDataLocation glGetFragDataLocation;
         
-        public unsafe int GetFragDataLocation(uint program, /*const*/ sbyte* name) =>
-            this.glGetFragDataLocation.Invoke(program, name);
+        public int GetFragDataLocation(out nint program, nint name) =>
+            this.glGetFragDataLocation.Invoke(out program, name);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform1ui(int location, uint v0);
-        private readonly GLUniform1ui glUniform1ui;
+        private delegate void OpenGLUniform1ui(out nint location, out nint v0);
+        private readonly OpenGLUniform1ui glUniform1ui;
         
-        public void Uniform1ui(int location, uint v0) =>
-            this.glUniform1ui.Invoke(location, v0);
+        public void Uniform1ui(out nint location, out nint v0) =>
+            this.glUniform1ui.Invoke(out location, out v0);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform2ui(int location, uint v0, uint v1);
-        private readonly GLUniform2ui glUniform2ui;
+        private delegate void OpenGLUniform2ui(out nint location, out nint v0, out nint v1);
+        private readonly OpenGLUniform2ui glUniform2ui;
         
-        public void Uniform2ui(int location, uint v0, uint v1) =>
-            this.glUniform2ui.Invoke(location, v0, v1);
+        public void Uniform2ui(out nint location, out nint v0, out nint v1) =>
+            this.glUniform2ui.Invoke(out location, out v0, out v1);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform3ui(int location, uint v0, uint v1, uint v2);
-        private readonly GLUniform3ui glUniform3ui;
+        private delegate void OpenGLUniform3ui(out nint location, out nint v0, out nint v1, out nint v2);
+        private readonly OpenGLUniform3ui glUniform3ui;
         
-        public void Uniform3ui(int location, uint v0, uint v1, uint v2) =>
-            this.glUniform3ui.Invoke(location, v0, v1, v2);
+        public void Uniform3ui(out nint location, out nint v0, out nint v1, out nint v2) =>
+            this.glUniform3ui.Invoke(out location, out v0, out v1, out v2);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniform4ui(int location, uint v0, uint v1, uint v2, uint v3);
-        private readonly GLUniform4ui glUniform4ui;
+        private delegate void OpenGLUniform4ui(out nint location, out nint v0, out nint v1, out nint v2, out nint v3);
+        private readonly OpenGLUniform4ui glUniform4ui;
         
-        public void Uniform4ui(int location, uint v0, uint v1, uint v2, uint v3) =>
-            this.glUniform4ui.Invoke(location, v0, v1, v2, v3);
+        public void Uniform4ui(out nint location, out nint v0, out nint v1, out nint v2, out nint v3) =>
+            this.glUniform4ui.Invoke(out location, out v0, out v1, out v2, out v3);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform1uiv(int location, int count, /*const*/ uint* value);
-        private readonly GLUniform1uiv glUniform1uiv;
+        private delegate void OpenGLUniform1uiv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform1uiv glUniform1uiv;
         
-        public unsafe void Uniform1uiv(int location, int count, /*const*/ uint* value) =>
-            this.glUniform1uiv.Invoke(location, count, value);
+        public void Uniform1uiv(out nint location, out nint count, nint value) =>
+            this.glUniform1uiv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform2uiv(int location, int count, /*const*/ uint* value);
-        private readonly GLUniform2uiv glUniform2uiv;
+        private delegate void OpenGLUniform2uiv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform2uiv glUniform2uiv;
         
-        public unsafe void Uniform2uiv(int location, int count, /*const*/ uint* value) =>
-            this.glUniform2uiv.Invoke(location, count, value);
+        public void Uniform2uiv(out nint location, out nint count, nint value) =>
+            this.glUniform2uiv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform3uiv(int location, int count, /*const*/ uint* value);
-        private readonly GLUniform3uiv glUniform3uiv;
+        private delegate void OpenGLUniform3uiv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform3uiv glUniform3uiv;
         
-        public unsafe void Uniform3uiv(int location, int count, /*const*/ uint* value) =>
-            this.glUniform3uiv.Invoke(location, count, value);
+        public void Uniform3uiv(out nint location, out nint count, nint value) =>
+            this.glUniform3uiv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLUniform4uiv(int location, int count, /*const*/ uint* value);
-        private readonly GLUniform4uiv glUniform4uiv;
+        private delegate void OpenGLUniform4uiv(out nint location, out nint count, nint value);
+        private readonly OpenGLUniform4uiv glUniform4uiv;
         
-        public unsafe void Uniform4uiv(int location, int count, /*const*/ uint* value) =>
-            this.glUniform4uiv.Invoke(location, count, value);
+        public void Uniform4uiv(out nint location, out nint count, nint value) =>
+            this.glUniform4uiv.Invoke(out location, out count, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLTexParameterIiv(TextureTarget target, TextureParameterName pname, /*const*/ int* @params);
-        private readonly GLTexParameterIiv glTexParameterIiv;
+        private delegate void OpenGLTexParameterIiv(out nint target, out nint pname, nint @params);
+        private readonly OpenGLTexParameterIiv glTexParameterIiv;
         
-        public unsafe void TexParameterIiv(TextureTarget target, TextureParameterName pname, /*const*/ int* @params) =>
-            this.glTexParameterIiv.Invoke(target, pname, @params);
+        public void TexParameterIiv(out nint target, out nint pname, nint @params) =>
+            this.glTexParameterIiv.Invoke(out target, out pname, @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLTexParameterIuiv(TextureTarget target, TextureParameterName pname, /*const*/ uint* @params);
-        private readonly GLTexParameterIuiv glTexParameterIuiv;
+        private delegate void OpenGLTexParameterIuiv(out nint target, out nint pname, nint @params);
+        private readonly OpenGLTexParameterIuiv glTexParameterIuiv;
         
-        public unsafe void TexParameterIuiv(TextureTarget target, TextureParameterName pname, /*const*/ uint* @params) =>
-            this.glTexParameterIuiv.Invoke(target, pname, @params);
+        public void TexParameterIuiv(out nint target, out nint pname, nint @params) =>
+            this.glTexParameterIuiv.Invoke(out target, out pname, @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTexParameterIiv(TextureTarget target, GetTextureParameter pname, int* @params);
-        private readonly GLGetTexParameterIiv glGetTexParameterIiv;
+        private delegate void OpenGLGetTexParameterIiv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetTexParameterIiv glGetTexParameterIiv;
         
-        public unsafe void GetTexParameterIiv(TextureTarget target, GetTextureParameter pname, int* @params) =>
-            this.glGetTexParameterIiv.Invoke(target, pname, @params);
+        public void GetTexParameterIiv(out nint target, out nint pname, out nint @params) =>
+            this.glGetTexParameterIiv.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetTexParameterIuiv(TextureTarget target, GetTextureParameter pname, uint* @params);
-        private readonly GLGetTexParameterIuiv glGetTexParameterIuiv;
+        private delegate void OpenGLGetTexParameterIuiv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetTexParameterIuiv glGetTexParameterIuiv;
         
-        public unsafe void GetTexParameterIuiv(TextureTarget target, GetTextureParameter pname, uint* @params) =>
-            this.glGetTexParameterIuiv.Invoke(target, pname, @params);
+        public void GetTexParameterIuiv(out nint target, out nint pname, out nint @params) =>
+            this.glGetTexParameterIuiv.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLClearBufferiv(Buffer buffer, int drawbuffer, /*const*/ int* value);
-        private readonly GLClearBufferiv glClearBufferiv;
+        private delegate void OpenGLClearBufferiv(out nint buffer, out nint drawbuffer, nint value);
+        private readonly OpenGLClearBufferiv glClearBufferiv;
         
-        public unsafe void ClearBufferiv(Buffer buffer, int drawbuffer, /*const*/ int* value) =>
-            this.glClearBufferiv.Invoke(buffer, drawbuffer, value);
+        public void ClearBufferiv(out nint buffer, out nint drawbuffer, nint value) =>
+            this.glClearBufferiv.Invoke(out buffer, out drawbuffer, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLClearBufferuiv(Buffer buffer, int drawbuffer, /*const*/ uint* value);
-        private readonly GLClearBufferuiv glClearBufferuiv;
+        private delegate void OpenGLClearBufferuiv(out nint buffer, out nint drawbuffer, nint value);
+        private readonly OpenGLClearBufferuiv glClearBufferuiv;
         
-        public unsafe void ClearBufferuiv(Buffer buffer, int drawbuffer, /*const*/ uint* value) =>
-            this.glClearBufferuiv.Invoke(buffer, drawbuffer, value);
+        public void ClearBufferuiv(out nint buffer, out nint drawbuffer, nint value) =>
+            this.glClearBufferuiv.Invoke(out buffer, out drawbuffer, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLClearBufferfv(Buffer buffer, int drawbuffer, /*const*/ float* value);
-        private readonly GLClearBufferfv glClearBufferfv;
+        private delegate void OpenGLClearBufferfv(out nint buffer, out nint drawbuffer, nint value);
+        private readonly OpenGLClearBufferfv glClearBufferfv;
         
-        public unsafe void ClearBufferfv(Buffer buffer, int drawbuffer, /*const*/ float* value) =>
-            this.glClearBufferfv.Invoke(buffer, drawbuffer, value);
+        public void ClearBufferfv(out nint buffer, out nint drawbuffer, nint value) =>
+            this.glClearBufferfv.Invoke(out buffer, out drawbuffer, value);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLClearBufferfi(Buffer buffer, int drawbuffer, float depth, int stencil);
-        private readonly GLClearBufferfi glClearBufferfi;
+        private delegate void OpenGLClearBufferfi(out nint buffer, out nint drawbuffer, out nint depth, out nint stencil);
+        private readonly OpenGLClearBufferfi glClearBufferfi;
         
-        public void ClearBufferfi(Buffer buffer, int drawbuffer, float depth, int stencil) =>
-            this.glClearBufferfi.Invoke(buffer, drawbuffer, depth, stencil);
+        public void ClearBufferfi(out nint buffer, out nint drawbuffer, out nint depth, out nint stencil) =>
+            this.glClearBufferfi.Invoke(out buffer, out drawbuffer, out depth, out stencil);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate nint GLGetStringi(StringName name, uint index);
-        private readonly GLGetStringi glGetStringi;
+        private delegate nint OpenGLGetStringi(out nint name, out nint index);
+        private readonly OpenGLGetStringi glGetStringi;
         
-        public nint GetStringi(StringName name, uint index) =>
-            this.glGetStringi.Invoke(name, index);
+        public nint GetStringi(out nint name, out nint index) =>
+            this.glGetStringi.Invoke(out name, out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsRenderbuffer(uint renderbuffer);
-        private readonly GLIsRenderbuffer glIsRenderbuffer;
+        private delegate bool OpenGLIsRenderbuffer(out nint renderbuffer);
+        private readonly OpenGLIsRenderbuffer glIsRenderbuffer;
         
-        public bool IsRenderbuffer(uint renderbuffer) =>
-            this.glIsRenderbuffer.Invoke(renderbuffer);
+        public bool IsRenderbuffer(out nint renderbuffer) =>
+            this.glIsRenderbuffer.Invoke(out renderbuffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindRenderbuffer(RenderbufferTarget target, uint renderbuffer);
-        private readonly GLBindRenderbuffer glBindRenderbuffer;
+        private delegate void OpenGLBindRenderbuffer(out nint target, out nint renderbuffer);
+        private readonly OpenGLBindRenderbuffer glBindRenderbuffer;
         
-        public void BindRenderbuffer(RenderbufferTarget target, uint renderbuffer) =>
-            this.glBindRenderbuffer.Invoke(target, renderbuffer);
+        public void BindRenderbuffer(out nint target, out nint renderbuffer) =>
+            this.glBindRenderbuffer.Invoke(out target, out renderbuffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteRenderbuffers(int n, /*const*/ uint* renderbuffers);
-        private readonly GLDeleteRenderbuffers glDeleteRenderbuffers;
+        private delegate void OpenGLDeleteRenderbuffers(out nint n, nint renderbuffers);
+        private readonly OpenGLDeleteRenderbuffers glDeleteRenderbuffers;
         
-        public unsafe void DeleteRenderbuffers(int n, /*const*/ uint* renderbuffers) =>
-            this.glDeleteRenderbuffers.Invoke(n, renderbuffers);
+        public void DeleteRenderbuffers(out nint n, nint renderbuffers) =>
+            this.glDeleteRenderbuffers.Invoke(out n, renderbuffers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenRenderbuffers(int n, uint* renderbuffers);
-        private readonly GLGenRenderbuffers glGenRenderbuffers;
+        private delegate void OpenGLGenRenderbuffers(out nint n, out nint renderbuffers);
+        private readonly OpenGLGenRenderbuffers glGenRenderbuffers;
         
-        public unsafe void GenRenderbuffers(int n, uint* renderbuffers) =>
-            this.glGenRenderbuffers.Invoke(n, renderbuffers);
+        public void GenRenderbuffers(out nint n, out nint renderbuffers) =>
+            this.glGenRenderbuffers.Invoke(out n, out renderbuffers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLRenderbufferStorage(RenderbufferTarget target, InternalFormat internalformat, int width, int height);
-        private readonly GLRenderbufferStorage glRenderbufferStorage;
+        private delegate void OpenGLRenderbufferStorage(out nint target, out nint internalformat, out nint width, out nint height);
+        private readonly OpenGLRenderbufferStorage glRenderbufferStorage;
         
-        public void RenderbufferStorage(RenderbufferTarget target, InternalFormat internalformat, int width, int height) =>
-            this.glRenderbufferStorage.Invoke(target, internalformat, width, height);
+        public void RenderbufferStorage(out nint target, out nint internalformat, out nint width, out nint height) =>
+            this.glRenderbufferStorage.Invoke(out target, out internalformat, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetRenderbufferParameteriv(RenderbufferTarget target, RenderbufferParameterName pname, int* @params);
-        private readonly GLGetRenderbufferParameteriv glGetRenderbufferParameteriv;
+        private delegate void OpenGLGetRenderbufferParameteriv(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetRenderbufferParameteriv glGetRenderbufferParameteriv;
         
-        public unsafe void GetRenderbufferParameteriv(RenderbufferTarget target, RenderbufferParameterName pname, int* @params) =>
-            this.glGetRenderbufferParameteriv.Invoke(target, pname, @params);
+        public void GetRenderbufferParameteriv(out nint target, out nint pname, out nint @params) =>
+            this.glGetRenderbufferParameteriv.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsFramebuffer(uint framebuffer);
-        private readonly GLIsFramebuffer glIsFramebuffer;
+        private delegate bool OpenGLIsFramebuffer(out nint framebuffer);
+        private readonly OpenGLIsFramebuffer glIsFramebuffer;
         
-        public bool IsFramebuffer(uint framebuffer) =>
-            this.glIsFramebuffer.Invoke(framebuffer);
+        public bool IsFramebuffer(out nint framebuffer) =>
+            this.glIsFramebuffer.Invoke(out framebuffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindFramebuffer(FramebufferTarget target, uint framebuffer);
-        private readonly GLBindFramebuffer glBindFramebuffer;
+        private delegate void OpenGLBindFramebuffer(out nint target, out nint framebuffer);
+        private readonly OpenGLBindFramebuffer glBindFramebuffer;
         
-        public void BindFramebuffer(FramebufferTarget target, uint framebuffer) =>
-            this.glBindFramebuffer.Invoke(target, framebuffer);
+        public void BindFramebuffer(out nint target, out nint framebuffer) =>
+            this.glBindFramebuffer.Invoke(out target, out framebuffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteFramebuffers(int n, /*const*/ uint* framebuffers);
-        private readonly GLDeleteFramebuffers glDeleteFramebuffers;
+        private delegate void OpenGLDeleteFramebuffers(out nint n, nint framebuffers);
+        private readonly OpenGLDeleteFramebuffers glDeleteFramebuffers;
         
-        public unsafe void DeleteFramebuffers(int n, /*const*/ uint* framebuffers) =>
-            this.glDeleteFramebuffers.Invoke(n, framebuffers);
+        public void DeleteFramebuffers(out nint n, nint framebuffers) =>
+            this.glDeleteFramebuffers.Invoke(out n, framebuffers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenFramebuffers(int n, uint* framebuffers);
-        private readonly GLGenFramebuffers glGenFramebuffers;
+        private delegate void OpenGLGenFramebuffers(out nint n, out nint framebuffers);
+        private readonly OpenGLGenFramebuffers glGenFramebuffers;
         
-        public unsafe void GenFramebuffers(int n, uint* framebuffers) =>
-            this.glGenFramebuffers.Invoke(n, framebuffers);
+        public void GenFramebuffers(out nint n, out nint framebuffers) =>
+            this.glGenFramebuffers.Invoke(out n, out framebuffers);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate FramebufferStatus GLCheckFramebufferStatus(FramebufferTarget target);
-        private readonly GLCheckFramebufferStatus glCheckFramebufferStatus;
+        private delegate FramebufferStatus OpenGLCheckFramebufferStatus(out nint target);
+        private readonly OpenGLCheckFramebufferStatus glCheckFramebufferStatus;
         
-        public FramebufferStatus CheckFramebufferStatus(FramebufferTarget target) =>
-            this.glCheckFramebufferStatus.Invoke(target);
+        public FramebufferStatus CheckFramebufferStatus(out nint target) =>
+            this.glCheckFramebufferStatus.Invoke(out target);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTexture1D(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, uint texture, int level);
-        private readonly GLFramebufferTexture1D glFramebufferTexture1D;
+        private delegate void OpenGLFramebufferTexture1D(out nint target, out nint attachment, out nint textarget, out nint texture, out nint level);
+        private readonly OpenGLFramebufferTexture1D glFramebufferTexture1D;
         
-        public void FramebufferTexture1D(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, uint texture, int level) =>
-            this.glFramebufferTexture1D.Invoke(target, attachment, textarget, texture, level);
+        public void FramebufferTexture1D(out nint target, out nint attachment, out nint textarget, out nint texture, out nint level) =>
+            this.glFramebufferTexture1D.Invoke(out target, out attachment, out textarget, out texture, out level);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTexture2D(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, uint texture, int level);
-        private readonly GLFramebufferTexture2D glFramebufferTexture2D;
+        private delegate void OpenGLFramebufferTexture2D(out nint target, out nint attachment, out nint textarget, out nint texture, out nint level);
+        private readonly OpenGLFramebufferTexture2D glFramebufferTexture2D;
         
-        public void FramebufferTexture2D(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, uint texture, int level) =>
-            this.glFramebufferTexture2D.Invoke(target, attachment, textarget, texture, level);
+        public void FramebufferTexture2D(out nint target, out nint attachment, out nint textarget, out nint texture, out nint level) =>
+            this.glFramebufferTexture2D.Invoke(out target, out attachment, out textarget, out texture, out level);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTexture3D(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, uint texture, int level, int zoffset);
-        private readonly GLFramebufferTexture3D glFramebufferTexture3D;
+        private delegate void OpenGLFramebufferTexture3D(out nint target, out nint attachment, out nint textarget, out nint texture, out nint level, out nint zoffset);
+        private readonly OpenGLFramebufferTexture3D glFramebufferTexture3D;
         
-        public void FramebufferTexture3D(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, uint texture, int level, int zoffset) =>
-            this.glFramebufferTexture3D.Invoke(target, attachment, textarget, texture, level, zoffset);
+        public void FramebufferTexture3D(out nint target, out nint attachment, out nint textarget, out nint texture, out nint level, out nint zoffset) =>
+            this.glFramebufferTexture3D.Invoke(out target, out attachment, out textarget, out texture, out level, out zoffset);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferRenderbuffer(FramebufferTarget target, FramebufferAttachment attachment, RenderbufferTarget renderbuffertarget, uint renderbuffer);
-        private readonly GLFramebufferRenderbuffer glFramebufferRenderbuffer;
+        private delegate void OpenGLFramebufferRenderbuffer(out nint target, out nint attachment, out nint renderbuffertarget, out nint renderbuffer);
+        private readonly OpenGLFramebufferRenderbuffer glFramebufferRenderbuffer;
         
-        public void FramebufferRenderbuffer(FramebufferTarget target, FramebufferAttachment attachment, RenderbufferTarget renderbuffertarget, uint renderbuffer) =>
-            this.glFramebufferRenderbuffer.Invoke(target, attachment, renderbuffertarget, renderbuffer);
+        public void FramebufferRenderbuffer(out nint target, out nint attachment, out nint renderbuffertarget, out nint renderbuffer) =>
+            this.glFramebufferRenderbuffer.Invoke(out target, out attachment, out renderbuffertarget, out renderbuffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetFramebufferAttachmentParameteriv(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params);
-        private readonly GLGetFramebufferAttachmentParameteriv glGetFramebufferAttachmentParameteriv;
+        private delegate void OpenGLGetFramebufferAttachmentParameteriv(out nint target, out nint attachment, out nint pname, out nint @params);
+        private readonly OpenGLGetFramebufferAttachmentParameteriv glGetFramebufferAttachmentParameteriv;
         
-        public unsafe void GetFramebufferAttachmentParameteriv(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) =>
-            this.glGetFramebufferAttachmentParameteriv.Invoke(target, attachment, pname, @params);
+        public void GetFramebufferAttachmentParameteriv(out nint target, out nint attachment, out nint pname, out nint @params) =>
+            this.glGetFramebufferAttachmentParameteriv.Invoke(out target, out attachment, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLGenerateMipmap(TextureTarget target);
-        private readonly GLGenerateMipmap glGenerateMipmap;
+        private delegate void OpenGLGenerateMipmap(out nint target);
+        private readonly OpenGLGenerateMipmap glGenerateMipmap;
         
-        public void GenerateMipmap(TextureTarget target) =>
-            this.glGenerateMipmap.Invoke(target);
+        public void GenerateMipmap(out nint target) =>
+            this.glGenerateMipmap.Invoke(out target);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, ClearBufferMask mask, BlitFramebufferFilter filter);
-        private readonly GLBlitFramebuffer glBlitFramebuffer;
+        private delegate void OpenGLBlitFramebuffer(out nint srcX0, out nint srcY0, out nint srcX1, out nint srcY1, out nint dstX0, out nint dstY0, out nint dstX1, out nint dstY1, out nint mask, out nint filter);
+        private readonly OpenGLBlitFramebuffer glBlitFramebuffer;
         
-        public void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, ClearBufferMask mask, BlitFramebufferFilter filter) =>
-            this.glBlitFramebuffer.Invoke(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
+        public void BlitFramebuffer(out nint srcX0, out nint srcY0, out nint srcX1, out nint srcY1, out nint dstX0, out nint dstY0, out nint dstX1, out nint dstY1, out nint mask, out nint filter) =>
+            this.glBlitFramebuffer.Invoke(out srcX0, out srcY0, out srcX1, out srcY1, out dstX0, out dstY0, out dstX1, out dstY1, out mask, out filter);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLRenderbufferStorageMultisample(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height);
-        private readonly GLRenderbufferStorageMultisample glRenderbufferStorageMultisample;
+        private delegate void OpenGLRenderbufferStorageMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height);
+        private readonly OpenGLRenderbufferStorageMultisample glRenderbufferStorageMultisample;
         
-        public void RenderbufferStorageMultisample(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) =>
-            this.glRenderbufferStorageMultisample.Invoke(target, samples, internalformat, width, height);
+        public void RenderbufferStorageMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height) =>
+            this.glRenderbufferStorageMultisample.Invoke(out target, out samples, out internalformat, out width, out height);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTextureLayer(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level, int layer);
-        private readonly GLFramebufferTextureLayer glFramebufferTextureLayer;
+        private delegate void OpenGLFramebufferTextureLayer(out nint target, out nint attachment, out nint texture, out nint level, out nint layer);
+        private readonly OpenGLFramebufferTextureLayer glFramebufferTextureLayer;
         
-        public void FramebufferTextureLayer(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level, int layer) =>
-            this.glFramebufferTextureLayer.Invoke(target, attachment, texture, level, layer);
+        public void FramebufferTextureLayer(out nint target, out nint attachment, out nint texture, out nint level, out nint layer) =>
+            this.glFramebufferTextureLayer.Invoke(out target, out attachment, out texture, out level, out layer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate nint GLMapBufferRange(BufferTargetARB target, nint offset, nint length, MapBufferAccessMask access);
-        private readonly GLMapBufferRange glMapBufferRange;
+        private delegate nint OpenGLMapBufferRange(out nint target, out nint offset, out nint length, out nint access);
+        private readonly OpenGLMapBufferRange glMapBufferRange;
         
-        public nint MapBufferRange(BufferTargetARB target, nint offset, nint length, MapBufferAccessMask access) =>
-            this.glMapBufferRange.Invoke(target, offset, length, access);
+        public nint MapBufferRange(out nint target, out nint offset, out nint length, out nint access) =>
+            this.glMapBufferRange.Invoke(out target, out offset, out length, out access);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFlushMappedBufferRange(BufferTargetARB target, nint offset, nint length);
-        private readonly GLFlushMappedBufferRange glFlushMappedBufferRange;
+        private delegate void OpenGLFlushMappedBufferRange(out nint target, out nint offset, out nint length);
+        private readonly OpenGLFlushMappedBufferRange glFlushMappedBufferRange;
         
-        public void FlushMappedBufferRange(BufferTargetARB target, nint offset, nint length) =>
-            this.glFlushMappedBufferRange.Invoke(target, offset, length);
+        public void FlushMappedBufferRange(out nint target, out nint offset, out nint length) =>
+            this.glFlushMappedBufferRange.Invoke(out target, out offset, out length);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLBindVertexArray(uint array);
-        private readonly GLBindVertexArray glBindVertexArray;
+        private delegate void OpenGLBindVertexArray(out nint array);
+        private readonly OpenGLBindVertexArray glBindVertexArray;
         
-        public void BindVertexArray(uint array) =>
-            this.glBindVertexArray.Invoke(array);
+        public void BindVertexArray(out nint array) =>
+            this.glBindVertexArray.Invoke(out array);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLDeleteVertexArrays(int n, /*const*/ uint* arrays);
-        private readonly GLDeleteVertexArrays glDeleteVertexArrays;
+        private delegate void OpenGLDeleteVertexArrays(out nint n, nint arrays);
+        private readonly OpenGLDeleteVertexArrays glDeleteVertexArrays;
         
-        public unsafe void DeleteVertexArrays(int n, /*const*/ uint* arrays) =>
-            this.glDeleteVertexArrays.Invoke(n, arrays);
+        public void DeleteVertexArrays(out nint n, nint arrays) =>
+            this.glDeleteVertexArrays.Invoke(out n, arrays);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGenVertexArrays(int n, uint* arrays);
-        private readonly GLGenVertexArrays glGenVertexArrays;
+        private delegate void OpenGLGenVertexArrays(out nint n, out nint arrays);
+        private readonly OpenGLGenVertexArrays glGenVertexArrays;
         
-        public unsafe void GenVertexArrays(int n, uint* arrays) =>
-            this.glGenVertexArrays.Invoke(n, arrays);
+        public void GenVertexArrays(out nint n, out nint arrays) =>
+            this.glGenVertexArrays.Invoke(out n, out arrays);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsVertexArray(uint array);
-        private readonly GLIsVertexArray glIsVertexArray;
+        private delegate bool OpenGLIsVertexArray(out nint array);
+        private readonly OpenGLIsVertexArray glIsVertexArray;
         
-        public bool IsVertexArray(uint array) =>
-            this.glIsVertexArray.Invoke(array);
+        public bool IsVertexArray(out nint array) =>
+            this.glIsVertexArray.Invoke(out array);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawArraysInstanced(PrimitiveType mode, int first, int count, int instancecount);
-        private readonly GLDrawArraysInstanced glDrawArraysInstanced;
+        private delegate void OpenGLDrawArraysInstanced(out nint mode, out nint first, out nint count, out nint instancecount);
+        private readonly OpenGLDrawArraysInstanced glDrawArraysInstanced;
         
-        public void DrawArraysInstanced(PrimitiveType mode, int first, int count, int instancecount) =>
-            this.glDrawArraysInstanced.Invoke(mode, first, count, instancecount);
+        public void DrawArraysInstanced(out nint mode, out nint first, out nint count, out nint instancecount) =>
+            this.glDrawArraysInstanced.Invoke(out mode, out first, out count, out instancecount);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawElementsInstanced(PrimitiveType mode, int count, DrawElementsType type, nint indices, int instancecount);
-        private readonly GLDrawElementsInstanced glDrawElementsInstanced;
+        private delegate void OpenGLDrawElementsInstanced(out nint mode, out nint count, out nint type, nint indices, out nint instancecount);
+        private readonly OpenGLDrawElementsInstanced glDrawElementsInstanced;
         
-        public void DrawElementsInstanced(PrimitiveType mode, int count, DrawElementsType type, nint indices, int instancecount) =>
-            this.glDrawElementsInstanced.Invoke(mode, count, type, indices, instancecount);
+        public void DrawElementsInstanced(out nint mode, out nint count, out nint type, nint indices, out nint instancecount) =>
+            this.glDrawElementsInstanced.Invoke(out mode, out count, out type, indices, out instancecount);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexBuffer(TextureTarget target, SizedInternalFormat internalformat, uint buffer);
-        private readonly GLTexBuffer glTexBuffer;
+        private delegate void OpenGLTexBuffer(out nint target, out nint internalformat, out nint buffer);
+        private readonly OpenGLTexBuffer glTexBuffer;
         
-        public void TexBuffer(TextureTarget target, SizedInternalFormat internalformat, uint buffer) =>
-            this.glTexBuffer.Invoke(target, internalformat, buffer);
+        public void TexBuffer(out nint target, out nint internalformat, out nint buffer) =>
+            this.glTexBuffer.Invoke(out target, out internalformat, out buffer);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLPrimitiveRestartIndex(uint index);
-        private readonly GLPrimitiveRestartIndex glPrimitiveRestartIndex;
+        private delegate void OpenGLPrimitiveRestartIndex(out nint index);
+        private readonly OpenGLPrimitiveRestartIndex glPrimitiveRestartIndex;
         
-        public void PrimitiveRestartIndex(uint index) =>
-            this.glPrimitiveRestartIndex.Invoke(index);
+        public void PrimitiveRestartIndex(out nint index) =>
+            this.glPrimitiveRestartIndex.Invoke(out index);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLCopyBufferSubData(CopyBufferSubDataTarget readTarget, CopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size);
-        private readonly GLCopyBufferSubData glCopyBufferSubData;
+        private delegate void OpenGLCopyBufferSubData(out nint readTarget, out nint writeTarget, out nint readOffset, out nint writeOffset, out nint size);
+        private readonly OpenGLCopyBufferSubData glCopyBufferSubData;
         
-        public void CopyBufferSubData(CopyBufferSubDataTarget readTarget, CopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size) =>
-            this.glCopyBufferSubData.Invoke(readTarget, writeTarget, readOffset, writeOffset, size);
+        public void CopyBufferSubData(out nint readTarget, out nint writeTarget, out nint readOffset, out nint writeOffset, out nint size) =>
+            this.glCopyBufferSubData.Invoke(out readTarget, out writeTarget, out readOffset, out writeOffset, out size);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetUniformIndices(uint program, int uniformCount, sbyte uniformNames, uint* uniformIndices);
-        private readonly GLGetUniformIndices glGetUniformIndices;
+        private delegate void OpenGLGetUniformIndices(out nint program, out nint uniformCount, nint uniformNames, out nint uniformIndices);
+        private readonly OpenGLGetUniformIndices glGetUniformIndices;
         
-        public unsafe void GetUniformIndices(uint program, int uniformCount, sbyte uniformNames, uint* uniformIndices) =>
-            this.glGetUniformIndices.Invoke(program, uniformCount, uniformNames, uniformIndices);
+        public void GetUniformIndices(out nint program, out nint uniformCount, nint uniformNames, out nint uniformIndices) =>
+            this.glGetUniformIndices.Invoke(out program, out uniformCount, uniformNames, out uniformIndices);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetActiveUniformsiv(uint program, int uniformCount, /*const*/ uint* uniformIndices, UniformPName pname, int* @params);
-        private readonly GLGetActiveUniformsiv glGetActiveUniformsiv;
+        private delegate void OpenGLGetActiveUniformsiv(out nint program, out nint uniformCount, nint uniformIndices, out nint pname, out nint @params);
+        private readonly OpenGLGetActiveUniformsiv glGetActiveUniformsiv;
         
-        public unsafe void GetActiveUniformsiv(uint program, int uniformCount, /*const*/ uint* uniformIndices, UniformPName pname, int* @params) =>
-            this.glGetActiveUniformsiv.Invoke(program, uniformCount, uniformIndices, pname, @params);
+        public void GetActiveUniformsiv(out nint program, out nint uniformCount, nint uniformIndices, out nint pname, out nint @params) =>
+            this.glGetActiveUniformsiv.Invoke(out program, out uniformCount, uniformIndices, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, sbyte* uniformName);
-        private readonly GLGetActiveUniformName glGetActiveUniformName;
+        private delegate void OpenGLGetActiveUniformName(out nint program, out nint uniformIndex, out nint bufSize, out nint length, out nint uniformName);
+        private readonly OpenGLGetActiveUniformName glGetActiveUniformName;
         
-        public unsafe void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, sbyte* uniformName) =>
-            this.glGetActiveUniformName.Invoke(program, uniformIndex, bufSize, length, uniformName);
+        public void GetActiveUniformName(out nint program, out nint uniformIndex, out nint bufSize, out nint length, out nint uniformName) =>
+            this.glGetActiveUniformName.Invoke(out program, out uniformIndex, out bufSize, out length, out uniformName);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate uint GLGetUniformBlockIndex(uint program, /*const*/ sbyte* uniformBlockName);
-        private readonly GLGetUniformBlockIndex glGetUniformBlockIndex;
+        private delegate uint OpenGLGetUniformBlockIndex(out nint program, nint uniformBlockName);
+        private readonly OpenGLGetUniformBlockIndex glGetUniformBlockIndex;
         
-        public unsafe uint GetUniformBlockIndex(uint program, /*const*/ sbyte* uniformBlockName) =>
-            this.glGetUniformBlockIndex.Invoke(program, uniformBlockName);
+        public uint GetUniformBlockIndex(out nint program, nint uniformBlockName) =>
+            this.glGetUniformBlockIndex.Invoke(out program, uniformBlockName);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetActiveUniformBlockiv(uint program, uint uniformBlockIndex, UniformBlockPName pname, int* @params);
-        private readonly GLGetActiveUniformBlockiv glGetActiveUniformBlockiv;
+        private delegate void OpenGLGetActiveUniformBlockiv(out nint program, out nint uniformBlockIndex, out nint pname, out nint @params);
+        private readonly OpenGLGetActiveUniformBlockiv glGetActiveUniformBlockiv;
         
-        public unsafe void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, UniformBlockPName pname, int* @params) =>
-            this.glGetActiveUniformBlockiv.Invoke(program, uniformBlockIndex, pname, @params);
+        public void GetActiveUniformBlockiv(out nint program, out nint uniformBlockIndex, out nint pname, out nint @params) =>
+            this.glGetActiveUniformBlockiv.Invoke(out program, out uniformBlockIndex, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, sbyte* uniformBlockName);
-        private readonly GLGetActiveUniformBlockName glGetActiveUniformBlockName;
+        private delegate void OpenGLGetActiveUniformBlockName(out nint program, out nint uniformBlockIndex, out nint bufSize, out nint length, out nint uniformBlockName);
+        private readonly OpenGLGetActiveUniformBlockName glGetActiveUniformBlockName;
         
-        public unsafe void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, sbyte* uniformBlockName) =>
-            this.glGetActiveUniformBlockName.Invoke(program, uniformBlockIndex, bufSize, length, uniformBlockName);
+        public void GetActiveUniformBlockName(out nint program, out nint uniformBlockIndex, out nint bufSize, out nint length, out nint uniformBlockName) =>
+            this.glGetActiveUniformBlockName.Invoke(out program, out uniformBlockIndex, out bufSize, out length, out uniformBlockName);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLUniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding);
-        private readonly GLUniformBlockBinding glUniformBlockBinding;
+        private delegate void OpenGLUniformBlockBinding(out nint program, out nint uniformBlockIndex, out nint uniformBlockBinding);
+        private readonly OpenGLUniformBlockBinding glUniformBlockBinding;
         
-        public void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding) =>
-            this.glUniformBlockBinding.Invoke(program, uniformBlockIndex, uniformBlockBinding);
+        public void UniformBlockBinding(out nint program, out nint uniformBlockIndex, out nint uniformBlockBinding) =>
+            this.glUniformBlockBinding.Invoke(out program, out uniformBlockIndex, out uniformBlockBinding);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawElementsBaseVertex(PrimitiveType mode, int count, DrawElementsType type, nint indices, int basevertex);
-        private readonly GLDrawElementsBaseVertex glDrawElementsBaseVertex;
+        private delegate void OpenGLDrawElementsBaseVertex(out nint mode, out nint count, out nint type, nint indices, out nint basevertex);
+        private readonly OpenGLDrawElementsBaseVertex glDrawElementsBaseVertex;
         
-        public void DrawElementsBaseVertex(PrimitiveType mode, int count, DrawElementsType type, nint indices, int basevertex) =>
-            this.glDrawElementsBaseVertex.Invoke(mode, count, type, indices, basevertex);
+        public void DrawElementsBaseVertex(out nint mode, out nint count, out nint type, nint indices, out nint basevertex) =>
+            this.glDrawElementsBaseVertex.Invoke(out mode, out count, out type, indices, out basevertex);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawRangeElementsBaseVertex(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, nint indices, int basevertex);
-        private readonly GLDrawRangeElementsBaseVertex glDrawRangeElementsBaseVertex;
+        private delegate void OpenGLDrawRangeElementsBaseVertex(out nint mode, out nint start, out nint end, out nint count, out nint type, nint indices, out nint basevertex);
+        private readonly OpenGLDrawRangeElementsBaseVertex glDrawRangeElementsBaseVertex;
         
-        public void DrawRangeElementsBaseVertex(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, nint indices, int basevertex) =>
-            this.glDrawRangeElementsBaseVertex.Invoke(mode, start, end, count, type, indices, basevertex);
+        public void DrawRangeElementsBaseVertex(out nint mode, out nint start, out nint end, out nint count, out nint type, nint indices, out nint basevertex) =>
+            this.glDrawRangeElementsBaseVertex.Invoke(out mode, out start, out end, out count, out type, indices, out basevertex);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDrawElementsInstancedBaseVertex(PrimitiveType mode, int count, DrawElementsType type, nint indices, int instancecount, int basevertex);
-        private readonly GLDrawElementsInstancedBaseVertex glDrawElementsInstancedBaseVertex;
+        private delegate void OpenGLDrawElementsInstancedBaseVertex(out nint mode, out nint count, out nint type, nint indices, out nint instancecount, out nint basevertex);
+        private readonly OpenGLDrawElementsInstancedBaseVertex glDrawElementsInstancedBaseVertex;
         
-        public void DrawElementsInstancedBaseVertex(PrimitiveType mode, int count, DrawElementsType type, nint indices, int instancecount, int basevertex) =>
-            this.glDrawElementsInstancedBaseVertex.Invoke(mode, count, type, indices, instancecount, basevertex);
+        public void DrawElementsInstancedBaseVertex(out nint mode, out nint count, out nint type, nint indices, out nint instancecount, out nint basevertex) =>
+            this.glDrawElementsInstancedBaseVertex.Invoke(out mode, out count, out type, indices, out instancecount, out basevertex);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLMultiDrawElementsBaseVertex(PrimitiveType mode, /*const*/ int* count, DrawElementsType type, nint indices, int drawcount, /*const*/ int* basevertex);
-        private readonly GLMultiDrawElementsBaseVertex glMultiDrawElementsBaseVertex;
+        private delegate void OpenGLMultiDrawElementsBaseVertex(out nint mode, nint count, out nint type, nint indices, out nint drawcount, nint basevertex);
+        private readonly OpenGLMultiDrawElementsBaseVertex glMultiDrawElementsBaseVertex;
         
-        public unsafe void MultiDrawElementsBaseVertex(PrimitiveType mode, /*const*/ int* count, DrawElementsType type, nint indices, int drawcount, /*const*/ int* basevertex) =>
-            this.glMultiDrawElementsBaseVertex.Invoke(mode, count, type, indices, drawcount, basevertex);
+        public void MultiDrawElementsBaseVertex(out nint mode, nint count, out nint type, nint indices, out nint drawcount, nint basevertex) =>
+            this.glMultiDrawElementsBaseVertex.Invoke(out mode, count, out type, indices, out drawcount, basevertex);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLProvokingVertex(VertexProvokingMode mode);
-        private readonly GLProvokingVertex glProvokingVertex;
+        private delegate void OpenGLProvokingVertex(out nint mode);
+        private readonly OpenGLProvokingVertex glProvokingVertex;
         
-        public void ProvokingVertex(VertexProvokingMode mode) =>
-            this.glProvokingVertex.Invoke(mode);
+        public void ProvokingVertex(out nint mode) =>
+            this.glProvokingVertex.Invoke(out mode);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate nint GLFenceSync(SyncCondition condition, SyncBehaviorFlags flags);
-        private readonly GLFenceSync glFenceSync;
+        private delegate nint OpenGLFenceSync(out nint condition, out nint flags);
+        private readonly OpenGLFenceSync glFenceSync;
         
-        public nint FenceSync(SyncCondition condition, SyncBehaviorFlags flags) =>
-            this.glFenceSync.Invoke(condition, flags);
+        public nint FenceSync(out nint condition, out nint flags) =>
+            this.glFenceSync.Invoke(out condition, out flags);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate bool GLIsSync(nint sync);
-        private readonly GLIsSync glIsSync;
+        private delegate bool OpenGLIsSync(out nint sync);
+        private readonly OpenGLIsSync glIsSync;
         
-        public bool IsSync(nint sync) =>
-            this.glIsSync.Invoke(sync);
+        public bool IsSync(out nint sync) =>
+            this.glIsSync.Invoke(out sync);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLDeleteSync(nint sync);
-        private readonly GLDeleteSync glDeleteSync;
+        private delegate void OpenGLDeleteSync(out nint sync);
+        private readonly OpenGLDeleteSync glDeleteSync;
         
-        public void DeleteSync(nint sync) =>
-            this.glDeleteSync.Invoke(sync);
+        public void DeleteSync(out nint sync) =>
+            this.glDeleteSync.Invoke(out sync);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate SyncStatus GLClientWaitSync(nint sync, SyncObjectMask flags, ulong timeout);
-        private readonly GLClientWaitSync glClientWaitSync;
+        private delegate SyncStatus OpenGLClientWaitSync(out nint sync, out nint flags, out nint timeout);
+        private readonly OpenGLClientWaitSync glClientWaitSync;
         
-        public SyncStatus ClientWaitSync(nint sync, SyncObjectMask flags, ulong timeout) =>
-            this.glClientWaitSync.Invoke(sync, flags, timeout);
+        public SyncStatus ClientWaitSync(out nint sync, out nint flags, out nint timeout) =>
+            this.glClientWaitSync.Invoke(out sync, out flags, out timeout);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLWaitSync(nint sync, SyncBehaviorFlags flags, ulong timeout);
-        private readonly GLWaitSync glWaitSync;
+        private delegate void OpenGLWaitSync(out nint sync, out nint flags, out nint timeout);
+        private readonly OpenGLWaitSync glWaitSync;
         
-        public void WaitSync(nint sync, SyncBehaviorFlags flags, ulong timeout) =>
-            this.glWaitSync.Invoke(sync, flags, timeout);
+        public void WaitSync(out nint sync, out nint flags, out nint timeout) =>
+            this.glWaitSync.Invoke(out sync, out flags, out timeout);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetInteger64v(GetPName pname, long* data);
-        private readonly GLGetInteger64v glGetInteger64v;
+        private delegate void OpenGLGetInteger64v(out nint pname, out nint data);
+        private readonly OpenGLGetInteger64v glGetInteger64v;
         
-        public unsafe void GetInteger64v(GetPName pname, long* data) =>
-            this.glGetInteger64v.Invoke(pname, data);
+        public void GetInteger64v(out nint pname, out nint data) =>
+            this.glGetInteger64v.Invoke(out pname, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetSynciv(nint sync, SyncParameterName pname, int count, int* length, int* values);
-        private readonly GLGetSynciv glGetSynciv;
+        private delegate void OpenGLGetSynciv(out nint sync, out nint pname, out nint count, out nint length, out nint values);
+        private readonly OpenGLGetSynciv glGetSynciv;
         
-        public unsafe void GetSynciv(nint sync, SyncParameterName pname, int count, int* length, int* values) =>
-            this.glGetSynciv.Invoke(sync, pname, count, length, values);
+        public void GetSynciv(out nint sync, out nint pname, out nint count, out nint length, out nint values) =>
+            this.glGetSynciv.Invoke(out sync, out pname, out count, out length, out values);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetInteger64i_v(GetPName target, uint index, long* data);
-        private readonly GLGetInteger64i_v glGetInteger64i_v;
+        private delegate void OpenGLGetInteger64i_v(out nint target, out nint index, out nint data);
+        private readonly OpenGLGetInteger64i_v glGetInteger64i_v;
         
-        public unsafe void GetInteger64i_v(GetPName target, uint index, long* data) =>
-            this.glGetInteger64i_v.Invoke(target, index, data);
+        public void GetInteger64i_v(out nint target, out nint index, out nint data) =>
+            this.glGetInteger64i_v.Invoke(out target, out index, out data);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetBufferParameteri64v(BufferTargetARB target, BufferPNameARB pname, long* @params);
-        private readonly GLGetBufferParameteri64v glGetBufferParameteri64v;
+        private delegate void OpenGLGetBufferParameteri64v(out nint target, out nint pname, out nint @params);
+        private readonly OpenGLGetBufferParameteri64v glGetBufferParameteri64v;
         
-        public unsafe void GetBufferParameteri64v(BufferTargetARB target, BufferPNameARB pname, long* @params) =>
-            this.glGetBufferParameteri64v.Invoke(target, pname, @params);
+        public void GetBufferParameteri64v(out nint target, out nint pname, out nint @params) =>
+            this.glGetBufferParameteri64v.Invoke(out target, out pname, out @params);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLFramebufferTexture(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level);
-        private readonly GLFramebufferTexture glFramebufferTexture;
+        private delegate void OpenGLFramebufferTexture(out nint target, out nint attachment, out nint texture, out nint level);
+        private readonly OpenGLFramebufferTexture glFramebufferTexture;
         
-        public void FramebufferTexture(FramebufferTarget target, FramebufferAttachment attachment, uint texture, int level) =>
-            this.glFramebufferTexture.Invoke(target, attachment, texture, level);
+        public void FramebufferTexture(out nint target, out nint attachment, out nint texture, out nint level) =>
+            this.glFramebufferTexture.Invoke(out target, out attachment, out texture, out level);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexImage2DMultisample(TextureTarget target, int samples, InternalFormat internalformat, int width, int height, bool fixedsamplelocations);
-        private readonly GLTexImage2DMultisample glTexImage2DMultisample;
+        private delegate void OpenGLTexImage2DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint fixedsamplelocations);
+        private readonly OpenGLTexImage2DMultisample glTexImage2DMultisample;
         
-        public void TexImage2DMultisample(TextureTarget target, int samples, InternalFormat internalformat, int width, int height, bool fixedsamplelocations) =>
-            this.glTexImage2DMultisample.Invoke(target, samples, internalformat, width, height, fixedsamplelocations);
+        public void TexImage2DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint fixedsamplelocations) =>
+            this.glTexImage2DMultisample.Invoke(out target, out samples, out internalformat, out width, out height, out fixedsamplelocations);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLTexImage3DMultisample(TextureTarget target, int samples, InternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations);
-        private readonly GLTexImage3DMultisample glTexImage3DMultisample;
+        private delegate void OpenGLTexImage3DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint depth, out nint fixedsamplelocations);
+        private readonly OpenGLTexImage3DMultisample glTexImage3DMultisample;
         
-        public void TexImage3DMultisample(TextureTarget target, int samples, InternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations) =>
-            this.glTexImage3DMultisample.Invoke(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+        public void TexImage3DMultisample(out nint target, out nint samples, out nint internalformat, out nint width, out nint height, out nint depth, out nint fixedsamplelocations) =>
+            this.glTexImage3DMultisample.Invoke(out target, out samples, out internalformat, out width, out height, out depth, out fixedsamplelocations);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void GLGetMultisamplefv(GetMultisamplePNameNV pname, uint index, float* val);
-        private readonly GLGetMultisamplefv glGetMultisamplefv;
+        private delegate void OpenGLGetMultisamplefv(out nint pname, out nint index, out nint val);
+        private readonly OpenGLGetMultisamplefv glGetMultisamplefv;
         
-        public unsafe void GetMultisamplefv(GetMultisamplePNameNV pname, uint index, float* val) =>
-            this.glGetMultisamplefv.Invoke(pname, index, val);
+        public void GetMultisamplefv(out nint pname, out nint index, out nint val) =>
+            this.glGetMultisamplefv.Invoke(out pname, out index, out val);
         
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void GLSampleMaski(uint maskNumber, uint mask);
-        private readonly GLSampleMaski glSampleMaski;
+        private delegate void OpenGLSampleMaski(out nint maskNumber, out nint mask);
+        private readonly OpenGLSampleMaski glSampleMaski;
         
-        public void SampleMaski(uint maskNumber, uint mask) =>
-            this.glSampleMaski.Invoke(maskNumber, mask);
+        public void SampleMaski(out nint maskNumber, out nint mask) =>
+            this.glSampleMaski.Invoke(out maskNumber, out mask);
         
-        public GL(GetProcAddressHandler loader)
+        public OpenGL(GetProcAddressHandler loader)
         {
-            glCullFace = Marshal.GetDelegateForFunctionPointer<GLCullFace>(loader.Invoke("glCullFace"));
-            glFrontFace = Marshal.GetDelegateForFunctionPointer<GLFrontFace>(loader.Invoke("glFrontFace"));
-            glHint = Marshal.GetDelegateForFunctionPointer<GLHint>(loader.Invoke("glHint"));
-            glLineWidth = Marshal.GetDelegateForFunctionPointer<GLLineWidth>(loader.Invoke("glLineWidth"));
-            glPointSize = Marshal.GetDelegateForFunctionPointer<GLPointSize>(loader.Invoke("glPointSize"));
-            glPolygonMode = Marshal.GetDelegateForFunctionPointer<GLPolygonMode>(loader.Invoke("glPolygonMode"));
-            glScissor = Marshal.GetDelegateForFunctionPointer<GLScissor>(loader.Invoke("glScissor"));
-            glTexParameterf = Marshal.GetDelegateForFunctionPointer<GLTexParameterf>(loader.Invoke("glTexParameterf"));
-            glTexParameterfv = Marshal.GetDelegateForFunctionPointer<GLTexParameterfv>(loader.Invoke("glTexParameterfv"));
-            glTexParameteri = Marshal.GetDelegateForFunctionPointer<GLTexParameteri>(loader.Invoke("glTexParameteri"));
-            glTexParameteriv = Marshal.GetDelegateForFunctionPointer<GLTexParameteriv>(loader.Invoke("glTexParameteriv"));
-            glTexImage1D = Marshal.GetDelegateForFunctionPointer<GLTexImage1D>(loader.Invoke("glTexImage1D"));
-            glTexImage2D = Marshal.GetDelegateForFunctionPointer<GLTexImage2D>(loader.Invoke("glTexImage2D"));
-            glDrawBuffer = Marshal.GetDelegateForFunctionPointer<GLDrawBuffer>(loader.Invoke("glDrawBuffer"));
-            glClear = Marshal.GetDelegateForFunctionPointer<GLClear>(loader.Invoke("glClear"));
-            glClearColor = Marshal.GetDelegateForFunctionPointer<GLClearColor>(loader.Invoke("glClearColor"));
-            glClearStencil = Marshal.GetDelegateForFunctionPointer<GLClearStencil>(loader.Invoke("glClearStencil"));
-            glClearDepth = Marshal.GetDelegateForFunctionPointer<GLClearDepth>(loader.Invoke("glClearDepth"));
-            glStencilMask = Marshal.GetDelegateForFunctionPointer<GLStencilMask>(loader.Invoke("glStencilMask"));
-            glColorMask = Marshal.GetDelegateForFunctionPointer<GLColorMask>(loader.Invoke("glColorMask"));
-            glDepthMask = Marshal.GetDelegateForFunctionPointer<GLDepthMask>(loader.Invoke("glDepthMask"));
-            glDisable = Marshal.GetDelegateForFunctionPointer<GLDisable>(loader.Invoke("glDisable"));
-            glEnable = Marshal.GetDelegateForFunctionPointer<GLEnable>(loader.Invoke("glEnable"));
-            glFinish = Marshal.GetDelegateForFunctionPointer<GLFinish>(loader.Invoke("glFinish"));
-            glFlush = Marshal.GetDelegateForFunctionPointer<GLFlush>(loader.Invoke("glFlush"));
-            glBlendFunc = Marshal.GetDelegateForFunctionPointer<GLBlendFunc>(loader.Invoke("glBlendFunc"));
-            glLogicOp = Marshal.GetDelegateForFunctionPointer<GLLogicOp>(loader.Invoke("glLogicOp"));
-            glStencilFunc = Marshal.GetDelegateForFunctionPointer<GLStencilFunc>(loader.Invoke("glStencilFunc"));
-            glStencilOp = Marshal.GetDelegateForFunctionPointer<GLStencilOp>(loader.Invoke("glStencilOp"));
-            glDepthFunc = Marshal.GetDelegateForFunctionPointer<GLDepthFunc>(loader.Invoke("glDepthFunc"));
-            glPixelStoref = Marshal.GetDelegateForFunctionPointer<GLPixelStoref>(loader.Invoke("glPixelStoref"));
-            glPixelStorei = Marshal.GetDelegateForFunctionPointer<GLPixelStorei>(loader.Invoke("glPixelStorei"));
-            glReadBuffer = Marshal.GetDelegateForFunctionPointer<GLReadBuffer>(loader.Invoke("glReadBuffer"));
-            glReadPixels = Marshal.GetDelegateForFunctionPointer<GLReadPixels>(loader.Invoke("glReadPixels"));
-            glGetBooleanv = Marshal.GetDelegateForFunctionPointer<GLGetBooleanv>(loader.Invoke("glGetBooleanv"));
-            glGetDoublev = Marshal.GetDelegateForFunctionPointer<GLGetDoublev>(loader.Invoke("glGetDoublev"));
-            glGetError = Marshal.GetDelegateForFunctionPointer<GLGetError>(loader.Invoke("glGetError"));
-            glGetFloatv = Marshal.GetDelegateForFunctionPointer<GLGetFloatv>(loader.Invoke("glGetFloatv"));
-            glGetIntegerv = Marshal.GetDelegateForFunctionPointer<GLGetIntegerv>(loader.Invoke("glGetIntegerv"));
-            glGetString = Marshal.GetDelegateForFunctionPointer<GLGetString>(loader.Invoke("glGetString"));
-            glGetTexImage = Marshal.GetDelegateForFunctionPointer<GLGetTexImage>(loader.Invoke("glGetTexImage"));
-            glGetTexParameterfv = Marshal.GetDelegateForFunctionPointer<GLGetTexParameterfv>(loader.Invoke("glGetTexParameterfv"));
-            glGetTexParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetTexParameteriv>(loader.Invoke("glGetTexParameteriv"));
-            glGetTexLevelParameterfv = Marshal.GetDelegateForFunctionPointer<GLGetTexLevelParameterfv>(loader.Invoke("glGetTexLevelParameterfv"));
-            glGetTexLevelParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetTexLevelParameteriv>(loader.Invoke("glGetTexLevelParameteriv"));
-            glIsEnabled = Marshal.GetDelegateForFunctionPointer<GLIsEnabled>(loader.Invoke("glIsEnabled"));
-            glDepthRange = Marshal.GetDelegateForFunctionPointer<GLDepthRange>(loader.Invoke("glDepthRange"));
-            glViewport = Marshal.GetDelegateForFunctionPointer<GLViewport>(loader.Invoke("glViewport"));
-            glTexStorage3DMultisample = Marshal.GetDelegateForFunctionPointer<GLTexStorage3DMultisample>(loader.Invoke("glTexStorage3DMultisample"));
-            glTexBufferRange = Marshal.GetDelegateForFunctionPointer<GLTexBufferRange>(loader.Invoke("glTexBufferRange"));
-            glPatchParameteri = Marshal.GetDelegateForFunctionPointer<GLPatchParameteri>(loader.Invoke("glPatchParameteri"));
-            glMinSampleShading = Marshal.GetDelegateForFunctionPointer<GLMinSampleShading>(loader.Invoke("glMinSampleShading"));
-            glPrimitiveBoundingBox = Marshal.GetDelegateForFunctionPointer<GLPrimitiveBoundingBox>(loader.Invoke("glPrimitiveBoundingBox"));
-            glBlendFuncSeparatei = Marshal.GetDelegateForFunctionPointer<GLBlendFuncSeparatei>(loader.Invoke("glBlendFuncSeparatei"));
-            glBlendFunci = Marshal.GetDelegateForFunctionPointer<GLBlendFunci>(loader.Invoke("glBlendFunci"));
-            glBlendEquationSeparatei = Marshal.GetDelegateForFunctionPointer<GLBlendEquationSeparatei>(loader.Invoke("glBlendEquationSeparatei"));
-            glBlendEquationi = Marshal.GetDelegateForFunctionPointer<GLBlendEquationi>(loader.Invoke("glBlendEquationi"));
-            glCopyImageSubData = Marshal.GetDelegateForFunctionPointer<GLCopyImageSubData>(loader.Invoke("glCopyImageSubData"));
-            glBlendBarrier = Marshal.GetDelegateForFunctionPointer<GLBlendBarrier>(loader.Invoke("glBlendBarrier"));
-            glVertexBindingDivisor = Marshal.GetDelegateForFunctionPointer<GLVertexBindingDivisor>(loader.Invoke("glVertexBindingDivisor"));
-            glVertexAttribBinding = Marshal.GetDelegateForFunctionPointer<GLVertexAttribBinding>(loader.Invoke("glVertexAttribBinding"));
-            glVertexAttribIFormat = Marshal.GetDelegateForFunctionPointer<GLVertexAttribIFormat>(loader.Invoke("glVertexAttribIFormat"));
-            glVertexAttribFormat = Marshal.GetDelegateForFunctionPointer<GLVertexAttribFormat>(loader.Invoke("glVertexAttribFormat"));
-            glBindVertexBuffer = Marshal.GetDelegateForFunctionPointer<GLBindVertexBuffer>(loader.Invoke("glBindVertexBuffer"));
-            glTexStorage2DMultisample = Marshal.GetDelegateForFunctionPointer<GLTexStorage2DMultisample>(loader.Invoke("glTexStorage2DMultisample"));
-            glMemoryBarrierByRegion = Marshal.GetDelegateForFunctionPointer<GLMemoryBarrierByRegion>(loader.Invoke("glMemoryBarrierByRegion"));
-            glMemoryBarrier = Marshal.GetDelegateForFunctionPointer<GLMemoryBarrier>(loader.Invoke("glMemoryBarrier"));
-            glBindImageTexture = Marshal.GetDelegateForFunctionPointer<GLBindImageTexture>(loader.Invoke("glBindImageTexture"));
-            glGetProgramPipelineInfoLog = Marshal.GetDelegateForFunctionPointer<GLGetProgramPipelineInfoLog>(loader.Invoke("glGetProgramPipelineInfoLog"));
-            glValidateProgramPipeline = Marshal.GetDelegateForFunctionPointer<GLValidateProgramPipeline>(loader.Invoke("glValidateProgramPipeline"));
-            glProgramUniformMatrix4x3fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix4x3fv>(loader.Invoke("glProgramUniformMatrix4x3fv"));
-            glProgramUniformMatrix3x4fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix3x4fv>(loader.Invoke("glProgramUniformMatrix3x4fv"));
-            glProgramUniformMatrix4x2fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix4x2fv>(loader.Invoke("glProgramUniformMatrix4x2fv"));
-            glProgramUniformMatrix2x4fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix2x4fv>(loader.Invoke("glProgramUniformMatrix2x4fv"));
-            glProgramUniformMatrix3x2fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix3x2fv>(loader.Invoke("glProgramUniformMatrix3x2fv"));
-            glProgramUniformMatrix2x3fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix2x3fv>(loader.Invoke("glProgramUniformMatrix2x3fv"));
-            glProgramUniformMatrix4fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix4fv>(loader.Invoke("glProgramUniformMatrix4fv"));
-            glProgramUniformMatrix3fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix3fv>(loader.Invoke("glProgramUniformMatrix3fv"));
-            glBlendBarrierKHR = Marshal.GetDelegateForFunctionPointer<GLBlendBarrierKHR>(loader.Invoke("glBlendBarrierKHR"));
-            glDebugMessageControl = Marshal.GetDelegateForFunctionPointer<GLDebugMessageControl>(loader.Invoke("glDebugMessageControl"));
-            glDebugMessageInsert = Marshal.GetDelegateForFunctionPointer<GLDebugMessageInsert>(loader.Invoke("glDebugMessageInsert"));
-            glDebugMessageCallback = Marshal.GetDelegateForFunctionPointer<GLDebugMessageCallback>(loader.Invoke("glDebugMessageCallback"));
-            glGetDebugMessageLog = Marshal.GetDelegateForFunctionPointer<GLGetDebugMessageLog>(loader.Invoke("glGetDebugMessageLog"));
-            glPushDebugGroup = Marshal.GetDelegateForFunctionPointer<GLPushDebugGroup>(loader.Invoke("glPushDebugGroup"));
-            glPopDebugGroup = Marshal.GetDelegateForFunctionPointer<GLPopDebugGroup>(loader.Invoke("glPopDebugGroup"));
-            glObjectLabel = Marshal.GetDelegateForFunctionPointer<GLObjectLabel>(loader.Invoke("glObjectLabel"));
-            glGetObjectLabel = Marshal.GetDelegateForFunctionPointer<GLGetObjectLabel>(loader.Invoke("glGetObjectLabel"));
-            glObjectPtrLabel = Marshal.GetDelegateForFunctionPointer<GLObjectPtrLabel>(loader.Invoke("glObjectPtrLabel"));
-            glGetObjectPtrLabel = Marshal.GetDelegateForFunctionPointer<GLGetObjectPtrLabel>(loader.Invoke("glGetObjectPtrLabel"));
-            glProgramUniform3uiv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform3uiv>(loader.Invoke("glProgramUniform3uiv"));
-            glDebugMessageControlKHR = Marshal.GetDelegateForFunctionPointer<GLDebugMessageControlKHR>(loader.Invoke("glDebugMessageControlKHR"));
-            glDebugMessageInsertKHR = Marshal.GetDelegateForFunctionPointer<GLDebugMessageInsertKHR>(loader.Invoke("glDebugMessageInsertKHR"));
-            glDebugMessageCallbackKHR = Marshal.GetDelegateForFunctionPointer<GLDebugMessageCallbackKHR>(loader.Invoke("glDebugMessageCallbackKHR"));
-            glGetDebugMessageLogKHR = Marshal.GetDelegateForFunctionPointer<GLGetDebugMessageLogKHR>(loader.Invoke("glGetDebugMessageLogKHR"));
-            glPushDebugGroupKHR = Marshal.GetDelegateForFunctionPointer<GLPushDebugGroupKHR>(loader.Invoke("glPushDebugGroupKHR"));
-            glPopDebugGroupKHR = Marshal.GetDelegateForFunctionPointer<GLPopDebugGroupKHR>(loader.Invoke("glPopDebugGroupKHR"));
-            glObjectLabelKHR = Marshal.GetDelegateForFunctionPointer<GLObjectLabelKHR>(loader.Invoke("glObjectLabelKHR"));
-            glGetObjectLabelKHR = Marshal.GetDelegateForFunctionPointer<GLGetObjectLabelKHR>(loader.Invoke("glGetObjectLabelKHR"));
-            glObjectPtrLabelKHR = Marshal.GetDelegateForFunctionPointer<GLObjectPtrLabelKHR>(loader.Invoke("glObjectPtrLabelKHR"));
-            glGetObjectPtrLabelKHR = Marshal.GetDelegateForFunctionPointer<GLGetObjectPtrLabelKHR>(loader.Invoke("glGetObjectPtrLabelKHR"));
-            glGetPointervKHR = Marshal.GetDelegateForFunctionPointer<GLGetPointervKHR>(loader.Invoke("glGetPointervKHR"));
-            glGetGraphicsResetStatus = Marshal.GetDelegateForFunctionPointer<GLGetGraphicsResetStatus>(loader.Invoke("glGetGraphicsResetStatus"));
-            glReadnPixels = Marshal.GetDelegateForFunctionPointer<GLReadnPixels>(loader.Invoke("glReadnPixels"));
-            glGetnUniformfv = Marshal.GetDelegateForFunctionPointer<GLGetnUniformfv>(loader.Invoke("glGetnUniformfv"));
-            glGetnUniformiv = Marshal.GetDelegateForFunctionPointer<GLGetnUniformiv>(loader.Invoke("glGetnUniformiv"));
-            glGetnUniformuiv = Marshal.GetDelegateForFunctionPointer<GLGetnUniformuiv>(loader.Invoke("glGetnUniformuiv"));
-            glGetGraphicsResetStatusKHR = Marshal.GetDelegateForFunctionPointer<GLGetGraphicsResetStatusKHR>(loader.Invoke("glGetGraphicsResetStatusKHR"));
-            glReadnPixelsKHR = Marshal.GetDelegateForFunctionPointer<GLReadnPixelsKHR>(loader.Invoke("glReadnPixelsKHR"));
-            glGetnUniformfvKHR = Marshal.GetDelegateForFunctionPointer<GLGetnUniformfvKHR>(loader.Invoke("glGetnUniformfvKHR"));
-            glGetnUniformivKHR = Marshal.GetDelegateForFunctionPointer<GLGetnUniformivKHR>(loader.Invoke("glGetnUniformivKHR"));
-            glGetnUniformuivKHR = Marshal.GetDelegateForFunctionPointer<GLGetnUniformuivKHR>(loader.Invoke("glGetnUniformuivKHR"));
-            glMaxShaderCompilerThreadsKHR = Marshal.GetDelegateForFunctionPointer<GLMaxShaderCompilerThreadsKHR>(loader.Invoke("glMaxShaderCompilerThreadsKHR"));
-            glFramebufferTextureMultiviewOVR = Marshal.GetDelegateForFunctionPointer<GLFramebufferTextureMultiviewOVR>(loader.Invoke("glFramebufferTextureMultiviewOVR"));
-            glFramebufferTextureMultisampleMultiviewOVR = Marshal.GetDelegateForFunctionPointer<GLFramebufferTextureMultisampleMultiviewOVR>(loader.Invoke("glFramebufferTextureMultisampleMultiviewOVR"));
-            glDrawArrays = Marshal.GetDelegateForFunctionPointer<GLDrawArrays>(loader.Invoke("glDrawArrays"));
-            glDrawElements = Marshal.GetDelegateForFunctionPointer<GLDrawElements>(loader.Invoke("glDrawElements"));
-            glPolygonOffset = Marshal.GetDelegateForFunctionPointer<GLPolygonOffset>(loader.Invoke("glPolygonOffset"));
-            glCopyTexImage1D = Marshal.GetDelegateForFunctionPointer<GLCopyTexImage1D>(loader.Invoke("glCopyTexImage1D"));
-            glCopyTexImage2D = Marshal.GetDelegateForFunctionPointer<GLCopyTexImage2D>(loader.Invoke("glCopyTexImage2D"));
-            glCopyTexSubImage1D = Marshal.GetDelegateForFunctionPointer<GLCopyTexSubImage1D>(loader.Invoke("glCopyTexSubImage1D"));
-            glCopyTexSubImage2D = Marshal.GetDelegateForFunctionPointer<GLCopyTexSubImage2D>(loader.Invoke("glCopyTexSubImage2D"));
-            glTexSubImage1D = Marshal.GetDelegateForFunctionPointer<GLTexSubImage1D>(loader.Invoke("glTexSubImage1D"));
-            glTexSubImage2D = Marshal.GetDelegateForFunctionPointer<GLTexSubImage2D>(loader.Invoke("glTexSubImage2D"));
-            glBindTexture = Marshal.GetDelegateForFunctionPointer<GLBindTexture>(loader.Invoke("glBindTexture"));
-            glDeleteTextures = Marshal.GetDelegateForFunctionPointer<GLDeleteTextures>(loader.Invoke("glDeleteTextures"));
-            glGenTextures = Marshal.GetDelegateForFunctionPointer<GLGenTextures>(loader.Invoke("glGenTextures"));
-            glIsTexture = Marshal.GetDelegateForFunctionPointer<GLIsTexture>(loader.Invoke("glIsTexture"));
-            glProgramUniformMatrix2fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniformMatrix2fv>(loader.Invoke("glProgramUniformMatrix2fv"));
-            glProgramUniform4fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform4fv>(loader.Invoke("glProgramUniform4fv"));
-            glProgramUniform3fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform3fv>(loader.Invoke("glProgramUniform3fv"));
-            glProgramUniform2fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform2fv>(loader.Invoke("glProgramUniform2fv"));
-            glProgramUniform1fv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform1fv>(loader.Invoke("glProgramUniform1fv"));
-            glProgramUniform4uiv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform4uiv>(loader.Invoke("glProgramUniform4uiv"));
-            glProgramUniform2uiv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform2uiv>(loader.Invoke("glProgramUniform2uiv"));
-            glProgramUniform1uiv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform1uiv>(loader.Invoke("glProgramUniform1uiv"));
-            glProgramUniform4iv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform4iv>(loader.Invoke("glProgramUniform4iv"));
-            glProgramUniform3iv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform3iv>(loader.Invoke("glProgramUniform3iv"));
-            glProgramUniform2iv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform2iv>(loader.Invoke("glProgramUniform2iv"));
-            glProgramUniform1iv = Marshal.GetDelegateForFunctionPointer<GLProgramUniform1iv>(loader.Invoke("glProgramUniform1iv"));
-            glProgramUniform4f = Marshal.GetDelegateForFunctionPointer<GLProgramUniform4f>(loader.Invoke("glProgramUniform4f"));
-            glProgramUniform3f = Marshal.GetDelegateForFunctionPointer<GLProgramUniform3f>(loader.Invoke("glProgramUniform3f"));
-            glProgramUniform2f = Marshal.GetDelegateForFunctionPointer<GLProgramUniform2f>(loader.Invoke("glProgramUniform2f"));
-            glProgramUniform1f = Marshal.GetDelegateForFunctionPointer<GLProgramUniform1f>(loader.Invoke("glProgramUniform1f"));
-            glDrawRangeElements = Marshal.GetDelegateForFunctionPointer<GLDrawRangeElements>(loader.Invoke("glDrawRangeElements"));
-            glTexImage3D = Marshal.GetDelegateForFunctionPointer<GLTexImage3D>(loader.Invoke("glTexImage3D"));
-            glTexSubImage3D = Marshal.GetDelegateForFunctionPointer<GLTexSubImage3D>(loader.Invoke("glTexSubImage3D"));
-            glCopyTexSubImage3D = Marshal.GetDelegateForFunctionPointer<GLCopyTexSubImage3D>(loader.Invoke("glCopyTexSubImage3D"));
-            glActiveTexture = Marshal.GetDelegateForFunctionPointer<GLActiveTexture>(loader.Invoke("glActiveTexture"));
-            glSampleCoverage = Marshal.GetDelegateForFunctionPointer<GLSampleCoverage>(loader.Invoke("glSampleCoverage"));
-            glCompressedTexImage3D = Marshal.GetDelegateForFunctionPointer<GLCompressedTexImage3D>(loader.Invoke("glCompressedTexImage3D"));
-            glCompressedTexImage2D = Marshal.GetDelegateForFunctionPointer<GLCompressedTexImage2D>(loader.Invoke("glCompressedTexImage2D"));
-            glCompressedTexImage1D = Marshal.GetDelegateForFunctionPointer<GLCompressedTexImage1D>(loader.Invoke("glCompressedTexImage1D"));
-            glCompressedTexSubImage3D = Marshal.GetDelegateForFunctionPointer<GLCompressedTexSubImage3D>(loader.Invoke("glCompressedTexSubImage3D"));
-            glCompressedTexSubImage2D = Marshal.GetDelegateForFunctionPointer<GLCompressedTexSubImage2D>(loader.Invoke("glCompressedTexSubImage2D"));
-            glCompressedTexSubImage1D = Marshal.GetDelegateForFunctionPointer<GLCompressedTexSubImage1D>(loader.Invoke("glCompressedTexSubImage1D"));
-            glGetCompressedTexImage = Marshal.GetDelegateForFunctionPointer<GLGetCompressedTexImage>(loader.Invoke("glGetCompressedTexImage"));
-            glProgramUniform4ui = Marshal.GetDelegateForFunctionPointer<GLProgramUniform4ui>(loader.Invoke("glProgramUniform4ui"));
-            glProgramUniform3ui = Marshal.GetDelegateForFunctionPointer<GLProgramUniform3ui>(loader.Invoke("glProgramUniform3ui"));
-            glProgramUniform2ui = Marshal.GetDelegateForFunctionPointer<GLProgramUniform2ui>(loader.Invoke("glProgramUniform2ui"));
-            glProgramUniform1ui = Marshal.GetDelegateForFunctionPointer<GLProgramUniform1ui>(loader.Invoke("glProgramUniform1ui"));
-            glProgramUniform4i = Marshal.GetDelegateForFunctionPointer<GLProgramUniform4i>(loader.Invoke("glProgramUniform4i"));
-            glProgramUniform3i = Marshal.GetDelegateForFunctionPointer<GLProgramUniform3i>(loader.Invoke("glProgramUniform3i"));
-            glProgramUniform2i = Marshal.GetDelegateForFunctionPointer<GLProgramUniform2i>(loader.Invoke("glProgramUniform2i"));
-            glProgramUniform1i = Marshal.GetDelegateForFunctionPointer<GLProgramUniform1i>(loader.Invoke("glProgramUniform1i"));
-            glGetProgramPipelineiv = Marshal.GetDelegateForFunctionPointer<GLGetProgramPipelineiv>(loader.Invoke("glGetProgramPipelineiv"));
-            glIsProgramPipeline = Marshal.GetDelegateForFunctionPointer<GLIsProgramPipeline>(loader.Invoke("glIsProgramPipeline"));
-            glGenProgramPipelines = Marshal.GetDelegateForFunctionPointer<GLGenProgramPipelines>(loader.Invoke("glGenProgramPipelines"));
-            glDeleteProgramPipelines = Marshal.GetDelegateForFunctionPointer<GLDeleteProgramPipelines>(loader.Invoke("glDeleteProgramPipelines"));
-            glBindProgramPipeline = Marshal.GetDelegateForFunctionPointer<GLBindProgramPipeline>(loader.Invoke("glBindProgramPipeline"));
-            glCreateShaderProgramv = Marshal.GetDelegateForFunctionPointer<GLCreateShaderProgramv>(loader.Invoke("glCreateShaderProgramv"));
-            glActiveShaderProgram = Marshal.GetDelegateForFunctionPointer<GLActiveShaderProgram>(loader.Invoke("glActiveShaderProgram"));
-            glUseProgramStages = Marshal.GetDelegateForFunctionPointer<GLUseProgramStages>(loader.Invoke("glUseProgramStages"));
-            glGetProgramResourceLocation = Marshal.GetDelegateForFunctionPointer<GLGetProgramResourceLocation>(loader.Invoke("glGetProgramResourceLocation"));
-            glGetProgramResourceiv = Marshal.GetDelegateForFunctionPointer<GLGetProgramResourceiv>(loader.Invoke("glGetProgramResourceiv"));
-            glGetProgramResourceName = Marshal.GetDelegateForFunctionPointer<GLGetProgramResourceName>(loader.Invoke("glGetProgramResourceName"));
-            glGetProgramResourceIndex = Marshal.GetDelegateForFunctionPointer<GLGetProgramResourceIndex>(loader.Invoke("glGetProgramResourceIndex"));
-            glGetProgramInterfaceiv = Marshal.GetDelegateForFunctionPointer<GLGetProgramInterfaceiv>(loader.Invoke("glGetProgramInterfaceiv"));
-            glGetFramebufferParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetFramebufferParameteriv>(loader.Invoke("glGetFramebufferParameteriv"));
-            glFramebufferParameteri = Marshal.GetDelegateForFunctionPointer<GLFramebufferParameteri>(loader.Invoke("glFramebufferParameteri"));
-            glDrawElementsIndirect = Marshal.GetDelegateForFunctionPointer<GLDrawElementsIndirect>(loader.Invoke("glDrawElementsIndirect"));
-            glDrawArraysIndirect = Marshal.GetDelegateForFunctionPointer<GLDrawArraysIndirect>(loader.Invoke("glDrawArraysIndirect"));
-            glDispatchComputeIndirect = Marshal.GetDelegateForFunctionPointer<GLDispatchComputeIndirect>(loader.Invoke("glDispatchComputeIndirect"));
-            glDispatchCompute = Marshal.GetDelegateForFunctionPointer<GLDispatchCompute>(loader.Invoke("glDispatchCompute"));
-            glGetInternalformativ = Marshal.GetDelegateForFunctionPointer<GLGetInternalformativ>(loader.Invoke("glGetInternalformativ"));
-            glTexStorage3D = Marshal.GetDelegateForFunctionPointer<GLTexStorage3D>(loader.Invoke("glTexStorage3D"));
-            glTexStorage2D = Marshal.GetDelegateForFunctionPointer<GLTexStorage2D>(loader.Invoke("glTexStorage2D"));
-            glInvalidateSubFramebuffer = Marshal.GetDelegateForFunctionPointer<GLInvalidateSubFramebuffer>(loader.Invoke("glInvalidateSubFramebuffer"));
-            glInvalidateFramebuffer = Marshal.GetDelegateForFunctionPointer<GLInvalidateFramebuffer>(loader.Invoke("glInvalidateFramebuffer"));
-            glProgramParameteri = Marshal.GetDelegateForFunctionPointer<GLProgramParameteri>(loader.Invoke("glProgramParameteri"));
-            glProgramBinary = Marshal.GetDelegateForFunctionPointer<GLProgramBinary>(loader.Invoke("glProgramBinary"));
-            glGetProgramBinary = Marshal.GetDelegateForFunctionPointer<GLGetProgramBinary>(loader.Invoke("glGetProgramBinary"));
-            glResumeTransformFeedback = Marshal.GetDelegateForFunctionPointer<GLResumeTransformFeedback>(loader.Invoke("glResumeTransformFeedback"));
-            glPauseTransformFeedback = Marshal.GetDelegateForFunctionPointer<GLPauseTransformFeedback>(loader.Invoke("glPauseTransformFeedback"));
-            glBlendFuncSeparate = Marshal.GetDelegateForFunctionPointer<GLBlendFuncSeparate>(loader.Invoke("glBlendFuncSeparate"));
-            glMultiDrawArrays = Marshal.GetDelegateForFunctionPointer<GLMultiDrawArrays>(loader.Invoke("glMultiDrawArrays"));
-            glMultiDrawElements = Marshal.GetDelegateForFunctionPointer<GLMultiDrawElements>(loader.Invoke("glMultiDrawElements"));
-            glPointParameterf = Marshal.GetDelegateForFunctionPointer<GLPointParameterf>(loader.Invoke("glPointParameterf"));
-            glPointParameterfv = Marshal.GetDelegateForFunctionPointer<GLPointParameterfv>(loader.Invoke("glPointParameterfv"));
-            glPointParameteri = Marshal.GetDelegateForFunctionPointer<GLPointParameteri>(loader.Invoke("glPointParameteri"));
-            glPointParameteriv = Marshal.GetDelegateForFunctionPointer<GLPointParameteriv>(loader.Invoke("glPointParameteriv"));
-            glIsTransformFeedback = Marshal.GetDelegateForFunctionPointer<GLIsTransformFeedback>(loader.Invoke("glIsTransformFeedback"));
-            glGenTransformFeedbacks = Marshal.GetDelegateForFunctionPointer<GLGenTransformFeedbacks>(loader.Invoke("glGenTransformFeedbacks"));
-            glDeleteTransformFeedbacks = Marshal.GetDelegateForFunctionPointer<GLDeleteTransformFeedbacks>(loader.Invoke("glDeleteTransformFeedbacks"));
-            glBindTransformFeedback = Marshal.GetDelegateForFunctionPointer<GLBindTransformFeedback>(loader.Invoke("glBindTransformFeedback"));
-            glShaderBinary = Marshal.GetDelegateForFunctionPointer<GLShaderBinary>(loader.Invoke("glShaderBinary"));
-            glReleaseShaderCompiler = Marshal.GetDelegateForFunctionPointer<GLReleaseShaderCompiler>(loader.Invoke("glReleaseShaderCompiler"));
-            glGetShaderPrecisionFormat = Marshal.GetDelegateForFunctionPointer<GLGetShaderPrecisionFormat>(loader.Invoke("glGetShaderPrecisionFormat"));
-            glDepthRangef = Marshal.GetDelegateForFunctionPointer<GLDepthRangef>(loader.Invoke("glDepthRangef"));
-            glClearDepthf = Marshal.GetDelegateForFunctionPointer<GLClearDepthf>(loader.Invoke("glClearDepthf"));
-            glVertexAttribP4uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP4uiv>(loader.Invoke("glVertexAttribP4uiv"));
-            glVertexAttribP4ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP4ui>(loader.Invoke("glVertexAttribP4ui"));
-            glVertexAttribP3uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP3uiv>(loader.Invoke("glVertexAttribP3uiv"));
-            glVertexAttribP3ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP3ui>(loader.Invoke("glVertexAttribP3ui"));
-            glVertexAttribP2uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP2uiv>(loader.Invoke("glVertexAttribP2uiv"));
-            glVertexAttribP2ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP2ui>(loader.Invoke("glVertexAttribP2ui"));
-            glVertexAttribP1uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP1uiv>(loader.Invoke("glVertexAttribP1uiv"));
-            glVertexAttribP1ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribP1ui>(loader.Invoke("glVertexAttribP1ui"));
-            glVertexAttribDivisor = Marshal.GetDelegateForFunctionPointer<GLVertexAttribDivisor>(loader.Invoke("glVertexAttribDivisor"));
-            glGetQueryObjectui64v = Marshal.GetDelegateForFunctionPointer<GLGetQueryObjectui64v>(loader.Invoke("glGetQueryObjectui64v"));
-            glGetQueryObjecti64v = Marshal.GetDelegateForFunctionPointer<GLGetQueryObjecti64v>(loader.Invoke("glGetQueryObjecti64v"));
-            glQueryCounter = Marshal.GetDelegateForFunctionPointer<GLQueryCounter>(loader.Invoke("glQueryCounter"));
-            glGetSamplerParameterIuiv = Marshal.GetDelegateForFunctionPointer<GLGetSamplerParameterIuiv>(loader.Invoke("glGetSamplerParameterIuiv"));
-            glGetSamplerParameterfv = Marshal.GetDelegateForFunctionPointer<GLGetSamplerParameterfv>(loader.Invoke("glGetSamplerParameterfv"));
-            glGetSamplerParameterIiv = Marshal.GetDelegateForFunctionPointer<GLGetSamplerParameterIiv>(loader.Invoke("glGetSamplerParameterIiv"));
-            glGetSamplerParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetSamplerParameteriv>(loader.Invoke("glGetSamplerParameteriv"));
-            glSamplerParameterIuiv = Marshal.GetDelegateForFunctionPointer<GLSamplerParameterIuiv>(loader.Invoke("glSamplerParameterIuiv"));
-            glSamplerParameterIiv = Marshal.GetDelegateForFunctionPointer<GLSamplerParameterIiv>(loader.Invoke("glSamplerParameterIiv"));
-            glSamplerParameterfv = Marshal.GetDelegateForFunctionPointer<GLSamplerParameterfv>(loader.Invoke("glSamplerParameterfv"));
-            glSamplerParameterf = Marshal.GetDelegateForFunctionPointer<GLSamplerParameterf>(loader.Invoke("glSamplerParameterf"));
-            glSamplerParameteriv = Marshal.GetDelegateForFunctionPointer<GLSamplerParameteriv>(loader.Invoke("glSamplerParameteriv"));
-            glSamplerParameteri = Marshal.GetDelegateForFunctionPointer<GLSamplerParameteri>(loader.Invoke("glSamplerParameteri"));
-            glBindSampler = Marshal.GetDelegateForFunctionPointer<GLBindSampler>(loader.Invoke("glBindSampler"));
-            glIsSampler = Marshal.GetDelegateForFunctionPointer<GLIsSampler>(loader.Invoke("glIsSampler"));
-            glDeleteSamplers = Marshal.GetDelegateForFunctionPointer<GLDeleteSamplers>(loader.Invoke("glDeleteSamplers"));
-            glGenSamplers = Marshal.GetDelegateForFunctionPointer<GLGenSamplers>(loader.Invoke("glGenSamplers"));
-            glGetFragDataIndex = Marshal.GetDelegateForFunctionPointer<GLGetFragDataIndex>(loader.Invoke("glGetFragDataIndex"));
-            glBindFragDataLocationIndexed = Marshal.GetDelegateForFunctionPointer<GLBindFragDataLocationIndexed>(loader.Invoke("glBindFragDataLocationIndexed"));
-            glGetPointerv = Marshal.GetDelegateForFunctionPointer<GLGetPointerv>(loader.Invoke("glGetPointerv"));
-            glBlendColor = Marshal.GetDelegateForFunctionPointer<GLBlendColor>(loader.Invoke("glBlendColor"));
-            glBlendEquation = Marshal.GetDelegateForFunctionPointer<GLBlendEquation>(loader.Invoke("glBlendEquation"));
-            glGenQueries = Marshal.GetDelegateForFunctionPointer<GLGenQueries>(loader.Invoke("glGenQueries"));
-            glDeleteQueries = Marshal.GetDelegateForFunctionPointer<GLDeleteQueries>(loader.Invoke("glDeleteQueries"));
-            glIsQuery = Marshal.GetDelegateForFunctionPointer<GLIsQuery>(loader.Invoke("glIsQuery"));
-            glBeginQuery = Marshal.GetDelegateForFunctionPointer<GLBeginQuery>(loader.Invoke("glBeginQuery"));
-            glEndQuery = Marshal.GetDelegateForFunctionPointer<GLEndQuery>(loader.Invoke("glEndQuery"));
-            glGetQueryiv = Marshal.GetDelegateForFunctionPointer<GLGetQueryiv>(loader.Invoke("glGetQueryiv"));
-            glGetQueryObjectiv = Marshal.GetDelegateForFunctionPointer<GLGetQueryObjectiv>(loader.Invoke("glGetQueryObjectiv"));
-            glGetQueryObjectuiv = Marshal.GetDelegateForFunctionPointer<GLGetQueryObjectuiv>(loader.Invoke("glGetQueryObjectuiv"));
-            glBindBuffer = Marshal.GetDelegateForFunctionPointer<GLBindBuffer>(loader.Invoke("glBindBuffer"));
-            glDeleteBuffers = Marshal.GetDelegateForFunctionPointer<GLDeleteBuffers>(loader.Invoke("glDeleteBuffers"));
-            glGenBuffers = Marshal.GetDelegateForFunctionPointer<GLGenBuffers>(loader.Invoke("glGenBuffers"));
-            glIsBuffer = Marshal.GetDelegateForFunctionPointer<GLIsBuffer>(loader.Invoke("glIsBuffer"));
-            glBufferData = Marshal.GetDelegateForFunctionPointer<GLBufferData>(loader.Invoke("glBufferData"));
-            glBufferSubData = Marshal.GetDelegateForFunctionPointer<GLBufferSubData>(loader.Invoke("glBufferSubData"));
-            glGetBufferSubData = Marshal.GetDelegateForFunctionPointer<GLGetBufferSubData>(loader.Invoke("glGetBufferSubData"));
-            glMapBuffer = Marshal.GetDelegateForFunctionPointer<GLMapBuffer>(loader.Invoke("glMapBuffer"));
-            glUnmapBuffer = Marshal.GetDelegateForFunctionPointer<GLUnmapBuffer>(loader.Invoke("glUnmapBuffer"));
-            glGetBufferParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetBufferParameteriv>(loader.Invoke("glGetBufferParameteriv"));
-            glGetBufferPointerv = Marshal.GetDelegateForFunctionPointer<GLGetBufferPointerv>(loader.Invoke("glGetBufferPointerv"));
-            glBlendEquationSeparate = Marshal.GetDelegateForFunctionPointer<GLBlendEquationSeparate>(loader.Invoke("glBlendEquationSeparate"));
-            glDrawBuffers = Marshal.GetDelegateForFunctionPointer<GLDrawBuffers>(loader.Invoke("glDrawBuffers"));
-            glStencilOpSeparate = Marshal.GetDelegateForFunctionPointer<GLStencilOpSeparate>(loader.Invoke("glStencilOpSeparate"));
-            glStencilFuncSeparate = Marshal.GetDelegateForFunctionPointer<GLStencilFuncSeparate>(loader.Invoke("glStencilFuncSeparate"));
-            glStencilMaskSeparate = Marshal.GetDelegateForFunctionPointer<GLStencilMaskSeparate>(loader.Invoke("glStencilMaskSeparate"));
-            glAttachShader = Marshal.GetDelegateForFunctionPointer<GLAttachShader>(loader.Invoke("glAttachShader"));
-            glBindAttribLocation = Marshal.GetDelegateForFunctionPointer<GLBindAttribLocation>(loader.Invoke("glBindAttribLocation"));
-            glCompileShader = Marshal.GetDelegateForFunctionPointer<GLCompileShader>(loader.Invoke("glCompileShader"));
-            glCreateProgram = Marshal.GetDelegateForFunctionPointer<GLCreateProgram>(loader.Invoke("glCreateProgram"));
-            glCreateShader = Marshal.GetDelegateForFunctionPointer<GLCreateShader>(loader.Invoke("glCreateShader"));
-            glDeleteProgram = Marshal.GetDelegateForFunctionPointer<GLDeleteProgram>(loader.Invoke("glDeleteProgram"));
-            glDeleteShader = Marshal.GetDelegateForFunctionPointer<GLDeleteShader>(loader.Invoke("glDeleteShader"));
-            glDetachShader = Marshal.GetDelegateForFunctionPointer<GLDetachShader>(loader.Invoke("glDetachShader"));
-            glDisableVertexAttribArray = Marshal.GetDelegateForFunctionPointer<GLDisableVertexAttribArray>(loader.Invoke("glDisableVertexAttribArray"));
-            glEnableVertexAttribArray = Marshal.GetDelegateForFunctionPointer<GLEnableVertexAttribArray>(loader.Invoke("glEnableVertexAttribArray"));
-            glGetActiveAttrib = Marshal.GetDelegateForFunctionPointer<GLGetActiveAttrib>(loader.Invoke("glGetActiveAttrib"));
-            glGetActiveUniform = Marshal.GetDelegateForFunctionPointer<GLGetActiveUniform>(loader.Invoke("glGetActiveUniform"));
-            glGetAttachedShaders = Marshal.GetDelegateForFunctionPointer<GLGetAttachedShaders>(loader.Invoke("glGetAttachedShaders"));
-            glGetAttribLocation = Marshal.GetDelegateForFunctionPointer<GLGetAttribLocation>(loader.Invoke("glGetAttribLocation"));
-            glGetProgramiv = Marshal.GetDelegateForFunctionPointer<GLGetProgramiv>(loader.Invoke("glGetProgramiv"));
-            glGetProgramInfoLog = Marshal.GetDelegateForFunctionPointer<GLGetProgramInfoLog>(loader.Invoke("glGetProgramInfoLog"));
-            glGetShaderiv = Marshal.GetDelegateForFunctionPointer<GLGetShaderiv>(loader.Invoke("glGetShaderiv"));
-            glGetShaderInfoLog = Marshal.GetDelegateForFunctionPointer<GLGetShaderInfoLog>(loader.Invoke("glGetShaderInfoLog"));
-            glGetShaderSource = Marshal.GetDelegateForFunctionPointer<GLGetShaderSource>(loader.Invoke("glGetShaderSource"));
-            glGetUniformLocation = Marshal.GetDelegateForFunctionPointer<GLGetUniformLocation>(loader.Invoke("glGetUniformLocation"));
-            glGetUniformfv = Marshal.GetDelegateForFunctionPointer<GLGetUniformfv>(loader.Invoke("glGetUniformfv"));
-            glGetUniformiv = Marshal.GetDelegateForFunctionPointer<GLGetUniformiv>(loader.Invoke("glGetUniformiv"));
-            glGetVertexAttribdv = Marshal.GetDelegateForFunctionPointer<GLGetVertexAttribdv>(loader.Invoke("glGetVertexAttribdv"));
-            glGetVertexAttribfv = Marshal.GetDelegateForFunctionPointer<GLGetVertexAttribfv>(loader.Invoke("glGetVertexAttribfv"));
-            glGetVertexAttribiv = Marshal.GetDelegateForFunctionPointer<GLGetVertexAttribiv>(loader.Invoke("glGetVertexAttribiv"));
-            glGetVertexAttribPointerv = Marshal.GetDelegateForFunctionPointer<GLGetVertexAttribPointerv>(loader.Invoke("glGetVertexAttribPointerv"));
-            glIsProgram = Marshal.GetDelegateForFunctionPointer<GLIsProgram>(loader.Invoke("glIsProgram"));
-            glIsShader = Marshal.GetDelegateForFunctionPointer<GLIsShader>(loader.Invoke("glIsShader"));
-            glLinkProgram = Marshal.GetDelegateForFunctionPointer<GLLinkProgram>(loader.Invoke("glLinkProgram"));
-            glShaderSource = Marshal.GetDelegateForFunctionPointer<GLShaderSource>(loader.Invoke("glShaderSource"));
-            glUseProgram = Marshal.GetDelegateForFunctionPointer<GLUseProgram>(loader.Invoke("glUseProgram"));
-            glUniform1f = Marshal.GetDelegateForFunctionPointer<GLUniform1f>(loader.Invoke("glUniform1f"));
-            glUniform2f = Marshal.GetDelegateForFunctionPointer<GLUniform2f>(loader.Invoke("glUniform2f"));
-            glUniform3f = Marshal.GetDelegateForFunctionPointer<GLUniform3f>(loader.Invoke("glUniform3f"));
-            glUniform4f = Marshal.GetDelegateForFunctionPointer<GLUniform4f>(loader.Invoke("glUniform4f"));
-            glUniform1i = Marshal.GetDelegateForFunctionPointer<GLUniform1i>(loader.Invoke("glUniform1i"));
-            glUniform2i = Marshal.GetDelegateForFunctionPointer<GLUniform2i>(loader.Invoke("glUniform2i"));
-            glUniform3i = Marshal.GetDelegateForFunctionPointer<GLUniform3i>(loader.Invoke("glUniform3i"));
-            glUniform4i = Marshal.GetDelegateForFunctionPointer<GLUniform4i>(loader.Invoke("glUniform4i"));
-            glUniform1fv = Marshal.GetDelegateForFunctionPointer<GLUniform1fv>(loader.Invoke("glUniform1fv"));
-            glUniform2fv = Marshal.GetDelegateForFunctionPointer<GLUniform2fv>(loader.Invoke("glUniform2fv"));
-            glUniform3fv = Marshal.GetDelegateForFunctionPointer<GLUniform3fv>(loader.Invoke("glUniform3fv"));
-            glUniform4fv = Marshal.GetDelegateForFunctionPointer<GLUniform4fv>(loader.Invoke("glUniform4fv"));
-            glUniform1iv = Marshal.GetDelegateForFunctionPointer<GLUniform1iv>(loader.Invoke("glUniform1iv"));
-            glUniform2iv = Marshal.GetDelegateForFunctionPointer<GLUniform2iv>(loader.Invoke("glUniform2iv"));
-            glUniform3iv = Marshal.GetDelegateForFunctionPointer<GLUniform3iv>(loader.Invoke("glUniform3iv"));
-            glUniform4iv = Marshal.GetDelegateForFunctionPointer<GLUniform4iv>(loader.Invoke("glUniform4iv"));
-            glUniformMatrix2fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix2fv>(loader.Invoke("glUniformMatrix2fv"));
-            glUniformMatrix3fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix3fv>(loader.Invoke("glUniformMatrix3fv"));
-            glUniformMatrix4fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix4fv>(loader.Invoke("glUniformMatrix4fv"));
-            glValidateProgram = Marshal.GetDelegateForFunctionPointer<GLValidateProgram>(loader.Invoke("glValidateProgram"));
-            glVertexAttrib1d = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib1d>(loader.Invoke("glVertexAttrib1d"));
-            glVertexAttrib1dv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib1dv>(loader.Invoke("glVertexAttrib1dv"));
-            glVertexAttrib1f = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib1f>(loader.Invoke("glVertexAttrib1f"));
-            glVertexAttrib1fv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib1fv>(loader.Invoke("glVertexAttrib1fv"));
-            glVertexAttrib1s = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib1s>(loader.Invoke("glVertexAttrib1s"));
-            glVertexAttrib1sv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib1sv>(loader.Invoke("glVertexAttrib1sv"));
-            glVertexAttrib2d = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib2d>(loader.Invoke("glVertexAttrib2d"));
-            glVertexAttrib2dv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib2dv>(loader.Invoke("glVertexAttrib2dv"));
-            glVertexAttrib2f = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib2f>(loader.Invoke("glVertexAttrib2f"));
-            glVertexAttrib2fv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib2fv>(loader.Invoke("glVertexAttrib2fv"));
-            glVertexAttrib2s = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib2s>(loader.Invoke("glVertexAttrib2s"));
-            glVertexAttrib2sv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib2sv>(loader.Invoke("glVertexAttrib2sv"));
-            glVertexAttrib3d = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib3d>(loader.Invoke("glVertexAttrib3d"));
-            glVertexAttrib3dv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib3dv>(loader.Invoke("glVertexAttrib3dv"));
-            glVertexAttrib3f = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib3f>(loader.Invoke("glVertexAttrib3f"));
-            glVertexAttrib3fv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib3fv>(loader.Invoke("glVertexAttrib3fv"));
-            glVertexAttrib3s = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib3s>(loader.Invoke("glVertexAttrib3s"));
-            glVertexAttrib3sv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib3sv>(loader.Invoke("glVertexAttrib3sv"));
-            glVertexAttrib4Nbv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Nbv>(loader.Invoke("glVertexAttrib4Nbv"));
-            glVertexAttrib4Niv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Niv>(loader.Invoke("glVertexAttrib4Niv"));
-            glVertexAttrib4Nsv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Nsv>(loader.Invoke("glVertexAttrib4Nsv"));
-            glVertexAttrib4Nub = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Nub>(loader.Invoke("glVertexAttrib4Nub"));
-            glVertexAttrib4Nubv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Nubv>(loader.Invoke("glVertexAttrib4Nubv"));
-            glVertexAttrib4Nuiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Nuiv>(loader.Invoke("glVertexAttrib4Nuiv"));
-            glVertexAttrib4Nusv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4Nusv>(loader.Invoke("glVertexAttrib4Nusv"));
-            glVertexAttrib4bv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4bv>(loader.Invoke("glVertexAttrib4bv"));
-            glVertexAttrib4d = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4d>(loader.Invoke("glVertexAttrib4d"));
-            glVertexAttrib4dv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4dv>(loader.Invoke("glVertexAttrib4dv"));
-            glVertexAttrib4f = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4f>(loader.Invoke("glVertexAttrib4f"));
-            glVertexAttrib4fv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4fv>(loader.Invoke("glVertexAttrib4fv"));
-            glVertexAttrib4iv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4iv>(loader.Invoke("glVertexAttrib4iv"));
-            glVertexAttrib4s = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4s>(loader.Invoke("glVertexAttrib4s"));
-            glVertexAttrib4sv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4sv>(loader.Invoke("glVertexAttrib4sv"));
-            glVertexAttrib4ubv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4ubv>(loader.Invoke("glVertexAttrib4ubv"));
-            glVertexAttrib4uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4uiv>(loader.Invoke("glVertexAttrib4uiv"));
-            glVertexAttrib4usv = Marshal.GetDelegateForFunctionPointer<GLVertexAttrib4usv>(loader.Invoke("glVertexAttrib4usv"));
-            glVertexAttribPointer = Marshal.GetDelegateForFunctionPointer<GLVertexAttribPointer>(loader.Invoke("glVertexAttribPointer"));
-            glUniformMatrix2x3fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix2x3fv>(loader.Invoke("glUniformMatrix2x3fv"));
-            glUniformMatrix3x2fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix3x2fv>(loader.Invoke("glUniformMatrix3x2fv"));
-            glUniformMatrix2x4fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix2x4fv>(loader.Invoke("glUniformMatrix2x4fv"));
-            glUniformMatrix4x2fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix4x2fv>(loader.Invoke("glUniformMatrix4x2fv"));
-            glUniformMatrix3x4fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix3x4fv>(loader.Invoke("glUniformMatrix3x4fv"));
-            glUniformMatrix4x3fv = Marshal.GetDelegateForFunctionPointer<GLUniformMatrix4x3fv>(loader.Invoke("glUniformMatrix4x3fv"));
-            glColorMaski = Marshal.GetDelegateForFunctionPointer<GLColorMaski>(loader.Invoke("glColorMaski"));
-            glGetBooleani_v = Marshal.GetDelegateForFunctionPointer<GLGetBooleani_v>(loader.Invoke("glGetBooleani_v"));
-            glGetIntegeri_v = Marshal.GetDelegateForFunctionPointer<GLGetIntegeri_v>(loader.Invoke("glGetIntegeri_v"));
-            glEnablei = Marshal.GetDelegateForFunctionPointer<GLEnablei>(loader.Invoke("glEnablei"));
-            glDisablei = Marshal.GetDelegateForFunctionPointer<GLDisablei>(loader.Invoke("glDisablei"));
-            glIsEnabledi = Marshal.GetDelegateForFunctionPointer<GLIsEnabledi>(loader.Invoke("glIsEnabledi"));
-            glBeginTransformFeedback = Marshal.GetDelegateForFunctionPointer<GLBeginTransformFeedback>(loader.Invoke("glBeginTransformFeedback"));
-            glEndTransformFeedback = Marshal.GetDelegateForFunctionPointer<GLEndTransformFeedback>(loader.Invoke("glEndTransformFeedback"));
-            glBindBufferRange = Marshal.GetDelegateForFunctionPointer<GLBindBufferRange>(loader.Invoke("glBindBufferRange"));
-            glBindBufferBase = Marshal.GetDelegateForFunctionPointer<GLBindBufferBase>(loader.Invoke("glBindBufferBase"));
-            glTransformFeedbackVaryings = Marshal.GetDelegateForFunctionPointer<GLTransformFeedbackVaryings>(loader.Invoke("glTransformFeedbackVaryings"));
-            glGetTransformFeedbackVarying = Marshal.GetDelegateForFunctionPointer<GLGetTransformFeedbackVarying>(loader.Invoke("glGetTransformFeedbackVarying"));
-            glClampColor = Marshal.GetDelegateForFunctionPointer<GLClampColor>(loader.Invoke("glClampColor"));
-            glBeginConditionalRender = Marshal.GetDelegateForFunctionPointer<GLBeginConditionalRender>(loader.Invoke("glBeginConditionalRender"));
-            glEndConditionalRender = Marshal.GetDelegateForFunctionPointer<GLEndConditionalRender>(loader.Invoke("glEndConditionalRender"));
-            glVertexAttribIPointer = Marshal.GetDelegateForFunctionPointer<GLVertexAttribIPointer>(loader.Invoke("glVertexAttribIPointer"));
-            glGetVertexAttribIiv = Marshal.GetDelegateForFunctionPointer<GLGetVertexAttribIiv>(loader.Invoke("glGetVertexAttribIiv"));
-            glGetVertexAttribIuiv = Marshal.GetDelegateForFunctionPointer<GLGetVertexAttribIuiv>(loader.Invoke("glGetVertexAttribIuiv"));
-            glVertexAttribI1i = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI1i>(loader.Invoke("glVertexAttribI1i"));
-            glVertexAttribI2i = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI2i>(loader.Invoke("glVertexAttribI2i"));
-            glVertexAttribI3i = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI3i>(loader.Invoke("glVertexAttribI3i"));
-            glVertexAttribI4i = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4i>(loader.Invoke("glVertexAttribI4i"));
-            glVertexAttribI1ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI1ui>(loader.Invoke("glVertexAttribI1ui"));
-            glVertexAttribI2ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI2ui>(loader.Invoke("glVertexAttribI2ui"));
-            glVertexAttribI3ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI3ui>(loader.Invoke("glVertexAttribI3ui"));
-            glVertexAttribI4ui = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4ui>(loader.Invoke("glVertexAttribI4ui"));
-            glVertexAttribI1iv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI1iv>(loader.Invoke("glVertexAttribI1iv"));
-            glVertexAttribI2iv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI2iv>(loader.Invoke("glVertexAttribI2iv"));
-            glVertexAttribI3iv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI3iv>(loader.Invoke("glVertexAttribI3iv"));
-            glVertexAttribI4iv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4iv>(loader.Invoke("glVertexAttribI4iv"));
-            glVertexAttribI1uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI1uiv>(loader.Invoke("glVertexAttribI1uiv"));
-            glVertexAttribI2uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI2uiv>(loader.Invoke("glVertexAttribI2uiv"));
-            glVertexAttribI3uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI3uiv>(loader.Invoke("glVertexAttribI3uiv"));
-            glVertexAttribI4uiv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4uiv>(loader.Invoke("glVertexAttribI4uiv"));
-            glVertexAttribI4bv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4bv>(loader.Invoke("glVertexAttribI4bv"));
-            glVertexAttribI4sv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4sv>(loader.Invoke("glVertexAttribI4sv"));
-            glVertexAttribI4ubv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4ubv>(loader.Invoke("glVertexAttribI4ubv"));
-            glVertexAttribI4usv = Marshal.GetDelegateForFunctionPointer<GLVertexAttribI4usv>(loader.Invoke("glVertexAttribI4usv"));
-            glGetUniformuiv = Marshal.GetDelegateForFunctionPointer<GLGetUniformuiv>(loader.Invoke("glGetUniformuiv"));
-            glBindFragDataLocation = Marshal.GetDelegateForFunctionPointer<GLBindFragDataLocation>(loader.Invoke("glBindFragDataLocation"));
-            glGetFragDataLocation = Marshal.GetDelegateForFunctionPointer<GLGetFragDataLocation>(loader.Invoke("glGetFragDataLocation"));
-            glUniform1ui = Marshal.GetDelegateForFunctionPointer<GLUniform1ui>(loader.Invoke("glUniform1ui"));
-            glUniform2ui = Marshal.GetDelegateForFunctionPointer<GLUniform2ui>(loader.Invoke("glUniform2ui"));
-            glUniform3ui = Marshal.GetDelegateForFunctionPointer<GLUniform3ui>(loader.Invoke("glUniform3ui"));
-            glUniform4ui = Marshal.GetDelegateForFunctionPointer<GLUniform4ui>(loader.Invoke("glUniform4ui"));
-            glUniform1uiv = Marshal.GetDelegateForFunctionPointer<GLUniform1uiv>(loader.Invoke("glUniform1uiv"));
-            glUniform2uiv = Marshal.GetDelegateForFunctionPointer<GLUniform2uiv>(loader.Invoke("glUniform2uiv"));
-            glUniform3uiv = Marshal.GetDelegateForFunctionPointer<GLUniform3uiv>(loader.Invoke("glUniform3uiv"));
-            glUniform4uiv = Marshal.GetDelegateForFunctionPointer<GLUniform4uiv>(loader.Invoke("glUniform4uiv"));
-            glTexParameterIiv = Marshal.GetDelegateForFunctionPointer<GLTexParameterIiv>(loader.Invoke("glTexParameterIiv"));
-            glTexParameterIuiv = Marshal.GetDelegateForFunctionPointer<GLTexParameterIuiv>(loader.Invoke("glTexParameterIuiv"));
-            glGetTexParameterIiv = Marshal.GetDelegateForFunctionPointer<GLGetTexParameterIiv>(loader.Invoke("glGetTexParameterIiv"));
-            glGetTexParameterIuiv = Marshal.GetDelegateForFunctionPointer<GLGetTexParameterIuiv>(loader.Invoke("glGetTexParameterIuiv"));
-            glClearBufferiv = Marshal.GetDelegateForFunctionPointer<GLClearBufferiv>(loader.Invoke("glClearBufferiv"));
-            glClearBufferuiv = Marshal.GetDelegateForFunctionPointer<GLClearBufferuiv>(loader.Invoke("glClearBufferuiv"));
-            glClearBufferfv = Marshal.GetDelegateForFunctionPointer<GLClearBufferfv>(loader.Invoke("glClearBufferfv"));
-            glClearBufferfi = Marshal.GetDelegateForFunctionPointer<GLClearBufferfi>(loader.Invoke("glClearBufferfi"));
-            glGetStringi = Marshal.GetDelegateForFunctionPointer<GLGetStringi>(loader.Invoke("glGetStringi"));
-            glIsRenderbuffer = Marshal.GetDelegateForFunctionPointer<GLIsRenderbuffer>(loader.Invoke("glIsRenderbuffer"));
-            glBindRenderbuffer = Marshal.GetDelegateForFunctionPointer<GLBindRenderbuffer>(loader.Invoke("glBindRenderbuffer"));
-            glDeleteRenderbuffers = Marshal.GetDelegateForFunctionPointer<GLDeleteRenderbuffers>(loader.Invoke("glDeleteRenderbuffers"));
-            glGenRenderbuffers = Marshal.GetDelegateForFunctionPointer<GLGenRenderbuffers>(loader.Invoke("glGenRenderbuffers"));
-            glRenderbufferStorage = Marshal.GetDelegateForFunctionPointer<GLRenderbufferStorage>(loader.Invoke("glRenderbufferStorage"));
-            glGetRenderbufferParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetRenderbufferParameteriv>(loader.Invoke("glGetRenderbufferParameteriv"));
-            glIsFramebuffer = Marshal.GetDelegateForFunctionPointer<GLIsFramebuffer>(loader.Invoke("glIsFramebuffer"));
-            glBindFramebuffer = Marshal.GetDelegateForFunctionPointer<GLBindFramebuffer>(loader.Invoke("glBindFramebuffer"));
-            glDeleteFramebuffers = Marshal.GetDelegateForFunctionPointer<GLDeleteFramebuffers>(loader.Invoke("glDeleteFramebuffers"));
-            glGenFramebuffers = Marshal.GetDelegateForFunctionPointer<GLGenFramebuffers>(loader.Invoke("glGenFramebuffers"));
-            glCheckFramebufferStatus = Marshal.GetDelegateForFunctionPointer<GLCheckFramebufferStatus>(loader.Invoke("glCheckFramebufferStatus"));
-            glFramebufferTexture1D = Marshal.GetDelegateForFunctionPointer<GLFramebufferTexture1D>(loader.Invoke("glFramebufferTexture1D"));
-            glFramebufferTexture2D = Marshal.GetDelegateForFunctionPointer<GLFramebufferTexture2D>(loader.Invoke("glFramebufferTexture2D"));
-            glFramebufferTexture3D = Marshal.GetDelegateForFunctionPointer<GLFramebufferTexture3D>(loader.Invoke("glFramebufferTexture3D"));
-            glFramebufferRenderbuffer = Marshal.GetDelegateForFunctionPointer<GLFramebufferRenderbuffer>(loader.Invoke("glFramebufferRenderbuffer"));
-            glGetFramebufferAttachmentParameteriv = Marshal.GetDelegateForFunctionPointer<GLGetFramebufferAttachmentParameteriv>(loader.Invoke("glGetFramebufferAttachmentParameteriv"));
-            glGenerateMipmap = Marshal.GetDelegateForFunctionPointer<GLGenerateMipmap>(loader.Invoke("glGenerateMipmap"));
-            glBlitFramebuffer = Marshal.GetDelegateForFunctionPointer<GLBlitFramebuffer>(loader.Invoke("glBlitFramebuffer"));
-            glRenderbufferStorageMultisample = Marshal.GetDelegateForFunctionPointer<GLRenderbufferStorageMultisample>(loader.Invoke("glRenderbufferStorageMultisample"));
-            glFramebufferTextureLayer = Marshal.GetDelegateForFunctionPointer<GLFramebufferTextureLayer>(loader.Invoke("glFramebufferTextureLayer"));
-            glMapBufferRange = Marshal.GetDelegateForFunctionPointer<GLMapBufferRange>(loader.Invoke("glMapBufferRange"));
-            glFlushMappedBufferRange = Marshal.GetDelegateForFunctionPointer<GLFlushMappedBufferRange>(loader.Invoke("glFlushMappedBufferRange"));
-            glBindVertexArray = Marshal.GetDelegateForFunctionPointer<GLBindVertexArray>(loader.Invoke("glBindVertexArray"));
-            glDeleteVertexArrays = Marshal.GetDelegateForFunctionPointer<GLDeleteVertexArrays>(loader.Invoke("glDeleteVertexArrays"));
-            glGenVertexArrays = Marshal.GetDelegateForFunctionPointer<GLGenVertexArrays>(loader.Invoke("glGenVertexArrays"));
-            glIsVertexArray = Marshal.GetDelegateForFunctionPointer<GLIsVertexArray>(loader.Invoke("glIsVertexArray"));
-            glDrawArraysInstanced = Marshal.GetDelegateForFunctionPointer<GLDrawArraysInstanced>(loader.Invoke("glDrawArraysInstanced"));
-            glDrawElementsInstanced = Marshal.GetDelegateForFunctionPointer<GLDrawElementsInstanced>(loader.Invoke("glDrawElementsInstanced"));
-            glTexBuffer = Marshal.GetDelegateForFunctionPointer<GLTexBuffer>(loader.Invoke("glTexBuffer"));
-            glPrimitiveRestartIndex = Marshal.GetDelegateForFunctionPointer<GLPrimitiveRestartIndex>(loader.Invoke("glPrimitiveRestartIndex"));
-            glCopyBufferSubData = Marshal.GetDelegateForFunctionPointer<GLCopyBufferSubData>(loader.Invoke("glCopyBufferSubData"));
-            glGetUniformIndices = Marshal.GetDelegateForFunctionPointer<GLGetUniformIndices>(loader.Invoke("glGetUniformIndices"));
-            glGetActiveUniformsiv = Marshal.GetDelegateForFunctionPointer<GLGetActiveUniformsiv>(loader.Invoke("glGetActiveUniformsiv"));
-            glGetActiveUniformName = Marshal.GetDelegateForFunctionPointer<GLGetActiveUniformName>(loader.Invoke("glGetActiveUniformName"));
-            glGetUniformBlockIndex = Marshal.GetDelegateForFunctionPointer<GLGetUniformBlockIndex>(loader.Invoke("glGetUniformBlockIndex"));
-            glGetActiveUniformBlockiv = Marshal.GetDelegateForFunctionPointer<GLGetActiveUniformBlockiv>(loader.Invoke("glGetActiveUniformBlockiv"));
-            glGetActiveUniformBlockName = Marshal.GetDelegateForFunctionPointer<GLGetActiveUniformBlockName>(loader.Invoke("glGetActiveUniformBlockName"));
-            glUniformBlockBinding = Marshal.GetDelegateForFunctionPointer<GLUniformBlockBinding>(loader.Invoke("glUniformBlockBinding"));
-            glDrawElementsBaseVertex = Marshal.GetDelegateForFunctionPointer<GLDrawElementsBaseVertex>(loader.Invoke("glDrawElementsBaseVertex"));
-            glDrawRangeElementsBaseVertex = Marshal.GetDelegateForFunctionPointer<GLDrawRangeElementsBaseVertex>(loader.Invoke("glDrawRangeElementsBaseVertex"));
-            glDrawElementsInstancedBaseVertex = Marshal.GetDelegateForFunctionPointer<GLDrawElementsInstancedBaseVertex>(loader.Invoke("glDrawElementsInstancedBaseVertex"));
-            glMultiDrawElementsBaseVertex = Marshal.GetDelegateForFunctionPointer<GLMultiDrawElementsBaseVertex>(loader.Invoke("glMultiDrawElementsBaseVertex"));
-            glProvokingVertex = Marshal.GetDelegateForFunctionPointer<GLProvokingVertex>(loader.Invoke("glProvokingVertex"));
-            glFenceSync = Marshal.GetDelegateForFunctionPointer<GLFenceSync>(loader.Invoke("glFenceSync"));
-            glIsSync = Marshal.GetDelegateForFunctionPointer<GLIsSync>(loader.Invoke("glIsSync"));
-            glDeleteSync = Marshal.GetDelegateForFunctionPointer<GLDeleteSync>(loader.Invoke("glDeleteSync"));
-            glClientWaitSync = Marshal.GetDelegateForFunctionPointer<GLClientWaitSync>(loader.Invoke("glClientWaitSync"));
-            glWaitSync = Marshal.GetDelegateForFunctionPointer<GLWaitSync>(loader.Invoke("glWaitSync"));
-            glGetInteger64v = Marshal.GetDelegateForFunctionPointer<GLGetInteger64v>(loader.Invoke("glGetInteger64v"));
-            glGetSynciv = Marshal.GetDelegateForFunctionPointer<GLGetSynciv>(loader.Invoke("glGetSynciv"));
-            glGetInteger64i_v = Marshal.GetDelegateForFunctionPointer<GLGetInteger64i_v>(loader.Invoke("glGetInteger64i_v"));
-            glGetBufferParameteri64v = Marshal.GetDelegateForFunctionPointer<GLGetBufferParameteri64v>(loader.Invoke("glGetBufferParameteri64v"));
-            glFramebufferTexture = Marshal.GetDelegateForFunctionPointer<GLFramebufferTexture>(loader.Invoke("glFramebufferTexture"));
-            glTexImage2DMultisample = Marshal.GetDelegateForFunctionPointer<GLTexImage2DMultisample>(loader.Invoke("glTexImage2DMultisample"));
-            glTexImage3DMultisample = Marshal.GetDelegateForFunctionPointer<GLTexImage3DMultisample>(loader.Invoke("glTexImage3DMultisample"));
-            glGetMultisamplefv = Marshal.GetDelegateForFunctionPointer<GLGetMultisamplefv>(loader.Invoke("glGetMultisamplefv"));
-            glSampleMaski = Marshal.GetDelegateForFunctionPointer<GLSampleMaski>(loader.Invoke("glSampleMaski"));
+            glCullFace = Marshal.GetDelegateForFunctionPointer<OpenGLCullFace>(loader.Invoke("glCullFace"));
+            glFrontFace = Marshal.GetDelegateForFunctionPointer<OpenGLFrontFace>(loader.Invoke("glFrontFace"));
+            glHint = Marshal.GetDelegateForFunctionPointer<OpenGLHint>(loader.Invoke("glHint"));
+            glLineWidth = Marshal.GetDelegateForFunctionPointer<OpenGLLineWidth>(loader.Invoke("glLineWidth"));
+            glPointSize = Marshal.GetDelegateForFunctionPointer<OpenGLPointSize>(loader.Invoke("glPointSize"));
+            glPolygonMode = Marshal.GetDelegateForFunctionPointer<OpenGLPolygonMode>(loader.Invoke("glPolygonMode"));
+            glScissor = Marshal.GetDelegateForFunctionPointer<OpenGLScissor>(loader.Invoke("glScissor"));
+            glTexParameterf = Marshal.GetDelegateForFunctionPointer<OpenGLTexParameterf>(loader.Invoke("glTexParameterf"));
+            glTexParameterfv = Marshal.GetDelegateForFunctionPointer<OpenGLTexParameterfv>(loader.Invoke("glTexParameterfv"));
+            glTexParameteri = Marshal.GetDelegateForFunctionPointer<OpenGLTexParameteri>(loader.Invoke("glTexParameteri"));
+            glTexParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLTexParameteriv>(loader.Invoke("glTexParameteriv"));
+            glTexImage1D = Marshal.GetDelegateForFunctionPointer<OpenGLTexImage1D>(loader.Invoke("glTexImage1D"));
+            glTexImage2D = Marshal.GetDelegateForFunctionPointer<OpenGLTexImage2D>(loader.Invoke("glTexImage2D"));
+            glDrawBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLDrawBuffer>(loader.Invoke("glDrawBuffer"));
+            glClear = Marshal.GetDelegateForFunctionPointer<OpenGLClear>(loader.Invoke("glClear"));
+            glClearColor = Marshal.GetDelegateForFunctionPointer<OpenGLClearColor>(loader.Invoke("glClearColor"));
+            glClearStencil = Marshal.GetDelegateForFunctionPointer<OpenGLClearStencil>(loader.Invoke("glClearStencil"));
+            glClearDepth = Marshal.GetDelegateForFunctionPointer<OpenGLClearDepth>(loader.Invoke("glClearDepth"));
+            glStencilMask = Marshal.GetDelegateForFunctionPointer<OpenGLStencilMask>(loader.Invoke("glStencilMask"));
+            glColorMask = Marshal.GetDelegateForFunctionPointer<OpenGLColorMask>(loader.Invoke("glColorMask"));
+            glDepthMask = Marshal.GetDelegateForFunctionPointer<OpenGLDepthMask>(loader.Invoke("glDepthMask"));
+            glDisable = Marshal.GetDelegateForFunctionPointer<OpenGLDisable>(loader.Invoke("glDisable"));
+            glEnable = Marshal.GetDelegateForFunctionPointer<OpenGLEnable>(loader.Invoke("glEnable"));
+            glFinish = Marshal.GetDelegateForFunctionPointer<OpenGLFinish>(loader.Invoke("glFinish"));
+            glFlush = Marshal.GetDelegateForFunctionPointer<OpenGLFlush>(loader.Invoke("glFlush"));
+            glBlendFunc = Marshal.GetDelegateForFunctionPointer<OpenGLBlendFunc>(loader.Invoke("glBlendFunc"));
+            glLogicOp = Marshal.GetDelegateForFunctionPointer<OpenGLLogicOp>(loader.Invoke("glLogicOp"));
+            glStencilFunc = Marshal.GetDelegateForFunctionPointer<OpenGLStencilFunc>(loader.Invoke("glStencilFunc"));
+            glStencilOp = Marshal.GetDelegateForFunctionPointer<OpenGLStencilOp>(loader.Invoke("glStencilOp"));
+            glDepthFunc = Marshal.GetDelegateForFunctionPointer<OpenGLDepthFunc>(loader.Invoke("glDepthFunc"));
+            glPixelStoref = Marshal.GetDelegateForFunctionPointer<OpenGLPixelStoref>(loader.Invoke("glPixelStoref"));
+            glPixelStorei = Marshal.GetDelegateForFunctionPointer<OpenGLPixelStorei>(loader.Invoke("glPixelStorei"));
+            glReadBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLReadBuffer>(loader.Invoke("glReadBuffer"));
+            glReadPixels = Marshal.GetDelegateForFunctionPointer<OpenGLReadPixels>(loader.Invoke("glReadPixels"));
+            glGetBooleanv = Marshal.GetDelegateForFunctionPointer<OpenGLGetBooleanv>(loader.Invoke("glGetBooleanv"));
+            glGetDoublev = Marshal.GetDelegateForFunctionPointer<OpenGLGetDoublev>(loader.Invoke("glGetDoublev"));
+            glGetError = Marshal.GetDelegateForFunctionPointer<OpenGLGetError>(loader.Invoke("glGetError"));
+            glGetFloatv = Marshal.GetDelegateForFunctionPointer<OpenGLGetFloatv>(loader.Invoke("glGetFloatv"));
+            glGetIntegerv = Marshal.GetDelegateForFunctionPointer<OpenGLGetIntegerv>(loader.Invoke("glGetIntegerv"));
+            glGetString = Marshal.GetDelegateForFunctionPointer<OpenGLGetString>(loader.Invoke("glGetString"));
+            glGetTexImage = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexImage>(loader.Invoke("glGetTexImage"));
+            glGetTexParameterfv = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexParameterfv>(loader.Invoke("glGetTexParameterfv"));
+            glGetTexParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexParameteriv>(loader.Invoke("glGetTexParameteriv"));
+            glGetTexLevelParameterfv = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexLevelParameterfv>(loader.Invoke("glGetTexLevelParameterfv"));
+            glGetTexLevelParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexLevelParameteriv>(loader.Invoke("glGetTexLevelParameteriv"));
+            glIsEnabled = Marshal.GetDelegateForFunctionPointer<OpenGLIsEnabled>(loader.Invoke("glIsEnabled"));
+            glDepthRange = Marshal.GetDelegateForFunctionPointer<OpenGLDepthRange>(loader.Invoke("glDepthRange"));
+            glViewport = Marshal.GetDelegateForFunctionPointer<OpenGLViewport>(loader.Invoke("glViewport"));
+            glTexStorage3DMultisample = Marshal.GetDelegateForFunctionPointer<OpenGLTexStorage3DMultisample>(loader.Invoke("glTexStorage3DMultisample"));
+            glTexBufferRange = Marshal.GetDelegateForFunctionPointer<OpenGLTexBufferRange>(loader.Invoke("glTexBufferRange"));
+            glPatchParameteri = Marshal.GetDelegateForFunctionPointer<OpenGLPatchParameteri>(loader.Invoke("glPatchParameteri"));
+            glMinSampleShading = Marshal.GetDelegateForFunctionPointer<OpenGLMinSampleShading>(loader.Invoke("glMinSampleShading"));
+            glPrimitiveBoundingBox = Marshal.GetDelegateForFunctionPointer<OpenGLPrimitiveBoundingBox>(loader.Invoke("glPrimitiveBoundingBox"));
+            glBlendFuncSeparatei = Marshal.GetDelegateForFunctionPointer<OpenGLBlendFuncSeparatei>(loader.Invoke("glBlendFuncSeparatei"));
+            glBlendFunci = Marshal.GetDelegateForFunctionPointer<OpenGLBlendFunci>(loader.Invoke("glBlendFunci"));
+            glBlendEquationSeparatei = Marshal.GetDelegateForFunctionPointer<OpenGLBlendEquationSeparatei>(loader.Invoke("glBlendEquationSeparatei"));
+            glBlendEquationi = Marshal.GetDelegateForFunctionPointer<OpenGLBlendEquationi>(loader.Invoke("glBlendEquationi"));
+            glCopyImageSubData = Marshal.GetDelegateForFunctionPointer<OpenGLCopyImageSubData>(loader.Invoke("glCopyImageSubData"));
+            glBlendBarrier = Marshal.GetDelegateForFunctionPointer<OpenGLBlendBarrier>(loader.Invoke("glBlendBarrier"));
+            glVertexBindingDivisor = Marshal.GetDelegateForFunctionPointer<OpenGLVertexBindingDivisor>(loader.Invoke("glVertexBindingDivisor"));
+            glVertexAttribBinding = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribBinding>(loader.Invoke("glVertexAttribBinding"));
+            glVertexAttribIFormat = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribIFormat>(loader.Invoke("glVertexAttribIFormat"));
+            glVertexAttribFormat = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribFormat>(loader.Invoke("glVertexAttribFormat"));
+            glBindVertexBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLBindVertexBuffer>(loader.Invoke("glBindVertexBuffer"));
+            glTexStorage2DMultisample = Marshal.GetDelegateForFunctionPointer<OpenGLTexStorage2DMultisample>(loader.Invoke("glTexStorage2DMultisample"));
+            glMemoryBarrierByRegion = Marshal.GetDelegateForFunctionPointer<OpenGLMemoryBarrierByRegion>(loader.Invoke("glMemoryBarrierByRegion"));
+            glMemoryBarrier = Marshal.GetDelegateForFunctionPointer<OpenGLMemoryBarrier>(loader.Invoke("glMemoryBarrier"));
+            glBindImageTexture = Marshal.GetDelegateForFunctionPointer<OpenGLBindImageTexture>(loader.Invoke("glBindImageTexture"));
+            glGetProgramPipelineInfoLog = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramPipelineInfoLog>(loader.Invoke("glGetProgramPipelineInfoLog"));
+            glValidateProgramPipeline = Marshal.GetDelegateForFunctionPointer<OpenGLValidateProgramPipeline>(loader.Invoke("glValidateProgramPipeline"));
+            glProgramUniformMatrix4x3fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix4x3fv>(loader.Invoke("glProgramUniformMatrix4x3fv"));
+            glProgramUniformMatrix3x4fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix3x4fv>(loader.Invoke("glProgramUniformMatrix3x4fv"));
+            glProgramUniformMatrix4x2fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix4x2fv>(loader.Invoke("glProgramUniformMatrix4x2fv"));
+            glProgramUniformMatrix2x4fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix2x4fv>(loader.Invoke("glProgramUniformMatrix2x4fv"));
+            glProgramUniformMatrix3x2fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix3x2fv>(loader.Invoke("glProgramUniformMatrix3x2fv"));
+            glProgramUniformMatrix2x3fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix2x3fv>(loader.Invoke("glProgramUniformMatrix2x3fv"));
+            glProgramUniformMatrix4fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix4fv>(loader.Invoke("glProgramUniformMatrix4fv"));
+            glProgramUniformMatrix3fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix3fv>(loader.Invoke("glProgramUniformMatrix3fv"));
+            glBlendBarrierKHR = Marshal.GetDelegateForFunctionPointer<OpenGLBlendBarrierKHR>(loader.Invoke("glBlendBarrierKHR"));
+            glDebugMessageControl = Marshal.GetDelegateForFunctionPointer<OpenGLDebugMessageControl>(loader.Invoke("glDebugMessageControl"));
+            glDebugMessageInsert = Marshal.GetDelegateForFunctionPointer<OpenGLDebugMessageInsert>(loader.Invoke("glDebugMessageInsert"));
+            glDebugMessageCallback = Marshal.GetDelegateForFunctionPointer<OpenGLDebugMessageCallback>(loader.Invoke("glDebugMessageCallback"));
+            glGetDebugMessageLog = Marshal.GetDelegateForFunctionPointer<OpenGLGetDebugMessageLog>(loader.Invoke("glGetDebugMessageLog"));
+            glPushDebugGroup = Marshal.GetDelegateForFunctionPointer<OpenGLPushDebugGroup>(loader.Invoke("glPushDebugGroup"));
+            glPopDebugGroup = Marshal.GetDelegateForFunctionPointer<OpenGLPopDebugGroup>(loader.Invoke("glPopDebugGroup"));
+            glObjectLabel = Marshal.GetDelegateForFunctionPointer<OpenGLObjectLabel>(loader.Invoke("glObjectLabel"));
+            glGetObjectLabel = Marshal.GetDelegateForFunctionPointer<OpenGLGetObjectLabel>(loader.Invoke("glGetObjectLabel"));
+            glObjectPtrLabel = Marshal.GetDelegateForFunctionPointer<OpenGLObjectPtrLabel>(loader.Invoke("glObjectPtrLabel"));
+            glGetObjectPtrLabel = Marshal.GetDelegateForFunctionPointer<OpenGLGetObjectPtrLabel>(loader.Invoke("glGetObjectPtrLabel"));
+            glProgramUniform3uiv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform3uiv>(loader.Invoke("glProgramUniform3uiv"));
+            glDebugMessageControlKHR = Marshal.GetDelegateForFunctionPointer<OpenGLDebugMessageControlKHR>(loader.Invoke("glDebugMessageControlKHR"));
+            glDebugMessageInsertKHR = Marshal.GetDelegateForFunctionPointer<OpenGLDebugMessageInsertKHR>(loader.Invoke("glDebugMessageInsertKHR"));
+            glDebugMessageCallbackKHR = Marshal.GetDelegateForFunctionPointer<OpenGLDebugMessageCallbackKHR>(loader.Invoke("glDebugMessageCallbackKHR"));
+            glGetDebugMessageLogKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetDebugMessageLogKHR>(loader.Invoke("glGetDebugMessageLogKHR"));
+            glPushDebugGroupKHR = Marshal.GetDelegateForFunctionPointer<OpenGLPushDebugGroupKHR>(loader.Invoke("glPushDebugGroupKHR"));
+            glPopDebugGroupKHR = Marshal.GetDelegateForFunctionPointer<OpenGLPopDebugGroupKHR>(loader.Invoke("glPopDebugGroupKHR"));
+            glObjectLabelKHR = Marshal.GetDelegateForFunctionPointer<OpenGLObjectLabelKHR>(loader.Invoke("glObjectLabelKHR"));
+            glGetObjectLabelKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetObjectLabelKHR>(loader.Invoke("glGetObjectLabelKHR"));
+            glObjectPtrLabelKHR = Marshal.GetDelegateForFunctionPointer<OpenGLObjectPtrLabelKHR>(loader.Invoke("glObjectPtrLabelKHR"));
+            glGetObjectPtrLabelKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetObjectPtrLabelKHR>(loader.Invoke("glGetObjectPtrLabelKHR"));
+            glGetPointervKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetPointervKHR>(loader.Invoke("glGetPointervKHR"));
+            glGetGraphicsResetStatus = Marshal.GetDelegateForFunctionPointer<OpenGLGetGraphicsResetStatus>(loader.Invoke("glGetGraphicsResetStatus"));
+            glReadnPixels = Marshal.GetDelegateForFunctionPointer<OpenGLReadnPixels>(loader.Invoke("glReadnPixels"));
+            glGetnUniformfv = Marshal.GetDelegateForFunctionPointer<OpenGLGetnUniformfv>(loader.Invoke("glGetnUniformfv"));
+            glGetnUniformiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetnUniformiv>(loader.Invoke("glGetnUniformiv"));
+            glGetnUniformuiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetnUniformuiv>(loader.Invoke("glGetnUniformuiv"));
+            glGetGraphicsResetStatusKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetGraphicsResetStatusKHR>(loader.Invoke("glGetGraphicsResetStatusKHR"));
+            glReadnPixelsKHR = Marshal.GetDelegateForFunctionPointer<OpenGLReadnPixelsKHR>(loader.Invoke("glReadnPixelsKHR"));
+            glGetnUniformfvKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetnUniformfvKHR>(loader.Invoke("glGetnUniformfvKHR"));
+            glGetnUniformivKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetnUniformivKHR>(loader.Invoke("glGetnUniformivKHR"));
+            glGetnUniformuivKHR = Marshal.GetDelegateForFunctionPointer<OpenGLGetnUniformuivKHR>(loader.Invoke("glGetnUniformuivKHR"));
+            glMaxShaderCompilerThreadsKHR = Marshal.GetDelegateForFunctionPointer<OpenGLMaxShaderCompilerThreadsKHR>(loader.Invoke("glMaxShaderCompilerThreadsKHR"));
+            glFramebufferTextureMultiviewOVR = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTextureMultiviewOVR>(loader.Invoke("glFramebufferTextureMultiviewOVR"));
+            glFramebufferTextureMultisampleMultiviewOVR = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTextureMultisampleMultiviewOVR>(loader.Invoke("glFramebufferTextureMultisampleMultiviewOVR"));
+            glDrawArrays = Marshal.GetDelegateForFunctionPointer<OpenGLDrawArrays>(loader.Invoke("glDrawArrays"));
+            glDrawElements = Marshal.GetDelegateForFunctionPointer<OpenGLDrawElements>(loader.Invoke("glDrawElements"));
+            glPolygonOffset = Marshal.GetDelegateForFunctionPointer<OpenGLPolygonOffset>(loader.Invoke("glPolygonOffset"));
+            glCopyTexImage1D = Marshal.GetDelegateForFunctionPointer<OpenGLCopyTexImage1D>(loader.Invoke("glCopyTexImage1D"));
+            glCopyTexImage2D = Marshal.GetDelegateForFunctionPointer<OpenGLCopyTexImage2D>(loader.Invoke("glCopyTexImage2D"));
+            glCopyTexSubImage1D = Marshal.GetDelegateForFunctionPointer<OpenGLCopyTexSubImage1D>(loader.Invoke("glCopyTexSubImage1D"));
+            glCopyTexSubImage2D = Marshal.GetDelegateForFunctionPointer<OpenGLCopyTexSubImage2D>(loader.Invoke("glCopyTexSubImage2D"));
+            glTexSubImage1D = Marshal.GetDelegateForFunctionPointer<OpenGLTexSubImage1D>(loader.Invoke("glTexSubImage1D"));
+            glTexSubImage2D = Marshal.GetDelegateForFunctionPointer<OpenGLTexSubImage2D>(loader.Invoke("glTexSubImage2D"));
+            glBindTexture = Marshal.GetDelegateForFunctionPointer<OpenGLBindTexture>(loader.Invoke("glBindTexture"));
+            glDeleteTextures = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteTextures>(loader.Invoke("glDeleteTextures"));
+            glGenTextures = Marshal.GetDelegateForFunctionPointer<OpenGLGenTextures>(loader.Invoke("glGenTextures"));
+            glIsTexture = Marshal.GetDelegateForFunctionPointer<OpenGLIsTexture>(loader.Invoke("glIsTexture"));
+            glProgramUniformMatrix2fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniformMatrix2fv>(loader.Invoke("glProgramUniformMatrix2fv"));
+            glProgramUniform4fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform4fv>(loader.Invoke("glProgramUniform4fv"));
+            glProgramUniform3fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform3fv>(loader.Invoke("glProgramUniform3fv"));
+            glProgramUniform2fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform2fv>(loader.Invoke("glProgramUniform2fv"));
+            glProgramUniform1fv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform1fv>(loader.Invoke("glProgramUniform1fv"));
+            glProgramUniform4uiv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform4uiv>(loader.Invoke("glProgramUniform4uiv"));
+            glProgramUniform2uiv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform2uiv>(loader.Invoke("glProgramUniform2uiv"));
+            glProgramUniform1uiv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform1uiv>(loader.Invoke("glProgramUniform1uiv"));
+            glProgramUniform4iv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform4iv>(loader.Invoke("glProgramUniform4iv"));
+            glProgramUniform3iv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform3iv>(loader.Invoke("glProgramUniform3iv"));
+            glProgramUniform2iv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform2iv>(loader.Invoke("glProgramUniform2iv"));
+            glProgramUniform1iv = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform1iv>(loader.Invoke("glProgramUniform1iv"));
+            glProgramUniform4f = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform4f>(loader.Invoke("glProgramUniform4f"));
+            glProgramUniform3f = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform3f>(loader.Invoke("glProgramUniform3f"));
+            glProgramUniform2f = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform2f>(loader.Invoke("glProgramUniform2f"));
+            glProgramUniform1f = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform1f>(loader.Invoke("glProgramUniform1f"));
+            glDrawRangeElements = Marshal.GetDelegateForFunctionPointer<OpenGLDrawRangeElements>(loader.Invoke("glDrawRangeElements"));
+            glTexImage3D = Marshal.GetDelegateForFunctionPointer<OpenGLTexImage3D>(loader.Invoke("glTexImage3D"));
+            glTexSubImage3D = Marshal.GetDelegateForFunctionPointer<OpenGLTexSubImage3D>(loader.Invoke("glTexSubImage3D"));
+            glCopyTexSubImage3D = Marshal.GetDelegateForFunctionPointer<OpenGLCopyTexSubImage3D>(loader.Invoke("glCopyTexSubImage3D"));
+            glActiveTexture = Marshal.GetDelegateForFunctionPointer<OpenGLActiveTexture>(loader.Invoke("glActiveTexture"));
+            glSampleCoverage = Marshal.GetDelegateForFunctionPointer<OpenGLSampleCoverage>(loader.Invoke("glSampleCoverage"));
+            glCompressedTexImage3D = Marshal.GetDelegateForFunctionPointer<OpenGLCompressedTexImage3D>(loader.Invoke("glCompressedTexImage3D"));
+            glCompressedTexImage2D = Marshal.GetDelegateForFunctionPointer<OpenGLCompressedTexImage2D>(loader.Invoke("glCompressedTexImage2D"));
+            glCompressedTexImage1D = Marshal.GetDelegateForFunctionPointer<OpenGLCompressedTexImage1D>(loader.Invoke("glCompressedTexImage1D"));
+            glCompressedTexSubImage3D = Marshal.GetDelegateForFunctionPointer<OpenGLCompressedTexSubImage3D>(loader.Invoke("glCompressedTexSubImage3D"));
+            glCompressedTexSubImage2D = Marshal.GetDelegateForFunctionPointer<OpenGLCompressedTexSubImage2D>(loader.Invoke("glCompressedTexSubImage2D"));
+            glCompressedTexSubImage1D = Marshal.GetDelegateForFunctionPointer<OpenGLCompressedTexSubImage1D>(loader.Invoke("glCompressedTexSubImage1D"));
+            glGetCompressedTexImage = Marshal.GetDelegateForFunctionPointer<OpenGLGetCompressedTexImage>(loader.Invoke("glGetCompressedTexImage"));
+            glProgramUniform4ui = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform4ui>(loader.Invoke("glProgramUniform4ui"));
+            glProgramUniform3ui = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform3ui>(loader.Invoke("glProgramUniform3ui"));
+            glProgramUniform2ui = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform2ui>(loader.Invoke("glProgramUniform2ui"));
+            glProgramUniform1ui = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform1ui>(loader.Invoke("glProgramUniform1ui"));
+            glProgramUniform4i = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform4i>(loader.Invoke("glProgramUniform4i"));
+            glProgramUniform3i = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform3i>(loader.Invoke("glProgramUniform3i"));
+            glProgramUniform2i = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform2i>(loader.Invoke("glProgramUniform2i"));
+            glProgramUniform1i = Marshal.GetDelegateForFunctionPointer<OpenGLProgramUniform1i>(loader.Invoke("glProgramUniform1i"));
+            glGetProgramPipelineiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramPipelineiv>(loader.Invoke("glGetProgramPipelineiv"));
+            glIsProgramPipeline = Marshal.GetDelegateForFunctionPointer<OpenGLIsProgramPipeline>(loader.Invoke("glIsProgramPipeline"));
+            glGenProgramPipelines = Marshal.GetDelegateForFunctionPointer<OpenGLGenProgramPipelines>(loader.Invoke("glGenProgramPipelines"));
+            glDeleteProgramPipelines = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteProgramPipelines>(loader.Invoke("glDeleteProgramPipelines"));
+            glBindProgramPipeline = Marshal.GetDelegateForFunctionPointer<OpenGLBindProgramPipeline>(loader.Invoke("glBindProgramPipeline"));
+            glCreateShaderProgramv = Marshal.GetDelegateForFunctionPointer<OpenGLCreateShaderProgramv>(loader.Invoke("glCreateShaderProgramv"));
+            glActiveShaderProgram = Marshal.GetDelegateForFunctionPointer<OpenGLActiveShaderProgram>(loader.Invoke("glActiveShaderProgram"));
+            glUseProgramStages = Marshal.GetDelegateForFunctionPointer<OpenGLUseProgramStages>(loader.Invoke("glUseProgramStages"));
+            glGetProgramResourceLocation = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramResourceLocation>(loader.Invoke("glGetProgramResourceLocation"));
+            glGetProgramResourceiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramResourceiv>(loader.Invoke("glGetProgramResourceiv"));
+            glGetProgramResourceName = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramResourceName>(loader.Invoke("glGetProgramResourceName"));
+            glGetProgramResourceIndex = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramResourceIndex>(loader.Invoke("glGetProgramResourceIndex"));
+            glGetProgramInterfaceiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramInterfaceiv>(loader.Invoke("glGetProgramInterfaceiv"));
+            glGetFramebufferParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetFramebufferParameteriv>(loader.Invoke("glGetFramebufferParameteriv"));
+            glFramebufferParameteri = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferParameteri>(loader.Invoke("glFramebufferParameteri"));
+            glDrawElementsIndirect = Marshal.GetDelegateForFunctionPointer<OpenGLDrawElementsIndirect>(loader.Invoke("glDrawElementsIndirect"));
+            glDrawArraysIndirect = Marshal.GetDelegateForFunctionPointer<OpenGLDrawArraysIndirect>(loader.Invoke("glDrawArraysIndirect"));
+            glDispatchComputeIndirect = Marshal.GetDelegateForFunctionPointer<OpenGLDispatchComputeIndirect>(loader.Invoke("glDispatchComputeIndirect"));
+            glDispatchCompute = Marshal.GetDelegateForFunctionPointer<OpenGLDispatchCompute>(loader.Invoke("glDispatchCompute"));
+            glGetInternalformativ = Marshal.GetDelegateForFunctionPointer<OpenGLGetInternalformativ>(loader.Invoke("glGetInternalformativ"));
+            glTexStorage3D = Marshal.GetDelegateForFunctionPointer<OpenGLTexStorage3D>(loader.Invoke("glTexStorage3D"));
+            glTexStorage2D = Marshal.GetDelegateForFunctionPointer<OpenGLTexStorage2D>(loader.Invoke("glTexStorage2D"));
+            glInvalidateSubFramebuffer = Marshal.GetDelegateForFunctionPointer<OpenGLInvalidateSubFramebuffer>(loader.Invoke("glInvalidateSubFramebuffer"));
+            glInvalidateFramebuffer = Marshal.GetDelegateForFunctionPointer<OpenGLInvalidateFramebuffer>(loader.Invoke("glInvalidateFramebuffer"));
+            glProgramParameteri = Marshal.GetDelegateForFunctionPointer<OpenGLProgramParameteri>(loader.Invoke("glProgramParameteri"));
+            glProgramBinary = Marshal.GetDelegateForFunctionPointer<OpenGLProgramBinary>(loader.Invoke("glProgramBinary"));
+            glGetProgramBinary = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramBinary>(loader.Invoke("glGetProgramBinary"));
+            glResumeTransformFeedback = Marshal.GetDelegateForFunctionPointer<OpenGLResumeTransformFeedback>(loader.Invoke("glResumeTransformFeedback"));
+            glPauseTransformFeedback = Marshal.GetDelegateForFunctionPointer<OpenGLPauseTransformFeedback>(loader.Invoke("glPauseTransformFeedback"));
+            glBlendFuncSeparate = Marshal.GetDelegateForFunctionPointer<OpenGLBlendFuncSeparate>(loader.Invoke("glBlendFuncSeparate"));
+            glMultiDrawArrays = Marshal.GetDelegateForFunctionPointer<OpenGLMultiDrawArrays>(loader.Invoke("glMultiDrawArrays"));
+            glMultiDrawElements = Marshal.GetDelegateForFunctionPointer<OpenGLMultiDrawElements>(loader.Invoke("glMultiDrawElements"));
+            glPointParameterf = Marshal.GetDelegateForFunctionPointer<OpenGLPointParameterf>(loader.Invoke("glPointParameterf"));
+            glPointParameterfv = Marshal.GetDelegateForFunctionPointer<OpenGLPointParameterfv>(loader.Invoke("glPointParameterfv"));
+            glPointParameteri = Marshal.GetDelegateForFunctionPointer<OpenGLPointParameteri>(loader.Invoke("glPointParameteri"));
+            glPointParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLPointParameteriv>(loader.Invoke("glPointParameteriv"));
+            glIsTransformFeedback = Marshal.GetDelegateForFunctionPointer<OpenGLIsTransformFeedback>(loader.Invoke("glIsTransformFeedback"));
+            glGenTransformFeedbacks = Marshal.GetDelegateForFunctionPointer<OpenGLGenTransformFeedbacks>(loader.Invoke("glGenTransformFeedbacks"));
+            glDeleteTransformFeedbacks = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteTransformFeedbacks>(loader.Invoke("glDeleteTransformFeedbacks"));
+            glBindTransformFeedback = Marshal.GetDelegateForFunctionPointer<OpenGLBindTransformFeedback>(loader.Invoke("glBindTransformFeedback"));
+            glShaderBinary = Marshal.GetDelegateForFunctionPointer<OpenGLShaderBinary>(loader.Invoke("glShaderBinary"));
+            glReleaseShaderCompiler = Marshal.GetDelegateForFunctionPointer<OpenGLReleaseShaderCompiler>(loader.Invoke("glReleaseShaderCompiler"));
+            glGetShaderPrecisionFormat = Marshal.GetDelegateForFunctionPointer<OpenGLGetShaderPrecisionFormat>(loader.Invoke("glGetShaderPrecisionFormat"));
+            glDepthRangef = Marshal.GetDelegateForFunctionPointer<OpenGLDepthRangef>(loader.Invoke("glDepthRangef"));
+            glClearDepthf = Marshal.GetDelegateForFunctionPointer<OpenGLClearDepthf>(loader.Invoke("glClearDepthf"));
+            glVertexAttribP4uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP4uiv>(loader.Invoke("glVertexAttribP4uiv"));
+            glVertexAttribP4ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP4ui>(loader.Invoke("glVertexAttribP4ui"));
+            glVertexAttribP3uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP3uiv>(loader.Invoke("glVertexAttribP3uiv"));
+            glVertexAttribP3ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP3ui>(loader.Invoke("glVertexAttribP3ui"));
+            glVertexAttribP2uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP2uiv>(loader.Invoke("glVertexAttribP2uiv"));
+            glVertexAttribP2ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP2ui>(loader.Invoke("glVertexAttribP2ui"));
+            glVertexAttribP1uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP1uiv>(loader.Invoke("glVertexAttribP1uiv"));
+            glVertexAttribP1ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribP1ui>(loader.Invoke("glVertexAttribP1ui"));
+            glVertexAttribDivisor = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribDivisor>(loader.Invoke("glVertexAttribDivisor"));
+            glGetQueryObjectui64v = Marshal.GetDelegateForFunctionPointer<OpenGLGetQueryObjectui64v>(loader.Invoke("glGetQueryObjectui64v"));
+            glGetQueryObjecti64v = Marshal.GetDelegateForFunctionPointer<OpenGLGetQueryObjecti64v>(loader.Invoke("glGetQueryObjecti64v"));
+            glQueryCounter = Marshal.GetDelegateForFunctionPointer<OpenGLQueryCounter>(loader.Invoke("glQueryCounter"));
+            glGetSamplerParameterIuiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetSamplerParameterIuiv>(loader.Invoke("glGetSamplerParameterIuiv"));
+            glGetSamplerParameterfv = Marshal.GetDelegateForFunctionPointer<OpenGLGetSamplerParameterfv>(loader.Invoke("glGetSamplerParameterfv"));
+            glGetSamplerParameterIiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetSamplerParameterIiv>(loader.Invoke("glGetSamplerParameterIiv"));
+            glGetSamplerParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetSamplerParameteriv>(loader.Invoke("glGetSamplerParameteriv"));
+            glSamplerParameterIuiv = Marshal.GetDelegateForFunctionPointer<OpenGLSamplerParameterIuiv>(loader.Invoke("glSamplerParameterIuiv"));
+            glSamplerParameterIiv = Marshal.GetDelegateForFunctionPointer<OpenGLSamplerParameterIiv>(loader.Invoke("glSamplerParameterIiv"));
+            glSamplerParameterfv = Marshal.GetDelegateForFunctionPointer<OpenGLSamplerParameterfv>(loader.Invoke("glSamplerParameterfv"));
+            glSamplerParameterf = Marshal.GetDelegateForFunctionPointer<OpenGLSamplerParameterf>(loader.Invoke("glSamplerParameterf"));
+            glSamplerParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLSamplerParameteriv>(loader.Invoke("glSamplerParameteriv"));
+            glSamplerParameteri = Marshal.GetDelegateForFunctionPointer<OpenGLSamplerParameteri>(loader.Invoke("glSamplerParameteri"));
+            glBindSampler = Marshal.GetDelegateForFunctionPointer<OpenGLBindSampler>(loader.Invoke("glBindSampler"));
+            glIsSampler = Marshal.GetDelegateForFunctionPointer<OpenGLIsSampler>(loader.Invoke("glIsSampler"));
+            glDeleteSamplers = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteSamplers>(loader.Invoke("glDeleteSamplers"));
+            glGenSamplers = Marshal.GetDelegateForFunctionPointer<OpenGLGenSamplers>(loader.Invoke("glGenSamplers"));
+            glGetFragDataIndex = Marshal.GetDelegateForFunctionPointer<OpenGLGetFragDataIndex>(loader.Invoke("glGetFragDataIndex"));
+            glBindFragDataLocationIndexed = Marshal.GetDelegateForFunctionPointer<OpenGLBindFragDataLocationIndexed>(loader.Invoke("glBindFragDataLocationIndexed"));
+            glGetPointerv = Marshal.GetDelegateForFunctionPointer<OpenGLGetPointerv>(loader.Invoke("glGetPointerv"));
+            glBlendColor = Marshal.GetDelegateForFunctionPointer<OpenGLBlendColor>(loader.Invoke("glBlendColor"));
+            glBlendEquation = Marshal.GetDelegateForFunctionPointer<OpenGLBlendEquation>(loader.Invoke("glBlendEquation"));
+            glGenQueries = Marshal.GetDelegateForFunctionPointer<OpenGLGenQueries>(loader.Invoke("glGenQueries"));
+            glDeleteQueries = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteQueries>(loader.Invoke("glDeleteQueries"));
+            glIsQuery = Marshal.GetDelegateForFunctionPointer<OpenGLIsQuery>(loader.Invoke("glIsQuery"));
+            glBeginQuery = Marshal.GetDelegateForFunctionPointer<OpenGLBeginQuery>(loader.Invoke("glBeginQuery"));
+            glEndQuery = Marshal.GetDelegateForFunctionPointer<OpenGLEndQuery>(loader.Invoke("glEndQuery"));
+            glGetQueryiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetQueryiv>(loader.Invoke("glGetQueryiv"));
+            glGetQueryObjectiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetQueryObjectiv>(loader.Invoke("glGetQueryObjectiv"));
+            glGetQueryObjectuiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetQueryObjectuiv>(loader.Invoke("glGetQueryObjectuiv"));
+            glBindBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLBindBuffer>(loader.Invoke("glBindBuffer"));
+            glDeleteBuffers = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteBuffers>(loader.Invoke("glDeleteBuffers"));
+            glGenBuffers = Marshal.GetDelegateForFunctionPointer<OpenGLGenBuffers>(loader.Invoke("glGenBuffers"));
+            glIsBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLIsBuffer>(loader.Invoke("glIsBuffer"));
+            glBufferData = Marshal.GetDelegateForFunctionPointer<OpenGLBufferData>(loader.Invoke("glBufferData"));
+            glBufferSubData = Marshal.GetDelegateForFunctionPointer<OpenGLBufferSubData>(loader.Invoke("glBufferSubData"));
+            glGetBufferSubData = Marshal.GetDelegateForFunctionPointer<OpenGLGetBufferSubData>(loader.Invoke("glGetBufferSubData"));
+            glMapBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLMapBuffer>(loader.Invoke("glMapBuffer"));
+            glUnmapBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLUnmapBuffer>(loader.Invoke("glUnmapBuffer"));
+            glGetBufferParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetBufferParameteriv>(loader.Invoke("glGetBufferParameteriv"));
+            glGetBufferPointerv = Marshal.GetDelegateForFunctionPointer<OpenGLGetBufferPointerv>(loader.Invoke("glGetBufferPointerv"));
+            glBlendEquationSeparate = Marshal.GetDelegateForFunctionPointer<OpenGLBlendEquationSeparate>(loader.Invoke("glBlendEquationSeparate"));
+            glDrawBuffers = Marshal.GetDelegateForFunctionPointer<OpenGLDrawBuffers>(loader.Invoke("glDrawBuffers"));
+            glStencilOpSeparate = Marshal.GetDelegateForFunctionPointer<OpenGLStencilOpSeparate>(loader.Invoke("glStencilOpSeparate"));
+            glStencilFuncSeparate = Marshal.GetDelegateForFunctionPointer<OpenGLStencilFuncSeparate>(loader.Invoke("glStencilFuncSeparate"));
+            glStencilMaskSeparate = Marshal.GetDelegateForFunctionPointer<OpenGLStencilMaskSeparate>(loader.Invoke("glStencilMaskSeparate"));
+            glAttachShader = Marshal.GetDelegateForFunctionPointer<OpenGLAttachShader>(loader.Invoke("glAttachShader"));
+            glBindAttribLocation = Marshal.GetDelegateForFunctionPointer<OpenGLBindAttribLocation>(loader.Invoke("glBindAttribLocation"));
+            glCompileShader = Marshal.GetDelegateForFunctionPointer<OpenGLCompileShader>(loader.Invoke("glCompileShader"));
+            glCreateProgram = Marshal.GetDelegateForFunctionPointer<OpenGLCreateProgram>(loader.Invoke("glCreateProgram"));
+            glCreateShader = Marshal.GetDelegateForFunctionPointer<OpenGLCreateShader>(loader.Invoke("glCreateShader"));
+            glDeleteProgram = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteProgram>(loader.Invoke("glDeleteProgram"));
+            glDeleteShader = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteShader>(loader.Invoke("glDeleteShader"));
+            glDetachShader = Marshal.GetDelegateForFunctionPointer<OpenGLDetachShader>(loader.Invoke("glDetachShader"));
+            glDisableVertexAttribArray = Marshal.GetDelegateForFunctionPointer<OpenGLDisableVertexAttribArray>(loader.Invoke("glDisableVertexAttribArray"));
+            glEnableVertexAttribArray = Marshal.GetDelegateForFunctionPointer<OpenGLEnableVertexAttribArray>(loader.Invoke("glEnableVertexAttribArray"));
+            glGetActiveAttrib = Marshal.GetDelegateForFunctionPointer<OpenGLGetActiveAttrib>(loader.Invoke("glGetActiveAttrib"));
+            glGetActiveUniform = Marshal.GetDelegateForFunctionPointer<OpenGLGetActiveUniform>(loader.Invoke("glGetActiveUniform"));
+            glGetAttachedShaders = Marshal.GetDelegateForFunctionPointer<OpenGLGetAttachedShaders>(loader.Invoke("glGetAttachedShaders"));
+            glGetAttribLocation = Marshal.GetDelegateForFunctionPointer<OpenGLGetAttribLocation>(loader.Invoke("glGetAttribLocation"));
+            glGetProgramiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramiv>(loader.Invoke("glGetProgramiv"));
+            glGetProgramInfoLog = Marshal.GetDelegateForFunctionPointer<OpenGLGetProgramInfoLog>(loader.Invoke("glGetProgramInfoLog"));
+            glGetShaderiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetShaderiv>(loader.Invoke("glGetShaderiv"));
+            glGetShaderInfoLog = Marshal.GetDelegateForFunctionPointer<OpenGLGetShaderInfoLog>(loader.Invoke("glGetShaderInfoLog"));
+            glGetShaderSource = Marshal.GetDelegateForFunctionPointer<OpenGLGetShaderSource>(loader.Invoke("glGetShaderSource"));
+            glGetUniformLocation = Marshal.GetDelegateForFunctionPointer<OpenGLGetUniformLocation>(loader.Invoke("glGetUniformLocation"));
+            glGetUniformfv = Marshal.GetDelegateForFunctionPointer<OpenGLGetUniformfv>(loader.Invoke("glGetUniformfv"));
+            glGetUniformiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetUniformiv>(loader.Invoke("glGetUniformiv"));
+            glGetVertexAttribdv = Marshal.GetDelegateForFunctionPointer<OpenGLGetVertexAttribdv>(loader.Invoke("glGetVertexAttribdv"));
+            glGetVertexAttribfv = Marshal.GetDelegateForFunctionPointer<OpenGLGetVertexAttribfv>(loader.Invoke("glGetVertexAttribfv"));
+            glGetVertexAttribiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetVertexAttribiv>(loader.Invoke("glGetVertexAttribiv"));
+            glGetVertexAttribPointerv = Marshal.GetDelegateForFunctionPointer<OpenGLGetVertexAttribPointerv>(loader.Invoke("glGetVertexAttribPointerv"));
+            glIsProgram = Marshal.GetDelegateForFunctionPointer<OpenGLIsProgram>(loader.Invoke("glIsProgram"));
+            glIsShader = Marshal.GetDelegateForFunctionPointer<OpenGLIsShader>(loader.Invoke("glIsShader"));
+            glLinkProgram = Marshal.GetDelegateForFunctionPointer<OpenGLLinkProgram>(loader.Invoke("glLinkProgram"));
+            glShaderSource = Marshal.GetDelegateForFunctionPointer<OpenGLShaderSource>(loader.Invoke("glShaderSource"));
+            glUseProgram = Marshal.GetDelegateForFunctionPointer<OpenGLUseProgram>(loader.Invoke("glUseProgram"));
+            glUniform1f = Marshal.GetDelegateForFunctionPointer<OpenGLUniform1f>(loader.Invoke("glUniform1f"));
+            glUniform2f = Marshal.GetDelegateForFunctionPointer<OpenGLUniform2f>(loader.Invoke("glUniform2f"));
+            glUniform3f = Marshal.GetDelegateForFunctionPointer<OpenGLUniform3f>(loader.Invoke("glUniform3f"));
+            glUniform4f = Marshal.GetDelegateForFunctionPointer<OpenGLUniform4f>(loader.Invoke("glUniform4f"));
+            glUniform1i = Marshal.GetDelegateForFunctionPointer<OpenGLUniform1i>(loader.Invoke("glUniform1i"));
+            glUniform2i = Marshal.GetDelegateForFunctionPointer<OpenGLUniform2i>(loader.Invoke("glUniform2i"));
+            glUniform3i = Marshal.GetDelegateForFunctionPointer<OpenGLUniform3i>(loader.Invoke("glUniform3i"));
+            glUniform4i = Marshal.GetDelegateForFunctionPointer<OpenGLUniform4i>(loader.Invoke("glUniform4i"));
+            glUniform1fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform1fv>(loader.Invoke("glUniform1fv"));
+            glUniform2fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform2fv>(loader.Invoke("glUniform2fv"));
+            glUniform3fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform3fv>(loader.Invoke("glUniform3fv"));
+            glUniform4fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform4fv>(loader.Invoke("glUniform4fv"));
+            glUniform1iv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform1iv>(loader.Invoke("glUniform1iv"));
+            glUniform2iv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform2iv>(loader.Invoke("glUniform2iv"));
+            glUniform3iv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform3iv>(loader.Invoke("glUniform3iv"));
+            glUniform4iv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform4iv>(loader.Invoke("glUniform4iv"));
+            glUniformMatrix2fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix2fv>(loader.Invoke("glUniformMatrix2fv"));
+            glUniformMatrix3fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix3fv>(loader.Invoke("glUniformMatrix3fv"));
+            glUniformMatrix4fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix4fv>(loader.Invoke("glUniformMatrix4fv"));
+            glValidateProgram = Marshal.GetDelegateForFunctionPointer<OpenGLValidateProgram>(loader.Invoke("glValidateProgram"));
+            glVertexAttrib1d = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib1d>(loader.Invoke("glVertexAttrib1d"));
+            glVertexAttrib1dv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib1dv>(loader.Invoke("glVertexAttrib1dv"));
+            glVertexAttrib1f = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib1f>(loader.Invoke("glVertexAttrib1f"));
+            glVertexAttrib1fv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib1fv>(loader.Invoke("glVertexAttrib1fv"));
+            glVertexAttrib1s = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib1s>(loader.Invoke("glVertexAttrib1s"));
+            glVertexAttrib1sv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib1sv>(loader.Invoke("glVertexAttrib1sv"));
+            glVertexAttrib2d = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib2d>(loader.Invoke("glVertexAttrib2d"));
+            glVertexAttrib2dv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib2dv>(loader.Invoke("glVertexAttrib2dv"));
+            glVertexAttrib2f = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib2f>(loader.Invoke("glVertexAttrib2f"));
+            glVertexAttrib2fv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib2fv>(loader.Invoke("glVertexAttrib2fv"));
+            glVertexAttrib2s = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib2s>(loader.Invoke("glVertexAttrib2s"));
+            glVertexAttrib2sv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib2sv>(loader.Invoke("glVertexAttrib2sv"));
+            glVertexAttrib3d = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib3d>(loader.Invoke("glVertexAttrib3d"));
+            glVertexAttrib3dv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib3dv>(loader.Invoke("glVertexAttrib3dv"));
+            glVertexAttrib3f = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib3f>(loader.Invoke("glVertexAttrib3f"));
+            glVertexAttrib3fv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib3fv>(loader.Invoke("glVertexAttrib3fv"));
+            glVertexAttrib3s = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib3s>(loader.Invoke("glVertexAttrib3s"));
+            glVertexAttrib3sv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib3sv>(loader.Invoke("glVertexAttrib3sv"));
+            glVertexAttrib4Nbv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Nbv>(loader.Invoke("glVertexAttrib4Nbv"));
+            glVertexAttrib4Niv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Niv>(loader.Invoke("glVertexAttrib4Niv"));
+            glVertexAttrib4Nsv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Nsv>(loader.Invoke("glVertexAttrib4Nsv"));
+            glVertexAttrib4Nub = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Nub>(loader.Invoke("glVertexAttrib4Nub"));
+            glVertexAttrib4Nubv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Nubv>(loader.Invoke("glVertexAttrib4Nubv"));
+            glVertexAttrib4Nuiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Nuiv>(loader.Invoke("glVertexAttrib4Nuiv"));
+            glVertexAttrib4Nusv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4Nusv>(loader.Invoke("glVertexAttrib4Nusv"));
+            glVertexAttrib4bv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4bv>(loader.Invoke("glVertexAttrib4bv"));
+            glVertexAttrib4d = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4d>(loader.Invoke("glVertexAttrib4d"));
+            glVertexAttrib4dv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4dv>(loader.Invoke("glVertexAttrib4dv"));
+            glVertexAttrib4f = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4f>(loader.Invoke("glVertexAttrib4f"));
+            glVertexAttrib4fv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4fv>(loader.Invoke("glVertexAttrib4fv"));
+            glVertexAttrib4iv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4iv>(loader.Invoke("glVertexAttrib4iv"));
+            glVertexAttrib4s = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4s>(loader.Invoke("glVertexAttrib4s"));
+            glVertexAttrib4sv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4sv>(loader.Invoke("glVertexAttrib4sv"));
+            glVertexAttrib4ubv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4ubv>(loader.Invoke("glVertexAttrib4ubv"));
+            glVertexAttrib4uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4uiv>(loader.Invoke("glVertexAttrib4uiv"));
+            glVertexAttrib4usv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttrib4usv>(loader.Invoke("glVertexAttrib4usv"));
+            glVertexAttribPointer = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribPointer>(loader.Invoke("glVertexAttribPointer"));
+            glUniformMatrix2x3fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix2x3fv>(loader.Invoke("glUniformMatrix2x3fv"));
+            glUniformMatrix3x2fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix3x2fv>(loader.Invoke("glUniformMatrix3x2fv"));
+            glUniformMatrix2x4fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix2x4fv>(loader.Invoke("glUniformMatrix2x4fv"));
+            glUniformMatrix4x2fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix4x2fv>(loader.Invoke("glUniformMatrix4x2fv"));
+            glUniformMatrix3x4fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix3x4fv>(loader.Invoke("glUniformMatrix3x4fv"));
+            glUniformMatrix4x3fv = Marshal.GetDelegateForFunctionPointer<OpenGLUniformMatrix4x3fv>(loader.Invoke("glUniformMatrix4x3fv"));
+            glColorMaski = Marshal.GetDelegateForFunctionPointer<OpenGLColorMaski>(loader.Invoke("glColorMaski"));
+            glGetBooleani_v = Marshal.GetDelegateForFunctionPointer<OpenGLGetBooleani_v>(loader.Invoke("glGetBooleani_v"));
+            glGetIntegeri_v = Marshal.GetDelegateForFunctionPointer<OpenGLGetIntegeri_v>(loader.Invoke("glGetIntegeri_v"));
+            glEnablei = Marshal.GetDelegateForFunctionPointer<OpenGLEnablei>(loader.Invoke("glEnablei"));
+            glDisablei = Marshal.GetDelegateForFunctionPointer<OpenGLDisablei>(loader.Invoke("glDisablei"));
+            glIsEnabledi = Marshal.GetDelegateForFunctionPointer<OpenGLIsEnabledi>(loader.Invoke("glIsEnabledi"));
+            glBeginTransformFeedback = Marshal.GetDelegateForFunctionPointer<OpenGLBeginTransformFeedback>(loader.Invoke("glBeginTransformFeedback"));
+            glEndTransformFeedback = Marshal.GetDelegateForFunctionPointer<OpenGLEndTransformFeedback>(loader.Invoke("glEndTransformFeedback"));
+            glBindBufferRange = Marshal.GetDelegateForFunctionPointer<OpenGLBindBufferRange>(loader.Invoke("glBindBufferRange"));
+            glBindBufferBase = Marshal.GetDelegateForFunctionPointer<OpenGLBindBufferBase>(loader.Invoke("glBindBufferBase"));
+            glTransformFeedbackVaryings = Marshal.GetDelegateForFunctionPointer<OpenGLTransformFeedbackVaryings>(loader.Invoke("glTransformFeedbackVaryings"));
+            glGetTransformFeedbackVarying = Marshal.GetDelegateForFunctionPointer<OpenGLGetTransformFeedbackVarying>(loader.Invoke("glGetTransformFeedbackVarying"));
+            glClampColor = Marshal.GetDelegateForFunctionPointer<OpenGLClampColor>(loader.Invoke("glClampColor"));
+            glBeginConditionalRender = Marshal.GetDelegateForFunctionPointer<OpenGLBeginConditionalRender>(loader.Invoke("glBeginConditionalRender"));
+            glEndConditionalRender = Marshal.GetDelegateForFunctionPointer<OpenGLEndConditionalRender>(loader.Invoke("glEndConditionalRender"));
+            glVertexAttribIPointer = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribIPointer>(loader.Invoke("glVertexAttribIPointer"));
+            glGetVertexAttribIiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetVertexAttribIiv>(loader.Invoke("glGetVertexAttribIiv"));
+            glGetVertexAttribIuiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetVertexAttribIuiv>(loader.Invoke("glGetVertexAttribIuiv"));
+            glVertexAttribI1i = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI1i>(loader.Invoke("glVertexAttribI1i"));
+            glVertexAttribI2i = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI2i>(loader.Invoke("glVertexAttribI2i"));
+            glVertexAttribI3i = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI3i>(loader.Invoke("glVertexAttribI3i"));
+            glVertexAttribI4i = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4i>(loader.Invoke("glVertexAttribI4i"));
+            glVertexAttribI1ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI1ui>(loader.Invoke("glVertexAttribI1ui"));
+            glVertexAttribI2ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI2ui>(loader.Invoke("glVertexAttribI2ui"));
+            glVertexAttribI3ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI3ui>(loader.Invoke("glVertexAttribI3ui"));
+            glVertexAttribI4ui = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4ui>(loader.Invoke("glVertexAttribI4ui"));
+            glVertexAttribI1iv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI1iv>(loader.Invoke("glVertexAttribI1iv"));
+            glVertexAttribI2iv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI2iv>(loader.Invoke("glVertexAttribI2iv"));
+            glVertexAttribI3iv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI3iv>(loader.Invoke("glVertexAttribI3iv"));
+            glVertexAttribI4iv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4iv>(loader.Invoke("glVertexAttribI4iv"));
+            glVertexAttribI1uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI1uiv>(loader.Invoke("glVertexAttribI1uiv"));
+            glVertexAttribI2uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI2uiv>(loader.Invoke("glVertexAttribI2uiv"));
+            glVertexAttribI3uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI3uiv>(loader.Invoke("glVertexAttribI3uiv"));
+            glVertexAttribI4uiv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4uiv>(loader.Invoke("glVertexAttribI4uiv"));
+            glVertexAttribI4bv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4bv>(loader.Invoke("glVertexAttribI4bv"));
+            glVertexAttribI4sv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4sv>(loader.Invoke("glVertexAttribI4sv"));
+            glVertexAttribI4ubv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4ubv>(loader.Invoke("glVertexAttribI4ubv"));
+            glVertexAttribI4usv = Marshal.GetDelegateForFunctionPointer<OpenGLVertexAttribI4usv>(loader.Invoke("glVertexAttribI4usv"));
+            glGetUniformuiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetUniformuiv>(loader.Invoke("glGetUniformuiv"));
+            glBindFragDataLocation = Marshal.GetDelegateForFunctionPointer<OpenGLBindFragDataLocation>(loader.Invoke("glBindFragDataLocation"));
+            glGetFragDataLocation = Marshal.GetDelegateForFunctionPointer<OpenGLGetFragDataLocation>(loader.Invoke("glGetFragDataLocation"));
+            glUniform1ui = Marshal.GetDelegateForFunctionPointer<OpenGLUniform1ui>(loader.Invoke("glUniform1ui"));
+            glUniform2ui = Marshal.GetDelegateForFunctionPointer<OpenGLUniform2ui>(loader.Invoke("glUniform2ui"));
+            glUniform3ui = Marshal.GetDelegateForFunctionPointer<OpenGLUniform3ui>(loader.Invoke("glUniform3ui"));
+            glUniform4ui = Marshal.GetDelegateForFunctionPointer<OpenGLUniform4ui>(loader.Invoke("glUniform4ui"));
+            glUniform1uiv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform1uiv>(loader.Invoke("glUniform1uiv"));
+            glUniform2uiv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform2uiv>(loader.Invoke("glUniform2uiv"));
+            glUniform3uiv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform3uiv>(loader.Invoke("glUniform3uiv"));
+            glUniform4uiv = Marshal.GetDelegateForFunctionPointer<OpenGLUniform4uiv>(loader.Invoke("glUniform4uiv"));
+            glTexParameterIiv = Marshal.GetDelegateForFunctionPointer<OpenGLTexParameterIiv>(loader.Invoke("glTexParameterIiv"));
+            glTexParameterIuiv = Marshal.GetDelegateForFunctionPointer<OpenGLTexParameterIuiv>(loader.Invoke("glTexParameterIuiv"));
+            glGetTexParameterIiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexParameterIiv>(loader.Invoke("glGetTexParameterIiv"));
+            glGetTexParameterIuiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetTexParameterIuiv>(loader.Invoke("glGetTexParameterIuiv"));
+            glClearBufferiv = Marshal.GetDelegateForFunctionPointer<OpenGLClearBufferiv>(loader.Invoke("glClearBufferiv"));
+            glClearBufferuiv = Marshal.GetDelegateForFunctionPointer<OpenGLClearBufferuiv>(loader.Invoke("glClearBufferuiv"));
+            glClearBufferfv = Marshal.GetDelegateForFunctionPointer<OpenGLClearBufferfv>(loader.Invoke("glClearBufferfv"));
+            glClearBufferfi = Marshal.GetDelegateForFunctionPointer<OpenGLClearBufferfi>(loader.Invoke("glClearBufferfi"));
+            glGetStringi = Marshal.GetDelegateForFunctionPointer<OpenGLGetStringi>(loader.Invoke("glGetStringi"));
+            glIsRenderbuffer = Marshal.GetDelegateForFunctionPointer<OpenGLIsRenderbuffer>(loader.Invoke("glIsRenderbuffer"));
+            glBindRenderbuffer = Marshal.GetDelegateForFunctionPointer<OpenGLBindRenderbuffer>(loader.Invoke("glBindRenderbuffer"));
+            glDeleteRenderbuffers = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteRenderbuffers>(loader.Invoke("glDeleteRenderbuffers"));
+            glGenRenderbuffers = Marshal.GetDelegateForFunctionPointer<OpenGLGenRenderbuffers>(loader.Invoke("glGenRenderbuffers"));
+            glRenderbufferStorage = Marshal.GetDelegateForFunctionPointer<OpenGLRenderbufferStorage>(loader.Invoke("glRenderbufferStorage"));
+            glGetRenderbufferParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetRenderbufferParameteriv>(loader.Invoke("glGetRenderbufferParameteriv"));
+            glIsFramebuffer = Marshal.GetDelegateForFunctionPointer<OpenGLIsFramebuffer>(loader.Invoke("glIsFramebuffer"));
+            glBindFramebuffer = Marshal.GetDelegateForFunctionPointer<OpenGLBindFramebuffer>(loader.Invoke("glBindFramebuffer"));
+            glDeleteFramebuffers = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteFramebuffers>(loader.Invoke("glDeleteFramebuffers"));
+            glGenFramebuffers = Marshal.GetDelegateForFunctionPointer<OpenGLGenFramebuffers>(loader.Invoke("glGenFramebuffers"));
+            glCheckFramebufferStatus = Marshal.GetDelegateForFunctionPointer<OpenGLCheckFramebufferStatus>(loader.Invoke("glCheckFramebufferStatus"));
+            glFramebufferTexture1D = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTexture1D>(loader.Invoke("glFramebufferTexture1D"));
+            glFramebufferTexture2D = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTexture2D>(loader.Invoke("glFramebufferTexture2D"));
+            glFramebufferTexture3D = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTexture3D>(loader.Invoke("glFramebufferTexture3D"));
+            glFramebufferRenderbuffer = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferRenderbuffer>(loader.Invoke("glFramebufferRenderbuffer"));
+            glGetFramebufferAttachmentParameteriv = Marshal.GetDelegateForFunctionPointer<OpenGLGetFramebufferAttachmentParameteriv>(loader.Invoke("glGetFramebufferAttachmentParameteriv"));
+            glGenerateMipmap = Marshal.GetDelegateForFunctionPointer<OpenGLGenerateMipmap>(loader.Invoke("glGenerateMipmap"));
+            glBlitFramebuffer = Marshal.GetDelegateForFunctionPointer<OpenGLBlitFramebuffer>(loader.Invoke("glBlitFramebuffer"));
+            glRenderbufferStorageMultisample = Marshal.GetDelegateForFunctionPointer<OpenGLRenderbufferStorageMultisample>(loader.Invoke("glRenderbufferStorageMultisample"));
+            glFramebufferTextureLayer = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTextureLayer>(loader.Invoke("glFramebufferTextureLayer"));
+            glMapBufferRange = Marshal.GetDelegateForFunctionPointer<OpenGLMapBufferRange>(loader.Invoke("glMapBufferRange"));
+            glFlushMappedBufferRange = Marshal.GetDelegateForFunctionPointer<OpenGLFlushMappedBufferRange>(loader.Invoke("glFlushMappedBufferRange"));
+            glBindVertexArray = Marshal.GetDelegateForFunctionPointer<OpenGLBindVertexArray>(loader.Invoke("glBindVertexArray"));
+            glDeleteVertexArrays = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteVertexArrays>(loader.Invoke("glDeleteVertexArrays"));
+            glGenVertexArrays = Marshal.GetDelegateForFunctionPointer<OpenGLGenVertexArrays>(loader.Invoke("glGenVertexArrays"));
+            glIsVertexArray = Marshal.GetDelegateForFunctionPointer<OpenGLIsVertexArray>(loader.Invoke("glIsVertexArray"));
+            glDrawArraysInstanced = Marshal.GetDelegateForFunctionPointer<OpenGLDrawArraysInstanced>(loader.Invoke("glDrawArraysInstanced"));
+            glDrawElementsInstanced = Marshal.GetDelegateForFunctionPointer<OpenGLDrawElementsInstanced>(loader.Invoke("glDrawElementsInstanced"));
+            glTexBuffer = Marshal.GetDelegateForFunctionPointer<OpenGLTexBuffer>(loader.Invoke("glTexBuffer"));
+            glPrimitiveRestartIndex = Marshal.GetDelegateForFunctionPointer<OpenGLPrimitiveRestartIndex>(loader.Invoke("glPrimitiveRestartIndex"));
+            glCopyBufferSubData = Marshal.GetDelegateForFunctionPointer<OpenGLCopyBufferSubData>(loader.Invoke("glCopyBufferSubData"));
+            glGetUniformIndices = Marshal.GetDelegateForFunctionPointer<OpenGLGetUniformIndices>(loader.Invoke("glGetUniformIndices"));
+            glGetActiveUniformsiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetActiveUniformsiv>(loader.Invoke("glGetActiveUniformsiv"));
+            glGetActiveUniformName = Marshal.GetDelegateForFunctionPointer<OpenGLGetActiveUniformName>(loader.Invoke("glGetActiveUniformName"));
+            glGetUniformBlockIndex = Marshal.GetDelegateForFunctionPointer<OpenGLGetUniformBlockIndex>(loader.Invoke("glGetUniformBlockIndex"));
+            glGetActiveUniformBlockiv = Marshal.GetDelegateForFunctionPointer<OpenGLGetActiveUniformBlockiv>(loader.Invoke("glGetActiveUniformBlockiv"));
+            glGetActiveUniformBlockName = Marshal.GetDelegateForFunctionPointer<OpenGLGetActiveUniformBlockName>(loader.Invoke("glGetActiveUniformBlockName"));
+            glUniformBlockBinding = Marshal.GetDelegateForFunctionPointer<OpenGLUniformBlockBinding>(loader.Invoke("glUniformBlockBinding"));
+            glDrawElementsBaseVertex = Marshal.GetDelegateForFunctionPointer<OpenGLDrawElementsBaseVertex>(loader.Invoke("glDrawElementsBaseVertex"));
+            glDrawRangeElementsBaseVertex = Marshal.GetDelegateForFunctionPointer<OpenGLDrawRangeElementsBaseVertex>(loader.Invoke("glDrawRangeElementsBaseVertex"));
+            glDrawElementsInstancedBaseVertex = Marshal.GetDelegateForFunctionPointer<OpenGLDrawElementsInstancedBaseVertex>(loader.Invoke("glDrawElementsInstancedBaseVertex"));
+            glMultiDrawElementsBaseVertex = Marshal.GetDelegateForFunctionPointer<OpenGLMultiDrawElementsBaseVertex>(loader.Invoke("glMultiDrawElementsBaseVertex"));
+            glProvokingVertex = Marshal.GetDelegateForFunctionPointer<OpenGLProvokingVertex>(loader.Invoke("glProvokingVertex"));
+            glFenceSync = Marshal.GetDelegateForFunctionPointer<OpenGLFenceSync>(loader.Invoke("glFenceSync"));
+            glIsSync = Marshal.GetDelegateForFunctionPointer<OpenGLIsSync>(loader.Invoke("glIsSync"));
+            glDeleteSync = Marshal.GetDelegateForFunctionPointer<OpenGLDeleteSync>(loader.Invoke("glDeleteSync"));
+            glClientWaitSync = Marshal.GetDelegateForFunctionPointer<OpenGLClientWaitSync>(loader.Invoke("glClientWaitSync"));
+            glWaitSync = Marshal.GetDelegateForFunctionPointer<OpenGLWaitSync>(loader.Invoke("glWaitSync"));
+            glGetInteger64v = Marshal.GetDelegateForFunctionPointer<OpenGLGetInteger64v>(loader.Invoke("glGetInteger64v"));
+            glGetSynciv = Marshal.GetDelegateForFunctionPointer<OpenGLGetSynciv>(loader.Invoke("glGetSynciv"));
+            glGetInteger64i_v = Marshal.GetDelegateForFunctionPointer<OpenGLGetInteger64i_v>(loader.Invoke("glGetInteger64i_v"));
+            glGetBufferParameteri64v = Marshal.GetDelegateForFunctionPointer<OpenGLGetBufferParameteri64v>(loader.Invoke("glGetBufferParameteri64v"));
+            glFramebufferTexture = Marshal.GetDelegateForFunctionPointer<OpenGLFramebufferTexture>(loader.Invoke("glFramebufferTexture"));
+            glTexImage2DMultisample = Marshal.GetDelegateForFunctionPointer<OpenGLTexImage2DMultisample>(loader.Invoke("glTexImage2DMultisample"));
+            glTexImage3DMultisample = Marshal.GetDelegateForFunctionPointer<OpenGLTexImage3DMultisample>(loader.Invoke("glTexImage3DMultisample"));
+            glGetMultisamplefv = Marshal.GetDelegateForFunctionPointer<OpenGLGetMultisamplefv>(loader.Invoke("glGetMultisamplefv"));
+            glSampleMaski = Marshal.GetDelegateForFunctionPointer<OpenGLSampleMaski>(loader.Invoke("glSampleMaski"));
         }
     }
 }

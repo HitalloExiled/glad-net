@@ -11,10 +11,10 @@ public abstract class Specification
     public abstract string   ApiUrl { get; }
     public abstract SpecType Type   { get; }
 
-    public Dictionary<string, Command>     Commands   { get; } = new();
-    public Dictionary<string, Enumeration> Enums      { get; } = new();
-    public Dictionary<string, Extension>   Extensions { get; } = new();
-    public Dictionary<string, Feature>     Features   { get; } = new();
+    public Dictionary<string, List<Command>> Commands   { get; } = new();
+    public Dictionary<string, Enumeration>   Enums      { get; } = new();
+    public Dictionary<string, Extension>     Extensions { get; } = new();
+    public Dictionary<string, Feature>       Features   { get; } = new();
 
     public async Task Load()
     {
@@ -148,20 +148,40 @@ public abstract class Specification
     {
         foreach (XmlElement node in root["commands"]!.GetElementsByTagName("command"))
         {
-            var command = new Command(node);
-            Commands.Add(command.Name, command);
+            if (!node.IsEmpty)
+            {
+                var command = new Command(node);
+                if (Commands.TryGetValue(command.Name, out var commands))
+                {
+                    commands.Add(command);
+                }
+                else
+                {
+                    Commands.Add(command.Name, new() { command });
+                }
+            }
         }
     }
 
-    public IEnumerable<Command?> GetCommands(GLOptions options)
+    public IEnumerable<Command?> GetCommands(Options options)
     {
         foreach (var name in Fetch(options, FeatureType.Command))
         {
-            yield return Commands[name];
+            if (Commands.TryGetValue(name, out var commands))
+            {
+                foreach (var overload in commands)
+                {
+                    yield return overload;
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{name} has empty definition");
+            }
         }
     }
 
-    private IEnumerable<string> Fetch(GLOptions options, FeatureType type)
+    private IEnumerable<string> Fetch(Options options, FeatureType type)
     {
         var set = new HashSet<string>();
         foreach (var feature in Features.Values)

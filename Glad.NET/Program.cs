@@ -9,8 +9,8 @@ internal class Program
 
     static void Main()
     {
-        GenerateOpenGL();
-        // GenerateVulkan();
+        // GenerateOpenGL();
+        GenerateVulkan();
 
         Console.WriteLine("Done!!!");
     }
@@ -23,16 +23,15 @@ internal class Program
 
         spec.Load(file);
 
-        var glOptions = new GLOptions
+        var options = new Options
         {
-            Spec       = SpecType.GL,
-            Api        = GLApi.GL | GLApi.GLES2,
+            Api        = Api.GL | Api.GLES2,
             Profile    = Profile.Core,
             Extensions = { "OVR", "KHR" },
             Version    = new(3, 3),
         };
 
-        Generator.Generate(spec, glOptions);
+        Generator.Generate(spec, options);
     }
 
     private static void GenerateVulkan()
@@ -43,15 +42,14 @@ internal class Program
 
         spec.Load(file);
 
-        var glOptions = new GLOptions
+        var options = new Options
         {
-            Spec       = SpecType.VK,
-            Api        = GLApi.GL | GLApi.GLES2,
+            Api        = Api.Vulkan | Api.VulkanSC,
             Profile    = Profile.Core,
             Extensions = { "OVR", "KHR" },
             Version    = new(3, 3),
         };
 
-        Generator.Generate(spec, glOptions);
+        Generator.Generate(spec, options);
     }
 }

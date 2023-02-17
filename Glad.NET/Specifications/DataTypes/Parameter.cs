@@ -6,11 +6,11 @@ public class Parameter : CommandItem
 {
     public string? LengthParam { get; }
 
-    public string? Type { get; }
+    public ParsedType Type { get; }
 
     public Parameter(XmlElement node) : base(node)
     {
         LengthParam = node.HasAttribute("len") ? node.GetAttribute("len") : null;
-        Type = node["ptype"]?.InnerText;
+        Type        = new ParsedType(node);
     }
 }

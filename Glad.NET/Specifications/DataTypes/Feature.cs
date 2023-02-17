@@ -5,7 +5,7 @@ using Glad.Net.Specifications.Enums;
 
 public class Feature : NamedEntryCollection<FeatureItem>
 {
-    public GLApi     Api     { get; }
+    public Api   Api     { get; }
     public Version Version { get; }
 
     public Feature(XmlElement node) : base(node)
@@ -16,7 +16,7 @@ public class Feature : NamedEntryCollection<FeatureItem>
             throw new XmlException("Feature API cannot be null/empty.");
         }
 
-        Api = Enum.Parse<GLApi>(api, true);
+        Api = Enum.Parse<Api>(api, true);
 
         Version = Version.Parse(node.GetAttribute("number"));
 
@@ -28,7 +28,7 @@ public class Feature : NamedEntryCollection<FeatureItem>
                 var action = GetAction(elem);
                 foreach (var entry in child.ChildNodes)
                 {
-                    if (entry is XmlElement item)
+                    if (entry is XmlElement item && item.Name != "comment")
                     {
                         Add(new FeatureItem(item, profile, action));
                     }
